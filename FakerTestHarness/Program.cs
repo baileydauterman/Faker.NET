@@ -1,5 +1,7 @@
-﻿new FakerTestHarness.Russian.Names().TestNames();
+﻿FakerTestHarness.Russian.Names.TestNames();
+FakerTestHarness.Russian.Lorem.Test();
 
 Console.WriteLine(Environment.NewLine);
 
-new FakerTestHarness.English.Names().TestNames();
+FakerTestHarness.English.Names.TestNames();
+FakerTestHarness.English.Lorem.Test();

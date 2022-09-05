@@ -2,9 +2,9 @@
 
 namespace FakerTestHarness.Russian
 {
-    internal class Names
+    internal static class Names
     {
-        public void TestNames()
+        public static void TestNames()
         {
             Console.WriteLine($"{Name.FirstName}");
             Console.WriteLine($"{Name.LastName}");
