@@ -1,9 +1,16 @@
 ﻿namespace Faker.NET.Common
 {
-    public interface IFakerText
+    public class IFakerText
     {
-        public string Get();
+        public IFakerText()
+        {
+        }
 
-        public List<string> Data { get; }
+        public string Get()
+        {
+            return Data[Randomizer.Next(Data.Count)];
+        }
+
+        public List<string> Data { get; set; }
     }
 }

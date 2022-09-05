@@ -1,15 +1,14 @@
 ﻿using Faker.NET.Common;
 
-namespace Faker.NET.Names
+namespace Faker.NET.Locales.EN.Names
 {
     internal class Title : IFakerText
     {
-
-        public string Get()
+        public new string Get()
         {
             return $"{Descriptor[Randomizer.Next(Descriptor.Count)]} {Level[Randomizer.Next(Level.Count)]} {Job[Randomizer.Next(Job.Count)]}";
         }
-        public List<string> Data => throw new NotImplementedException();
+
         public List<string> Descriptor = new()
         {
             "Lead",

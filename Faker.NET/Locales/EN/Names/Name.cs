@@ -1,4 +1,4 @@
-﻿namespace Faker.NET.Names
+﻿namespace Faker.NET.Locales.EN.Names
 {
     public static class Name
     {
@@ -14,7 +14,7 @@
         {
             get
             {
-                return firstName.Get();
+                return lastName.Get();
             }
         }
 
@@ -50,10 +50,19 @@
             }
         }
 
+        public static string Email
+        {
+            get
+            {
+                return email.Get(FullName);
+            }
+        }
+
         private static FirstName firstName = new FirstName();
         private static LastName lastName = new LastName();
         private static Suffix suffix = new Suffix();
         private static Prefix prefix = new Prefix();
         private static Title title = new Title();
+        private static Email email = new Email();
     }
 }
