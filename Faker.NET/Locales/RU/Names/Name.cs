@@ -4,42 +4,27 @@
     {
         public static string FirstName
         {
-            get
-            {
-                return firstName.Get();
-            }
+            get => firstName.Get();
         }
 
         public static string MiddleName
         {
-            get
-            {
-                return middleName.Get();
-            }
+            get => middleName.Get();
         }
 
         public static string LastName
         {
-            get
-            {
-                return lastName.Get();
-            }
+            get => lastName.Get();
         }
 
         public static string FullName
         {
-            get
-            {
-                return $"{firstName.Get()} {lastName.Get()}";
-            }
+            get => $"{firstName.Get()} {lastName.Get()}";
         }
 
         public static string JobTitle
         {
-            get
-            {
-                return title.Get();
-            }
+            get => title.Get();
         }
 
         private static FirstName firstName = new();

@@ -4,58 +4,37 @@
     {
         public static string FirstName
         {
-            get
-            {
-                return firstName.Get();
-            }
+            get => firstName.Get();
         }
 
         public static string LastName
         {
-            get
-            {
-                return lastName.Get();
-            }
+            get => lastName.Get();
         }
 
         public static string FullName
         {
-            get
-            {
-                return $"{firstName.Get()} {lastName.Get()}";
-            }
+            get => $"{firstName.Get()} {lastName.Get()}";
         }
 
         public static string Suffix
         {
-            get
-            {
-                return suffix.Get();
-            }
+            get => suffix.Get();
         }
 
         public static string Prefix
         {
-            get
-            {
-                return prefix.Get();
-            }
+            get => prefix.Get();
         }
 
         public static string JobTitle
         {
-            get
-            {
-                return title.Get();
-            }
+            get => title.Get();
         }
 
         public static string Email
         {
-            get
-            {
-                return email.Get(FullName);
-            }
+            get => email.Get(FullName);
         }
 
         private static FirstName firstName = new FirstName();
