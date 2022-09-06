@@ -2,7 +2,7 @@
 
 namespace Faker.NET.Locales.EN.Date
 {
-    public class Date
+    public static class Date
     {
         public static string Month
         {

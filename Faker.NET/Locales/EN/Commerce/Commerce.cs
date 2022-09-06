@@ -1,18 +1,18 @@
 ﻿namespace Faker.NET.Locales.EN.Commerce
 {
-    public class Commerce
+    public static class Commerce
     {
-        public string Department
+        public static string Department
         {
             get => department.Get();
         }
 
-        public string Product
+        public static string Product
         {
             get => product.Get();
         }
 
-        private Department department = new();
-        private ProductName product = new();
+        private static Department department = new();
+        private static ProductName product = new();
     }
 }
