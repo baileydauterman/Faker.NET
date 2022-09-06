@@ -4,16 +4,9 @@ namespace Faker.NET.Locales.EN.Location
 {
     internal class BuildingNumber : IFakerNumber
     {
-        public BuildingNumber() : base()
+        public new int Get()
         {
-            Format = formats[Randomizer.Next(formats.Count)];
+            return Randomizer.Next(1, 8000);
         }
-
-        private List<string> formats = new()
-        {
-            "####",
-            "###",
-            "##"
-        };
     }
 }

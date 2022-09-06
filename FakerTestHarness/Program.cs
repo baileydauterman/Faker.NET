@@ -1,10 +1,10 @@
-﻿FakerTestHarness.Russian.Names.TestNames();
-FakerTestHarness.Russian.Lorem.Test();
-
+﻿FakerTestHarness.English.Names.TestNames();
 Console.WriteLine(Environment.NewLine);
-
-FakerTestHarness.English.Names.TestNames();
 FakerTestHarness.English.Lorem.Test();
+Console.WriteLine(Environment.NewLine);
+FakerTestHarness.English.Dates.Test();
+Console.WriteLine(Environment.NewLine);
+FakerTestHarness.English.Locations.Test();
 
 //for (int i = 0; i < 10; i++)
 //{

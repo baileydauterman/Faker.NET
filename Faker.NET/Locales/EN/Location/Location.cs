@@ -19,7 +19,7 @@
 
         public static string BuildingNumber
         {
-            get => buildingNumber.Get();
+            get => buildingNumber.Get().ToString();
         }
 
         public static string Address
