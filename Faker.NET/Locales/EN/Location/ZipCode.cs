@@ -7,6 +7,7 @@ namespace Faker.NET.Locales.EN.Location
         public ZipCode() : base()
         {
             Format = "#####";
+            AltFormat = "#####-####";
         }
     }
 }

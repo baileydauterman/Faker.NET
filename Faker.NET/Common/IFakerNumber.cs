@@ -25,6 +25,24 @@ namespace Faker.NET.Common
             return sb.ToString();
         }
 
+        public string Get(bool useAlternate)
+        {
+            var sb = new StringBuilder();
+            foreach (char c in AltFormat)
+            {
+                if (c == '#')
+                {
+                    sb.Append(Randomizer.Next(9));
+                    continue;
+                }
+
+                sb.Append(c);
+            }
+
+            return sb.ToString();
+        }
+
         public string Format { get; set; }
+        public string AltFormat { get; set; }
     }
 }

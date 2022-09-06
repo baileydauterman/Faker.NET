@@ -34,13 +34,12 @@
 
         public static string ZipCodeLongFormat
         {
-            get => zipCodeLong.Get();
+            get => zipCode.Get(true);
         }
 
         private static City city = new();
         private static States states = new();
-        private static BuildingNumber buildingNumber = new();
         private static ZipCode zipCode = new();
-        private static ZipCodeLong zipCodeLong = new();
+        private static BuildingNumber buildingNumber = new();
     }
 }
