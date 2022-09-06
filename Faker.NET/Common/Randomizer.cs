@@ -7,6 +7,11 @@
             return random.Next(max);
         }
 
+        public static int Next(int min, int max)
+        {
+            return random.Next(min, max);
+        }
+
         private static Random random = new Random();
     }
 }

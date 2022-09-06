@@ -14,7 +14,7 @@
 
         public static string StateAbbreviation
         {
-            get => statesabbv.Get();
+            get => states.Get(true);
         }
 
         public static string BuildingNumber
@@ -32,10 +32,15 @@
             get => zipCode.Get();
         }
 
+        public static string ZipCodeLongFormat
+        {
+            get => zipCodeLong.Get();
+        }
+
         private static City city = new();
         private static States states = new();
-        private static StateAbbreviation statesabbv = new();
         private static BuildingNumber buildingNumber = new();
         private static ZipCode zipCode = new();
+        private static ZipCodeLong zipCodeLong = new();
     }
 }

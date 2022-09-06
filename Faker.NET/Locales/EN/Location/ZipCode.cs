@@ -1,5 +1,4 @@
-﻿
-using Faker.NET.Common;
+﻿using Faker.NET.Common;
 
 namespace Faker.NET.Locales.EN.Location
 {
