@@ -1,14 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 
 namespace Faker.NET.Common
 {
-    public interface IFakerNumber
+    public class IFakerNumber
     {
-        public string Get();
+        public IFakerNumber()
+        {
+        }
+
+        public string Get()
+        {
+            var sb = new StringBuilder();
+            foreach (char c in Format)
+            {
+                if (c == '#')
+                {
+                    sb.Append(Randomizer.Next(9));
+                    continue;
+                }
+
+                sb.Append(c);
+            }
+
+            return sb.ToString();
+        }
 
         public string Format { get; set; }
     }

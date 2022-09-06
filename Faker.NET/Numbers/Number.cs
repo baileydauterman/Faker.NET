@@ -1,31 +1,15 @@
 ﻿using Faker.NET.Common;
-using System.Text;
 
 namespace Faker.NET.Numbers
 {
-    public static class Number
+    public class Number : IFakerNumber
     {
-        public static string NumberString
+        public string NumberString
         {
-            get
-            {
-                var sb = new StringBuilder();
-                foreach (char c in Format)
-                {
-                    if (c == '#')
-                    {
-                        sb.Append(Randomizer.Next(9));
-                        continue;
-                    }
-
-                    sb.Append(c);
-                }
-
-                return sb.ToString();
-            }
+            get => base.Get();
         }
 
-        public static string Format
+        public string Format
         {
             get => _format;
 
@@ -35,6 +19,6 @@ namespace Faker.NET.Numbers
             }
         }
 
-        public static string _format = "###-###-####";
+        public string _format = "###-###-####";
     }
 }

@@ -8,6 +8,5 @@
         }
 
         private static Random random = new Random();
-        private static int Temp = 0;
     }
 }
