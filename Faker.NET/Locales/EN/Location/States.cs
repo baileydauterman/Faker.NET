@@ -1,7 +1,7 @@
 ﻿
 using Faker.NET.Common;
 
-namespace Faker.NET.Locales.EN.Location
+namespace Faker.NET.EN.Location
 {
     internal class States : FakerText
     {

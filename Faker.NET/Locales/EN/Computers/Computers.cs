@@ -1,4 +1,4 @@
-﻿namespace Faker.NET.Locales.EN.Computers
+﻿namespace Faker.NET.EN.Computers
 {
     public static class Computers
     {

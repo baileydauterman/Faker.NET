@@ -1,4 +1,4 @@
-﻿using Faker.NET.Locales.EN.Names;
+﻿using Faker.NET.EN.Names;
 
 namespace FakerTestHarness.English
 {

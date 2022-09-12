@@ -1,4 +1,4 @@
-﻿using Faker.NET.Locales.EN.Location;
+﻿using Faker.NET.EN.Location;
 
 namespace FakerTestHarness.English
 {

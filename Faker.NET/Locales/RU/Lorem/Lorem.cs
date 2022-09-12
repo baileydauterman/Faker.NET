@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace Faker.NET.Locales.RU.Lorem
+namespace Faker.NET.RU.Lorem
 {
     public static class Lorem
     {

@@ -1,6 +1,6 @@
 ﻿using Faker.NET.Common;
 
-namespace Faker.NET.Locales.EN.Commerce
+namespace Faker.NET.EN.Commerce
 {
     internal class ProductName : FakerText
     {

@@ -1,4 +1,4 @@
-﻿namespace Faker.NET.Locales.EN.Commerce
+﻿namespace Faker.NET.EN.Commerce
 {
     public static class Commerce
     {

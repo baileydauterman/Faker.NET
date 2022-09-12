@@ -1,6 +1,6 @@
 ﻿using Faker.NET.Common;
 
-namespace Faker.NET.Locales.EN.Lorem
+namespace Faker.NET.EN.Lorem
 {
     internal class LoremIpsum : FakerText
     {

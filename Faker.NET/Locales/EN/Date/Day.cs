@@ -1,6 +1,6 @@
 ﻿using Faker.NET.Common;
 
-namespace Faker.NET.Locales.EN.Date
+namespace Faker.NET.EN.Date
 {
     internal class Day : FakerText
     {

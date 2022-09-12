@@ -1,4 +1,4 @@
-﻿namespace Faker.NET.Locales.EN.Location
+﻿namespace Faker.NET.EN.Location
 {
     public static class Location
     {

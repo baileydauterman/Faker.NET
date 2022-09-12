@@ -1,6 +1,6 @@
 ﻿using Faker.NET.Common;
 
-namespace Faker.NET.Locales.EN.Names
+namespace Faker.NET.EN.Names
 {
     internal class Title : FakerText
     {

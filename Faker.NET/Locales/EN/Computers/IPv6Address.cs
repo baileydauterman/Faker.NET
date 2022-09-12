@@ -1,7 +1,7 @@
 ﻿using Faker.NET.Common;
 using System.Net;
 
-namespace Faker.NET.Locales.EN.Computers
+namespace Faker.NET.EN.Computers
 {
     internal class IPv6Address : FakerNumber
     {

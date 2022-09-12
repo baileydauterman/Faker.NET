@@ -4,8 +4,8 @@
     {
         public static void Test()
         {
-            Console.WriteLine(Faker.NET.Locales.EN.Lorem.Lorem.GetText(5));
-            Console.WriteLine(Faker.NET.Locales.EN.Lorem.Lorem.GetText(50));
+            Console.WriteLine(Faker.NET.EN.Lorem.Lorem.GetText(5));
+            Console.WriteLine(Faker.NET.EN.Lorem.Lorem.GetText(50));
         }
     }
 }

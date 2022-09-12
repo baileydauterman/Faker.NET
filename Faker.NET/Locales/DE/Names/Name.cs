@@ -1,4 +1,4 @@
-﻿namespace Faker.NET.Locales.DE.Names
+﻿namespace Faker.NET.DE.Names
 {
     public static class Name
     {

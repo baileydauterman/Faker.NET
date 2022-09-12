@@ -1,4 +1,4 @@
-﻿using Faker.NET.Locales.EN.Date;
+﻿using Faker.NET.EN.Date;
 
 namespace FakerTestHarness.English
 {

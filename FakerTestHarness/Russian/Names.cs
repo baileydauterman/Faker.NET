@@ -1,4 +1,4 @@
-﻿using Faker.NET.Locales.RU.Names;
+﻿using Faker.NET.RU.Names;
 
 namespace FakerTestHarness.Russian
 {
