@@ -112,11 +112,19 @@ namespace Faker.NET.EN.Names
         }
         public string Get(string name)
         {
-            var domain = base.Get();
+            var domain = Get();
             var nameSplit = name.Split(' ');
-            var followingNum = Randomizer.Next(15) + 1;
+            var followingNum = Randomizer.Next(1, 15);
 
             return $"{nameSplit[0].ToLower()}.{nameSplit[1].ToLower()}{followingNum}@{domain}";
+        }
+
+        public string Get(string fname, string lname)
+        {
+            var domain = Get();
+            var followingNum = Randomizer.Next(1,9);
+
+            return $"{fname.ToLower()}.{lname.ToLower()}{followingNum}@{domain}";
         }
     }
 }

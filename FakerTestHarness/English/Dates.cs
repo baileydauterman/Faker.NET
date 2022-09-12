@@ -35,6 +35,8 @@ namespace FakerTestHarness.English
             Console.WriteLine(Date.Formatted("h:mm tt"));
             Console.WriteLine(Date.Formatted("HH:mm:ss"));
             Console.WriteLine(Date.Formatted("yyyy MMMM"));
+
+            Console.WriteLine(Date.FullDateTime);
         }
     }
 }

@@ -26,6 +26,8 @@ namespace Faker.NET.EN.Date
 
         public static string Second => Randomizer.Next(0, 60).ToString();
 
+        public static string FullDateTime => NowFormatted("dddd, MMMM dd, yyyy h:mm:ss tt");
+
         public static string Formatted(string format)
         {
             var dt = new DateTime(int.Parse(Year), int.Parse(MonthNum), int.Parse(DateNum), int.Parse(Hour), int.Parse(Minute), int.Parse(Second));
@@ -39,10 +41,9 @@ namespace Faker.NET.EN.Date
 
         private static Month month = new();
         private static Day day = new();
-        private static Time time = new();
 
 
-        public static int YearMin { get; set; }
-        public static int YearMax { get;  set; }
+        public static int YearMin { get; set; } = 1941;
+        public static int YearMax { get; set; } = 2022;
     }
 }
