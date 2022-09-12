@@ -1,11 +1,7 @@
 ﻿namespace Faker.NET.Common
 {
-    public class IFakerText
+    public class FakerText
     {
-        public IFakerText()
-        {
-        }
-
         public string Get()
         {
             return Data[Randomizer.Next(Data.Count)];

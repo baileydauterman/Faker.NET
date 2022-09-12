@@ -2,7 +2,7 @@
 
 namespace Faker.NET.Locales.EN.Names
 {
-    internal class Suffix : IFakerText
+    internal class Suffix : FakerText
     {
         public Suffix() : base()
         {

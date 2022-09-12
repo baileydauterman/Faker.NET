@@ -2,7 +2,7 @@
 
 namespace Faker.NET.Locales.RU.Names
 {
-    internal class MiddleName : IFakerText
+    internal class MiddleName : FakerText
     {
         public MiddleName() 
             : base()

@@ -2,7 +2,7 @@
 
 namespace Faker.NET.Locales.EN.Date
 {
-    internal class Day : IFakerText
+    internal class Day : FakerText
     {
         public Day() : base()
         {

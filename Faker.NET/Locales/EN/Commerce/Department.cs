@@ -2,7 +2,7 @@
 
 namespace Faker.NET.Locales.EN.Commerce
 {
-    internal class Department : IFakerText
+    internal class Department : FakerText
     {
         public Department() : base()
         {

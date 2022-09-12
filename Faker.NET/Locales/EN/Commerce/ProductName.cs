@@ -2,7 +2,7 @@
 
 namespace Faker.NET.Locales.EN.Commerce
 {
-    internal class ProductName : IFakerText
+    internal class ProductName : FakerText
     {
         public new string Get()
         {

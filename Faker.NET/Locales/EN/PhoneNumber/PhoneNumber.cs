@@ -2,11 +2,12 @@
 
 namespace Faker.NET.Locales.EN.PhoneNumber
 {
-    internal class PhoneNumber : IFakerNumber
+    internal class PhoneNumber : FakerNumber
     {
         public PhoneNumber() : base()
         {
             Format = "###-###-####";
+            AltFormat = "(###)-###-####";
         }
     }
 }

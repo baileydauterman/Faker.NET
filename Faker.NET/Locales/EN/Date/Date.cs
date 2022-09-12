@@ -9,29 +9,19 @@ namespace Faker.NET.Locales.EN.Date
             get => day.Get();
         }
 
-        public static string DayAbbreviated
-        {
-            get => day.Get(true);
-        }
+        public static string DayAbbreviated => day.Get(true);
 
-        public static string DateNum
-        {
-            get => Randomizer.Next(1,31).ToString();
-        }
+        public static string DateNum => Randomizer.Next(1,31).ToString();
 
-        public static string Month
-        {
-            get => month.Get();
-        }
+        public static string Month => month.Get();
 
-        public static string MonthAbbreviated
-        {
-            get => month.Get(true);
-        }
+        public static string MonthAbbreviated => month.Get(true);
 
-        public static string Year
+        public static string Year => Randomizer.Next(1995, 2025).ToString();
+
+        public static string NowFormatted(string format)
         {
-            get => Randomizer.Next(1995, 2025).ToString();
+            return DateTime.Now.ToString(format);
         }
 
         private static Month month = new();

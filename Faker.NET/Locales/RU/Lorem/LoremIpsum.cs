@@ -2,7 +2,7 @@
 
 namespace Faker.NET.Locales.RU.Lorem
 {
-    internal class LoremIpsum : IFakerText
+    internal class LoremIpsum : FakerText
     {
         public LoremIpsum() : base()
         {

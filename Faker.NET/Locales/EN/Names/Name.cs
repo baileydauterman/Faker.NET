@@ -2,40 +2,19 @@
 {
     public static class Name
     {
-        public static string FirstName
-        {
-            get => firstName.Get();
-        }
+        public static string FirstName => firstName.Get();
 
-        public static string LastName
-        {
-            get => lastName.Get();
-        }
+        public static string LastName => lastName.Get();
 
-        public static string FullName
-        {
-            get => $"{firstName.Get()} {lastName.Get()}";
-        }
+        public static string FullName => $"{firstName.Get()} {lastName.Get()}";
 
-        public static string Suffix
-        {
-            get => suffix.Get();
-        }
+        public static string Suffix => suffix.Get();
 
-        public static string Prefix
-        {
-            get => prefix.Get();
-        }
+        public static string Prefix => prefix.Get();
 
-        public static string JobTitle
-        {
-            get => title.Get();
-        }
+        public static string JobTitle => title.Get();
 
-        public static string Email
-        {
-            get => email.Get(FullName);
-        }
+        public static string Email => email.Get(FullName);
 
         private static FirstName firstName = new();
         private static LastName lastName = new();

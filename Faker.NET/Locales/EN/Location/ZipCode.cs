@@ -2,7 +2,7 @@
 
 namespace Faker.NET.Locales.EN.Location
 {
-    internal class ZipCode : IFakerNumber
+    internal class ZipCode : FakerNumber
     {
         public ZipCode() : base()
         {

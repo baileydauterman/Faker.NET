@@ -5,6 +5,8 @@ Console.WriteLine(Environment.NewLine);
 FakerTestHarness.English.Dates.Test();
 Console.WriteLine(Environment.NewLine);
 FakerTestHarness.English.Locations.Test();
+Console.WriteLine(Environment.NewLine);
+FakerTestHarness.English.Computers.Test();
 
 //for (int i = 0; i < 10; i++)
 //{

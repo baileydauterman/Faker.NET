@@ -2,7 +2,7 @@
 
 namespace Faker.NET.Locales.EN.Location
 {
-    internal class BuildingNumber : IFakerNumber
+    internal class BuildingNumber : FakerNumber
     {
         public new int Get()
         {

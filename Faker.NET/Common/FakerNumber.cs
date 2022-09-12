@@ -2,12 +2,8 @@
 
 namespace Faker.NET.Common
 {
-    public class IFakerNumber
+    public class FakerNumber
     {
-        public IFakerNumber()
-        {
-        }
-
         public string Get()
         {
             var sb = new StringBuilder();

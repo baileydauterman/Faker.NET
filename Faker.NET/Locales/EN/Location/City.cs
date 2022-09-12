@@ -2,7 +2,7 @@
 
 namespace Faker.NET.Locales.EN.Location
 {
-    internal class City : IFakerText
+    internal class City : FakerText
     {
         public City() : base()
         {

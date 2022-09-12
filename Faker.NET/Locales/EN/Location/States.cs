@@ -3,7 +3,7 @@ using Faker.NET.Common;
 
 namespace Faker.NET.Locales.EN.Location
 {
-    internal class States : IFakerText
+    internal class States : FakerText
     {
         public States() : base()
         {

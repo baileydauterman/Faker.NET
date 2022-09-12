@@ -2,40 +2,19 @@
 {
     public static class Location
     {
-        public static string City
-        {
-            get => city.Get();
-        }
+        public static string City => city.Get();
 
-        public static string State
-        {
-            get => states.Get();
-        }
+        public static string State => states.Get();
 
-        public static string StateAbbreviation
-        {
-            get => states.Get(true);
-        }
+        public static string StateAbbreviation => states.Get(true);
 
-        public static string BuildingNumber
-        {
-            get => buildingNumber.Get().ToString();
-        }
+        public static string BuildingNumber => buildingNumber.Get().ToString();
 
-        public static string Address
-        {
-            get => $"{BuildingNumber} {City}, {StateAbbreviation} {ZipCode}";
-        }
+        public static string Address => $"{BuildingNumber} {City}, {StateAbbreviation} {ZipCode}";
 
-        public static string ZipCode
-        {
-            get => zipCode.Get();
-        }
+        public static string ZipCode => zipCode.Get();
 
-        public static string ZipCodeLongFormat
-        {
-            get => zipCode.Get(true);
-        }
+        public static string ZipCodeLongFormat => zipCode.Get(true);
 
         private static City city = new();
         private static States states = new();

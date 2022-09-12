@@ -2,7 +2,7 @@
 
 namespace Faker.NET.Locales.EN.Date
 {
-    internal class Month : IFakerText
+    internal class Month : FakerText
     {
         public Month() : base()
         {

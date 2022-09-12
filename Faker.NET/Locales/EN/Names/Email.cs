@@ -2,7 +2,7 @@
 
 namespace Faker.NET.Locales.EN.Names
 {
-    internal class Email : IFakerText
+    internal class Email : FakerText
     {
         public Email() : base()
         {
