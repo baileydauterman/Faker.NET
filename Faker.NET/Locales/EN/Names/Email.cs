@@ -20,7 +20,7 @@ namespace Faker.NET.EN.Names
         }
         public string Get(string name)
         {
-            var domain = Get();
+            var domain = Get(false);
             var nameSplit = name.Split(' ');
             var followingNum = Randomizer.Next(1, 15);
 
@@ -29,7 +29,7 @@ namespace Faker.NET.EN.Names
 
         public string Get(string fname, string lname)
         {
-            var domain = Get();
+            var domain = Get(false);
             var followingNum = Randomizer.Next(1,9);
 
             return $"{fname.ToLower()}.{lname.ToLower()}{followingNum}@{domain}";

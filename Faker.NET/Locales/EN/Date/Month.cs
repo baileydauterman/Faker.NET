@@ -4,39 +4,16 @@ namespace Faker.NET.EN.Date
 {
     internal class Month : FakerText
     {
-        public Month() : base()
+        public Month(string? culture = null) 
+            : base()
         {
-            Data = new()
-            {
-                "January",
-                "February",
-                "March",
-                "April",
-                "May",
-                "June",
-                "July",
-                "August",
-                "September",
-                "October",
-                "November",
-                "December",
-            };
+        }
 
-            AlternateData = new()
-            {
-                "Jan",
-                "Feb",
-                "Mar",
-                "Apr",
-                "May",
-                "Jun",
-                "Jul",
-                "Aug",
-                "Sep",
-                "Oct",
-                "Nov",
-                "Dec",
-            };
+        public override string Get(bool useAlternate = false)
+        {
+            return useAlternate ?
+                _culture.DateTimeFormat.AbbreviatedMonthNames[Randomizer.Next(12)] :
+                _culture.DateTimeFormat.MonthNames[Randomizer.Next(12)];
         }
     }
 }

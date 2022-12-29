@@ -1,16 +1,24 @@
-﻿namespace Faker.NET.Common
+﻿using System.Globalization;
+
+namespace Faker.NET.Common
 {
     public class FakerText
     {
-        public string Get()
+        public FakerText(string? culture = null)
         {
-            return Data[Randomizer.Next(Data.Count)];
+                _culture = string.IsNullOrEmpty(culture)
+                    ? CultureInfo.CurrentCulture
+                    : CultureInfo.GetCultureInfo(culture);
         }
 
-        public string Get(bool useAlternate)
+        public virtual string Get(bool useAlternate = false)
         {
-            return AlternateData[Randomizer.Next(AlternateData.Count)];
+            return useAlternate ? 
+                Data[Randomizer.Next(Data.Count)] :
+                AlternateData[Randomizer.Next(AlternateData.Count)];
         }
+
+        public CultureInfo _culture { get; set; }
 
         public List<string> Data { get; set; }
         public List<string> AlternateData { get; set; }

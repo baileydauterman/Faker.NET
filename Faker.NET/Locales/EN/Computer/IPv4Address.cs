@@ -1,6 +1,6 @@
 ﻿using Faker.NET.Common;
 
-namespace Faker.NET.EN.Computers
+namespace Faker.NET.EN.Computer
 {
     public class IPv4Address : FakerNumber
     {

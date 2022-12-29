@@ -2,11 +2,11 @@
 {
     public static class Name
     {
-        public static string FirstName => firstName.Get();
+        public static string FirstName => firstName.Get(false);
 
-        public static string LastName => lastName.Get();
+        public static string LastName => lastName.Get(false);
 
-        public static string Prefix => prefix.Get();
+        public static string Prefix => prefix.Get(false);
 
         private static FirstName firstName = new();
         private static LastName lastName = new();
