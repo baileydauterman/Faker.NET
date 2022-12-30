@@ -14,13 +14,13 @@ namespace Faker.NET.Common
         public virtual string Get(bool useAlternate = false)
         {
             return useAlternate ? 
-                Data[Randomizer.Next(Data.Count)] :
-                AlternateData[Randomizer.Next(AlternateData.Count)];
+                Data.ElementAt(Randomizer.Next(Data.Count)) :
+                AlternateData.ElementAt(Randomizer.Next(AlternateData.Count));
         }
 
         public CultureInfo _culture { get; set; }
 
-        public List<string> Data { get; set; }
-        public List<string> AlternateData { get; set; }
+        public HashSet<string> Data { get; set; }
+        public HashSet<string> AlternateData { get; set; }
     }
 }
