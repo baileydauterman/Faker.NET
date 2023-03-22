@@ -6,7 +6,7 @@ namespace Faker.NET.EN.Names
     {
         public Suffix() : base()
         {
-            Data = new()
+            Native = new()
             {
                 "Jr.",
                 "Sr.",

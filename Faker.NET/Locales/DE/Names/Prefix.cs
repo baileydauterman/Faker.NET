@@ -6,7 +6,7 @@ namespace Faker.NET.DE.Names
     {
         public Prefix() : base()
         {
-            Data = new()
+            Native = new()
             {
                 "Hr.",
                 "Fr.",

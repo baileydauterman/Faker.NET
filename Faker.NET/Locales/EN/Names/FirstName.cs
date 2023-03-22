@@ -4,9 +4,10 @@ namespace Faker.NET.EN.Names
 {
     internal class FirstName : FakerText
     {
-        public FirstName() : base()
+        public FirstName()
+            : base()
         {
-            Data = new()
+            Native = new()
             {
                 "Aaron",
                 "Abagail",

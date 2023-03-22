@@ -6,7 +6,7 @@ namespace Faker.NET.EN.Lorem
     {
         public LoremIpsum() : base()
         {
-            Data = new()
+            Native = new()
             {
                 "alias",
                 "consequatur",

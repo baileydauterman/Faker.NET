@@ -7,7 +7,7 @@ namespace Faker.NET.EN.Location
     {
         public States() : base()
         {
-            Data = new()
+            Native = new()
             {
                 "Alabama",
                 "Alaska",
@@ -61,7 +61,7 @@ namespace Faker.NET.EN.Location
                 "Wyoming",
             };
 
-            AlternateData = new()
+            Translated = new()
             {
                 "AL",
                 "AK",

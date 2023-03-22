@@ -4,9 +4,10 @@ namespace Faker.NET.RU.Names
 {
     internal class FirstName : FakerText
     {
-        public FirstName() : base()
+        public FirstName() 
+            : base()
         {
-            Data = new()
+            Native = new()
             {
                 "Август",
                 "Авдей",

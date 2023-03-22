@@ -7,7 +7,7 @@ namespace Faker.NET.RU.Names
         public MiddleName() 
             : base()
         {
-            Data = new()
+            Native = new()
             { 
                 "Ааронович",
                 "Абрамович",

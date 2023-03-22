@@ -6,7 +6,7 @@ namespace Faker.NET.Locales.AR.Names
     {
         public LastName() : base()
         {
-            Data = new()
+            Native = new()
             {
 
             };

@@ -6,7 +6,7 @@ namespace Faker.NET.EN.Names
     {
         public LastName() : base()
         {
-            Data = new()
+            Native = new()
             {
                 "Abbott",
                 "Abernathy",

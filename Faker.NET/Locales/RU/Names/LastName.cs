@@ -7,7 +7,7 @@ namespace Faker.NET.RU.Names
         public LastName() 
             : base()
         {
-            Data = new()
+            Native = new()
             {
                 "Смирнова",
                 "Иванова",

@@ -6,7 +6,7 @@ namespace Faker.NET.EN.Location
     {
         public City() : base()
         {
-            Data = new()
+            Native = new()
             {
                 "Abilene",
                 "Akron",

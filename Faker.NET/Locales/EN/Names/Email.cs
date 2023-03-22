@@ -6,7 +6,7 @@ namespace Faker.NET.EN.Names
     {
         public Email() : base()
         {
-            Data = new()
+            Native = new()
             {
                 "gmail.com",
                 "yahoo.com",

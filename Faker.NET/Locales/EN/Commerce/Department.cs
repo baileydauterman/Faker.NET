@@ -6,7 +6,7 @@ namespace Faker.NET.EN.Commerce
     {
         public Department() : base()
         {
-            Data = new()
+            Native = new()
             {
                 "Books",
                 "Movies",

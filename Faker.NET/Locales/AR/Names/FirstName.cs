@@ -6,7 +6,7 @@ namespace Faker.NET.Locales.AR.Names
     {
         public FirstName() : base()
         {
-            Data = new()
+            Native = new()
             {
                 "Aaliyah",
                 "Abir",
@@ -208,7 +208,7 @@ namespace Faker.NET.Locales.AR.Names
                 "Hayat",
                 "Hazim"
             };
-            AlternateData = new()
+            Translated = new()
             {
                 "عالية",
                 "عبير",
