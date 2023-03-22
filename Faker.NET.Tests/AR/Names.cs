@@ -1,6 +1,6 @@
-﻿using Faker.NET.Locales.ZH.Names;
+﻿using Faker.NET.AR.Names;
 
-namespace Faker.NET.Tests.Locales.ZH
+namespace Faker.NET.Tests.AR
 {
     internal class NameTest
     {

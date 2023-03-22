@@ -1,6 +1,6 @@
-﻿namespace Faker.NET.ZH.Names
+﻿namespace Faker.NET.AR.Names
 {
-    public static class Name
+    public class Name
     {
         public static class Native
         {
@@ -19,7 +19,7 @@
 
             public static string FullName => $"{lastName.Get(true)} {firstName.Get(true)}";
         }
-        
+
         private static LastName lastName = new();
         private static FirstName firstName = new();
     }

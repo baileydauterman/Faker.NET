@@ -1,6 +1,6 @@
 ﻿using Faker.NET.Common;
 
-namespace Faker.NET.Locales.ZH.Names
+namespace Faker.NET.ZH.Names
 {
     internal class LastName : FakerText
     {

@@ -1,7 +1,7 @@
 ﻿using Faker.NET.EN.Date;
 using System.Globalization;
 
-namespace Faker.NET.Tests.Locales.EN
+namespace Faker.NET.Tests.EN
 {
     internal static class Dates
     {
@@ -18,7 +18,7 @@ namespace Faker.NET.Tests.Locales.EN
         public static void Months()
         {
             Assert.That(Date.Month, Is.InstanceOf<string>());
-            Assert.That(Date.MonthAbbreviated, Is.InstanceOf<string>()); 
+            Assert.That(Date.MonthAbbreviated, Is.InstanceOf<string>());
             Assert.That(int.Parse(Date.MonthNum), Is.InstanceOf<int>());
         }
 

@@ -1,6 +1,6 @@
 ﻿using Faker.NET.EN.Account;
 
-namespace Faker.NET.Tests.Locales.EN
+namespace Faker.NET.Tests.EN
 {
     public static class Users
     {

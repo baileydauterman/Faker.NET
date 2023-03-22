@@ -1,6 +1,6 @@
 ﻿using Faker.NET.EN.Names;
 
-namespace Faker.NET.Tests.Locales.EN
+namespace Faker.NET.Tests.EN
 {
     internal static class Names
     {

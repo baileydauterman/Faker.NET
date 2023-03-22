@@ -18,14 +18,14 @@ namespace Faker.NET.Common
         public virtual string Get(bool useAlternate = false)
         {
             return useAlternate ? 
-                Native.ElementAt(Randomizer.Next(Native.Count)) :
-                Translated.ElementAt(Randomizer.Next(Translated.Count));
+                Native[Randomizer.Next(Native.Count)] :
+                Translated[Randomizer.Next(Translated.Count)];
         }
 
         public CultureInfo _culture { get; set; }
 
-        public HashSet<string> Native { get; set; }
+        public List<string> Native { get; set; }
 
-        public HashSet<string> Translated { get; set; }
+        public List<string> Translated { get; set; }
     }
 }

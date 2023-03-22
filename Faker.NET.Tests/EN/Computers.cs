@@ -1,7 +1,7 @@
 ﻿using Faker.NET.EN.Computer;
 using System.Net;
 
-namespace Faker.NET.Tests.Locales.EN
+namespace Faker.NET.Tests.EN
 {
     public static class Computers
     {
