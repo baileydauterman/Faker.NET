@@ -1009,6 +1009,7 @@ namespace Faker.NET.EN.Location
                 "Yucaipa",
                 "Yuma",
             };
+            Translated = Native;
         }
     }
 }

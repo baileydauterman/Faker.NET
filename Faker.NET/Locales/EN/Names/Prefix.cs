@@ -14,6 +14,8 @@ namespace Faker.NET.EN.Names
                 "Miss",
                 "Dr."
             };
+
+            Translated = Native;
         }
     }
 }

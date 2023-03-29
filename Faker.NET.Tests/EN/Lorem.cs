@@ -1,11 +1,18 @@
-﻿namespace Faker.NET.Tests.EN
+﻿using System.Text;
+
+namespace Faker.NET.Tests.EN
 {
     internal class Lorem
     {
+        [Test]
         public static void Test()
         {
-            Console.WriteLine(NET.EN.Lorem.Lorem.GetText(5));
-            Console.WriteLine(NET.EN.Lorem.Lorem.GetText(50));
+            var str = new StringBuilder();
+
+            str.Append(Faker.NET.EN.Lorem.GetText(5));
+            str.Append($" {Faker.NET.EN.Lorem.GetText(50)}");
+
+            Assert.That(str.ToString().Split(" ").Count, Is.EqualTo(55));
         }
     }
 }

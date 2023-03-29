@@ -20,6 +20,8 @@ namespace Faker.NET.EN.Names
                 "PhD",
                 "DVM",
             };
+
+            Translated = Native;
         }
     }
 }

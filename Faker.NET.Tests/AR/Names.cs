@@ -1,4 +1,5 @@
 ﻿using Faker.NET.AR.Names;
+using Faker.NET.Common;
 
 namespace Faker.NET.Tests.AR
 {

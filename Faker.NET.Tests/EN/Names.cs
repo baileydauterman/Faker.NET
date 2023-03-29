@@ -4,15 +4,16 @@ namespace Faker.NET.Tests.EN
 {
     internal static class Names
     {
+        [Test]
         public static void TestNames()
         {
-            Console.WriteLine($"{Name.FirstName}");
-            Console.WriteLine($"{Name.LastName}");
-            Console.WriteLine($"{Name.FullName}");
-            Console.WriteLine($"{Name.JobTitle}");
-            Console.WriteLine($"{Name.Suffix}");
-            Console.WriteLine($"{Name.Prefix}");
-            Console.WriteLine($"{Name.Email}");
+            Assert.That(Name.FirstName, Is.Not.Null);
+            Assert.That(Name.LastName, Is.Not.Null);
+            Assert.That(Name.FullName, Is.Not.Null);
+            Assert.That(Name.JobTitle, Is.Not.Null);
+            Assert.That(Name.Suffix, Is.Not.Null);
+            Assert.That(Name.Prefix, Is.Not.Null);
+            Assert.That(Name.Email, Is.Not.Null);
         }
     }
 }

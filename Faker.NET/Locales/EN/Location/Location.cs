@@ -4,9 +4,9 @@
     {
         public static string City => city.Get();
 
-        public static string State => states.Get();
+        public static string State => states.Get(true);
 
-        public static string StateAbbreviation => states.Get(true);
+        public static string StateAbbreviation => states.Get();
 
         public static string BuildingNumber => buildingNumber.Get().ToString();
 

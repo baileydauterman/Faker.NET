@@ -17,6 +17,8 @@ namespace Faker.NET.EN.Names
                 "ymail.com",
                 "outlook.com",
             };
+
+            Translated = Native;
         }
         public string Get(string name)
         {

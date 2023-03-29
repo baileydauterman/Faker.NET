@@ -4,12 +4,17 @@ namespace Faker.NET.Tests.EN
 {
     public static class Users
     {
-        public static void Test()
+        [Test]
+        public static void GenerateUsers()
         {
+            var users = new List<Faker.NET.Common.Objects.User>();
+
             for (int i = 0; i < 4; i++)
             {
-                Console.WriteLine(User.NewAccount);
+                users.Add(User.NewAccount);
             }
+
+            Assert.That(users.Count, Is.EqualTo(4));
         }
     }
 }

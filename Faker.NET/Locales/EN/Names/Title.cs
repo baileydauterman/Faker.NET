@@ -4,7 +4,7 @@ namespace Faker.NET.EN.Names
 {
     internal class Title : FakerText
     {
-        public new string Get()
+        public override string Get(bool alternate = false)
         {
             return $"{Descriptor[Randomizer.Next(Descriptor.Count)]} {Level[Randomizer.Next(Level.Count)]} {Job[Randomizer.Next(Job.Count)]}";
         }

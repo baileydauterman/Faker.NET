@@ -3014,6 +3014,7 @@ namespace Faker.NET.EN.Names
                 "Zora",
                 "Zula",
             };
+            Translated = Native;
         }
     }
 }

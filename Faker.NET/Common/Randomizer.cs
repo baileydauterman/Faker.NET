@@ -12,6 +12,14 @@
             return random.Next(min, max);
         }
 
+        public static void SetSeed(int seed)
+        {
+            Seed = seed;
+            random = new Random(Seed.Value);
+        }
+
         private static Random random = new Random();
+
+        public static int? Seed { get; private set; } = null;
     }
 }

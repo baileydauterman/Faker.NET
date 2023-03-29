@@ -4,15 +4,16 @@ namespace Faker.NET.Tests.EN
 {
     internal static class Locations
     {
-        public static void Test()
+        [Test]
+        public static void GeneratingDataTest()
         {
-            Console.WriteLine(Location.City);
-            Console.WriteLine(Location.State);
-            Console.WriteLine(Location.StateAbbreviation);
-            Console.WriteLine(Location.BuildingNumber);
-            Console.WriteLine(Location.Address);
-            Console.WriteLine(Location.ZipCode);
-            Console.WriteLine(Location.ZipCodeLongFormat);
+            Assert.That(Location.City, Is.Not.Null);
+            Assert.That(Location.State, Is.Not.Null);
+            Assert.That(Location.StateAbbreviation, Is.Not.Null);
+            Assert.That(Location.Address, Is.Not.Null);
+            Assert.That(Location.BuildingNumber, Is.Not.Null);
+            Assert.That(Location.ZipCode, Is.Not.Null);
+            Assert.That(Location.ZipCodeLongFormat, Is.Not.Null);
         }
     }
 }

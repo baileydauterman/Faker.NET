@@ -482,6 +482,8 @@ namespace Faker.NET.EN.Names
                 "Zieme",
                 "Zulauf",
             };
+
+            Translated = Native;
         }
     }
 }
