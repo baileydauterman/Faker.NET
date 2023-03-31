@@ -1,5 +1,4 @@
 ﻿using Faker.NET.AR.Names;
-using Faker.NET.Common;
 
 namespace Faker.NET.Tests.AR
 {
@@ -20,11 +19,14 @@ namespace Faker.NET.Tests.AR
         }
 
         [Test]
-        public void StressFirstName()
+        [TestCase(10_000)]
+        [TestCase(100_000)]
+        [TestCase(1_000_000)]
+        public void StressFirstName(int count)
         {
             var i = 0;
 
-            while (i < 10_000)
+            while (i < count)
             {
                 _ = Name.Native.FirstName;
                 _ = Name.Translated.FirstName;
@@ -34,11 +36,14 @@ namespace Faker.NET.Tests.AR
         }
 
         [Test]
-        public void StressLastName()
+        [TestCase(10_000)]
+        [TestCase(100_000)]
+        [TestCase(1_000_000)]
+        public void StressLastName(int count)
         {
             var i = 0;
 
-            while (i < 10_000)
+            while (i < count)
             {
                 _ = Name.Native.LastName;
                 _ = Name.Translated.LastName;
