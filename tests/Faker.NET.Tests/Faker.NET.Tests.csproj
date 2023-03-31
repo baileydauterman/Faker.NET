@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Faker.NET\Faker.NET.csproj" />
+    <ProjectReference Include="..\..\src\Faker.NET\Faker.NET.csproj" />
   </ItemGroup>
 
 </Project>
