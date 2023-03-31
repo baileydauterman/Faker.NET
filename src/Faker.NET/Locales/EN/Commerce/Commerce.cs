@@ -6,7 +6,7 @@
 
         public static string Product => product.Get();
 
-        private static Department department = new();
-        private static ProductName product = new();
+        private readonly static Department department = new();
+        private readonly static ProductName product = new();
     }
 }

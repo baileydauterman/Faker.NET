@@ -4,7 +4,7 @@ namespace Faker.NET.EN.Commerce
 {
     internal class ProductName : FakerText
     {
-        public new string Get()
+        public override string Get(bool useAlternate = false)
         {
             return $"{Adjective[Randomizer.Next(Adjective.Count)]} {Material[Randomizer.Next(Material.Count)]} {Product[Randomizer.Next(Product.Count)]}";
         }

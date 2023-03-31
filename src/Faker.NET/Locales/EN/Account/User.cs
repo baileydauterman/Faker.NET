@@ -21,6 +21,6 @@ namespace Faker.NET.EN.Account
             return user;
         }
 
-        private static Email emailGenerator = new();
+        private readonly static Email emailGenerator = new();
     }
 }

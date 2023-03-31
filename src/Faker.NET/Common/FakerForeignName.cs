@@ -2,8 +2,8 @@
 {
     internal class FakerForeignName
     {
-        public HashSet<string> Translated { get; set; }
+        public List<string> Translated { get; set; }
 
-        public HashSet<string> Native { get; set; }
+        public List<string> Native { get; set; }
     }
 }

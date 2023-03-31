@@ -4,7 +4,7 @@ namespace Faker.NET.EN.Date
 {
     internal class Month : FakerText
     {
-        public Month(string? culture = null) 
+        public Month(string culture = null) 
             : base()
         {
         }

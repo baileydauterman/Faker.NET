@@ -9,7 +9,7 @@ namespace Faker.NET.EN.Date
         /// If none is provided it will use the current culture of the machine.
         /// </summary>
         /// <param name="culture"></param>
-        public Day(string? culture) : base()
+        public Day(string culture) : base()
         {
         }
 
