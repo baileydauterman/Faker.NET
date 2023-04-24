@@ -23,8 +23,11 @@ jobs:
       with:
         dotnet-version: 6.0.x
     - name: Restore dependencies
-      run: dotnet restore ../../src/Faker.NET/Faker.NET.csproj
+      run: dotnet restore
+      working-directory: /src/
     - name: Build
-      run: dotnet build ../../src/Faker.NET/Faker.NET.csproj --no-restore --configuration Release
+      run: dotnet build --no-restore --configuration Release
+      working-directory: /src/
     - name: Test
-      run: dotnet test ../../tests/Faker.NET.Tests/Faker.NET.Tests.csproj --no-build --verbosity normal
+      run: dotnet test --no-build --verbosity normal
+      working-directory: /tests/
