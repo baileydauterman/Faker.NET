@@ -13,10 +13,6 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    
-    defaults:
-      run:
-        working-directory: ${{ env.working-directory }}
 
     steps:
     - uses: actions/checkout@v3
@@ -25,8 +21,8 @@ jobs:
       with:
         dotnet-version: 6.0.x
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore ../../src/Faker.NET/Faker.NET.csproj
     - name: Build
-      run: dotnet build --no-restore --configuration Release
+      run: dotnet build ../../src/Faker.NET/Faker.NET.csproj --no-restore --configuration Release
     - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test ../../tests/Faker.NET.Tests/Faker.NET.Tests.csproj --no-build --verbosity normal
