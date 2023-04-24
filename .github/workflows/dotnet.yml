@@ -16,7 +16,7 @@ jobs:
 
     steps:
     - name: Show dirs
-      run: ls -la
+      run: ls -p | grep -v / | tr '\n' ','
     - uses: actions/checkout@v3
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
