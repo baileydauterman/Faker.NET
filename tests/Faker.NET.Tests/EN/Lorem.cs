@@ -12,7 +12,7 @@ namespace Faker.NET.Tests.EN
             str.Append(Faker.NET.EN.Lorem.GetText(5));
             str.Append($" {Faker.NET.EN.Lorem.GetText(50)}");
 
-            Assert.That(str.ToString().Split(" ").Count, Is.EqualTo(55));
+            Assert.That(str.ToString().Split(" ", StringSplitOptions.RemoveEmptyEntries).Count, Is.EqualTo(55));
         }
     }
 }

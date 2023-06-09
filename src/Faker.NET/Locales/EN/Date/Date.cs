@@ -61,11 +61,11 @@ namespace Faker.NET.EN.Date
             return DateTime.Now.ToString(format);
         }
 
-        private static Month month = new(CultureInfo.CurrentCulture.TwoLetterISOLanguageName);
-        private static Day day = new(CultureInfo.CurrentCulture.TwoLetterISOLanguageName);
+        private static Day day => new(CultureInfo.CurrentCulture.TwoLetterISOLanguageName);
+        private static Month month => new(CultureInfo.CurrentCulture.TwoLetterISOLanguageName);
 
 
         public static int YearMin { get; set; } = 1941;
-        public static int YearMax { get; set; } = 2022;
+        public static int YearMax { get; set; } = DateTime.Now.Year;
     }
 }

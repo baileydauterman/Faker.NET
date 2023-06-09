@@ -34,6 +34,7 @@ namespace Faker.NET.EN.Names
             "Chief",
             "Principal",
         };
+
         public List<string> Level = new()
         {
             "Solutions",
@@ -74,6 +75,7 @@ namespace Faker.NET.EN.Names
             "Usability",
             "Metrics",
         };
+
         public List<string> Job = new()
         {
             "Supervisor",

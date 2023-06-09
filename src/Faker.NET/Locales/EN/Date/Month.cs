@@ -12,8 +12,8 @@ namespace Faker.NET.EN.Date
         public override string Get(bool useAlternate = false)
         {
             return useAlternate ?
-                _culture.DateTimeFormat.AbbreviatedMonthNames[Randomizer.Next(12)] :
-                _culture.DateTimeFormat.MonthNames[Randomizer.Next(12)];
+                Culture.DateTimeFormat.AbbreviatedMonthNames[Randomizer.Next(12)] :
+                Culture.DateTimeFormat.MonthNames[Randomizer.Next(12)];
         }
     }
 }

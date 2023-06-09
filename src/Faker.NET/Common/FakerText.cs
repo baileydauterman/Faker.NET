@@ -1,18 +1,18 @@
 ﻿using System.Globalization;
+using Faker.NET.API;
 
 namespace Faker.NET.Common
 {
-    public class FakerText
+    public class FakerText : IFaker
     {
-        /// <summary>
-        /// Used for date times
-        /// </summary>
-        /// <param name="culture"></param>
-        public FakerText(string culture = null)
+        public FakerText()
         {
-            _culture = string.IsNullOrEmpty(culture)
-                ? CultureInfo.CurrentCulture
-                : CultureInfo.GetCultureInfo(culture);
+            Culture = CultureInfo.CurrentCulture;
+        }
+
+        public FakerText(string culture)
+        {
+            Culture = CultureInfo.GetCultureInfo(culture);
         }
 
         public virtual string Get(bool useAlternate = false)
@@ -22,7 +22,7 @@ namespace Faker.NET.Common
                 Translated[Randomizer.Next(Translated.Count)];
         }
 
-        public CultureInfo _culture { get; set; }
+        public CultureInfo Culture { get; }
 
         public List<string> Native { get; set; }
 

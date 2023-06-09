@@ -1,14 +1,12 @@
-﻿using Faker.NET.Common;
+﻿using Faker.NET.Abstractions;
+using Faker.NET.Common;
 
 namespace Faker.NET.RU.Lorem
 {
-    internal class LoremIpsum : FakerText
+    internal class LoremIpsum : LoremText
     {
-        public LoremIpsum() : base()
-        {
-            Native = new()
-            {
-                "а",
+        public LoremIpsum()
+            : base("а",
                 "административных",
                 "активизации",
                 "активности",
@@ -196,8 +194,8 @@ namespace Faker.NET.RU.Lorem
                 "широкому",
                 "экономической",
                 "эксперимент",
-                "этих",
-            };
+                "этих")
+        {
         }
     }
 }

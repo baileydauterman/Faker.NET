@@ -1,26 +1,22 @@
 ﻿using System.Text;
+using Faker.NET.API;
 
 namespace Faker.NET.Common
 {
-    public class FakerNumber
+    public class FakerNumber : IFaker
     {
-        public string Get()
+        public string Get(bool useAlternate = false)
         {
-            return ConvertFormatToNumbers(Format);
+            return useAlternate ? Convert(Format) : Convert(AltFormat);
         }
 
-        public string Get(bool useAlternate)
+        internal string Convert(string format)
         {
-            return ConvertFormatToNumbers(AltFormat);
-        }
+            if (string.IsNullOrWhiteSpace(format))
+            {
+                return string.Empty;
+            }
 
-        public string Get(string customFormat)
-        {
-            return ConvertFormatToNumbers(customFormat);
-        }
-
-        private string ConvertFormatToNumbers(string format)
-        {
             var sb = new StringBuilder();
             foreach (char c in format)
             {

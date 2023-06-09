@@ -1,14 +1,12 @@
-﻿using Faker.NET.Common;
+﻿using Faker.NET.Abstractions;
+using Faker.NET.Common;
 
 namespace Faker.NET.EN
 {
-    internal class LoremIpsum : FakerText
+    internal class LoremIpsum : LoremText
     {
-        public LoremIpsum() : base()
-        {
-            Native = new()
-            {
-                "alias",
+        public LoremIpsum()
+            : base("alias",
                 "consequatur",
                 "aut",
                 "perferendis",
@@ -256,9 +254,8 @@ namespace Faker.NET.EN
                 "maiores",
                 "doloribus",
                 "asperiores",
-                "repellat",
-            };
-            Translated = Native;
+                "repellat")
+        {
         }
     }
 }

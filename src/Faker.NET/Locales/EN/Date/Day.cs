@@ -21,8 +21,8 @@ namespace Faker.NET.EN.Date
         public override string Get(bool useAlternate = false)
         {
             return useAlternate ?
-                _culture.DateTimeFormat.AbbreviatedDayNames[Randomizer.Next(7)] :
-                _culture.DateTimeFormat.DayNames[Randomizer.Next(7)];
+                Culture.DateTimeFormat.AbbreviatedDayNames[Randomizer.Next(7)] :
+                Culture.DateTimeFormat.DayNames[Randomizer.Next(7)];
         }
     }
 }
