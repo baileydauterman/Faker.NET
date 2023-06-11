@@ -27,8 +27,6 @@ namespace Faker.NET.Tests.EN
             {
                 _ = User.NewAccount;
             }
-
-
         }
     }
 }

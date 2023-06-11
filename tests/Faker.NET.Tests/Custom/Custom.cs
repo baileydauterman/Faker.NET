@@ -26,8 +26,8 @@
         {
             var custom = new Faker.NET.Custom.Custom(data, secondData);
 
-            _ = custom.Primary;
-            _ = custom.Secondary;
+            _ = custom.Get();
+            _ = custom.Get(true);
         }
 
         List<string> data;

@@ -4,9 +4,11 @@ namespace Faker.NET.EN.Computer
 {
     public class IPv4Address : FakerNumber
     {
-        public new string Get()
+        public string Get()
         {
-            return $"{Randomizer.Next(1,256)}.{Randomizer.Next(1, 256)}.{Randomizer.Next(1, 256)}.{Randomizer.Next(1, 256)}";
+            return $"{octet}.{octet}.{octet}.{octet}";
         }
+
+        private int octet => Randomizer.Next(1, 256);
     }
 }

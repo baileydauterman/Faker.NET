@@ -4,9 +4,6 @@ namespace Faker.NET.EN.Location
 {
     internal class BuildingNumber : FakerNumber
     {
-        public new int Get()
-        {
-            return Randomizer.Next(1, 8000);
-        }
+        public int Get() => System.Convert.ToInt16(base.Get(1, 1000));
     }
 }

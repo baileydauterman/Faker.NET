@@ -5,7 +5,7 @@ namespace Faker.NET.Tests.Common
     internal class Randomizer
     {
         [Test]
-        public void TestSeedSetter()
+        public void SeedSetter()
         {
             Faker.NET.Common.Randomizer.SetSeed(192876453);
 

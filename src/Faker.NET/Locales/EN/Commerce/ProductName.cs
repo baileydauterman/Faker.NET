@@ -6,10 +6,14 @@ namespace Faker.NET.EN.Commerce
     {
         public override string Get(bool useAlternate = false)
         {
-            return $"{Adjective[Randomizer.Next(Adjective.Count)]} {Material[Randomizer.Next(Material.Count)]} {Product[Randomizer.Next(Product.Count)]}";
+            return $"{Adjective} {Material} {Product}";
         }
 
-        public List<string> Adjective = new()
+        public string Adjective => AdjectiveList[Randomizer.Next(AdjectiveList.Count)];
+        public string Material => MaterialList[Randomizer.Next(MaterialList.Count)];
+        public string Product => ProductList[Randomizer.Next(ProductList.Count)];
+
+        public List<string> AdjectiveList = new()
         {
             "Small",
             "Ergonomic",
@@ -37,7 +41,7 @@ namespace Faker.NET.EN.Commerce
             "Tasty",
         };
 
-        public List<string> Material = new()
+        public List<string> MaterialList = new()
         {
             "Steel",
             "Bronze",
@@ -53,7 +57,7 @@ namespace Faker.NET.EN.Commerce
             "Frozen",
         };
 
-        public List<string> Product = new()
+        public List<string> ProductList = new()
         {
             "Chair",
             "Car",
