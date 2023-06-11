@@ -24,4 +24,10 @@
     <ProjectReference Include="..\..\src\Faker.NET\Faker.NET.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="FR\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="FR\" />
+  </ItemGroup>
 </Project>

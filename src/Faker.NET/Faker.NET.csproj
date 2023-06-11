@@ -9,10 +9,12 @@
     <None Remove="API\" />
     <None Remove="Abstractions\" />
     <None Remove="Locales\AR\Lorem\" />
+    <None Remove="Locales\FR\Names\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="API\" />
     <Folder Include="Abstractions\" />
     <Folder Include="Locales\AR\Lorem\" />
+    <Folder Include="Locales\FR\Names\" />
   </ItemGroup>
 </Project>
