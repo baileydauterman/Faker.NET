@@ -10,11 +10,15 @@
     <None Remove="Abstractions\" />
     <None Remove="Locales\AR\Lorem\" />
     <None Remove="Locales\FR\Names\" />
+    <None Remove="Files\" />
+    <None Remove="Files\Csv\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="API\" />
     <Folder Include="Abstractions\" />
     <Folder Include="Locales\AR\Lorem\" />
     <Folder Include="Locales\FR\Names\" />
+    <Folder Include="Files\" />
+    <Folder Include="Files\Csv\" />
   </ItemGroup>
 </Project>

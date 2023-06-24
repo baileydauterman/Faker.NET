@@ -26,6 +26,12 @@ namespace Faker.NET.Abstractions
             return string.Join(' ', GetWords(words));
         }
 
+        public virtual string GetText(int minWords, int maxWords)
+        {
+            var words = Randomizer.Next(minWords, maxWords);
+            return string.Join(' ', GetWords(words));
+        }
+
         private IEnumerable<string> GetWords(int words)
         {
             while (words-- != 0)
