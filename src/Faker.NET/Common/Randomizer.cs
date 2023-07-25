@@ -18,6 +18,11 @@
             random = new Random(Seed.Value);
         }
 
+        public static void Reset()
+        {
+            random = new Random();
+        }
+
         private static Random random = new Random();
 
         public static int? Seed { get; private set; } = null;
