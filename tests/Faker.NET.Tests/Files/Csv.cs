@@ -97,7 +97,7 @@ namespace Faker.NET.Tests.Files
 			{
 				while (!reader.EndOfStream)
 				{
-					lines.Add(reader.ReadLine());
+					lines.Add(reader.ReadLine() ?? string.Empty);
 				}
 			}
 
@@ -114,7 +114,7 @@ namespace Faker.NET.Tests.Files
 			var tempPath = Path.Combine(Path.GetTempPath(), Path.GetTempFileName());
 			var lines = CreateFileGetLines(tempPath, (uint)rowCount);
 
-			Assert.That(lines.Count, Is.EqualTo(rowCount + 1));
+			Assert.That(lines?.Count, Is.EqualTo(rowCount + 1));
 		}
 
 		[Test]
@@ -141,7 +141,7 @@ namespace Faker.NET.Tests.Files
 			{
 				while (!reader.EndOfStream)
 				{
-					lines.Add(reader.ReadLine());
+					lines.Add(reader.ReadLine() ?? string.Empty);
 				}
 			}
 
