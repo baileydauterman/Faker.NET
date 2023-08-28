@@ -2,6 +2,11 @@
 {
     public static class Randomizer
     {
+        public static string GetRandom(this string[] array)
+        {
+            return array[random.Next(array.Length)];
+        }
+
         public static int Next(int max)
         {
             return random.Next(max);
