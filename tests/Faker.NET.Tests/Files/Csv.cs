@@ -19,13 +19,14 @@ namespace Faker.NET.Tests.Files
 			var value = faker.GenerateRow();
 
 			// default 10 rows
-			var values = faker.GenerateRows();
+			var values = faker.Generate();
 
 			// 10 rows and 1 header row
 			Assert.That(values.Count(), Is.EqualTo(11));
 
-			values = faker.GenerateRows(25);
+			values = faker.Iterations(25).Generate();
 
+			// 25 rows and 1 header row
 			Assert.That(values.Count(), Is.EqualTo(26));
 		}
 
@@ -35,9 +36,9 @@ namespace Faker.NET.Tests.Files
 		[TestCase(1_000_000)]
 		public void GenerateMassiveRows(int rowCount)
 		{
-			var faker = CreateFaker().UpdateRowCount((uint)rowCount);
+			var faker = CreateFaker().Iterations((uint)rowCount);
 
-			faker.GenerateRows();
+			faker.Generate();
 		}
 
 		[Test]
@@ -82,8 +83,8 @@ namespace Faker.NET.Tests.Files
 
 		[Test]
 		public void GenerateFileFromStream() {
-            var tempPath = Path.Combine(Path.GetTempPath(), Path.GetTempFileName());
-            using var writeStream = File.OpenWrite(tempPath);
+			var tempPath = Path.Combine(Path.GetTempPath(), Path.GetTempFileName());
+			using var writeStream = File.OpenWrite(tempPath);
 
 			var faker = CreateFaker(writeStream);
 
@@ -110,56 +111,66 @@ namespace Faker.NET.Tests.Files
 		[TestCase(1_000_000)]
 		public void GenerateFile(int rowCount)
 		{
-            var tempPath = Path.Combine(Path.GetTempPath(), Path.GetTempFileName());
+			var tempPath = Path.Combine(Path.GetTempPath(), Path.GetTempFileName());
 			var lines = CreateFileGetLines(tempPath, (uint)rowCount);
 
-            Assert.That(lines.Count, Is.EqualTo(rowCount + 1));
-        }
+			Assert.That(lines.Count, Is.EqualTo(rowCount + 1));
+		}
+
+		[Test]
+		public void GenerateTypeCsv()
+		{
+			var csvFaker = new CsvFaker()
+				.Iterations(100)
+				.Generate<FakeClass>();
+
+			Assert.That(csvFaker.Count(), Is.EqualTo(101));
+		}
 
 		private ICollection<string> CreateFileGetLines(string tempPath, uint rowCount = 10)
 		{
-            using var stream = File.OpenWrite(tempPath);
+			using var stream = File.OpenWrite(tempPath);
 
-            var faker = CreateFaker(stream).UpdateRowCount(rowCount);
-            faker.WriteRows();
+			var faker = CreateFaker(stream).Iterations(rowCount);
+			faker.WriteRows();
 
-            ICollection<string> lines = new List<string>();
+			ICollection<string> lines = new List<string>();
 
-            using (var file = File.OpenRead(tempPath))
-            using (var reader = new StreamReader(file))
-            {
-                while (!reader.EndOfStream)
-                {
-                    lines.Add(reader.ReadLine());
-                }
-            }
+			using (var file = File.OpenRead(tempPath))
+			using (var reader = new StreamReader(file))
+			{
+				while (!reader.EndOfStream)
+				{
+					lines.Add(reader.ReadLine());
+				}
+			}
 
-            File.Delete(tempPath);
+			File.Delete(tempPath);
 
 			return lines;
-        }
+		}
 
 		private CsvFaker CreateFaker()
 		{
 			return new CsvFaker()
-                .AddColumn("name", () => Name.FirstName)
-                .AddColumn("date", () => Date.FullDateTime)
-                .AddColumn("update_date", () => Date.NowFormatted("dddd, dd MMMM yyyy HH:mm:ss"))
-                .AddColumn("text", () => Lorem.GetText(35))
-                .AddColumn("ip", () => Computer.IPv4Address)
-                .AddColumn("small_variable_message", () => Lorem.GetText(5, 10));
-        }
+				.AddColumn("name", () => Name.FirstName)
+				.AddColumn("date", () => Date.FullDateTime)
+				.AddColumn("update_date", () => Date.NowFormatted("dddd, dd MMMM yyyy HH:mm:ss"))
+				.AddColumn("text", () => Lorem.GetText(35))
+				.AddColumn("ip", () => Computer.IPv4Address)
+				.AddColumn("small_variable_message", () => Lorem.GetText(5, 10));
+		}
 
 		private CsvFaker CreateFaker(string tempPath)
 		{
 			return new CsvFaker(tempPath)
-                .AddColumn("name", () => Name.FirstName)
-                .AddColumn("date", () => Date.FullDateTime)
-                .AddColumn("update_date", () => Date.NowFormatted("dddd, dd MMMM yyyy HH:mm:ss"))
-                .AddColumn("text", () => Lorem.GetText(35))
-                .AddColumn("ip", () => Computer.IPv4Address)
-                .AddColumn("small_variable_message", () => Lorem.GetText(5, 10));
-        }
+				.AddColumn("name", () => Name.FirstName)
+				.AddColumn("date", () => Date.FullDateTime)
+				.AddColumn("update_date", () => Date.NowFormatted("dddd, dd MMMM yyyy HH:mm:ss"))
+				.AddColumn("text", () => Lorem.GetText(35))
+				.AddColumn("ip", () => Computer.IPv4Address)
+				.AddColumn("small_variable_message", () => Lorem.GetText(5, 10));
+		}
 
 		private CsvFaker CreateFaker(Stream stream)
 		{
@@ -170,6 +181,18 @@ namespace Faker.NET.Tests.Files
 				.AddColumn("text", () => Lorem.GetText(35))
 				.AddColumn("ip", () => Computer.IPv4Address)
 				.AddColumn("small_variable_message", () => Lorem.GetText(5, 10));
+		}
+
+		public class FakeClass
+		{
+			[CsvMap(DisplayName = "name", ClassType = typeof(Faker.NET.EN.Names.Name), ClassProperty = "FirstName")]
+			public string Name { get; set; }
+
+			[CsvMap(DisplayName = "date", ClassType = typeof(Faker.NET.EN.Date.Date), ClassProperty = "FullDateTime")]
+			public string Date { get; set; }
+
+			[CsvMap(DisplayName = "ip_address", ClassType = typeof(Faker.NET.EN.Computer.Computer), ClassProperty = "IPv4Address")]
+			public string IPAddress { get; set; }
 		}
 	}
 }

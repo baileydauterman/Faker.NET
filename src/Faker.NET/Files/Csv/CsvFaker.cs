@@ -2,10 +2,17 @@
 {
 	public class CsvFaker
 	{
+		/// <summary>
+		/// Constructor
+		/// </summary>
 		public CsvFaker()
 		{
 		}
 
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="outputFile">Opens stream to write to</param>
 		public CsvFaker(string outputFile)
 		{
 			BaseStream = File.Open(outputFile, new FileStreamOptions
@@ -15,6 +22,11 @@
 			});
 		}
 
+		/// <summary>
+		/// Stream that can be written to for output
+		/// </summary>
+		/// <param name="stream">The stream (must have write permissions)</param>
+		/// <exception cref="Exception"></exception>
 		public CsvFaker(Stream stream)
 		{
 			if (!stream.CanWrite)
@@ -25,7 +37,14 @@
 			BaseStream = stream;
 		}
 
-		public CsvFaker UpdateDelimiter(char delimiter)
+        public Stream BaseStream { get; private set; }
+
+        /// <summary>
+        /// Change the delimiter to whatever best suits your uses
+        /// </summary>
+        /// <param name="delimiter"></param>
+        /// <returns></returns>
+        public CsvFaker UpdateDelimiter(char delimiter)
 		{
 			_delimiter = delimiter;
 			return this;
@@ -44,23 +63,55 @@
 			return this;
 		}
 
+		/// <summary>
+		/// Adds a column header and the static value that will be put in the rows
+		/// </summary>
+		/// <param name="columnName"></param>
+		/// <param name="value"></param>
+		/// <returns></returns>
 		public CsvFaker AddColumn(string columnName, string value)
 		{
 			_headers.Add(columnName, () => value);
 			return this;
 		}
 
+		/// <summary>
+		/// Amount of rows to be generated when <see cref="Generate"/> or <see cref="Generate{T}"/> are called
+		/// </summary>
+		/// <returns></returns>
 		public uint GetRowCount()
 		{
 			return _rowsCountToGenerate;
 		}
 
-		/// <summary>
-		/// Defaults to 10 can update to any uint value
-		/// </summary>
-		/// <param name="count"></param>
-		/// <returns></returns>
-		public CsvFaker UpdateRowCount(uint count)
+        /// <summary>
+        /// Generate a csv based on a type. Requires use of <see cref="CsvMapAttribute"/>
+        /// </summary>
+        /// <typeparam name="T">Type to generate csv from</typeparam>
+        /// <returns></returns>
+        public IEnumerable<string> Generate<T>()
+        {
+			var type = typeof(T);
+
+			foreach (var prop in type.GetProperties())
+			{
+				var attrs = prop.GetCustomAttributes(typeof(CsvMapAttribute), false) as CsvMapAttribute[];
+
+				foreach (var attr in attrs)
+				{
+					_headers.Add(attr.DisplayName, () => (string)attr.GetPropertyValue());
+				}
+			}
+
+			return Generate();
+        }
+
+        /// <summary>
+        /// Defaults to 10 can update to any uint value
+        /// </summary>
+        /// <param name="count"></param>
+        /// <returns></returns>
+        public CsvFaker Iterations(uint count)
 		{
 			_rowsCountToGenerate = count;
 			return this;
@@ -90,13 +141,12 @@
 			return JoinColumns(output);
 		}
 
-		public IEnumerable<string> GenerateRows(uint rowCount = 10)
+		/// <summary>
+		/// Generates the entire csv (headers and rows).
+		/// </summary>
+		/// <returns></returns>
+		public IEnumerable<string> Generate()
 		{
-			if (rowCount != 10)
-			{
-				UpdateRowCount(rowCount);
-			}
-
 			yield return JoinColumns(_headers.Keys);
 
 			var count = 0;
@@ -107,16 +157,14 @@
 			}
 		}
 
-		public void WriteRows(uint rowCount = 10)
+		/// <summary>
+		/// Outputs the data to the <see cref="BaseStream"/>
+		/// </summary>
+		public void WriteRows()
 		{
-			if (rowCount != 10)
-			{
-				UpdateRowCount(rowCount);
-			}
-
 			using (var streamWriter = new StreamWriter(BaseStream))
 			{
-				foreach (var line in GenerateRows(rowCount))
+				foreach (var line in Generate())
 				{
 					streamWriter.WriteLine(line);
 				}
@@ -124,14 +172,14 @@
 		}
 
 		/// <summary>
-		/// TODO: Create a way to get properties from an object and take a
-		/// delegate to create a csv from a type
+		/// Clears the headers and value creating funcs. Allows to start fresh.
 		/// </summary>
-		/// <typeparam name="T"></typeparam>
 		/// <returns></returns>
-		public IEnumerable<string> Generate<T>()
+		public bool Clear()
 		{
-			return Enumerable.Empty<string>();
+			_headers = new();
+
+			return _headers.Count == 0;
 		}
 
 		private string JoinColumns(IEnumerable<string> input)
@@ -147,8 +195,6 @@
 		private Dictionary<string, Func<string>> _headers = new();
 		private uint _rowsCountToGenerate = 10;
 		private char _delimiter = ',';
-
-		public Stream BaseStream { get; private set; }
 	}
 }
 

@@ -19,8 +19,6 @@
     <Folder Include="Abstractions\" />
     <Folder Include="Locales\AR\Lorem\" />
     <Folder Include="Locales\FR\Names\" />
-    <Folder Include="Files\" />
-    <Folder Include="Files\Csv\" />
     <Folder Include="Files\Json\" />
   </ItemGroup>
 </Project>
