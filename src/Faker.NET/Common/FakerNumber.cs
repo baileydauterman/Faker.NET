@@ -17,7 +17,7 @@ namespace Faker.NET.Common
 
         public string Get(int startRange, int endRange)
         {
-            return Randomizer.Next(startRange, endRange).ToString();
+            return Faker.Randomizer.Next(startRange, endRange).ToString();
         }
 
         internal string Convert(string format)
@@ -32,7 +32,7 @@ namespace Faker.NET.Common
             {
                 if (c == '#')
                 {
-                    sb.Append(Randomizer.Next(9));
+                    sb.Append(Faker.Randomizer.Next(9));
                     continue;
                 }
 

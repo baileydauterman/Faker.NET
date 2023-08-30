@@ -9,8 +9,8 @@ namespace Faker.NET.Tests.EN
         {
             var str = new StringBuilder();
 
-            str.Append(Faker.NET.EN.Lorem.GetText(5));
-            str.Append($" {Faker.NET.EN.Lorem.GetText(50)}");
+            str.Append(Faker.Lorem.GetText(5));
+            str.Append($" {Faker.Lorem.GetText(50)}");
 
             Assert.That(str.ToString().Split(" ", StringSplitOptions.RemoveEmptyEntries).Count, Is.EqualTo(55));
         }

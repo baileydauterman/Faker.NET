@@ -1,9 +1,4 @@
 ﻿using Faker.NET.API;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Faker.NET.Locales.EN
 {
@@ -11,9 +6,15 @@ namespace Faker.NET.Locales.EN
     {
         public ENLocale()
         {
-            Name = new Faker.NET.EN.Names.Name();
+            Name = new NET.EN.Names.Name();
+            User = new NET.EN.Account.User();
+            Lorem = new NET.EN.Lorem();
         }
 
         public IFakerName Name { get; }
+
+        public IFakerUser User { get; }
+
+        public IFakerLorem Lorem { get; }
     }
 }

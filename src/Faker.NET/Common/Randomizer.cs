@@ -1,35 +1,53 @@
 ﻿namespace Faker.NET.Common
 {
-    public static class Randomizer
+    public class Randomizer
+    {
+        public int Next(int max)
+        {
+            return _random.Next(max);
+        }
+
+        public int Next(int min, int max)
+        {
+            return _random.Next(min, max);
+        }
+
+        public void SetSeed(int seed)
+        {
+            _random = new Random(seed);
+        }
+
+        public void Reset()
+        {
+            _random = new Random();
+        }
+
+        private Random _random = new Random();
+    }
+
+    internal static class RandomizerExtensions
     {
         public static string GetRandom(this string[] array)
         {
-            return array[random.Next(array.Length)];
+            return array[Faker.Randomizer.Next(array.Length)];
         }
 
-        public static int Next(int max)
+        public static string CreateRandomString(this string[] array, int words)
         {
-            return random.Next(max);
+            var wordArray = new string[words];
+
+            while (words-- > 0)
+            {
+                wordArray[words] = array.GetRandom();
+            }
+
+            return string.Join(" ", wordArray);
         }
 
-        public static int Next(int min, int max)
+        public static string CreateRandomLengthString(this string[] array, int min, int max)
         {
-            return random.Next(min, max);
+            var value = Faker.Randomizer.Next(min, max);
+            return array.CreateRandomString(value);
         }
-
-        public static void SetSeed(int seed)
-        {
-            Seed = seed;
-            random = new Random(Seed.Value);
-        }
-
-        public static void Reset()
-        {
-            random = new Random();
-        }
-
-        private static Random random = new Random();
-
-        public static int? Seed { get; private set; } = null;
     }
 }

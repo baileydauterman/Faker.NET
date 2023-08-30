@@ -153,45 +153,45 @@ namespace Faker.NET.Tests.Files
 		private CsvFaker CreateFaker()
 		{
 			return new CsvFaker()
-				.AddColumn("name", () => Name.FirstName)
+				.AddColumn("name", () => Faker.Name.First)
 				.AddColumn("date", () => Date.FullDateTime)
 				.AddColumn("update_date", () => Date.NowFormatted("dddd, dd MMMM yyyy HH:mm:ss"))
-				.AddColumn("text", () => Lorem.GetText(35))
+				.AddColumn("text", () => Faker.Lorem.GetText(35))
 				.AddColumn("ip", () => Computer.IPv4Address)
-				.AddColumn("small_variable_message", () => Lorem.GetText(5, 10));
+				.AddColumn("small_variable_message", () => Faker.Lorem.GetText(5, 10));
 		}
 
 		private CsvFaker CreateFaker(string tempPath)
 		{
 			return new CsvFaker(tempPath)
-				.AddColumn("name", () => Name.FirstName)
+				.AddColumn("name", () => Faker.Name.First)
 				.AddColumn("date", () => Date.FullDateTime)
 				.AddColumn("update_date", () => Date.NowFormatted("dddd, dd MMMM yyyy HH:mm:ss"))
-				.AddColumn("text", () => Lorem.GetText(35))
+				.AddColumn("text", () => Faker.Lorem.GetText(35))
 				.AddColumn("ip", () => Computer.IPv4Address)
-				.AddColumn("small_variable_message", () => Lorem.GetText(5, 10));
+				.AddColumn("small_variable_message", () => Faker.Lorem.GetText(5, 10));
 		}
 
 		private CsvFaker CreateFaker(Stream stream)
 		{
 			return new CsvFaker(stream)
-				.AddColumn("name", () => Name.FirstName)
+				.AddColumn("name", () => Faker.Name.First)
 				.AddColumn("date", () => Date.FullDateTime)
 				.AddColumn("update_date", () => Date.NowFormatted("dddd, dd MMMM yyyy HH:mm:ss"))
-				.AddColumn("text", () => Lorem.GetText(35))
+				.AddColumn("text", () => Faker.Lorem.GetText(35))
 				.AddColumn("ip", () => Computer.IPv4Address)
-				.AddColumn("small_variable_message", () => Lorem.GetText(5, 10));
+				.AddColumn("small_variable_message", () => Faker.Lorem.GetText(5, 10));
 		}
 
 		public class FakeClass
 		{
-			[CsvMap(DisplayName = "name", ClassType = typeof(Faker.NET.EN.Names.Name), ClassProperty = "FirstName")]
+			// [CsvMap(DisplayName = "name", ClassType = typeof(Faker), ClassProperty = "FirstName")]
 			public string Name { get; set; }
 
-			[CsvMap(DisplayName = "date", ClassType = typeof(Faker.NET.EN.Date.Date), ClassProperty = "FullDateTime")]
+			// [CsvMap(DisplayName = "date", ClassType = typeof(Faker.NET.EN.Date.Date), ClassProperty = "FullDateTime")]
 			public string Date { get; set; }
 
-			[CsvMap(DisplayName = "ip_address", ClassType = typeof(Faker.NET.EN.Computer.Computer), ClassProperty = "IPv4Address")]
+			// [CsvMap(DisplayName = "ip_address", ClassType = typeof(Faker.NET.EN.Computer.Computer), ClassProperty = "IPv4Address")]
 			public string IPAddress { get; set; }
 		}
 	}

@@ -1,4 +1,4 @@
-﻿using Faker.NET.EN.Account;
+﻿using Objects = Faker.NET.Common.Objects;
 
 namespace Faker.NET.Tests.EN
 {
@@ -7,11 +7,11 @@ namespace Faker.NET.Tests.EN
         [Test]
         public void GenerateUsers()
         {
-            var users = new List<Faker.NET.Common.Objects.User>();
+            var users = new List<Objects.User>();
 
             for (int i = 0; i < 4; i++)
             {
-                users.Add(User.NewAccount);
+                users.Add(Faker.User.New);
             }
 
             Assert.That(users.Count, Is.EqualTo(4));
@@ -25,7 +25,7 @@ namespace Faker.NET.Tests.EN
         {
             for (int i  = 0; i <= count; i++)
             {
-                _ = User.NewAccount;
+                _ = Faker.User.New;
             }
         }
     }

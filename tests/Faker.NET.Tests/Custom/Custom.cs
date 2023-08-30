@@ -1,4 +1,6 @@
-﻿namespace Faker.NET.Tests.Custom
+﻿using CustomValue = Faker.NET.Custom;
+
+namespace Faker.NET.Tests.Custom
 {
     internal class Custom
     {
@@ -24,7 +26,7 @@
         [Test]
         public void CreateCustom()
         {
-            var custom = new Faker.NET.Custom.Custom(data, secondData);
+            var custom = new CustomValue.Custom(data, secondData);
 
             _ = custom.Get();
             _ = custom.Get(true);

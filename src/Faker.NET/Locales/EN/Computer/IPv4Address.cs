@@ -9,6 +9,6 @@ namespace Faker.NET.EN.Computer
             return $"{octet}.{octet}.{octet}.{octet}";
         }
 
-        private int octet => Randomizer.Next(1, 256);
+        private int octet => Faker.Randomizer.Next(1, 256);
     }
 }

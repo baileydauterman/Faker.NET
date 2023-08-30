@@ -9,17 +9,17 @@ namespace Faker.NET.API
 {
     public interface IFakerName
     {
-        string FirstName { get; }
+        string First { get; }
 
-        string LastName { get; }
+        string Last { get; }
 
-        string FullName { get; }
+        string Full { get; }
 
         string Suffix { get; }
 
         string Prefix { get; }
 
-        string JobTitle { get; }
+        string Job { get; }
 
         string Email { get; }
     }

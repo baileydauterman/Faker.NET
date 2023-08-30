@@ -5,7 +5,7 @@
         [Test]
         public void TestDecorator()
         {
-            var generator = new Faker.NET.FakerDecorator("en-US");
+            var value = Faker.Name.Full;
         }
     }
 }

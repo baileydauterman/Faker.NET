@@ -8,10 +8,10 @@ namespace Faker.NET.RU.Names
         {
             if (useAlternate)
             {
-                return $"{TranslatedDescriptor[Randomizer.Next(TranslatedDescriptor.Count)]} {TranslatedLevel[Randomizer.Next(TranslatedLevel.Count)]} {TranslatedJob[Randomizer.Next(TranslatedJob.Count)]}";
+                return $"{TranslatedDescriptor[Faker.Randomizer.Next(TranslatedDescriptor.Count)]} {TranslatedLevel[Faker.Randomizer.Next(TranslatedLevel.Count)]} {TranslatedJob[Faker.Randomizer.Next(TranslatedJob.Count)]}";
             }
 
-            return $"{NativeDescriptor[Randomizer.Next(NativeDescriptor.Count)]} {NativeLevel[Randomizer.Next(NativeLevel.Count)]} {NativeJob[Randomizer.Next(NativeJob.Count)]}";
+            return $"{NativeDescriptor[Faker.Randomizer.Next(NativeDescriptor.Count)]} {NativeLevel[Faker.Randomizer.Next(NativeLevel.Count)]} {NativeJob[Faker.Randomizer.Next(NativeJob.Count)]}";
         }
 
         public List<string> NativeDescriptor = new()
