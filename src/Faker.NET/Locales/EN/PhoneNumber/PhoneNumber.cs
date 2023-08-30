@@ -1,13 +1,12 @@
-﻿using Faker.NET.Common;
+﻿using Faker.NET.API;
+using Faker.NET.Common;
 
 namespace Faker.NET.EN.PhoneNumber
 {
-    internal class PhoneNumber : FakerNumber
+    internal class PhoneNumber : IFakerPhoneNumber
     {
-        public PhoneNumber() : base()
-        {
-            Format = "###-###-####";
-            AltFormat = "(###)-###-####";
-        }
+        public string AlternateNumberFormat => NumberHelper.GetFromFormat("###-###-####");
+
+        public string Number => NumberHelper.GetFromFormat("(###)-###-####");
     }
 }

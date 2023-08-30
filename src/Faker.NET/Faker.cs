@@ -43,6 +43,10 @@ namespace Faker.NET
         public static IFakerUser User => FakerInstance.User;
 
         public static IFakerLorem Lorem => FakerInstance.Lorem;
+
+        public static IFakerLocation Location => FakerInstance.Location;
+
+        public static IFakerPhoneNumber Phone => FakerInstance.PhoneNumber;
         
         public static Randomizer Randomizer = new Randomizer();
 

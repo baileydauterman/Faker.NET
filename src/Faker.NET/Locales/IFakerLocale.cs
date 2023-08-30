@@ -6,8 +6,12 @@ namespace Faker.NET.Locales
     {
         IFakerName Name { get; }
 
-        IFakerUser User { get; }
+        IFakerLocation Location { get; }
 
         IFakerLorem Lorem { get; }
+
+        IFakerUser User { get; }
+
+        IFakerPhoneNumber PhoneNumber { get; }
     }
 }
