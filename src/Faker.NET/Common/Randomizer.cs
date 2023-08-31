@@ -38,7 +38,7 @@
         private Random _random = new Random();
     }
 
-    internal static class RandomizerExtensions
+    public static class RandomizerExtensions
     {
         public static string GetRandom(this string[] array)
         {

@@ -1,13 +1,21 @@
-﻿using CustomValue = Faker.NET.Custom;
+﻿using Faker.NET.API;
+using Faker.NET.Common;
 
 namespace Faker.NET.Tests.Custom
 {
     internal class Custom
     {
-        [SetUp]
-        public void SetUp()
+        [Test]
+        public void CreateCustom()
         {
-            data = new List<string>()
+            Faker.Custom = new CustomClass();
+
+            _ = Faker.Custom.GetValue();
+        }
+
+        private class CustomClass : IFakerCustom
+        {
+            public string[] Data { get; set; } = new string[]
             {
                 "Pizza",
                 "Cheesecake",
@@ -15,24 +23,8 @@ namespace Faker.NET.Tests.Custom
 
             };
 
-            secondData = new List<string>()
-            {
-                "Milkshake",
-                "Lemonade",
-                "Cola",
-            };
+            /// <inheritdoc />
+            public string GetValue() => Data.GetRandom();
         }
-
-        [Test]
-        public void CreateCustom()
-        {
-            var custom = new CustomValue.Custom(data, secondData);
-
-            _ = custom.Get();
-            _ = custom.Get(true);
-        }
-
-        List<string> data;
-        List<string> secondData;
     }
 }
