@@ -21,27 +21,22 @@
 
         public object GetPropertyValue()
         {
-            var type = Property.Name switch
+            return Property.Name switch
             {
-                "IFakerName" => Faker.Name.GetType(),
-                "IFakerComputer" => Faker.Computer.GetType(),
-                _ => throw new NotSupportedException(Property.Name)
+                "IFakerName" => GetFieldValue(Faker.Name),
+                "IFakerComputer" => GetFieldValue(Faker.Computer),
+                "IFakerUser" => GetFieldValue(Faker.User),
+                "IFakerLorem" => GetFieldValue(Faker.Lorem),
+                "IFakerLocation" => GetFieldValue(Faker.Location),
+                _ => throw new NotSupportedException(Property.Name),
             };
+        }
 
+        private string GetFieldValue(object value)
+        {
+            var type = value.GetType();
             var field = type.GetProperty(Field);
-
-            return field.GetValue(null);
-
-            //var split = Property.Split('.', 2);
-
-            //var props = typeof(Faker).GetProperty(split[0]);
-
-            //if (props is null)
-            //{
-            //    throw new Exception($"Unable to find property {Property}");
-            //}
-
-            //return props.GetValue(split[1]);
+            return (string)field.GetValue(value);
         }
     }
 }

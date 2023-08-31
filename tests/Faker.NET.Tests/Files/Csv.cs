@@ -1,4 +1,5 @@
-﻿using Faker.NET.EN.Date;
+﻿using Faker.NET.API;
+using Faker.NET.EN.Date;
 using Faker.NET.Files.Csv;
 
 namespace Faker.NET.Tests.Files
@@ -183,13 +184,13 @@ namespace Faker.NET.Tests.Files
 
         public class FakeClass
         {
-            //[CsvMap(DisplayName = "name", Property = typeof(IFakerName), Field = "First")]
+            [CsvMap(DisplayName = "name", Property = typeof(IFakerName), Field = "First")]
             public string Name { get; set; }
 
-            //[CsvMap(DisplayName = "last", Property = typeof(IFakerName), Field = "Last")]
+            [CsvMap(DisplayName = "last", Property = typeof(IFakerName), Field = "Last")]
             public string Last { get; set; }
 
-            //[CsvMap(DisplayName = "ip_address", Property = typeof(IFakerComputer), Field = "IPv4Address")]
+            [CsvMap(DisplayName = "ip_address", Property = typeof(IFakerComputer), Field = "IPv4Address")]
             public string IPAddress { get; set; }
         }
     }
