@@ -1,6 +1,5 @@
-﻿using Faker.NET.Files.Json;
-using Faker.NET.EN.Computer;
-using System.Text.Json;
+﻿using System.Text.Json;
+using Faker.NET.Files.Json;
 
 namespace Faker.NET.Tests.Files
 {
@@ -74,7 +73,7 @@ namespace Faker.NET.Tests.Files
 			{
 				return new AnotherValue
 				{
-					AValue = Computer.IPv4Address,
+					AValue = Faker.Computer.IPv4Address,
 					BValue = Faker.Name.Full,
 					CValue = string.Empty,
 					nested = SomeValue.AsValue()

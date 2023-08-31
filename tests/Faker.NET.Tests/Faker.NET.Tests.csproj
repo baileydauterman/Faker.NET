@@ -34,7 +34,6 @@
     <None Remove="Files\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Locales\" />
     <Folder Include="Locales\AR\" />
     <Folder Include="Locales\EN\" />
     <Folder Include="Locales\FR\" />

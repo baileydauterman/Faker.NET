@@ -1,74 +1,54 @@
-﻿using Faker.NET.RU.Names;
-
-namespace Faker.NET.Tests.RU
+﻿namespace Faker.NET.Tests.RU
 {
     internal class Names
     {
-        [Test]
-        public void FirstName()
+        [SetUp]
+        public void Setup()
         {
-            Assert.That(Name.Translated.FirstName, Is.Not.Null);
-            Assert.That(Name.Native.FirstName, Is.Not.Null);
+            Faker.SetLocale("ru");
         }
 
         [Test]
-        public void MiddleName()
+        public void FirstName()
         {
-            Assert.That(Name.Translated.MiddleName, Is.Not.Null);
-            Assert.That(Name.Native.MiddleName, Is.Not.Null);
+            Assert.That(Faker.Name.First, Is.Not.Null);
         }
 
         [Test]
         public void LastName()
         {
-            Assert.That(Name.Translated.LastName, Is.Not.Null);
-            Assert.That(Name.Native.LastName, Is.Not.Null);
+            Assert.That(Faker.Name.Last, Is.Not.Null);
         }
 
         [Test]
         public void Jobs()
         {
-            Assert.That(Name.Native.JobTitle, Is.Not.Null);
-            Assert.That(Name.Translated.JobTitle, Is.Not.Null);
+            Assert.That(Faker.Name.Job, Is.Not.Null);
         }
 
         [Test]
-        public void StressFirstName()
+        [TestCase(10_000)]
+        public void StressFirstName(int count)
         {
             var i = 0;
 
-            while (i < 10_000)
+            while (i < count)
             {
-                _ = Name.Native.FirstName;
-                _ = Name.Translated.FirstName;
+                _ = Faker.Name.First;
 
                 i++;
             }
         }
 
         [Test]
-        public void StressMiddleName()
+        [TestCase(10_000)]
+        public void StressLastName(int count)
         {
             var i = 0;
 
-            while (i < 10_000)
+            while (i < count)
             {
-                _ = Name.Native.MiddleName;
-                _ = Name.Translated.MiddleName;
-
-                i++;
-            }
-        }
-
-        [Test]
-        public void StressLastName()
-        {
-            var i = 0;
-
-            while (i < 10_000)
-            {
-                _ = Name.Native.LastName;
-                _ = Name.Translated.LastName;
+                _ = Faker.Name.Last;
 
                 i++;
             }

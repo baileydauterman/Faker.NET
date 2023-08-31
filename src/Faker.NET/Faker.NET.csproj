@@ -15,7 +15,7 @@
     <None Remove="Files\Json\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Locales\AR\Lorem\" />
+    <Folder Include="Locales\ES\Lorem\" />
     <Folder Include="Locales\FR\Names\" />
     <Folder Include="Files\Json\" />
   </ItemGroup>

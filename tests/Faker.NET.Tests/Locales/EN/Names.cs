@@ -1,16 +1,10 @@
-﻿using Faker.NET.API;
-using Faker.NET.EN.Names;
-// using Faker = Faker.NET.Faker;
-
-namespace Faker.NET.Tests.EN
+﻿namespace Faker.NET.Tests.EN
 {
-    internal static class Names
+    internal class Names
     {
         [Test]
-        public static void TestNames()
+        public void TestNames()
         {
-            IFakerName names = new Name();
-
             Assert.Multiple(() =>
             {
                 Assert.That(Faker.Name.First, Is.Not.Null);

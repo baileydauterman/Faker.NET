@@ -4,6 +4,8 @@ namespace Faker.NET.Locales
 {
     public interface IFakerLocale
     {
+        IFakerComputer Computer { get; }
+
         IFakerName Name { get; }
 
         IFakerLocation Location { get; }

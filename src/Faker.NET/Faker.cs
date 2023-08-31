@@ -1,7 +1,10 @@
 ﻿using Faker.NET.API;
 using Faker.NET.Common;
 using Faker.NET.Locales;
+using Faker.NET.Locales.AR;
 using Faker.NET.Locales.EN;
+using Faker.NET.Locales.RU;
+using Faker.NET.Locales.ZH;
 using System.Globalization;
 
 namespace Faker.NET
@@ -27,8 +30,17 @@ namespace Faker.NET
         {
             switch (Culture.TwoLetterISOLanguageName)
             {
+                case "ar":
+                    return new ARLocale();
+
                 case "en":
                     return new ENLocale();
+
+                case "ru":
+                    return new RULocale();
+
+                case "zh":
+                    return new ZHLocale();
 
                 default:
                     throw new NotSupportedException($"{Culture.TwoLetterISOLanguageName} is not yet supported by Faker.NET. Feel free to contribute at:\n\t" +
@@ -37,6 +49,8 @@ namespace Faker.NET
         }
 
         public static CultureInfo Culture { get; private set; } = CultureInfo.CurrentCulture;
+
+        public static IFakerComputer Computer => FakerInstance.Computer;
 
         public static IFakerName Name => FakerInstance.Name;
 
@@ -47,7 +61,9 @@ namespace Faker.NET
         public static IFakerLocation Location => FakerInstance.Location;
 
         public static IFakerPhoneNumber Phone => FakerInstance.PhoneNumber;
-        
+
+        public static IFakerCustom Custom { get; set; }
+
         public static Randomizer Randomizer = new Randomizer();
 
         private static IFakerLocale FakerInstance { get; set; } = SetFakerInstance();

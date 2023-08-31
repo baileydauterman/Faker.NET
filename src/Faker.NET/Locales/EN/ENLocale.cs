@@ -6,6 +6,7 @@ namespace Faker.NET.Locales.EN
     {
         public ENLocale()
         {
+            Computer = new NET.EN.Computer.Computer();
             Name = new NET.EN.Names.Name();
             User = new NET.EN.Account.User();
             Lorem = new NET.EN.Lorem();
@@ -22,5 +23,7 @@ namespace Faker.NET.Locales.EN
         public IFakerLocation Location { get; }
 
         public IFakerPhoneNumber PhoneNumber { get; }
+
+        public IFakerComputer Computer { get; }
     }
 }

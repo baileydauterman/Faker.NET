@@ -1,21 +1,17 @@
-﻿using Faker.NET.ZH.Names;
-
-namespace Faker.NET.Tests.ZH
+﻿namespace Faker.NET.Tests.ZH
 {
     internal class NameTest
     {
         [Test]
         public void FirstName()
         {
-            Assert.That(Name.Translated.FirstName, Is.Not.Null);
-            Assert.That(Name.Native.FirstName, Is.Not.Null);
+            Assert.That(Faker.Name.First, Is.Not.Null);
         }
 
         [Test]
         public void LastName()
         {
-            Assert.That(Name.Translated.LastName, Is.Not.Null);
-            Assert.That(Name.Native.LastName, Is.Not.Null);
+            Assert.That(Faker.Name.Last, Is.Not.Null);
         }
 
         [Test]
@@ -25,8 +21,7 @@ namespace Faker.NET.Tests.ZH
 
             while (i < 10_000)
             {
-                _ = Name.Native.FirstName;
-                _ = Name.Translated.FirstName;
+                _ = Faker.Name.First;
 
                 i++;
             }
@@ -39,8 +34,7 @@ namespace Faker.NET.Tests.ZH
 
             while (i < 10_000)
             {
-                _ = Name.Native.LastName;
-                _ = Name.Translated.LastName;
+                _ = Faker.Name.Last;
 
                 i++;
             }

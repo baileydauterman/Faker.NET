@@ -12,6 +12,19 @@
             return _random.Next(min, max);
         }
 
+        public byte[] NextBytes(int count)
+        {
+            var bytes = new byte[count];
+            _random.NextBytes(bytes);
+            return bytes;
+        }
+
+        public byte[] NextBytes(byte[] bytes)
+        {
+            _random.NextBytes(bytes);
+            return bytes;
+        }
+
         public void SetSeed(int seed)
         {
             _random = new Random(seed);

@@ -157,7 +157,7 @@ namespace Faker.NET.Tests.Files
 				.AddColumn("date", () => Date.FullDateTime)
 				.AddColumn("update_date", () => Date.NowFormatted("dddd, dd MMMM yyyy HH:mm:ss"))
 				.AddColumn("text", () => Faker.Lorem.GetText(35))
-				.AddColumn("ip", () => Computer.IPv4Address)
+				.AddColumn("ip", () => Faker.Computer.IPv4Address)
 				.AddColumn("small_variable_message", () => Faker.Lorem.GetText(5, 10));
 		}
 
@@ -168,7 +168,7 @@ namespace Faker.NET.Tests.Files
 				.AddColumn("date", () => Date.FullDateTime)
 				.AddColumn("update_date", () => Date.NowFormatted("dddd, dd MMMM yyyy HH:mm:ss"))
 				.AddColumn("text", () => Faker.Lorem.GetText(35))
-				.AddColumn("ip", () => Computer.IPv4Address)
+				.AddColumn("ip", () => Faker.Computer.IPv4Address)
 				.AddColumn("small_variable_message", () => Faker.Lorem.GetText(5, 10));
 		}
 
@@ -179,7 +179,7 @@ namespace Faker.NET.Tests.Files
 				.AddColumn("date", () => Date.FullDateTime)
 				.AddColumn("update_date", () => Date.NowFormatted("dddd, dd MMMM yyyy HH:mm:ss"))
 				.AddColumn("text", () => Faker.Lorem.GetText(35))
-				.AddColumn("ip", () => Computer.IPv4Address)
+				.AddColumn("ip", () => Faker.Computer.IPv4Address)
 				.AddColumn("small_variable_message", () => Faker.Lorem.GetText(5, 10));
 		}
 

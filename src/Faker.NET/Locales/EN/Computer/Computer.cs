@@ -1,11 +1,14 @@
-﻿namespace Faker.NET.EN.Computer
-{
-    public class Computer
-    {
-        public static string IPv4Address => ip.Get();
-        public static string IPv6Address => ipv6.Get();
+﻿using Faker.NET.API;
+using System.Net;
 
-        private static IPv4Address ip = new();
-        private static IPv6Address ipv6 = new();
+namespace Faker.NET.EN.Computer
+{
+    public class Computer : IFakerComputer
+    {
+        public string IPv4Address => $"{ipv4Octet}.{ipv4Octet}.{ipv4Octet}.{ipv4Octet}";
+
+        public string IPv6Address => new IPAddress(Faker.Randomizer.NextBytes(16)).ToString();
+
+        private int ipv4Octet => Faker.Randomizer.Next(1, 256);
     }
 }
