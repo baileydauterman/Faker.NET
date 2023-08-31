@@ -4,6 +4,7 @@
     [TestFixture("ru")]
     [TestFixture("zh")]
     [TestFixture("ar")]
+    [TestFixture("fr")]
     internal class NameTest
     {
         public NameTest(string locale)

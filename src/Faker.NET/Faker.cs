@@ -3,6 +3,7 @@ using Faker.NET.Common;
 using Faker.NET.Locales;
 using Faker.NET.Locales.AR;
 using Faker.NET.Locales.EN;
+using Faker.NET.Locales.FR;
 using Faker.NET.Locales.RU;
 using Faker.NET.Locales.ZH;
 using System.Globalization;
@@ -28,24 +29,16 @@ namespace Faker.NET
 
         private static IFakerLocale SetFakerInstance()
         {
-            switch (Culture.TwoLetterISOLanguageName)
+            return Culture.TwoLetterISOLanguageName switch
             {
-                case "ar":
-                    return new ARLocale();
-
-                case "en":
-                    return new ENLocale();
-
-                case "ru":
-                    return new RULocale();
-
-                case "zh":
-                    return new ZHLocale();
-
-                default:
-                    throw new NotSupportedException($"{Culture.TwoLetterISOLanguageName} is not yet supported by Faker.NET. Feel free to contribute at:\n\t" +
-                        $"https://github.com/baileydauterman/Faker.NET");
-            }
+                "ar" => new ARLocale(),
+                "en" => new ENLocale(),
+                "fr" => new FRLocale(),
+                "ru" => new RULocale(),
+                "zh" => new ZHLocale(),
+                _ => throw new NotSupportedException($"{Culture.TwoLetterISOLanguageName} is not yet supported by Faker.NET. Feel free to contribute at:\n\t" +
+                                        $"https://github.com/baileydauterman/Faker.NET"),
+            };
         }
 
         public static CultureInfo Culture { get; private set; } = CultureInfo.CurrentCulture;

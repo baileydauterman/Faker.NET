@@ -16,7 +16,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Locales\ES\Lorem\" />
-    <Folder Include="Locales\FR\Names\" />
     <Folder Include="Files\Json\" />
   </ItemGroup>
 </Project>

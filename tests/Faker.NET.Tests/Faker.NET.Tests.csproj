@@ -36,7 +36,6 @@
   <ItemGroup>
     <Folder Include="Locales\AR\" />
     <Folder Include="Locales\EN\" />
-    <Folder Include="Locales\FR\" />
     <Folder Include="Locales\RU\" />
     <Folder Include="Locales\ZH\" />
     <Folder Include="Files\" />
