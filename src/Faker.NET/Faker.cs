@@ -27,6 +27,11 @@ namespace Faker.NET
             FakerInstance = SetFakerInstance();
         }
 
+        public static void SetInstance(IFakerLocale faker)
+        {
+            FakerInstance = faker;
+        }
+
         private static IFakerLocale SetFakerInstance()
         {
             return Culture.TwoLetterISOLanguageName switch
@@ -57,7 +62,7 @@ namespace Faker.NET
 
         public static IFakerCustom Custom { get; set; }
 
-        public static Randomizer Randomizer = new Randomizer();
+        public static Randomizer Randomizer { get; private set; } = new Randomizer();
 
         private static IFakerLocale FakerInstance { get; set; } = SetFakerInstance();
     }
