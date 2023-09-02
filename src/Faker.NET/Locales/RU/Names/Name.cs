@@ -1,36 +1,53 @@
-﻿namespace Faker.NET.RU.Names
+﻿using Faker.NET.API;
+using Faker.NET.Common;
+
+namespace Faker.NET.Locales.RU.Names
 {
-    public static class Name
+    public class Name : IFakerName
     {
-        public static class Native
-        {
-            public static string FirstName => firstName.Get();
+        public string First => NameData.FirstNames.GetRandom();
 
-            public static string MiddleName => middleName.Get();
+        public string Last => NameData.LastNames.GetRandom();
 
-            public static string LastName => lastName.Get();
+        public string Full => $"{First} {Last}";
 
-            public static string FullName => $"{firstName.Get()} {lastName.Get()}";
+        public string Suffix => throw new NotImplementedException();
 
-            public static string JobTitle => title.Get(false);
-        }
+        public string Prefix => throw new NotImplementedException();
 
-        public static class Translated
-        {
-            public static string FirstName => firstName.Get(true);
+        public string Job => $"{NameData.TitleLevel.GetRandom()} {NameData.TitleDescriptor.GetRandom()} {NameData.TitleJob.GetRandom()}";
 
-            public static string MiddleName => middleName.Get(true);
+        public string Email => throw new NotImplementedException();
 
-            public static string LastName => lastName.Get(true);
+        //public static class Native
+        //{
+        //    public static string FirstName => firstName.Get();
 
-            public static string FullName => $"{firstName.Get(true)} {lastName.Get(true)}";
+        //    public static string MiddleName => middleName.Get();
 
-            public static string JobTitle => title.Get(true);
-        }
+        //    public static string LastName => lastName.Get();
 
-        private static readonly FirstName firstName = new();
-        private static readonly MiddleName middleName = new();
-        private static readonly LastName lastName = new();
-        private static readonly Title title = new();
+        //    public static string FullName => $"{firstName.Get()} {lastName.Get()}";
+
+        //    public static string JobTitle => title.Get(false);
+        //}
+
+        //public static class Translated
+        //{
+        //    public static string FirstName => firstName.Get(true);
+
+        //    public static string MiddleName => middleName.Get(true);
+
+        //    public static string LastName => lastName.Get(true);
+
+        //    public static string FullName => $"{firstName.Get(true)} {lastName.Get(true)}";
+
+        //    public static string JobTitle => title.Get(true);
+        //}
+
+        //private static readonly FirstName firstName = new();
+        //private static readonly MiddleName middleName = new();
+        //private static readonly LastName lastName = new();
+        //private static readonly Title title = new();
     }
 }

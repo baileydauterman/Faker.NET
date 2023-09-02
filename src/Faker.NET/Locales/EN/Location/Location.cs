@@ -1,24 +1,23 @@
-﻿namespace Faker.NET.EN.Location
+﻿using Faker.NET.API;
+using Faker.NET.Common;
+using Faker.NET.Locales.EN.Location;
+
+namespace Faker.NET.EN.Location
 {
-    public static class Location
+    public class Location : IFakerLocation
     {
-        public static string City => city.Get();
+        public string City => LocationData.Cities.GetRandom();
 
-        public static string State => states.Get(true);
+        public string State => LocationData.States.GetRandom();
 
-        public static string StateAbbreviation => states.Get();
+        public string StateAbbreviation => LocationData.StatesAbbreviation.GetRandom();
 
-        public static string BuildingNumber => buildingNumber.Get().ToString();
+        public string BuildingNumber => NumberHelper.Get(1, 1000).ToString();
 
-        public static string Address => $"{BuildingNumber} {City}, {StateAbbreviation} {ZipCode}";
+        public string Address => $"{BuildingNumber} {City}, {StateAbbreviation} {ZipCode}";
 
-        public static string ZipCode => zipCode.Get();
+        public string ZipCode => NumberHelper.GetFromFormat("#####");
 
-        public static string ZipCodeLongFormat => zipCode.Get(true);
-
-        private static City city = new();
-        private static States states = new();
-        private static ZipCode zipCode = new();
-        private static BuildingNumber buildingNumber = new();
+        public string LongZipCode => NumberHelper.GetFromFormat("#####-####");
     }
 }

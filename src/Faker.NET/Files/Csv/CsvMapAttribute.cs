@@ -1,6 +1,4 @@
-﻿using System.Reflection.Metadata;
-
-namespace Faker.NET.Files.Csv
+﻿namespace Faker.NET.Files.Csv
 {
     [AttributeUsage(AttributeTargets.Property)]
     public class CsvMapAttribute : Attribute
@@ -12,30 +10,33 @@ namespace Faker.NET.Files.Csv
         public string DisplayName { get; set; }
 
         /// <summary>
-        /// The class that you want to get the value from.
+        /// The value used to get the specified property. E.g. "Name.First"
         /// </summary>
-        public Type ClassType { get; set; }
+        public Type Property { get; set; }
 
         /// <summary>
-        /// The name of the property where the class is coming from. 
+        /// Name of field
         /// </summary>
-        public string ClassProperty { get; set; }
+        public string Field { get; set; }
 
         public object GetPropertyValue()
         {
-            if (string.IsNullOrWhiteSpace(DisplayName) && string.IsNullOrWhiteSpace(ClassProperty))
+            return Property.Name switch
             {
-                throw new InvalidDataException($"{nameof(DisplayName)} or {nameof(ClassProperty)} must have a value to identify property name");
-            }
+                "IFakerName" => GetFieldValue(Faker.Name),
+                "IFakerComputer" => GetFieldValue(Faker.Computer),
+                "IFakerUser" => GetFieldValue(Faker.User),
+                "IFakerLorem" => GetFieldValue(Faker.Lorem),
+                "IFakerLocation" => GetFieldValue(Faker.Location),
+                _ => throw new NotSupportedException(Property.Name),
+            };
+        }
 
-            var prop = ClassType.GetProperty(ClassProperty ?? DisplayName);
-
-            if (prop == null)
-            {
-                throw new Exception($"Unable to find property ({ClassProperty} or {DisplayName}) on give type: {ClassType}");
-            }
-
-            return prop.GetValue(null);
+        private string GetFieldValue(object value)
+        {
+            var type = value.GetType();
+            var field = type.GetProperty(Field);
+            return (string)field.GetValue(value);
         }
     }
 }

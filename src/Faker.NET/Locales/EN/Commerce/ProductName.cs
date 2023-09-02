@@ -9,9 +9,9 @@ namespace Faker.NET.EN.Commerce
             return $"{Adjective} {Material} {Product}";
         }
 
-        public string Adjective => AdjectiveList[Randomizer.Next(AdjectiveList.Count)];
-        public string Material => MaterialList[Randomizer.Next(MaterialList.Count)];
-        public string Product => ProductList[Randomizer.Next(ProductList.Count)];
+        public string Adjective => AdjectiveList[Faker.Randomizer.Next(AdjectiveList.Count)];
+        public string Material => MaterialList[Faker.Randomizer.Next(MaterialList.Count)];
+        public string Product => ProductList[Faker.Randomizer.Next(ProductList.Count)];
 
         public List<string> AdjectiveList = new()
         {

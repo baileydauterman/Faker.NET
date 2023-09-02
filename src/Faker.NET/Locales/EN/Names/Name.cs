@@ -1,26 +1,23 @@
-﻿namespace Faker.NET.EN.Names
+﻿using Faker.NET.API;
+using Faker.NET.Common;
+using Faker.NET.Locales.EN.Names;
+
+namespace Faker.NET.EN.Names
 {
-    public static class Name
+    public class Name : IFakerName
     {
-        public static string FirstName => firstName.Get();
+        public string First => NameData.FirstNames.GetRandom();
 
-        public static string LastName => lastName.Get();
+        public string Last => NameData.LastNames.GetRandom();
 
-        public static string FullName => $"{firstName.Get()} {lastName.Get()}";
+        public string Full => $"{First} {Last}";
 
-        public static string Suffix => suffix.Get();
+        public string Suffix => NameData.Suffix.GetRandom();
 
-        public static string Prefix => prefix.Get();
+        public string Prefix => NameData.Prefix.GetRandom();
 
-        public static string JobTitle => title.Get();
+        public string Job => $"{NameData.TitleLevel.GetRandom()} {NameData.TitleDescriptor.GetRandom()} {NameData.TitleJob.GetRandom()}";
 
-        public static string Email => email.Get(FullName);
-
-        private static FirstName firstName = new();
-        private static LastName lastName = new();
-        private static Suffix suffix = new();
-        private static Prefix prefix = new();
-        private static Title title = new();
-        private static Email email = new();
+        public string Email => EmailHelper.Generate(First, Last);
     }
 }

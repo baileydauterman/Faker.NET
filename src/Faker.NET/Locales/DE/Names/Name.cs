@@ -1,15 +1,23 @@
-﻿namespace Faker.NET.DE.Names
+﻿using Faker.NET.API;
+using Faker.NET.Common;
+using Faker.NET.Locales.DE.Names;
+
+namespace Faker.NET.DE.Names
 {
-    public static class Name
+    public class Name : IFakerName
     {
-        public static string FirstName => firstName.Get(false);
+        public string First => NameData.FirstName.GetRandom();
 
-        public static string LastName => lastName.Get(false);
+        public string Last => NameData.LastName.GetRandom();
 
-        public static string Prefix => prefix.Get(false);
+        public string Prefix => NameData.Prefix.GetRandom();
 
-        private static FirstName firstName = new();
-        private static LastName lastName = new();
-        private static Prefix prefix = new();
+        public string Full => $"{First} {Last}";
+
+        public string Suffix => throw new NotImplementedException();
+
+        public string Job => throw new NotImplementedException();
+
+        public string Email => throw new NotImplementedException();
     }
 }

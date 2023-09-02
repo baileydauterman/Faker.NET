@@ -1,13 +1,12 @@
-﻿using System.Text;
+﻿using Faker.NET.API;
+using Faker.NET.Common;
 
 namespace Faker.NET.EN
 {
-    public static class Lorem
+    public class Lorem : IFakerLorem
     {
-        public static string GetText(int words) => lorem.GetText(words);
+        public string GetText(int words) => LoremIpsum.Words.CreateRandomString(words);
 
-        public static string GetText(int min, int max) => lorem.GetText(min, max);
-
-        private static LoremIpsum lorem = new();
+        public string GetText(int min, int max) => LoremIpsum.Words.CreateRandomLengthString(min, max);
     }
 }

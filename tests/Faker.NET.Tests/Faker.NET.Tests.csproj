@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.6.2" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.7.2" />
     <PackageReference Include="NUnit" Version="3.13.3" />
     <PackageReference Include="NUnit3TestAdapter" Version="4.5.0" />
     <PackageReference Include="NUnit.Analyzers" Version="3.6.1"><IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -26,20 +26,12 @@
 
   <ItemGroup>
     <None Remove="Locales\" />
-    <None Remove="Locales\AR\" />
     <None Remove="Locales\EN\" />
     <None Remove="Locales\FR\" />
-    <None Remove="Locales\RU\" />
-    <None Remove="Locales\ZH\" />
     <None Remove="Files\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Locales\" />
-    <Folder Include="Locales\AR\" />
     <Folder Include="Locales\EN\" />
-    <Folder Include="Locales\FR\" />
-    <Folder Include="Locales\RU\" />
-    <Folder Include="Locales\ZH\" />
     <Folder Include="Files\" />
   </ItemGroup>
 </Project>

@@ -7,15 +7,14 @@ namespace Faker.NET.Tests.Common
         [Test]
         public void SeedSetter()
         {
-            Faker.NET.Common.Randomizer.SetSeed(192876453);
+            Faker.Randomizer.SetSeed(192876453);
 
             Assert.Multiple(() =>
             {
-                Assert.That(Name.FirstName, Is.EqualTo("Edd"));
-                Assert.That(Name.LastName, Is.EqualTo("Bahringer"));
-                Assert.That(Name.FullName, Is.EqualTo("Angelina Walter"));
-                Assert.That(Name.JobTitle, Is.EqualTo("Future Data Architect"));
-                Assert.That(Name.Email, Is.EqualTo("kristoffer.harris5@gmail.com"));
+                Assert.That(Faker.Name.First, Is.EqualTo("Edd"));
+                Assert.That(Faker.Name.Last, Is.EqualTo("Bahringer"));
+                Assert.That(Faker.Name.Full, Is.EqualTo("Angelina Walter"));
+                Assert.That(Faker.Name.Job, Is.EqualTo("Future Data Architect"));
             });
         }
     }

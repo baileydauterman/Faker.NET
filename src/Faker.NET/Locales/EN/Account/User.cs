@@ -1,26 +1,27 @@
-﻿using Faker.NET.EN.Names;
+﻿using Faker.NET.API;
+using Faker.NET.Common;
 
 namespace Faker.NET.EN.Account
 {
-    public static class User
+    public class User : IFakerUser
     {
-        public static Common.Objects.User NewAccount => GetUser();
+        public Common.Objects.User New => GetUser();
 
-        public static Common.Objects.User GetUser()
+        public Common.Objects.User GetUser()
         {
+            var name = new EN.Names.Name();
+
             var user = new Common.Objects.User()
             {
-                FirstName = Name.FirstName,
-                LastName = Name.LastName,
-                JobTitle = Name.JobTitle,
-                Prefix = Name.Prefix,
+                FirstName = name.First,
+                LastName = name.Last,
+                JobTitle = name.Job,
+                Prefix = name.Prefix,
             };
 
-            user.Email = emailGenerator.Get(user.FirstName, user.LastName);
+            user.Email = EmailHelper.Generate(user.FirstName, user.LastName);
 
             return user;
         }
-
-        private readonly static Email emailGenerator = new();
     }
 }

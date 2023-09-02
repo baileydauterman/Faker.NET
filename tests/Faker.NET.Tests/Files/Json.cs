@@ -1,8 +1,5 @@
-﻿using Faker.NET.Files.Json;
-using Faker.NET.EN.Computer;
-using Faker.NET.EN.Names;
-using Faker.NET.Common;
-using System.Text.Json;
+﻿using System.Text.Json;
+using Faker.NET.Files.Json;
 
 namespace Faker.NET.Tests.Files
 {
@@ -11,27 +8,27 @@ namespace Faker.NET.Tests.Files
 		[Test]
 		public void SingleObject()
 		{
-			Randomizer.SetSeed(1000);
+			Faker.Randomizer.SetSeed(1000);
 			var fakedData = JsonFaker.FromObject(SomeValue.SetTestValues).Trim();
 			Assert.That(fakedData, Is.EqualTo(_singleFaked));
 
-			Randomizer.Reset();
+			Faker.Randomizer.Reset();
 		}
 
 		[Test]
 		public void SingleNestedObject()
 		{
-			Randomizer.SetSeed(1000);
+			Faker.Randomizer.SetSeed(1000);
 			var fakedData = JsonFaker.FromObject(AnotherValue.AsValue, jsonSerializerOptions);
 			Assert.That(fakedData, Is.EqualTo(_singleNestedFaked));
-			Randomizer.Reset();
-		}
+            Faker.Randomizer.Reset();
+        }
 
 		[Test]
 		public void MultipleNodes()
 		{
 			var faker = new JsonFaker()
-				.AddField<KeyValuePair<string, object>>(() => CreateNameNode("name", Name.FirstName))
+				.AddField<KeyValuePair<string, object>>(() => CreateNameNode("name", Faker.Name.First))
 				.AddField<SomeValue>(SomeValue.SetTestValues)
 				.AddField<AnotherValue>(AnotherValue.SetTestValues)
 				.AddField<DoubleNested>(DoubleNested.SetTestValues);
@@ -54,8 +51,8 @@ namespace Faker.NET.Tests.Files
 			{
 				return new SomeValue
 				{
-					firstValue = Name.FullName,
-					secondvalue = Name.JobTitle,
+					firstValue = Faker.Name.Full,
+					secondvalue = Faker.Name.Job,
 				};
 			}
 
@@ -76,8 +73,8 @@ namespace Faker.NET.Tests.Files
 			{
 				return new AnotherValue
 				{
-					AValue = Computer.IPv4Address,
-					BValue = Name.Email,
+					AValue = Faker.Computer.IPv4Address,
+					BValue = Faker.Name.Full,
 					CValue = string.Empty,
 					nested = SomeValue.AsValue()
 				};
@@ -105,7 +102,7 @@ namespace Faker.NET.Tests.Files
 		}
 
 		private const string _singleFaked = "{\"firstValue\":\"Camryn Feil\",\"secondvalue\":\"Legacy Solutions Developer\"}";
-		private const string _singleNestedFaked = "{\"AValue\":\"39.61.193.1\",\"BValue\":\"mathias.koch2@outlook.com\",\"CValue\":\"\",\"nested\":{\"firstValue\":\"Maud Bailey\",\"secondvalue\":\"Lead Directives Executive\"}}";
+		private const string _singleNestedFaked = "{\"AValue\":\"39.61.193.1\",\"BValue\":\"Mathias Koch\",\"CValue\":\"\",\"nested\":{\"firstValue\":\"Vincent Cassin\",\"secondvalue\":\"International Solutions Supervisor\"}}";
 		private readonly JsonSerializerOptions jsonSerializerOptions = new JsonSerializerOptions
 		{
 			WriteIndented = false

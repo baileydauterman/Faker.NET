@@ -15,10 +15,7 @@
     <None Remove="Files\Json\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="API\" />
-    <Folder Include="Abstractions\" />
-    <Folder Include="Locales\AR\Lorem\" />
-    <Folder Include="Locales\FR\Names\" />
+    <Folder Include="Locales\ES\Lorem\" />
     <Folder Include="Files\Json\" />
   </ItemGroup>
 </Project>
