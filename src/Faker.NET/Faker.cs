@@ -41,7 +41,7 @@ namespace Faker.NET
             };
         }
 
-        public static CultureInfo Culture { get; private set; } = CultureInfo.CurrentCulture;
+        public static CultureInfo Culture { get; private set; } = CultureInfo.GetCultureInfo("en");
 
         public static IFakerComputer Computer => FakerInstance.Computer;
 
