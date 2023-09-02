@@ -11,15 +11,18 @@
 Faker.NET makes it easy to create fake user data. A simple interface to allows users to create preestablished or customized data sets. After importing the project it's as easy as doing:
 
 ```csharp
-using Faker.NET.EN.Names;
+using Faker.NET;
 
-var firstName = Name.FirstName;
-var lastName = Name.LastName;
+Faker.SetLocale("en");
+Faker.SetSeed(10000);
 
-# -- OR ==
-# create a user with a first, middle, and last name, prefix, job title, and email address.
+var firstName = Faker.Name.First;
+var lastName = Faker.Name.Last;
+var fulleName = Faker.Name.Full;
+var user = Faker.User.New;
+var ipAddr = Faker.Computer.IPv4Address;
 
-using Faker.NET.EN.Account;
+Faker.SetLocale(CultureInfo.CurrentCulture);
 
-var user = User.NewAccount;
+var user = Faker.User.New;
 ```
