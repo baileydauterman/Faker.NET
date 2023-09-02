@@ -53,5 +53,17 @@
                 _ = Faker.Name.Last;
             }
         }
+
+        [Test]
+        [TestCase(10_000)]
+        public void StressFull(int count)
+        {
+            var i = 0;
+
+            while (i++ < count)
+            {
+                _ = Faker.Name.Full;
+            }
+        }
     }
 }
