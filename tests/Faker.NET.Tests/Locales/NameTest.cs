@@ -1,10 +1,10 @@
 ﻿namespace Faker.NET.Tests.Locales
 {
+    [TestFixture("ar")]
     [TestFixture("en")]
+    [TestFixture("fr")]
     [TestFixture("ru")]
     [TestFixture("zh")]
-    [TestFixture("ar")]
-    [TestFixture("fr")]
     internal class NameTest
     {
         public NameTest(string locale)
@@ -25,9 +25,9 @@
         }
 
         [Test]
-        public void Jobs()
+        public void FullName()
         {
-            Assert.That(Faker.Name.Job, Is.Not.Null);
+            Assert.That(Faker.Name.Full, Is.Not.Null);
         }
 
         [Test]

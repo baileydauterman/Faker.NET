@@ -1,14 +1,15 @@
 ﻿using Faker.NET.API;
+using Faker.NET.Common;
 
 namespace Faker.NET.Locales.ZH.Names
 {
     public class Name : IFakerName
     {
-        public string First => throw new NotImplementedException();
+        public string First => NameData.FirstNames.GetRandom();
 
-        public string Last => throw new NotImplementedException();
+        public string Last => NameData.LastNames.GetRandom();
 
-        public string Full => throw new NotImplementedException();
+        public string Full => $"{Last} {First}";
 
         public string Suffix => throw new NotImplementedException();
 

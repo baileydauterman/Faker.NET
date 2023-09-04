@@ -15,21 +15,24 @@ namespace Faker.NET
     /// </summary>
     public class Faker
     {
-        public static void SetLocale(string locale)
-        {
-            Culture = CultureInfo.GetCultureInfo(locale);
-            SetFakerInstance();
-        }
-
         public static void SetLocale(CultureInfo cultureInfo)
-        {
-            Culture = cultureInfo;
-            FakerInstance = SetFakerInstance();
-        }
+            => UpdateCultureAndFakerInstance(cultureInfo);
+
+        public static void SetLocale(string locale)
+            => UpdateCultureAndFakerInstance(CultureInfo.GetCultureInfo(locale));
+
+        public static void SetLocale(SupportedLocales locale)
+            => UpdateCultureAndFakerInstance(CultureInfo.GetCultureInfo(locale.ToString()));
 
         public static void SetInstance(IFakerLocale faker)
         {
             FakerInstance = faker;
+        }
+
+        private static void UpdateCultureAndFakerInstance(CultureInfo culture)
+        {
+            Culture = culture;
+            FakerInstance = SetFakerInstance();
         }
 
         private static IFakerLocale SetFakerInstance()

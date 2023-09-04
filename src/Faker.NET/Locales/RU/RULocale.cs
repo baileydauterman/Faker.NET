@@ -1,20 +1,28 @@
 ﻿using Faker.NET.API;
+using Faker.NET.Common;
 using Faker.NET.EN.Computer;
+using Faker.NET.RU.Lorem;
 
 namespace Faker.NET.Locales.RU
 {
     public class RULocale : IFakerLocale
     {
-        public IFakerComputer Computer => new Computer();
+        public RULocale()
+        {
+            Computer = new Computer();
+            Name = new Names.Name();
+            Lorem = new Lorem();
+        }
+        public IFakerComputer Computer { get; }
 
-        public IFakerName Name => new Names.Name();
+        public IFakerName Name { get; }
 
-        public IFakerLocation Location => throw new NotImplementedException();
+        public IFakerLocation Location => throw new FakerInstanceNotImplementedException(nameof(Location));
 
-        public IFakerLorem Lorem => throw new NotImplementedException();
+        public IFakerLorem Lorem { get; }
 
-        public IFakerUser User => throw new NotImplementedException();
+        public IFakerUser User => throw new NotImplementedException(nameof(User));
 
-        public IFakerPhoneNumber PhoneNumber => throw new NotImplementedException();
+        public IFakerPhoneNumber PhoneNumber => throw new NotImplementedException(nameof(PhoneNumber));
     }
 }

@@ -1,17 +1,17 @@
-﻿using Faker.NET.API;
+﻿using System;
+using Faker.NET.API;
 using Faker.NET.Common;
 using Faker.NET.EN.Computer;
 
-namespace Faker.NET.Locales.ZH
+namespace Faker.NET.Locales.DE
 {
-    internal class ZHLocale : IFakerLocale
-    {
-        public ZHLocale()
+	public class DELocale : IFakerLocale
+	{
+        public DELocale()
         {
             Computer = new Computer();
             Name = new Names.Name();
         }
-
         public IFakerComputer Computer { get; }
 
         public IFakerName Name { get; }
@@ -25,3 +25,4 @@ namespace Faker.NET.Locales.ZH
         public IFakerPhoneNumber PhoneNumber => throw new FakerInstanceNotImplementedException(nameof(PhoneNumber));
     }
 }
+

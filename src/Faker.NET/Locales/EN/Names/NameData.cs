@@ -1,6 +1,6 @@
 ﻿namespace Faker.NET.Locales.EN.Names
 {
-    internal class NameData
+    public class NameData
     {
         public static string[] FirstNames = new string[]
         {

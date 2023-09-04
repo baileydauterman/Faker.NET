@@ -5,9 +5,15 @@ namespace Faker.NET.Locales.FR
 {
     internal class FRLocale : IFakerLocale
     {
-        public IFakerComputer Computer => new Computer();
+        public FRLocale()
+        {
+            Computer = new Computer();
+            Name = new Names.Name();
+        }
 
-        public IFakerName Name => new Names.Name();
+        public IFakerComputer Computer { get; }
+
+        public IFakerName Name { get; }
 
         public IFakerLocation Location => throw new NotImplementedException();
 
