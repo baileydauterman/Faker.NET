@@ -2,6 +2,7 @@
 using Faker.NET.Common;
 using Faker.NET.EN.Computer;
 using Faker.NET.RU.Lorem;
+using System.Globalization;
 
 namespace Faker.NET.Locales.RU
 {
@@ -24,5 +25,7 @@ namespace Faker.NET.Locales.RU
         public IFakerUser User => throw new NotImplementedException(nameof(User));
 
         public IFakerPhoneNumber PhoneNumber => throw new NotImplementedException(nameof(PhoneNumber));
+
+        public CultureInfo Culture { get; } = CultureInfo.GetCultureInfo("ru");
     }
 }

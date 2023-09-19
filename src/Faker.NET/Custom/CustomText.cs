@@ -7,17 +7,9 @@ namespace Faker.NET.Custom
     /// </summary>
     public class Custom : FakerText
     {
-        public Custom(List<string> primaryData, List<string> secondaryData)
+        public Custom(ICollection<string> data)
         {
-            if (primaryData is not null)
-            {
-                Native = primaryData;
-            }
 
-            if (secondaryData is not null)
-            {
-                Translated = secondaryData;
-            }
         }
 
         public string Primary => base.Get();

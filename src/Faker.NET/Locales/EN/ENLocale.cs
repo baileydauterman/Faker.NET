@@ -1,4 +1,5 @@
 ﻿using Faker.NET.API;
+using System.Globalization;
 
 namespace Faker.NET.Locales.EN
 {
@@ -25,5 +26,7 @@ namespace Faker.NET.Locales.EN
         public IFakerPhoneNumber PhoneNumber { get; }
 
         public IFakerComputer Computer { get; }
+
+        public CultureInfo Culture { get; } = CultureInfo.GetCultureInfo("en");
     }
 }

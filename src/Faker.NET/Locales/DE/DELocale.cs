@@ -1,12 +1,12 @@
-﻿using System;
-using Faker.NET.API;
+﻿using Faker.NET.API;
 using Faker.NET.Common;
 using Faker.NET.EN.Computer;
+using System.Globalization;
 
 namespace Faker.NET.Locales.DE
 {
-	public class DELocale : IFakerLocale
-	{
+    public class DELocale : IFakerLocale
+    {
         public DELocale()
         {
             Computer = new Computer();
@@ -23,6 +23,8 @@ namespace Faker.NET.Locales.DE
         public IFakerUser User => throw new FakerInstanceNotImplementedException(nameof(User));
 
         public IFakerPhoneNumber PhoneNumber => throw new FakerInstanceNotImplementedException(nameof(PhoneNumber));
+
+        public CultureInfo Culture { get; } = CultureInfo.GetCultureInfo("de");
     }
 }
 

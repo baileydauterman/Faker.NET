@@ -2,16 +2,22 @@
 
 namespace Faker.NET.Tests.EN
 {
-    public static class Computers
+    public class Computers
     {
+        [SetUp]
+        public void Setup()
+        {
+            Faker.SetInstance(SupportedLocales.English);
+        }
+
         [Test]
-        public static void IPv4()
+        public void IPv4()
         {
             Assert.That(IPAddress.Parse(Faker.Computer.IPv4Address), Is.InstanceOf<IPAddress>());
         }
 
         [Test]
-        public static void IPv6()
+        public void IPv6()
         {
             Assert.That(IPAddress.Parse(Faker.Computer.IPv6Address), Is.InstanceOf<IPAddress>());
         }

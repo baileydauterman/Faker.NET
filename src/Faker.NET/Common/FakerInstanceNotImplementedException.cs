@@ -1,14 +1,11 @@
-﻿using System;
-using System.Globalization;
-
-namespace Faker.NET.Common
+﻿namespace Faker.NET.Common
 {
-	internal class FakerInstanceNotImplementedException : Exception
-	{
-		public FakerInstanceNotImplementedException(string methodName)
-			: base($"{methodName} has not been implemented for {Faker.Culture.TwoLetterISOLanguageName}")
-		{
-		}
-	}
+    internal class FakerInstanceNotImplementedException : Exception
+    {
+        public FakerInstanceNotImplementedException(string methodName)
+            : base($"{methodName} is not yet implemented by Faker.NET. Feel free to contribute at:\n\t https://github.com/baileydauterman/Faker.NET")
+        {
+        }
+    }
 }
 

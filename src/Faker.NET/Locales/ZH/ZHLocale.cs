@@ -1,6 +1,7 @@
 ﻿using Faker.NET.API;
 using Faker.NET.Common;
 using Faker.NET.EN.Computer;
+using System.Globalization;
 
 namespace Faker.NET.Locales.ZH
 {
@@ -23,5 +24,7 @@ namespace Faker.NET.Locales.ZH
         public IFakerUser User => throw new FakerInstanceNotImplementedException(nameof(User));
 
         public IFakerPhoneNumber PhoneNumber => throw new FakerInstanceNotImplementedException(nameof(PhoneNumber));
+
+        public CultureInfo Culture { get; } = CultureInfo.GetCultureInfo("zh");
     }
 }

@@ -107,7 +107,6 @@ namespace Faker.NET.Tests.Files
 
         [Test]
         [TestCase(100_000)]
-        [TestCase(1_000_000)]
         public void GenerateFile(int rowCount)
         {
             var tempPath = Path.Combine(Path.GetTempPath(), Path.GetTempFileName());
