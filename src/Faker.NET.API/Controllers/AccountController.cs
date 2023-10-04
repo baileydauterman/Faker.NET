@@ -1,18 +1,20 @@
-﻿using Faker.NET.Common.Objects;
+﻿using Faker.NET.API.Services;
+using Faker.NET.Common.Objects;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Faker.NET.API.Controllers
 {
-	public class AccountController : ControllerBase
+    public class AccountController : ControllerBase
     {
         [HttpGet("/get/account")]
         public IEnumerable<User> GetAccount(string locale = "en", int count = 100)
         {
-            Faker.SetLocale(locale);
-
-            while (count-- != 0)
+            if (FakerService.TryGetInstance(locale, out var instance))
             {
-                yield return Faker.User.New;
+                while (count-- != 0)
+                {
+                    yield return instance.User.New;
+                }
             }
         }
     }
