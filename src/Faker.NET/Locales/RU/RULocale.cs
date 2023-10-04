@@ -12,19 +12,20 @@ namespace Faker.NET.Locales.RU
             Computer = new Computer();
             Name = new Name();
             Lorem = new Lorem();
+            PhoneNumber = new PhoneNumber();
         }
 
         public IFakerComputer Computer { get; }
 
         public IFakerName Name { get; }
 
-        public IFakerLocation Location => throw new FakerInstanceNotImplementedException(nameof(Location));
+        public IFakerLocation Location => throw new FakerMemberNotImplementedException(SupportedFakerLocales.Russian, nameof(Location));
 
         public IFakerLorem Lorem { get; }
 
-        public IFakerUser User => throw new NotImplementedException(nameof(User));
+        public IFakerUser User => throw new FakerMemberNotImplementedException(SupportedFakerLocales.Russian, nameof(User));
 
-        public IFakerPhoneNumber PhoneNumber => throw new NotImplementedException(nameof(PhoneNumber));
+        public IFakerPhoneNumber PhoneNumber { get; }
 
         public CultureInfo Culture { get; } = CultureInfo.GetCultureInfo("ru");
     }

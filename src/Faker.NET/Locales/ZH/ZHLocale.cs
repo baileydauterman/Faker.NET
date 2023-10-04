@@ -10,20 +10,20 @@ namespace Faker.NET.Locales.ZH
         public ZHLocale()
         {
             Computer = new Computer();
-            Name = new Names.Name();
+            Name = new Name();
         }
 
         public IFakerComputer Computer { get; }
 
         public IFakerName Name { get; }
 
-        public IFakerLocation Location => throw new FakerInstanceNotImplementedException(nameof(Location));
+        public IFakerLocation Location => throw new FakerMemberNotImplementedException(SupportedFakerLocales.Mandarin, nameof(Location));
 
-        public IFakerLorem Lorem => throw new FakerInstanceNotImplementedException(nameof(Lorem));
+        public IFakerLorem Lorem => throw new FakerMemberNotImplementedException(SupportedFakerLocales.Mandarin, nameof(Lorem));
 
-        public IFakerUser User => throw new FakerInstanceNotImplementedException(nameof(User));
+        public IFakerUser User => throw new FakerMemberNotImplementedException(SupportedFakerLocales.Mandarin, nameof(User));
 
-        public IFakerPhoneNumber PhoneNumber => throw new FakerInstanceNotImplementedException(nameof(PhoneNumber));
+        public IFakerPhoneNumber PhoneNumber => throw new FakerMemberNotImplementedException(SupportedFakerLocales.Mandarin, nameof(PhoneNumber));
 
         public CultureInfo Culture { get; } = CultureInfo.GetCultureInfo("zh");
     }
