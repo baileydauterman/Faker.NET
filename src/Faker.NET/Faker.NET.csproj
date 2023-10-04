@@ -16,7 +16,6 @@
     <None Remove="Files\Json\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Locales\ES\Lorem\" />
     <Folder Include="Files\Json\" />
   </ItemGroup>
 </Project>

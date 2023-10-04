@@ -1,4 +1,6 @@
 ﻿using Faker.NET.API;
+using Faker.NET.Common;
+using Faker.NET.Locales.EN.Data;
 using System.Globalization;
 
 namespace Faker.NET.Locales.EN
@@ -10,7 +12,7 @@ namespace Faker.NET.Locales.EN
             Computer = new Computer();
             Name = new Name();
             User = new User();
-            Lorem = new Lorem();
+            Lorem = new Lorem(LoremIpsum.Words);
             Location = new Location();
             PhoneNumber = new PhoneNumber();
         }

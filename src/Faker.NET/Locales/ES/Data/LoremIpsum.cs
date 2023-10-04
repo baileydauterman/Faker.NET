@@ -1,4 +1,4 @@
-﻿namespace Faker.NET.Locales.ES.Lorem
+﻿namespace Faker.NET.Locales.ES.Data
 {
     public class LoremIpsum
     {

@@ -9,14 +9,12 @@ namespace Faker.NET.Locales.EN
 
         public Common.Objects.User GetUser()
         {
-            var name = new Name();
-
             var user = new Common.Objects.User()
             {
-                FirstName = name.First,
-                LastName = name.Last,
-                JobTitle = name.Job,
-                Prefix = name.Prefix,
+                FirstName = Faker.Name.First,
+                LastName = Faker.Name.Last,
+                JobTitle = Faker.Name.Job,
+                Prefix = Faker.Name.Prefix,
             };
 
             user.Email = EmailHelper.Generate(user.FirstName, user.LastName);

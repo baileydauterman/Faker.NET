@@ -9,7 +9,7 @@ namespace Faker.NET.Locales.FR
         public FRLocale()
         {
             Computer = new Computer();
-            Name = new Names.Name();
+            Name = new Name();
         }
 
         public IFakerComputer Computer { get; }
