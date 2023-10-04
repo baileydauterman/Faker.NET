@@ -1,4 +1,4 @@
-﻿namespace Faker.NET.RU.Lorem
+﻿namespace Faker.NET.Locales.RU.Data
 {
     internal class LoremIpsum
     {

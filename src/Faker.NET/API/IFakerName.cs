@@ -1,11 +1,4 @@
-﻿using Faker.NET.EN.Names;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Faker.NET.API
+﻿namespace Faker.NET.API
 {
     public interface IFakerName
     {

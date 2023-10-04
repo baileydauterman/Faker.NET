@@ -1,7 +1,8 @@
 ﻿using Faker.NET.API;
 using Faker.NET.Common;
+using Faker.NET.Locales.RU.Data;
 
-namespace Faker.NET.EN
+namespace Faker.NET.Locales.RU
 {
     public class Lorem : IFakerLorem
     {

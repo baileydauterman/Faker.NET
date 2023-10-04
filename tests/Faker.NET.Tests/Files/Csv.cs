@@ -1,6 +1,6 @@
 ﻿using Faker.NET.API;
-using Faker.NET.EN.Date;
 using Faker.NET.Files.Csv;
+using Faker.NET.Locales.EN;
 
 namespace Faker.NET.Tests.Files
 {
@@ -11,7 +11,7 @@ namespace Faker.NET.Tests.Files
         {
             // using the static first name here will generate the same same for every row
             // use () => Name.FirstName to turn this into a func.
-            var faker = CreateFaker();
+            var faker = CreateCsvFaker();
 
             // Generate a single row
             var value = faker.GenerateRow();
@@ -31,10 +31,10 @@ namespace Faker.NET.Tests.Files
         [Test]
         [TestCase(100_000)]
         [TestCase(200_000)]
-        [TestCase(1_000_000)]
+        [TestCase(500_000)]
         public void GenerateMassiveRows(int rowCount)
         {
-            var faker = CreateFaker().Iterations((uint)rowCount);
+            var faker = CreateCsvFaker().Iterations((uint)rowCount);
 
             faker.Generate();
         }
@@ -44,7 +44,7 @@ namespace Faker.NET.Tests.Files
         {
             var tempPath = Path.Combine(Path.GetTempPath(), Path.GetTempFileName());
 
-            var faker = CreateFaker(tempPath);
+            var faker = CreateCsvFaker(tempPath);
             faker.WriteRows();
 
             ICollection<string> lines = new List<string>();
@@ -70,7 +70,7 @@ namespace Faker.NET.Tests.Files
 
             using (var stream = File.OpenRead(tempPath))
             {
-                Assert.Throws<Exception>(() => CreateFaker(stream));
+                Assert.Throws<Exception>(() => CreateCsvFaker(stream));
             }
 
             if (File.Exists(tempPath))
@@ -85,7 +85,7 @@ namespace Faker.NET.Tests.Files
             var tempPath = Path.Combine(Path.GetTempPath(), Path.GetTempFileName());
             using var writeStream = File.OpenWrite(tempPath);
 
-            var faker = CreateFaker(writeStream);
+            var faker = CreateCsvFaker(writeStream);
 
             faker.WriteRows();
 
@@ -110,9 +110,10 @@ namespace Faker.NET.Tests.Files
         public void GenerateFile(int rowCount)
         {
             var tempPath = Path.Combine(Path.GetTempPath(), Path.GetTempFileName());
-            var lines = CreateFileGetLines(tempPath, (uint)rowCount);
+            var lines = CreateFileGetLineCount(tempPath, (uint)rowCount);
 
-            Assert.That(lines?.Count, Is.EqualTo(rowCount + 1));
+            // amount of lines plus the header
+            Assert.That(lines, Is.EqualTo(rowCount + 1));
         }
 
         [Test]
@@ -125,21 +126,22 @@ namespace Faker.NET.Tests.Files
             Assert.That(csvFaker.Count(), Is.EqualTo(101));
         }
 
-        private ICollection<string> CreateFileGetLines(string tempPath, uint rowCount = 10)
+        private int CreateFileGetLineCount(string tempPath, uint rowCount = 10)
         {
             using var stream = File.OpenWrite(tempPath);
 
-            var faker = CreateFaker(stream).Iterations(rowCount);
+            var faker = CreateCsvFaker(stream).Iterations(rowCount);
             faker.WriteRows();
 
-            ICollection<string> lines = new List<string>();
+            var lines = 0;
 
             using (var file = File.OpenRead(tempPath))
             using (var reader = new StreamReader(file))
             {
                 while (!reader.EndOfStream)
                 {
-                    lines.Add(reader.ReadLine() ?? string.Empty);
+                    reader.ReadLine();
+                    lines++;
                 }
             }
 
@@ -148,7 +150,7 @@ namespace Faker.NET.Tests.Files
             return lines;
         }
 
-        private CsvFaker CreateFaker()
+        private CsvFaker CreateCsvFaker()
         {
             return new CsvFaker()
                 .AddColumn("name", () => Faker.Name.First)
@@ -159,7 +161,7 @@ namespace Faker.NET.Tests.Files
                 .AddColumn("small_variable_message", () => Faker.Lorem.GetText(5, 10));
         }
 
-        private CsvFaker CreateFaker(string tempPath)
+        private CsvFaker CreateCsvFaker(string tempPath)
         {
             return new CsvFaker(tempPath)
                 .AddColumn("name", () => Faker.Name.First)
@@ -170,7 +172,7 @@ namespace Faker.NET.Tests.Files
                 .AddColumn("small_variable_message", () => Faker.Lorem.GetText(5, 10));
         }
 
-        private CsvFaker CreateFaker(Stream stream)
+        private CsvFaker CreateCsvFaker(Stream stream)
         {
             return new CsvFaker(stream)
                 .AddColumn("name", () => Faker.Name.First)

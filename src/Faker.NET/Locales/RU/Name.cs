@@ -1,7 +1,8 @@
 ﻿using Faker.NET.API;
 using Faker.NET.Common;
+using Faker.NET.Locales.RU.Data;
 
-namespace Faker.NET.Locales.RU.Names
+namespace Faker.NET.Locales.RU
 {
     public class Name : IFakerName
     {
@@ -17,7 +18,7 @@ namespace Faker.NET.Locales.RU.Names
 
         public string Job => $"{NameData.TitleLevel.GetRandom()} {NameData.TitleDescriptor.GetRandom()} {NameData.TitleJob.GetRandom()}";
 
-        public string Email => throw new NotImplementedException();
+        public string Email => EmailHelper.Generate(First, Last);
 
         //public static class Native
         //{

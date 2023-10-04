@@ -1,7 +1,7 @@
 ﻿using Faker.NET.API;
 using Faker.NET.Common;
 
-namespace Faker.NET.EN.PhoneNumber
+namespace Faker.NET.Locales.EN
 {
     internal class PhoneNumber : IFakerPhoneNumber
     {

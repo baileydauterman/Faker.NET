@@ -3,16 +3,16 @@ using System.Globalization;
 
 namespace Faker.NET.Locales.EN
 {
-    internal class ENLocale : IFakerLocale
+    internal class ENLocale : IFakerInstance
     {
         public ENLocale()
         {
-            Computer = new NET.EN.Computer.Computer();
-            Name = new NET.EN.Names.Name();
-            User = new NET.EN.Account.User();
-            Lorem = new NET.EN.Lorem();
-            Location = new NET.EN.Location.Location();
-            PhoneNumber = new NET.EN.PhoneNumber.PhoneNumber();
+            Computer = new Computer();
+            Name = new Name();
+            User = new User();
+            Lorem = new Lorem();
+            Location = new Location();
+            PhoneNumber = new PhoneNumber();
         }
 
         public IFakerName Name { get; }

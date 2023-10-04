@@ -1,6 +1,4 @@
-﻿using Faker.NET.EN.Location;
-
-namespace Faker.NET.Tests.EN
+﻿namespace Faker.NET.Tests.EN
 {
     internal static class Locations
     {

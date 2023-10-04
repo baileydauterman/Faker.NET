@@ -1,11 +1,11 @@
 ﻿using Faker.NET.API;
 using Faker.NET.Common;
-using Faker.NET.EN.Computer;
+using Faker.NET.Locales.EN;
 using System.Globalization;
 
 namespace Faker.NET.Locales.AR
 {
-    internal class ARLocale : IFakerLocale
+    internal class ARLocale : IFakerInstance
     {
         public ARLocale()
         {

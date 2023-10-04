@@ -24,7 +24,7 @@
 
         public static string GetDomain() => _domain.GetRandom();
 
-        private static readonly string[] _domain = new string[]
+        private static readonly string[] _domain =
         {
             "gmail.com",
             "yahoo.com",

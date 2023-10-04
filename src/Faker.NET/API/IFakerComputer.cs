@@ -5,5 +5,7 @@
         string IPv4Address { get; }
 
         string IPv6Address { get; }
+
+        string Domain { get; }
     }
 }

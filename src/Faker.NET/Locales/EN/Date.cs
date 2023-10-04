@@ -1,4 +1,4 @@
-﻿namespace Faker.NET.EN.Date
+﻿namespace Faker.NET.Locales.EN
 {
     public static class Date
     {

@@ -1,19 +1,34 @@
-﻿using Faker.NET.Common;
-
-namespace Faker.NET.EN.Commerce
+﻿namespace Faker.NET.Locales.EN.Data
 {
-    internal class ProductName : FakerText
+    internal class CommerceData
     {
-        public override string Get(bool useAlternate = false)
+        public static readonly string[] Department =
         {
-            return $"{Adjective} {Material} {Product}";
-        }
+            "Books",
+            "Movies",
+            "Music",
+            "Games",
+            "Electronics",
+            "Computers",
+            "Home",
+            "Garden",
+            "Tools",
+            "Grocery",
+            "Health",
+            "Beauty",
+            "Toys",
+            "Kids",
+            "Baby",
+            "Clothing",
+            "Shoes",
+            "Jewelery",
+            "Sports",
+            "Outdoors",
+            "Automotive",
+            "Industrial",
+        };
 
-        public string Adjective => AdjectiveList[Faker.Randomizer.Next(AdjectiveList.Count)];
-        public string Material => MaterialList[Faker.Randomizer.Next(MaterialList.Count)];
-        public string Product => ProductList[Faker.Randomizer.Next(ProductList.Count)];
-
-        public List<string> AdjectiveList = new()
+        public static readonly string[] Adjective =
         {
             "Small",
             "Ergonomic",
@@ -41,7 +56,7 @@ namespace Faker.NET.EN.Commerce
             "Tasty",
         };
 
-        public List<string> MaterialList = new()
+        public static readonly string[] Material =
         {
             "Steel",
             "Bronze",
@@ -57,7 +72,7 @@ namespace Faker.NET.EN.Commerce
             "Frozen",
         };
 
-        public List<string> ProductList = new()
+        public static readonly string[] Product =
         {
             "Chair",
             "Car",

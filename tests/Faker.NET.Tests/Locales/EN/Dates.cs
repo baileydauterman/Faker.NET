@@ -1,4 +1,4 @@
-﻿using Faker.NET.EN.Date;
+﻿using Faker.NET.Locales.EN;
 using System.Globalization;
 
 namespace Faker.NET.Tests.EN

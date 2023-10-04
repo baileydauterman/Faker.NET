@@ -1,19 +1,19 @@
 ﻿using Faker.NET.API;
 using Faker.NET.Common;
-using Faker.NET.EN.Computer;
-using Faker.NET.RU.Lorem;
+using Faker.NET.Locales.EN;
 using System.Globalization;
 
 namespace Faker.NET.Locales.RU
 {
-    public class RULocale : IFakerLocale
+    public class RULocale : IFakerInstance
     {
         public RULocale()
         {
             Computer = new Computer();
-            Name = new Names.Name();
+            Name = new Name();
             Lorem = new Lorem();
         }
+
         public IFakerComputer Computer { get; }
 
         public IFakerName Name { get; }

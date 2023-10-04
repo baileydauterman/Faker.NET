@@ -1,10 +1,10 @@
 ﻿using Faker.NET.API;
-using Faker.NET.EN.Computer;
+using Faker.NET.Locales.EN;
 using System.Globalization;
 
 namespace Faker.NET.Locales.FR
 {
-    internal class FRLocale : IFakerLocale
+    internal class FRLocale : IFakerInstance
     {
         public FRLocale()
         {

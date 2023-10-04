@@ -24,7 +24,7 @@ namespace Faker.NET.Tests.Custom
         }
     }
 
-    internal class CustomFaker : IFakerLocale
+    internal class CustomFaker : IFakerInstance
     {
         public IFakerComputer Computer => throw new NotImplementedException();
 

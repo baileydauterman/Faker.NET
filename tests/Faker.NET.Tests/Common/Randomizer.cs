@@ -1,6 +1,4 @@
-﻿using Faker.NET.EN.Names;
-
-namespace Faker.NET.Tests.Common
+﻿namespace Faker.NET.Tests.Common
 {
     internal class Randomizer
     {

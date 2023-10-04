@@ -1,8 +1,8 @@
 ﻿using Faker.NET.API;
 using Faker.NET.Common;
-using Faker.NET.Locales.EN.Location;
+using Faker.NET.Locales.EN.Data;
 
-namespace Faker.NET.EN.Location
+namespace Faker.NET.Locales.EN
 {
     public class Location : IFakerLocation
     {

@@ -3,7 +3,10 @@ using System.Globalization;
 
 namespace Faker.NET.Locales
 {
-    public interface IFakerLocale
+    /// <summary>
+    /// Instance that contains all faker instances related to an <see cref="SupportedFakerLocales"/>
+    /// </summary>
+    public interface IFakerInstance
     {
         IFakerComputer Computer { get; }
 

@@ -15,57 +15,83 @@ namespace Faker.NET
     /// </summary>
     public class Faker
     {
+        public static IFakerInstance GetInstance(SupportedFakerLocales locale)
+        {
+            return locale switch
+            {
+                SupportedFakerLocales.Arabic => new ARLocale(),
+                SupportedFakerLocales.English => new ENLocale(),
+                SupportedFakerLocales.French => new FRLocale(),
+                SupportedFakerLocales.Russian => new RULocale(),
+                SupportedFakerLocales.Mandarin => new ZHLocale(),
+                _ => throw new FakerInstanceNotImplementedException(locale.ToString()),
+            };
+        }
+
+        public static IFakerInstance GetInstance(string locale)
+        {
+            var fakerLocale = GetLocale(locale);
+            return GetInstance(fakerLocale);
+        }
+
+        public static IFakerInstance GetInstance(CultureInfo culture)
+        {
+            return GetInstance(culture);
+        }
+
         public static void SetLocale(CultureInfo cultureInfo)
             => UpdateCultureAndFakerInstance(cultureInfo);
 
         public static void SetLocale(string locale)
             => UpdateCultureAndFakerInstance(CultureInfo.GetCultureInfo(locale));
 
-        public static void SetLocale(SupportedLocales locale)
+        public static void SetLocale(SupportedFakerLocales locale)
             => UpdateCultureAndFakerInstance(CultureInfo.GetCultureInfo(locale.ToString()));
 
-        public static void SetLocale(IFakerLocale locale)
+        public static void SetLocale(IFakerInstance locale)
             => SetFakerInstance(locale);
 
-        public static void SetInstance(SupportedLocales locale)
+        public static void SetInstance(SupportedFakerLocales locale)
         {
             SetFakerInstance(locale);
         }
 
-        public static void SetInstance(IFakerLocale faker)
+        public static void SetInstance(IFakerInstance faker)
         {
             FakerInstance = faker;
         }
 
-        private static void UpdateCultureAndFakerInstance(CultureInfo culture)
+        private static SupportedFakerLocales GetLocale(CultureInfo culture)
         {
-            var locale = culture.TwoLetterISOLanguageName switch
+            return culture.TwoLetterISOLanguageName switch
             {
-                "ar" => SupportedLocales.Arabic,
-                "en" => SupportedLocales.English,
-                "fr" => SupportedLocales.French,
-                "ru" => SupportedLocales.Russian,
-                "zh" => SupportedLocales.Mandarin,
+                "ar" => SupportedFakerLocales.Arabic,
+                "en" => SupportedFakerLocales.English,
+                "fr" => SupportedFakerLocales.French,
+                "ru" => SupportedFakerLocales.Russian,
+                "zh" => SupportedFakerLocales.Mandarin,
                 _ => throw new FakerInstanceNotImplementedException(culture.TwoLetterISOLanguageName),
             };
+        }
 
+        private static SupportedFakerLocales GetLocale(string locale)
+        {
+            var cultureInfo = CultureInfo.GetCultureInfo(locale);
+            return GetLocale(cultureInfo);
+        }
+
+        private static void UpdateCultureAndFakerInstance(CultureInfo culture)
+        {
+            var locale = GetLocale(culture);
             SetFakerInstance(locale);
         }
 
-        private static void SetFakerInstance(SupportedLocales locale)
+        private static void SetFakerInstance(SupportedFakerLocales locale)
         {
-            FakerInstance = locale switch
-            {
-                SupportedLocales.Arabic => new ARLocale(),
-                SupportedLocales.English => new ENLocale(),
-                SupportedLocales.French => new FRLocale(),
-                SupportedLocales.Russian => new RULocale(),
-                SupportedLocales.Mandarin => new ZHLocale(),
-                _ => throw new FakerInstanceNotImplementedException(locale.ToString()),
-            };
+            FakerInstance = GetInstance(locale);
         }
 
-        private static void SetFakerInstance(IFakerLocale locale)
+        private static void SetFakerInstance(IFakerInstance locale)
         {
             FakerInstance = locale;
         }
@@ -88,10 +114,10 @@ namespace Faker.NET
 
         public static Randomizer Randomizer { get; private set; } = new Randomizer();
 
-        private static IFakerLocale FakerInstance { get; set; } = new ENLocale();
+        public static IFakerInstance FakerInstance { get; private set; } = new ENLocale();
     }
 
-    public enum SupportedLocales
+    public enum SupportedFakerLocales
     {
         English,
         Arabic,

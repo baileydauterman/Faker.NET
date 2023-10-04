@@ -1,8 +1,8 @@
-﻿namespace Faker.NET.EN
+﻿namespace Faker.NET.Locales.EN.Data
 {
     internal class LoremIpsum
     {
-        public static readonly string[] Words = new string[] 
+        public static readonly string[] Words = new string[]
         {
             "alias","consequatur","aut","perferendis","sit","voluptatem","accusantium","doloremque","aperiam","eaque",
             "ipsa","quae","ab","illo","inventore","veritatis","et","quasi","architecto","beatae",

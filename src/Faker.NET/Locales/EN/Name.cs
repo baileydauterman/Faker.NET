@@ -1,8 +1,8 @@
 ﻿using Faker.NET.API;
 using Faker.NET.Common;
-using Faker.NET.Locales.EN.Names;
+using Faker.NET.Locales.EN.Data;
 
-namespace Faker.NET.EN.Names
+namespace Faker.NET.Locales.EN
 {
     public class Name : IFakerName
     {

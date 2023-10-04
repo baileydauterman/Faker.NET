@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Runtime.InteropServices;
-using Faker.NET.Locales.EN.Names;
+using Faker.NET.Locales.EN.Data;
 
 namespace Faker.NET.Tests.Locales.EN
 {
-	public class BinaryTest
+    public class BinaryTest
 	{
 		[Test]
 		public void temp()

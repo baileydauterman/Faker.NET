@@ -1,4 +1,4 @@
-﻿namespace Faker.NET.Locales.RU.Names
+﻿namespace Faker.NET.Locales.RU.Data
 {
     internal class NameData
     {

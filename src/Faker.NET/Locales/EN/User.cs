@@ -1,7 +1,7 @@
 ﻿using Faker.NET.API;
 using Faker.NET.Common;
 
-namespace Faker.NET.EN.Account
+namespace Faker.NET.Locales.EN
 {
     public class User : IFakerUser
     {
@@ -9,7 +9,7 @@ namespace Faker.NET.EN.Account
 
         public Common.Objects.User GetUser()
         {
-            var name = new EN.Names.Name();
+            var name = new Name();
 
             var user = new Common.Objects.User()
             {

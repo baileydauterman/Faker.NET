@@ -1,7 +1,8 @@
 ﻿using Faker.NET.API;
+using Faker.NET.Common;
 using System.Net;
 
-namespace Faker.NET.EN.Computer
+namespace Faker.NET.Locales.EN
 {
     public class Computer : IFakerComputer
     {
@@ -9,6 +10,16 @@ namespace Faker.NET.EN.Computer
 
         public string IPv6Address => new IPAddress(Faker.Randomizer.NextBytes(16)).ToString();
 
+        public string Domain => _domains.GetRandom();
+
         private int ipv4Octet => Faker.Randomizer.Next(1, 256);
+
+        private string[] _domains =
+        {
+            ".com",
+            ".org",
+            ".net",
+            ".edu",
+        };
     }
 }
