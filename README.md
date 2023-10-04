@@ -14,7 +14,7 @@ Faker.NET makes it easy to create fake user data. A simple interface to allows u
 using Faker.NET;
 
 Faker.SetLocale("en");
-Faker.SetSeed(10000);
+Faker.SetSeed(10000); // allows for deterministic fake data creation
 
 var firstName = Faker.Name.First;
 var lastName = Faker.Name.Last;
