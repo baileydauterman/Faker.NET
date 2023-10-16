@@ -1,9 +1,15 @@
 ﻿using Objects = Faker.NET.Common.Objects;
 
-namespace Faker.NET.Tests.EN
+namespace Faker.NET.Tests.Locales
 {
+    [TestFixture("en")]
     public class Users
     {
+        public Users(string locale)
+        {
+            Faker.SetLocale(locale);
+        }
+
         [Test]
         public void GenerateUsers()
         {
@@ -14,7 +20,7 @@ namespace Faker.NET.Tests.EN
                 users.Add(Faker.User.New);
             }
 
-            Assert.That(users.Count, Is.EqualTo(4));
+            Assert.That(users, Has.Count.EqualTo(4));
         }
 
         [Test]

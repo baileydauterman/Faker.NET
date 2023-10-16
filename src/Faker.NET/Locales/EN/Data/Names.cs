@@ -1,8 +1,8 @@
 ﻿namespace Faker.NET.Locales.EN.Data
 {
-    public class NameData
+    public class Names
     {
-        public static string[] FirstNames = new string[]
+        public static string[] First = new string[]
         {
             "Aaron","Abagail","Abbey","Abbie","Abbigail","Abby","Abdiel","Abdul","Abdullah","Abe",
             "Abel","Abelardo","Abigail","Abigale","Abigayle","Abner","Abraham","Ada","Adah","Adalberto",
@@ -307,7 +307,7 @@
             "Zoila","Zola","Zora","Zula",
         };
 
-        public static string[] LastNames = new string[]
+        public static string[] Last = new string[]
         {
             "Abbott","Abernathy","Abshire","Adams","Altenwerth","Anderson","Ankunding","Armstrong","Auer","Aufderhar",
             "Bahringer","Bailey","Balistreri","Barrows","Bartell","Bartoletti","Barton","Bashirian","Batz","Bauch",

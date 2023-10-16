@@ -16,7 +16,7 @@ namespace Faker.NET.Tests.Locales.EN
 			using (var stream = File.OpenWrite(tempFile))
 			using (var binWriter = new BinaryWriter(stream))
 			{
-				foreach (var name in NameData.FirstNames)
+				foreach (var name in Names.First)
 				{
 					binWriter.Write(name);
 				}

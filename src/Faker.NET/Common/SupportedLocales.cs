@@ -1,13 +1,13 @@
-﻿using System;
-namespace Faker.NET.Common
+﻿namespace Faker.NET.Common
 {
-	public enum SupportedLocales
-	{
-		AR,
-		EN,
-		FR,
-		RU,
-		ZH
-	}
+    public enum SupportedLocales
+    {
+        AR,
+        EN,
+        FR,
+        RU,
+        ZH,
+        DE
+    }
 }
 

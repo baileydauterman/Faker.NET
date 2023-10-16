@@ -14,7 +14,7 @@ namespace Faker.NET.API.Services
                 instance = Faker.GetInstance(locale);
                 return true;
             }
-            catch (FakerInstanceNotImplementedException e)
+            catch
             {
                 instance = new NoOpFakerInstance();
                 return false;

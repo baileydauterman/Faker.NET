@@ -10,8 +10,8 @@
             Assert.That(Faker.Location.StateAbbreviation, Is.Not.Null);
             Assert.That(Faker.Location.Address, Is.Not.Null);
             Assert.That(Faker.Location.BuildingNumber, Is.Not.Null);
-            Assert.That(Faker.Location.ZipCode, Is.Not.Null);
-            Assert.That(Faker.Location.LongZipCode, Is.Not.Null);
+            Assert.That(Faker.Location.PostalCode, Is.Not.Null);
+            Assert.That(Faker.Location.PostalCodeAlternate, Is.Not.Null);
         }
     }
 }

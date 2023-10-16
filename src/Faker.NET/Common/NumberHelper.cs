@@ -18,5 +18,11 @@
 
             return new string(charArray);
         }
+
+        public static string GetFromRandomFormat(string[] formats, char delim = '#')
+        {
+            var format = formats.GetRandom();
+            return GetFromFormat(format, delim);
+        }
     }
 }

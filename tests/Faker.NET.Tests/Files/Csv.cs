@@ -54,7 +54,11 @@ namespace Faker.NET.Tests.Files
             {
                 while (!reader.EndOfStream)
                 {
-                    lines.Add(reader.ReadLine());
+                    var line = reader.ReadLine();
+                    if (line is not null)
+                    {
+                        lines.Add(line);
+                    }
                 }
             }
 
@@ -186,13 +190,13 @@ namespace Faker.NET.Tests.Files
         public class FakeClass
         {
             [CsvMap(DisplayName = "name", Property = typeof(IFakerName), Field = "First")]
-            public string Name { get; set; }
+            public string Name { get; set; } = string.Empty;
 
             [CsvMap(DisplayName = "last", Property = typeof(IFakerName), Field = "Last")]
-            public string Last { get; set; }
+            public string Last { get; set; } = string.Empty;
 
             [CsvMap(DisplayName = "ip_address", Property = typeof(IFakerComputer), Field = "IPv4Address")]
-            public string IPAddress { get; set; }
+            public string IPAddress { get; set; } = string.Empty;
         }
     }
 }

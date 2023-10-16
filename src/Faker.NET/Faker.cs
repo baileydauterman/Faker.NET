@@ -2,6 +2,7 @@
 using Faker.NET.Common;
 using Faker.NET.Locales;
 using Faker.NET.Locales.AR;
+using Faker.NET.Locales.DE;
 using Faker.NET.Locales.EN;
 using Faker.NET.Locales.FR;
 using Faker.NET.Locales.RU;
@@ -21,11 +22,12 @@ namespace Faker.NET
             {
                 SupportedFakerLocales.Arabic => new ARLocale(),
                 SupportedFakerLocales.English => new ENLocale(),
+                SupportedFakerLocales.German => new DELocale(),
                 SupportedFakerLocales.French => new FRLocale(),
                 SupportedFakerLocales.Russian => new RULocale(),
                 SupportedFakerLocales.Mandarin => new ZHLocale(),
                 _ => throw new FakerInstanceNotImplementedException(locale.ToString()),
-            };
+            }; ;
         }
 
         public static IFakerInstance GetInstance(string locale)
@@ -66,6 +68,7 @@ namespace Faker.NET
             return culture.TwoLetterISOLanguageName switch
             {
                 "ar" => SupportedFakerLocales.Arabic,
+                "de" => SupportedFakerLocales.German,
                 "en" => SupportedFakerLocales.English,
                 "fr" => SupportedFakerLocales.French,
                 "ru" => SupportedFakerLocales.Russian,
@@ -124,5 +127,6 @@ namespace Faker.NET
         French,
         Russian,
         Mandarin,
+        German,
     }
 }

@@ -1,6 +1,7 @@
 ﻿namespace Faker.NET.Tests.Locales
 {
     [TestFixture("ar")]
+    [TestFixture("de")]
     [TestFixture("en")]
     [TestFixture("fr")]
     [TestFixture("ru")]
