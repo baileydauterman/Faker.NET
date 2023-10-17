@@ -14,13 +14,14 @@ namespace Faker.NET.Locales.RU
             Name = new Name();
             Lorem = new Lorem(LoremIpsum.Words);
             PhoneNumber = new PhoneNumber();
+            Location = new Location();
         }
 
         public IFakerComputer Computer { get; }
 
         public IFakerName Name { get; }
 
-        public IFakerLocation Location => throw new FakerMemberNotImplementedException(SupportedFakerLocales.Russian, nameof(Location));
+        public IFakerLocation Location { get; }
 
         public IFakerLorem Lorem { get; }
 
@@ -29,5 +30,24 @@ namespace Faker.NET.Locales.RU
         public IFakerPhoneNumber PhoneNumber { get; }
 
         public CultureInfo Culture { get; } = CultureInfo.GetCultureInfo("ru");
+    }
+
+    internal class Location : IFakerLocation
+    {
+        public string Street => $"{Locations.StreetSuffix.GetRandom()} {Locations.Streets.GetRandom()}";
+
+        public string City => Locations.Cities.GetRandom();
+
+        public string State => Locations.States.GetRandom();
+
+        public string StateAbbreviation => Locations.StatesAbbreviated.GetRandom();
+
+        public string BuildingNumber => NumberHelper.GetFromRandomFormat(Locations.BuildingNumberFormats);
+
+        public string Address => $"{Street} {BuildingNumber}, {City}, {State}";
+
+        public string PostalCode => NumberHelper.Get(100000, 162817).ToString();
+
+        public string PostalCodeAlternate => PostalCode;
     }
 }

@@ -2,6 +2,7 @@
 {
     [TestFixture("en")]
     [TestFixture("de")]
+    [TestFixture("ru")]
     internal class Locations
     {
         public Locations(string locale)
