@@ -33,7 +33,7 @@ namespace Faker.NET.Tests.Files
 				.AddField<AnotherValue>(AnotherValue.SetTestValues)
 				.AddField<DoubleNested>(DoubleNested.SetTestValues);
 
-			var output = faker.CreateJsonString();
+			var output = faker.Generate();
 		}
 
 		public KeyValuePair<string, object> CreateNameNode(string nodeName, object value)

@@ -1,4 +1,5 @@
 ﻿using System.Text.Json;
+using Faker.NET.API;
 
 namespace Faker.NET.Files.Json
 {
@@ -48,7 +49,7 @@ namespace Faker.NET.Files.Json
             return this;
         }
 
-        public string CreateJsonString()
+        public string Generate()
 		{
             var nodes = new List<System.Text.Json.Nodes.JsonNode>();
 
