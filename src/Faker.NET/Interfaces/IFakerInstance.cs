@@ -1,7 +1,6 @@
-﻿using Faker.NET.Interfaces;
-using System.Globalization;
+﻿using System.Globalization;
 
-namespace Faker.NET.Locales
+namespace Faker.NET.Interfaces
 {
     /// <summary>
     /// Instance that contains all faker instances related to an <see cref="SupportedFakerLocales"/>

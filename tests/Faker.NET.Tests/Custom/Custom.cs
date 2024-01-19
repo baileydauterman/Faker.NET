@@ -1,6 +1,5 @@
 ﻿using Faker.NET.Common;
 using Faker.NET.Interfaces;
-using Faker.NET.Locales;
 using NUnit.Framework.Internal;
 using System.Globalization;
 

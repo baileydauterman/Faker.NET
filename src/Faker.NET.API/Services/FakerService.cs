@@ -1,4 +1,5 @@
 ﻿using Faker.NET.Common;
+using Faker.NET.Interfaces;
 using Faker.NET.Locales;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;

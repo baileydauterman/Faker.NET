@@ -1,6 +1,5 @@
-﻿using Faker.NET.Interfaces;
-using Faker.NET.Common;
-using Faker.NET.Locales;
+﻿using Faker.NET.Common;
+using Faker.NET.Interfaces;
 using Faker.NET.Locales.AR;
 using Faker.NET.Locales.DE;
 using Faker.NET.Locales.EN;
@@ -12,7 +11,7 @@ using System.Globalization;
 namespace Faker.NET
 {
     /// <summary>
-    /// Decorator to handle Locales and calls to base classes
+    /// Static entry point into creating fake data. Can be changed with any SetLocale method
     /// </summary>
     public class Faker
     {
@@ -63,6 +62,26 @@ namespace Faker.NET
             FakerInstance = faker;
         }
 
+        public static CultureInfo Culture => FakerInstance.Culture;
+
+        public static IFakerComputer Computer => FakerInstance.Computer;
+
+        public static IFakerName Name => FakerInstance.Name;
+
+        public static IFakerUser User => FakerInstance.User;
+
+        public static IFakerLorem Lorem => FakerInstance.Lorem;
+
+        public static IFakerLocation Location => FakerInstance.Location;
+
+        public static IFakerPhoneNumber Phone => FakerInstance.PhoneNumber;
+
+        public static IFakerCustom Custom { get; set; }
+
+        public static Randomizer Randomizer { get; private set; } = new Randomizer();
+
+        public static IFakerInstance FakerInstance { get; private set; } = new ENLocale();
+
         private static SupportedFakerLocales GetLocale(CultureInfo culture)
         {
             return culture.TwoLetterISOLanguageName switch
@@ -98,26 +117,6 @@ namespace Faker.NET
         {
             FakerInstance = locale;
         }
-
-        public static CultureInfo Culture => FakerInstance.Culture;
-
-        public static IFakerComputer Computer => FakerInstance.Computer;
-
-        public static IFakerName Name => FakerInstance.Name;
-
-        public static IFakerUser User => FakerInstance.User;
-
-        public static IFakerLorem Lorem => FakerInstance.Lorem;
-
-        public static IFakerLocation Location => FakerInstance.Location;
-
-        public static IFakerPhoneNumber Phone => FakerInstance.PhoneNumber;
-
-        public static IFakerCustom Custom { get; set; }
-
-        public static Randomizer Randomizer { get; private set; } = new Randomizer();
-
-        public static IFakerInstance FakerInstance { get; private set; } = new ENLocale();
     }
 
     public enum SupportedFakerLocales
