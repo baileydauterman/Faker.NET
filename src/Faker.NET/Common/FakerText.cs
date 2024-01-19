@@ -1,5 +1,5 @@
 ﻿using System.Globalization;
-using Faker.NET.API;
+using Faker.NET.Interfaces;
 
 namespace Faker.NET.Common
 {

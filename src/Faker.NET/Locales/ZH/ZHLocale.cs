@@ -1,4 +1,4 @@
-﻿using Faker.NET.API;
+﻿using Faker.NET.Interfaces;
 using Faker.NET.Common;
 using Faker.NET.Locales.EN;
 using System.Globalization;

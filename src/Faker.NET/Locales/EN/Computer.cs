@@ -1,5 +1,5 @@
-﻿using Faker.NET.API;
-using Faker.NET.Common;
+﻿using Faker.NET.Common;
+using Faker.NET.Interfaces;
 using System.Net;
 
 namespace Faker.NET.Locales.EN

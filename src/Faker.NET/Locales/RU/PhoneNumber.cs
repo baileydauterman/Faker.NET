@@ -1,4 +1,4 @@
-﻿using Faker.NET.API;
+﻿using Faker.NET.Interfaces;
 using Faker.NET.Common;
 
 namespace Faker.NET.Locales.RU

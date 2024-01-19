@@ -1,5 +1,5 @@
 ﻿using System.Text;
-using Faker.NET.API;
+using Faker.NET.Interfaces;
 
 namespace Faker.NET.Common
 {

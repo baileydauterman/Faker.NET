@@ -1,4 +1,4 @@
-﻿namespace Faker.NET.API
+﻿namespace Faker.NET.Interfaces
 {
     /// <summary>
     /// Interface for generating random name data

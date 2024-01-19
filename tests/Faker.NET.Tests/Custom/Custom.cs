@@ -1,5 +1,5 @@
-﻿using Faker.NET.API;
-using Faker.NET.Common;
+﻿using Faker.NET.Common;
+using Faker.NET.Interfaces;
 using Faker.NET.Locales;
 using NUnit.Framework.Internal;
 using System.Globalization;
@@ -26,9 +26,14 @@ namespace Faker.NET.Tests.Custom
 
     internal class CustomFaker : IFakerInstance
     {
+        public CustomFaker()
+        {
+            Name = new CustomName();
+        }
+
         public IFakerComputer Computer => throw new NotImplementedException();
 
-        public IFakerName Name { get; } = new CustomName();
+        public IFakerName Name { get; }
 
         public IFakerLocation Location => throw new NotImplementedException();
 
