@@ -1,5 +1,5 @@
-﻿using Faker.NET.Interfaces;
-using Faker.NET.Files.Csv;
+﻿using Faker.NET.Files.Csv;
+using Faker.NET.Interfaces;
 using Faker.NET.Locales.EN;
 
 namespace Faker.NET.Tests.Files
@@ -130,6 +130,17 @@ namespace Faker.NET.Tests.Files
             Assert.That(csvFaker.Count(), Is.EqualTo(101));
         }
 
+        [Test]
+        public void GenerateTypeByInstanceCsv()
+        {
+            var classInstance = new NoAttrInteropClass();
+            var csvFaker = new CsvFaker()
+                .Iterations(100)
+                .Generate(classInstance);
+
+            Assert.That(csvFaker.Count(), Is.EqualTo(101));
+        }
+
         private int CreateFileGetLineCount(string tempPath, uint rowCount = 10)
         {
             using var stream = File.OpenWrite(tempPath);
@@ -187,7 +198,7 @@ namespace Faker.NET.Tests.Files
                 .AddColumn("small_variable_message", () => Faker.Lorem.GetText(5, 10));
         }
 
-        public class FakeClass
+        public class FakeClass : IMyClass
         {
             [CsvMap(DisplayName = "name", Property = typeof(IFakerName), Field = "First")]
             public string Name { get; set; } = string.Empty;
@@ -197,6 +208,22 @@ namespace Faker.NET.Tests.Files
 
             [CsvMap(DisplayName = "ip_address", Property = typeof(IFakerComputer), Field = "IPv4Address")]
             public string IPAddress { get; set; } = string.Empty;
+        }
+
+        public class NoAttrInteropClass : IMyClass
+        {
+            public string Name { get => Faker.Name.First; set => throw new NotImplementedException(); }
+            public string Last { get => Faker.Name.Last; set => throw new NotImplementedException(); }
+            public string IPAddress { get => Faker.Computer.IPv4Address; set => throw new NotImplementedException(); }
+        }
+
+        public interface IMyClass
+        {
+            string Name { get; set; }
+
+            string Last { get; set; }
+
+            string IPAddress { get; set; }
         }
     }
 }

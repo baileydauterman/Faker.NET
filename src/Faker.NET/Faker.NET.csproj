@@ -1,24 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
+  <Import Project="../../version.props" />
+	
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
-    <ReleaseVersion>1.0.2</ReleaseVersion>
+	<PackageOutputPath>./nupkg</PackageOutputPath>
   </PropertyGroup>
-
-  <ItemGroup>
-    <None Remove="API\" />
-    <None Remove="Abstractions\" />
-    <None Remove="Locales\AR\Lorem\" />
-    <None Remove="Locales\FR\Names\" />
-    <None Remove="Files\" />
-    <None Remove="Files\Csv\" />
-    <None Remove="Files\Json\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Files\Json\" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="SQLite" Version="3.13.0" />
-  </ItemGroup>
 </Project>

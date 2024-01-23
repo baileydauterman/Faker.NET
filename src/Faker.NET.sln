@@ -3,11 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Faker.NET", "Faker.NET\Faker.NET.csproj", "{B44FC720-3154-4D85-B521-DAFB790A9F3C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Faker.NET", "Faker.NET\Faker.NET.csproj", "{B44FC720-3154-4D85-B521-DAFB790A9F3C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Faker.NET.Tests", "..\tests\Faker.NET.Tests\Faker.NET.Tests.csproj", "{6610D48C-3781-4AFC-892A-D09B6C5CA5BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Faker.NET.Tests", "..\tests\Faker.NET.Tests\Faker.NET.Tests.csproj", "{6610D48C-3781-4AFC-892A-D09B6C5CA5BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Faker.NET.API", "Faker.NET.API\Faker.NET.API.csproj", "{0B6B8476-74EE-43CC-A85D-78EA86753366}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7973E037-BB58-4E71-AC2F-F4693508961C}"
+	ProjectSection(SolutionItems) = preProject
+		version.props = version.props
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +26,6 @@ Global
 		{6610D48C-3781-4AFC-892A-D09B6C5CA5BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6610D48C-3781-4AFC-892A-D09B6C5CA5BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6610D48C-3781-4AFC-892A-D09B6C5CA5BC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0B6B8476-74EE-43CC-A85D-78EA86753366}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0B6B8476-74EE-43CC-A85D-78EA86753366}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0B6B8476-74EE-43CC-A85D-78EA86753366}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0B6B8476-74EE-43CC-A85D-78EA86753366}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

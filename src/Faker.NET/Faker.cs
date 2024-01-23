@@ -17,11 +17,6 @@ namespace Faker.NET
             return FakerLocaleFactory.Create(fakerLocale);
         }
 
-        public static IFakerInstance GetInstance(CultureInfo culture)
-        {
-            return GetInstance(culture);
-        }
-
         public static void SetLocale(CultureInfo cultureInfo)
             => UpdateCultureAndFakerInstance(cultureInfo);
 
@@ -30,11 +25,6 @@ namespace Faker.NET
 
         public static void SetLocale(SupportedFakerLocales locale)
             => UpdateCultureAndFakerInstance(CultureInfo.GetCultureInfo(locale.ToString()));
-
-        public static void SetLocale(IFakerInstance instance)
-        {
-            FakerInstance = instance;
-        }
 
         public static void SetInstance(SupportedFakerLocales locale)
         {
