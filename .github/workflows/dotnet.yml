@@ -33,5 +33,5 @@ jobs:
       uses: actions/download-artifact@v4
       with:
         path: ./src/Faker.NET/nupkg
-        pattern: *.nupkg
+        pattern: "*.nupkg"
     - run: ls -R
