@@ -30,10 +30,15 @@ jobs:
       run: dotnet pack -c Release
       working-directory: ./
 
-    # Create Nuget Package as an artifact with the name of the package
+    # Create Nuget Package and DLL as an artifact
     - run: echo "NupkgName=$(ls ./src/Faker.NET/nupkg/ | head -n 1)" >> $GITHUB_ENV
     - name: Create Nupkg Artifact
       uses: actions/upload-artifact@v4
       with:
         name: ${{ env.NupkgName }}
         path: ./src/Faker.NET/nupkg
+    - name: Create DLL Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: Faker.NET.dll
+        path: ./src/Faker.NET/bin/Release/net6.0
