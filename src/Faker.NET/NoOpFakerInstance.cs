@@ -1,7 +1,7 @@
 ﻿using Faker.NET.Interfaces;
 using System.Globalization;
 
-namespace Faker.NET.Locales
+namespace Faker.NET
 {
     public class NoOpFakerInstance : IFakerInstance
     {

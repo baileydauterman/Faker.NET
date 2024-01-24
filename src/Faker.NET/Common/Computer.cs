@@ -1,10 +1,9 @@
-﻿using Faker.NET.Common;
-using Faker.NET.Interfaces;
+﻿using Faker.NET.Interfaces;
 using System.Net;
 
-namespace Faker.NET.Locales.EN
+namespace Faker.NET.Common
 {
-    public class Computer : IFakerComputer
+    internal class Computer : IFakerComputer
     {
         public string IPv4Address => $"{ipv4Octet}.{ipv4Octet}.{ipv4Octet}.{ipv4Octet}";
 

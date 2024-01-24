@@ -6,7 +6,7 @@ using System.Globalization;
 
 namespace Faker.NET.Locales.RU
 {
-    public class RULocale : IFakerInstance
+    internal class RULocale : IFakerInstance
     {
         public RULocale()
         {

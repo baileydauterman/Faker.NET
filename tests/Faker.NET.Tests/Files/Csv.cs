@@ -1,6 +1,5 @@
 ﻿using Faker.NET.Files.Csv;
 using Faker.NET.Interfaces;
-using Faker.NET.Locales.EN;
 
 namespace Faker.NET.Tests.Files
 {
@@ -169,8 +168,8 @@ namespace Faker.NET.Tests.Files
         {
             return new CsvFaker()
                 .AddColumn("name", () => Faker.Name.First)
-                .AddColumn("date", () => Date.FullDateTime)
-                .AddColumn("update_date", () => Date.NowFormatted("dddd, dd MMMM yyyy HH:mm:ss"))
+                .AddColumn("date", () => Faker.Date.FullDateTime)
+                .AddColumn("update_date", () => Faker.Date.NowFormatted("dddd, dd MMMM yyyy HH:mm:ss"))
                 .AddColumn("text", () => Faker.Lorem.GetText(35))
                 .AddColumn("ip", () => Faker.Computer.IPv4Address)
                 .AddColumn("small_variable_message", () => Faker.Lorem.GetText(5, 10));
@@ -180,8 +179,8 @@ namespace Faker.NET.Tests.Files
         {
             return new CsvFaker(tempPath)
                 .AddColumn("name", () => Faker.Name.First)
-                .AddColumn("date", () => Date.FullDateTime)
-                .AddColumn("update_date", () => Date.NowFormatted("dddd, dd MMMM yyyy HH:mm:ss"))
+                .AddColumn("date", () => Faker.Date.FullDateTime)
+                .AddColumn("update_date", () => Faker.Date.NowFormatted("dddd, dd MMMM yyyy HH:mm:ss"))
                 .AddColumn("text", () => Faker.Lorem.GetText(35))
                 .AddColumn("ip", () => Faker.Computer.IPv4Address)
                 .AddColumn("small_variable_message", () => Faker.Lorem.GetText(5, 10));
@@ -191,8 +190,8 @@ namespace Faker.NET.Tests.Files
         {
             return new CsvFaker(stream)
                 .AddColumn("name", () => Faker.Name.First)
-                .AddColumn("date", () => Date.FullDateTime)
-                .AddColumn("update_date", () => Date.NowFormatted("dddd, dd MMMM yyyy HH:mm:ss"))
+                .AddColumn("date", () => Faker.Date.FullDateTime)
+                .AddColumn("update_date", () => Faker.Date.NowFormatted("dddd, dd MMMM yyyy HH:mm:ss"))
                 .AddColumn("text", () => Faker.Lorem.GetText(35))
                 .AddColumn("ip", () => Faker.Computer.IPv4Address)
                 .AddColumn("small_variable_message", () => Faker.Lorem.GetText(5, 10));

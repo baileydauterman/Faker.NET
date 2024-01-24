@@ -8,7 +8,7 @@ using Faker.NET.Locales.RU;
 using Faker.NET.Locales.ZH;
 using System.Globalization;
 
-namespace Faker.NET.Locales
+namespace Faker.NET
 {
     public static class FakerLocaleFactory
     {

@@ -86,7 +86,7 @@ namespace Faker.NET.Locales.EN
         public string Street => LocationData.StreetNames.GetRandom();
     }
 
-    public class User : IFakerUser
+    internal class User : IFakerUser
     {
         public Common.Objects.User New => GetUser();
 

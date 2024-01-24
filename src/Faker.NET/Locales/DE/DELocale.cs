@@ -6,7 +6,7 @@ using System.Globalization;
 
 namespace Faker.NET.Locales.DE
 {
-    public class DELocale : IFakerInstance
+    internal class DELocale : IFakerInstance
     {
         public DELocale()
         {
@@ -32,13 +32,13 @@ namespace Faker.NET.Locales.DE
         public CultureInfo Culture { get; } = CultureInfo.GetCultureInfo("de");
     }
 
-    public class Name : IFakerName
+    internal class Name : IFakerName
     {
-        public string First => Data.Names.FirstName.GetRandom();
+        public string First => Names.FirstName.GetRandom();
 
-        public string Last => Data.Names.LastName.GetRandom();
+        public string Last => Names.LastName.GetRandom();
 
-        public string Prefix => Data.Names.Prefix.GetRandom();
+        public string Prefix => Names.Prefix.GetRandom();
 
         public string Full => $"{First} {Last}";
 
@@ -49,7 +49,7 @@ namespace Faker.NET.Locales.DE
         public string Email => throw new NotImplementedException();
     }
 
-    public class Location : IFakerLocation
+    internal class Location : IFakerLocation
     {
         public string City => Locations.Cities.GetRandom();
 

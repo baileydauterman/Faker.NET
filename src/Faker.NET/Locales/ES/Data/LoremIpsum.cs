@@ -1,6 +1,6 @@
 ﻿namespace Faker.NET.Locales.ES.Data
 {
-    public class LoremIpsum
+    internal class LoremIpsum
     {
         public static readonly string[] Words = new string[]
         {

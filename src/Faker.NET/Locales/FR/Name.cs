@@ -1,10 +1,10 @@
-﻿using Faker.NET.Interfaces;
-using Faker.NET.Common;
+﻿using Faker.NET.Common;
+using Faker.NET.Interfaces;
 using Faker.NET.Locales.FR.Data;
 
 namespace Faker.NET.Locales.FR
 {
-    public class Name : IFakerName
+    internal class Name : IFakerName
     {
         public string First => NameData.FirstNames.GetRandom();
         public string Last => NameData.LastNames.GetRandom();

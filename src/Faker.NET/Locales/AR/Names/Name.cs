@@ -3,7 +3,7 @@ using Faker.NET.Interfaces;
 
 namespace Faker.NET.Locales.AR.Names
 {
-    public class Name : IFakerName
+    internal class Name : IFakerName
     {
         public string First => NameData.FirstNames.GetRandom();
 
