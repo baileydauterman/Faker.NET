@@ -30,8 +30,7 @@ jobs:
       run: dotnet pack -c Release
       working-directory: ./
     - name: Download Nupkg Artifact
-      uses: actions/download-artifact@v4
+      uses: actions/upload-artifact@v4
       with:
         path: ./src/Faker.NET/nupkg
-        pattern: Faker.NET.*.nupkg
     - run: ls -R
