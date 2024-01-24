@@ -1,6 +1,5 @@
 ﻿using Faker.NET.Common;
 using Faker.NET.Interfaces;
-using Faker.NET.Locales.EN;
 using Faker.NET.Locales.RU.Data;
 using System.Globalization;
 
@@ -25,7 +24,7 @@ namespace Faker.NET.Locales.RU
 
         public IFakerLorem Lorem { get; }
 
-        public IFakerUser User => throw new FakerMemberNotImplementedException(SupportedFakerLocales.Russian, nameof(User));
+        public IFakerUser User => throw new FakerMemberNotImplementedException(FakerLocale.Russian, nameof(User));
 
         public IFakerPhoneNumber PhoneNumber { get; }
 

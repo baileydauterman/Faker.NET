@@ -10,22 +10,7 @@ namespace Faker.NET
     /// </summary>
     public class Faker
     {
-        public static IFakerInstance GetInstance(string locale)
-        {
-            var fakerLocale = GetLocale(locale);
-            return FakerLocaleFactory.Create(fakerLocale);
-        }
-
-        public static void SetLocale(CultureInfo cultureInfo)
-            => UpdateCultureAndFakerInstance(cultureInfo);
-
-        public static void SetLocale(string locale)
-            => UpdateCultureAndFakerInstance(CultureInfo.GetCultureInfo(locale));
-
-        public static void SetLocale(SupportedFakerLocales locale)
-            => UpdateCultureAndFakerInstance(CultureInfo.GetCultureInfo(locale.ToString()));
-
-        public static void SetInstance(SupportedFakerLocales locale)
+        public static void SetInstance(FakerLocale locale)
         {
             FakerInstance = FakerLocaleFactory.Create(locale);
         }
@@ -56,21 +41,9 @@ namespace Faker.NET
         public static Randomizer Randomizer { get; private set; } = new Randomizer();
 
         public static IFakerInstance FakerInstance { get; private set; } = new ENLocale();
-
-        private static SupportedFakerLocales GetLocale(string locale)
-        {
-            var cultureInfo = CultureInfo.GetCultureInfo(locale);
-            return FakerLocaleFactory.GetLocale(cultureInfo);
-        }
-
-        private static void UpdateCultureAndFakerInstance(CultureInfo culture)
-        {
-            var locale = FakerLocaleFactory.GetLocale(culture);
-            FakerInstance = FakerLocaleFactory.Create(locale);
-        }
     }
 
-    public enum SupportedFakerLocales
+    public enum FakerLocale
     {
         English,
         Arabic,

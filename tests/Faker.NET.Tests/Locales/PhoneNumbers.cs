@@ -1,12 +1,13 @@
 ﻿namespace Faker.NET.Tests.Locales
 {
-    [TestFixture("en")]
-    [TestFixture("de")]
+    [TestFixture(FakerLocale.English)]
+    [TestFixture(FakerLocale.German)]
+    [TestFixture(FakerLocale.Russian)]
     internal class PhoneNumbers
     {
-        public PhoneNumbers(string locale)
+        public PhoneNumbers(FakerLocale locale)
         {
-            Faker.SetLocale(locale);
+            Faker.SetInstance(locale);
         }
 
         [Test]

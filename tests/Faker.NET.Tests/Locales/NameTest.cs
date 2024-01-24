@@ -1,16 +1,16 @@
 ﻿namespace Faker.NET.Tests.Locales
 {
-    [TestFixture("ar")]
-    [TestFixture("de")]
-    [TestFixture("en")]
-    [TestFixture("fr")]
-    [TestFixture("ru")]
-    [TestFixture("zh")]
+    [TestFixture(FakerLocale.Arabic)]
+    [TestFixture(FakerLocale.English)]
+    [TestFixture(FakerLocale.French)]
+    [TestFixture(FakerLocale.German)]
+    [TestFixture(FakerLocale.Russian)]
+    [TestFixture(FakerLocale.Mandarin)]
     internal class NameTest
     {
-        public NameTest(string locale)
+        public NameTest(FakerLocale locale)
         {
-            Faker.SetLocale(locale);
+            Faker.SetInstance(locale);
         }
 
         [Test]

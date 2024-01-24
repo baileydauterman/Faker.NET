@@ -1,13 +1,13 @@
 ﻿namespace Faker.NET.Tests.Locales
 {
-    [TestFixture("en")]
-    [TestFixture("ru")]
-    [TestFixture("de")]
+    [TestFixture(FakerLocale.English)]
+    [TestFixture(FakerLocale.German)]
+    [TestFixture(FakerLocale.Russian)]
     public class LoremTests
     {
-        public LoremTests(string locale)
+        public LoremTests(FakerLocale locale)
         {
-            Faker.SetLocale(locale);
+            Faker.SetInstance(locale);
         }
 
         [TestCase(5)]

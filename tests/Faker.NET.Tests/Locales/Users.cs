@@ -2,12 +2,12 @@
 
 namespace Faker.NET.Tests.Locales
 {
-    [TestFixture("en")]
+    [TestFixture(FakerLocale.English)]
     public class Users
     {
-        public Users(string locale)
+        public Users(FakerLocale locale)
         {
-            Faker.SetLocale(locale);
+            Faker.SetInstance(locale);
         }
 
         [Test]

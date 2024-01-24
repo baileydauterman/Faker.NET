@@ -7,7 +7,7 @@ namespace Faker.NET.Tests.EN
         [SetUp]
         public void Setup()
         {
-            Faker.SetLocale("en");
+            Faker.SetInstance(FakerLocale.English);
         }
 
         [Test]

@@ -12,30 +12,30 @@ namespace Faker.NET
 {
     public static class FakerLocaleFactory
     {
-        public static IFakerInstance Create(SupportedFakerLocales locale)
+        public static IFakerInstance Create(FakerLocale locale)
         {
             return locale switch
             {
-                SupportedFakerLocales.Arabic => new ARLocale(),
-                SupportedFakerLocales.English => new ENLocale(),
-                SupportedFakerLocales.German => new DELocale(),
-                SupportedFakerLocales.French => new FRLocale(),
-                SupportedFakerLocales.Russian => new RULocale(),
-                SupportedFakerLocales.Mandarin => new ZHLocale(),
+                FakerLocale.Arabic => new ARLocale(),
+                FakerLocale.English => new ENLocale(),
+                FakerLocale.German => new DELocale(),
+                FakerLocale.French => new FRLocale(),
+                FakerLocale.Russian => new RULocale(),
+                FakerLocale.Mandarin => new ZHLocale(),
                 _ => throw new FakerInstanceNotImplementedException(locale.ToString()),
             };
         }
 
-        public static SupportedFakerLocales GetLocale(CultureInfo culture)
+        public static FakerLocale GetLocale(CultureInfo culture)
         {
             return culture.TwoLetterISOLanguageName switch
             {
-                "ar" => SupportedFakerLocales.Arabic,
-                "de" => SupportedFakerLocales.German,
-                "en" => SupportedFakerLocales.English,
-                "fr" => SupportedFakerLocales.French,
-                "ru" => SupportedFakerLocales.Russian,
-                "zh" => SupportedFakerLocales.Mandarin,
+                "ar" => FakerLocale.Arabic,
+                "de" => FakerLocale.German,
+                "en" => FakerLocale.English,
+                "fr" => FakerLocale.French,
+                "ru" => FakerLocale.Russian,
+                "zh" => FakerLocale.Mandarin,
                 _ => throw new FakerInstanceNotImplementedException(culture.TwoLetterISOLanguageName),
             };
         }

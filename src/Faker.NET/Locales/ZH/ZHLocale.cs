@@ -1,6 +1,5 @@
-﻿using Faker.NET.Interfaces;
-using Faker.NET.Common;
-using Faker.NET.Locales.EN;
+﻿using Faker.NET.Common;
+using Faker.NET.Interfaces;
 using System.Globalization;
 
 namespace Faker.NET.Locales.ZH
@@ -17,13 +16,13 @@ namespace Faker.NET.Locales.ZH
 
         public IFakerName Name { get; }
 
-        public IFakerLocation Location => throw new FakerMemberNotImplementedException(SupportedFakerLocales.Mandarin, nameof(Location));
+        public IFakerLocation Location => throw new FakerMemberNotImplementedException(FakerLocale.Mandarin, nameof(Location));
 
-        public IFakerLorem Lorem => throw new FakerMemberNotImplementedException(SupportedFakerLocales.Mandarin, nameof(Lorem));
+        public IFakerLorem Lorem => throw new FakerMemberNotImplementedException(FakerLocale.Mandarin, nameof(Lorem));
 
-        public IFakerUser User => throw new FakerMemberNotImplementedException(SupportedFakerLocales.Mandarin, nameof(User));
+        public IFakerUser User => throw new FakerMemberNotImplementedException(FakerLocale.Mandarin, nameof(User));
 
-        public IFakerPhoneNumber PhoneNumber => throw new FakerMemberNotImplementedException(SupportedFakerLocales.Mandarin, nameof(PhoneNumber));
+        public IFakerPhoneNumber PhoneNumber => throw new FakerMemberNotImplementedException(FakerLocale.Mandarin, nameof(PhoneNumber));
 
         public CultureInfo Culture { get; } = CultureInfo.GetCultureInfo("zh");
     }
