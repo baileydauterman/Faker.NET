@@ -29,10 +29,10 @@ jobs:
     - name: Pack
       run: dotnet pack -c Release
       working-directory: ./
-    - run: NupkgName=$(ls ./src/Faker.NET/nupkg/ | head -n 1) 
+    - run: echo "NupkgName=$(ls ./src/Faker.NET/nupkg/ | head -n 1)" >> $GITHUB_ENV
     - name: Create Nupkg Artifact
       uses: actions/upload-artifact@v4
       with:
-        name: echo $NupkgName
+        name: ${{ env.NupkgName }}
         path: ./src/Faker.NET/nupkg
     - run: ls -R
