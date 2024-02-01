@@ -58,7 +58,6 @@
         /// <returns></returns>
         public CsvFaker AddColumn(string columnName, Func<string> func)
         {
-
             _headers.Add(columnName, func);
             return this;
         }
