@@ -2,6 +2,10 @@
 {
     public interface IFakerPhoneNumber
     {
-        string Number { get; }
+        public string Number { get; }
+
+        public string NumberWithCountryCode { get; }
+
+        public int CountryCode { get; }
     }
 }

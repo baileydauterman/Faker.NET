@@ -41,12 +41,38 @@ namespace Faker.NET.Locales.RU
 
         public string StateAbbreviation => Locations.StatesAbbreviated.GetRandom();
 
-        public string BuildingNumber => NumberHelper.GetFromRandomFormat(Locations.BuildingNumberFormats);
+        public string BuildingNumber => Locations.BuildingNumberFormats.ToRandomFormat();
 
         public string Address => $"{Street} {BuildingNumber}, {City}, {State}";
 
-        public string PostalCode => NumberHelper.Get(100000, 162817).ToString();
+        public string PostalCode => Faker.Randomizer.Next(100000, 162817).ToString();
 
         public string PostalCodeAlternate => PostalCode;
+    }
+
+    internal class PhoneNumber : IFakerPhoneNumber
+    {
+        public string Number => $"{PhoneNumbers.AreaCodes.GetRandom()} {PhoneNumbers.Formats.ToRandomFormat()}";
+
+        public string NumberWithCountryCode => $"+{CountryCode} {Number}";
+
+        public int CountryCode => 8;
+    }
+
+    internal class Name : IFakerName
+    {
+        public string First => NameData.FirstNames.GetRandom();
+
+        public string Last => NameData.LastNames.GetRandom();
+
+        public string Full => $"{First} {Last}";
+
+        public string Suffix => throw new NotImplementedException();
+
+        public string Prefix => throw new NotImplementedException();
+
+        public string Job => $"{NameData.TitleLevel.GetRandom()} {NameData.TitleDescriptor.GetRandom()} {NameData.TitleJob.GetRandom()}";
+
+        public string Email => EmailHelper.Generate(First, Last);
     }
 }

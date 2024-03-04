@@ -51,7 +51,12 @@ namespace Faker.NET.Locales.EN
 
     internal class PhoneNumber : IFakerPhoneNumber
     {
-        public string Number => NumberHelper.GetFromRandomFormat(PhoneNumbers.Formats);
+        public string Number => $"{PhoneNumbers.AreaCodes.GetRandom()}{PhoneNumbers.Formats.ToRandomFormat()}";
+
+        public string NumberWithCountryCode => $"+{CountryCode} {Number}";
+
+        public int CountryCode { get; } = 1;
+
     }
 
     internal class Commerce : IFakerCommerce
@@ -75,15 +80,18 @@ namespace Faker.NET.Locales.EN
 
         public string StateAbbreviation => LocationData.StatesAbbreviation.GetRandom();
 
-        public string BuildingNumber => NumberHelper.Get(1, 1000).ToString();
+        public string BuildingNumber => Faker.Randomizer.Next(1, 1000).ToString();
 
         public string Address => $"{BuildingNumber} {Street} {City}, {StateAbbreviation} {PostalCode}";
 
-        public string PostalCode => NumberHelper.GetFromFormat("#####");
+        public string PostalCode => _postalCodeFormat.ToRandomString();
 
-        public string PostalCodeAlternate => NumberHelper.GetFromFormat("#####-####");
+        public string PostalCodeAlternate => _postalCodeAltFormat.ToRandomString();
 
         public string Street => LocationData.StreetNames.GetRandom();
+
+        public const string _postalCodeFormat = "#####";
+        public const string _postalCodeAltFormat = "#####-####";
     }
 
     internal class User : IFakerUser

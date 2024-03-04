@@ -11,9 +11,10 @@
         }
 
         [Test]
-        public void GeneratePhoneNUmber()
+        public void GeneratePhoneNumber()
         {
             Assert.IsNotNull(Faker.Phone.Number);
+            Assert.IsNotNull(Faker.Phone.NumberWithCountryCode);
         }
     }
 }

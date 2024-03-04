@@ -1,7 +1,6 @@
 ﻿using Faker.NET.Common;
 using Faker.NET.Interfaces;
 using Faker.NET.Locales.DE.Data;
-using Faker.NET.Locales.EN;
 using System.Globalization;
 
 namespace Faker.NET.Locales.DE
@@ -57,22 +56,26 @@ namespace Faker.NET.Locales.DE
 
         public string StateAbbreviation => Locations.StatesAbbreviated.GetRandom();
 
-        public string BuildingNumber => NumberHelper.GetFromRandomFormat(Locations.BuildingNumberFormat);
+        public string BuildingNumber => Locations.BuildingNumberFormat.ToRandomFormat();
 
         public string Address => $"{Street} {BuildingNumber}, {PostalCode} {City}";
 
-        public string PostalCode => NumberHelper.GetFromFormat("#####");
+        public string PostalCode => _postalCodeFormat.ToRandomString();
 
-        public string PostalCodeAlternate => NumberHelper.GetFromFormat("#####");
+        public string PostalCodeAlternate => _postalCodeFormat.ToRandomString();
 
         public string Street => Locations.StreetNames.GetRandom();
+
+        private static readonly string _postalCodeFormat = "#####";
     }
 
     internal class PhoneNumber : IFakerPhoneNumber
     {
-        public string Number => NumberHelper.GetFromFormat("+49-1##-#######");
+        public string Number => $"1{PhoneNumbers.Formats.ToRandomFormat()}";
 
-        public string AlternateNumberFormat => NumberHelper.GetFromFormat("+49-1###-########");
+        public string NumberWithCountryCode => $"+{CountryCode}-1{Number}";
+
+        public int CountryCode { get; } = 49;
     }
 }
 
