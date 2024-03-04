@@ -6,6 +6,8 @@
 
         string IPv6Address { get; }
 
+        string UserAgent { get; }
+
         string Domain { get; }
     }
 }

@@ -2,27 +2,48 @@
 {
     public class Randomizer
     {
+        /// <summary>
+        /// Get random next value
+        /// </summary>
+        /// <param name="max">Max of value returned</param>
+        /// <returns>Random int</returns>
         public int Next(int max)
         {
             return _random.Next(max);
         }
 
+        /// <summary>
+        /// Get random next value
+        /// </summary>
+        /// <param name="min">Min of value returned</param>
+        /// <param name="max">Max of value returned</param>
+        /// <returns>Random int</returns>
         public int Next(int min, int max)
         {
             return _random.Next(min, max);
         }
 
-        public byte[] NextBytes(int count)
+        /// <summary>
+        /// Creates a random byte array of given length
+        /// </summary>
+        /// <param name="length">Length of return value</param>
+        /// <returns>Random byte array</returns>
+        public byte[] NextBytes(int length)
         {
-            var bytes = new byte[count];
+            var bytes = new byte[length];
             _random.NextBytes(bytes);
             return bytes;
         }
 
-        public byte[] NextBytes(byte[] bytes)
+        /// <summary>
+        /// Fills the given byte array with random values
+        /// </summary>
+        /// <param name="buffer">Given byte array</param>
+        /// <returns>Filled byte array</returns>
+        public byte[] NextBytes(byte[] buffer)
         {
-            _random.NextBytes(bytes);
-            return bytes;
+            _random.NextBytes(buffer);
+            return buffer;
         }
 
         public void SetSeed(int seed)
