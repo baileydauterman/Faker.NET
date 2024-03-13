@@ -73,6 +73,6 @@ namespace Faker.NET.Locales.RU
 
         public string Job => $"{NameData.TitleLevel.GetRandom()} {NameData.TitleDescriptor.GetRandom()} {NameData.TitleJob.GetRandom()}";
 
-        public string Email => EmailHelper.Generate(First, Last);
+        public string Email => InternetHelper.GenerateEmail(First, Last);
     }
 }

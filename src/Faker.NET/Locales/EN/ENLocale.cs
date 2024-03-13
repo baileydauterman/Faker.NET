@@ -46,7 +46,7 @@ namespace Faker.NET.Locales.EN
 
         public string Job => $"{Names.TitleLevel.GetRandom()} {Names.TitleDescriptor.GetRandom()} {Names.TitleJob.GetRandom()}";
 
-        public string Email => EmailHelper.Generate(First, Last);
+        public string Email => InternetHelper.GenerateEmail(First, Last);
     }
 
     internal class PhoneNumber : IFakerPhoneNumber
@@ -108,7 +108,8 @@ namespace Faker.NET.Locales.EN
                 Prefix = Faker.Name.Prefix,
             };
 
-            user.Email = EmailHelper.Generate(user.FirstName, user.LastName);
+            user.Username = InternetHelper.GenerateUsername(user.FirstName, user.LastName);
+            user.Email = InternetHelper.GenerateEmail(user.Username);
 
             return user;
         }

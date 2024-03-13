@@ -2,6 +2,11 @@
 {
     public class Randomizer
     {
+        public Coin FlipCoin()
+        {
+            return Next(1, 10) > 5 ? Coin.Heads : Coin.Tails;
+        }
+
         /// <summary>
         /// Get random next value
         /// </summary>
@@ -66,6 +71,11 @@
             return array[Faker.Randomizer.Next(array.Length)];
         }
 
+        public static string GetRandom(this IList<string> array)
+        {
+            return array[Faker.Randomizer.Next(array.Count)];
+        }
+
         public static string CreateRandomString(this string[] array, int words)
         {
             var wordArray = new string[words];
@@ -83,5 +93,11 @@
             var value = Faker.Randomizer.Next(min, max);
             return array.CreateRandomString(value);
         }
+    }
+
+    public enum Coin
+    {
+        Heads,
+        Tails,
     }
 }
