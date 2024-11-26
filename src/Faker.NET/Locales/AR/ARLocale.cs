@@ -1,4 +1,4 @@
-﻿using Faker.NET.Common;
+﻿using Faker.NET.Extensions;
 using Faker.NET.Common.Exceptions;
 using Faker.NET.Interfaces;
 using Faker.NET.Locales.AR.Data;

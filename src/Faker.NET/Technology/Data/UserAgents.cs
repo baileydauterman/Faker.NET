@@ -1,4 +1,4 @@
-using Faker.NET.Common;
+using Faker.NET.Extensions;
 
 namespace Faker.NET.Technology.Data;
 

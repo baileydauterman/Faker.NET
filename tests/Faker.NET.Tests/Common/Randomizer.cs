@@ -5,7 +5,7 @@
         [Test]
         public void SeedSetter()
         {
-            Faker.Randomizer.SetSeed(192876453);
+            Faker.SetRandomizerSeed(192876453);
 
             Assert.Multiple(() =>
             {

@@ -1,4 +1,5 @@
-﻿using Faker.NET.Interfaces;
+﻿using Faker.NET.Extensions;
+using Faker.NET.Interfaces;
 
 namespace Faker.NET.Common
 {

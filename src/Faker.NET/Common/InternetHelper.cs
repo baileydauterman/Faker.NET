@@ -1,4 +1,6 @@
-﻿namespace Faker.NET.Common
+﻿using Faker.NET.Extensions;
+
+namespace Faker.NET.Common
 {
     internal class InternetHelper
     {

@@ -1,5 +1,5 @@
-﻿using Faker.NET.Common;
-using Faker.NET.Common.Exceptions;
+﻿using Faker.NET.Common.Exceptions;
+using Faker.NET.Extensions;
 using Faker.NET.Interfaces;
 using Faker.NET.Locales.ZH.Data;
 using System.Globalization;

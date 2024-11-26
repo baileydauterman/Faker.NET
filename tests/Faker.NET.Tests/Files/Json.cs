@@ -8,20 +8,20 @@ namespace Faker.NET.Tests.Files
         [Test]
         public void SingleObject()
         {
-            Faker.Randomizer.SetSeed(1000);
+            Faker.SetRandomizerSeed(1000);
             var fakedData = JsonFaker.FromObject(SomeValue.SetTestValues).Trim();
             Assert.That(fakedData, Is.EqualTo(_singleFaked));
 
-            Faker.Randomizer.Reset();
+            Faker.ResetRandomizer();
         }
 
         [Test]
         public void SingleNestedObject()
         {
-            Faker.Randomizer.SetSeed(1000);
+            Faker.SetRandomizerSeed(1000);
             var fakedData = JsonFaker.FromObject(AnotherValue.AsValue, jsonSerializerOptions);
             Assert.That(fakedData, Is.EqualTo(_singleNestedFaked));
-            Faker.Randomizer.Reset();
+            Faker.ResetRandomizer();
         }
 
         [Test]

@@ -10,14 +10,24 @@ namespace Faker.NET
     /// </summary>
     public class Faker
     {
-        public static void SetInstance(FakerLocale locale)
+        public static void SetLocale(FakerLocale locale)
         {
             FakerInstance = FakerLocaleFactory.Create(locale);
         }
 
-        public static void SetInstance(IFakerLocaleInstance faker)
+        public static void SetLocale(IFakerLocaleInstance faker)
         {
             FakerInstance = faker;
+        }
+
+        public static void SetRandomizerSeed(int seed)
+        {
+            Randomizer = new FakerRandomizer(seed);
+        }
+
+        public static void ResetRandomizer()
+        {
+            Randomizer = new FakerRandomizer();
         }
 
         public static CultureInfo Culture => FakerInstance.Culture;
@@ -38,7 +48,7 @@ namespace Faker.NET
 
         public static IFakerCustom Custom { get; set; }
 
-        public static Randomizer Randomizer { get; private set; } = new Randomizer();
+        public static FakerRandomizer Randomizer { get; private set; } = new FakerRandomizer();
 
         public static IFakerLocaleInstance FakerInstance { get; private set; } = new ENLocale();
     }

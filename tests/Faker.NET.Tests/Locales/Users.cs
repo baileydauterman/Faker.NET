@@ -7,7 +7,7 @@ namespace Faker.NET.Tests.Locales
     {
         public Users(FakerLocale locale)
         {
-            Faker.SetInstance(locale);
+            Faker.SetLocale(locale);
         }
 
         [Test]
