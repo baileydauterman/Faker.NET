@@ -71,7 +71,7 @@
             return array[Faker.Randomizer.Next(array.Length)];
         }
 
-        public static string GetRandom(this IList<string> array)
+        public static T GetRandom<T>(this IList<T> array)
         {
             return array[Faker.Randomizer.Next(array.Count)];
         }

@@ -13,13 +13,14 @@ public class Domains
 
         if (domains is null)
         {
-            ThrowHelper.FakerLocaleNotImplementedException(locale, nameof(Domains.GetLocaleDomains));
+            ThrowHelper.FakerLocaleNotImplementedException(locale, nameof(GetLocaleDomains));
         }
 
         return domains;
     }
 
-    private static readonly string[] _enDomains = {
+    private static readonly string[] _enDomains = 
+    {
         ".com",
         ".org",
         ".net",

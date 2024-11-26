@@ -4,25 +4,27 @@
     {
         public static string GenerateUsername(string firstName, string lastName)
         {
-            var followingNum = Faker.Randomizer.Next(1, 9);
-            var prefixSuffix = Faker.Randomizer.Next(1, 2) > 1 ? $"{followingNum}" : string.Empty;
-            string prefix;
+            var addNumber = Faker.Randomizer.Next(1, 2) > 1;
+            return GenerateUsername(firstName, lastName, addNumber);
+        }
 
-            if (Faker.Randomizer.FlipCoin() == Coin.Heads)
+        public static string GenerateUsername(string firstName, string lastName, bool addNumber = true)
+        {
+            var userName = Faker.Randomizer.Next(1, 4) switch
             {
-                prefix = Faker.Randomizer.FlipCoin() == Coin.Heads ?
-                    $"{firstName}.{lastName}" :
-                    $"{lastName}.{firstName}";
-            }
-            else
+                1 => $"{firstName}.{lastName}", // john.doe
+                2 => $"{lastName}.{firstName}", // doe.john
+                3 => $"{firstName[0]}{lastName}", //jdoe
+                4 => $"{firstName}{lastName[0]}", // johnd
+                _ => $"{firstName}{lastName}", // johndoe
+            };
+
+            if (addNumber)
             {
-                prefix = Faker.Randomizer.FlipCoin() == Coin.Tails ?
-                    $"{firstName[0]}{lastName}" :
-                    $"{firstName}{lastName[0]}";
+                userName = $"{userName}{Faker.Randomizer.Next(1, 9)}";
             }
 
-
-            return $"{prefix}{prefixSuffix}".ToLower();
+            return userName.ToLower();
         }
 
         /// <summary>
