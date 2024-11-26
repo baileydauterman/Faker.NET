@@ -1,5 +1,6 @@
 ﻿using Faker.NET.Common;
 using Faker.NET.Interfaces;
+using Faker.NET.Technology.PasswordGenerator;
 using System.Net;
 
 namespace Faker.NET.Technology
@@ -9,8 +10,10 @@ namespace Faker.NET.Technology
         public Computer(string[] domains) 
         {
             _domains = domains;
+            _passwordGenerator = new FakerPasswordGenerator();
         }
 
+        public string Password => _passwordGenerator.Generate(Faker.Randomizer.Next(15,28));
         public string IPv4Address => $"{Ipv4Octet}.{Ipv4Octet}.{Ipv4Octet}.{Ipv4Octet}";
 
         public string IPv6Address => new IPAddress(Faker.Randomizer.NextBytes(16)).ToString();
@@ -22,5 +25,6 @@ namespace Faker.NET.Technology
         private static int Ipv4Octet => Faker.Randomizer.Next(1, 256);
 
         private string[] _domains;
+        private FakerPasswordGenerator _passwordGenerator;
     }
 }

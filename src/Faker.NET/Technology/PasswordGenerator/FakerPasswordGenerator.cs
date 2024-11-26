@@ -3,7 +3,7 @@ using Faker.NET.Common;
 
 namespace Faker.NET.Technology.PasswordGenerator;
 
-public class FakerPasswordGenerator
+internal class FakerPasswordGenerator
 {
     public string Generate(int length, PasswordGeneratorFlags settings = PasswordGeneratorFlags.All)
     {
