@@ -1,4 +1,5 @@
-﻿using Faker.NET.Files.Csv;
+﻿using Faker.NET.Attributes;
+using Faker.NET.Files.Csv;
 using Faker.NET.Interfaces;
 
 namespace Faker.NET.Tests.Files
@@ -199,7 +200,7 @@ namespace Faker.NET.Tests.Files
 
         public class FakeClass : IMyClass
         {
-            [CsvMap(DisplayName = "name", Property = typeof(IFakerName), Field = "First")]
+            [FakerName(Field = FakerNameAttributes.First)]
             public string Name { get; set; } = string.Empty;
 
             [CsvMap(DisplayName = "last", Property = typeof(IFakerName), Field = "Last")]

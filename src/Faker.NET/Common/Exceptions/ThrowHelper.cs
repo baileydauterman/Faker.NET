@@ -36,4 +36,9 @@ public static class ThrowHelper
     {
         throw new FakerLocaleNotImplementedException(locale, methodName);
     }
+
+    public static void FakerAttributeNotImplementedException(string attribute, string attributeClass)
+    {
+        throw new FakerAttributeNotImplementedException(attribute, attributeClass);
+    }
 }
