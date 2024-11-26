@@ -5,15 +5,12 @@ using System.Globalization;
 
 namespace Faker.NET.Locales.FR
 {
-    internal class FRLocale : IFakerInstance
+    internal class FRLocale : IFakerLocaleInstance
     {
         public FRLocale()
         {
-            Computer = new Computer();
             Name = new Name();
         }
-
-        public IFakerComputer Computer { get; }
 
         public IFakerName Name { get; }
 

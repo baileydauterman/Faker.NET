@@ -23,14 +23,12 @@ namespace Faker.NET.Tests.Custom
         }
     }
 
-    internal class CustomFaker : IFakerInstance
+    internal class CustomFaker : IFakerLocaleInstance
     {
         public CustomFaker()
         {
             Name = new CustomName();
         }
-
-        public IFakerComputer Computer => throw new NotImplementedException();
 
         public IFakerName Name { get; }
 

@@ -1,23 +1,21 @@
 ﻿using Faker.NET.Common;
+using Faker.NET.Common.Exceptions;
 using Faker.NET.Interfaces;
 using Faker.NET.Locales.AR.Data;
 using System.Globalization;
 
 namespace Faker.NET.Locales.AR
 {
-    internal class ARLocale : IFakerInstance
+    internal class ARLocale : IFakerLocaleInstance
     {
         public ARLocale()
         {
-            Computer = new Computer();
             Name = new Name();
         }
 
-        public IFakerComputer Computer { get; }
-
         public IFakerName Name { get; }
 
-        public IFakerLocation Location => throw new FakerInstanceNotImplementedException(nameof(Location));
+        public IFakerLocation Location => ThrowHelper.FakerInstanceNotImplementedException(Location, nameof(Location));
 
         public IFakerLorem Lorem => throw new FakerInstanceNotImplementedException(nameof(Lorem));
 

@@ -1,29 +1,27 @@
 ﻿using Faker.NET.Common;
+using Faker.NET.Common.Exceptions;
 using Faker.NET.Interfaces;
 using Faker.NET.Locales.ZH.Data;
 using System.Globalization;
 
 namespace Faker.NET.Locales.ZH
 {
-    internal class ZHLocale : IFakerInstance
+    internal class ZHLocale : IFakerLocaleInstance
     {
         public ZHLocale()
         {
-            Computer = new Computer();
             Name = new Name();
         }
 
-        public IFakerComputer Computer { get; }
-
         public IFakerName Name { get; }
 
-        public IFakerLocation Location => throw new FakerMemberNotImplementedException(FakerLocale.Mandarin, nameof(Location));
+        public IFakerLocation Location => ThrowHelper.FakerMemberNotImplementedException(Location, FakerLocale.Mandarin, nameof(Location));
 
-        public IFakerLorem Lorem => throw new FakerMemberNotImplementedException(FakerLocale.Mandarin, nameof(Lorem));
+        public IFakerLorem Lorem => ThrowHelper.FakerMemberNotImplementedException(Lorem, FakerLocale.Mandarin, nameof(Lorem));
 
-        public IFakerUser User => throw new FakerMemberNotImplementedException(FakerLocale.Mandarin, nameof(User));
+        public IFakerUser User => ThrowHelper.FakerMemberNotImplementedException(User, FakerLocale.Mandarin, nameof(User));
 
-        public IFakerPhoneNumber PhoneNumber => throw new FakerMemberNotImplementedException(FakerLocale.Mandarin, nameof(PhoneNumber));
+        public IFakerPhoneNumber PhoneNumber => ThrowHelper.FakerMemberNotImplementedException(PhoneNumber, FakerLocale.Mandarin, nameof(PhoneNumber));
 
         public CultureInfo Culture { get; } = CultureInfo.GetCultureInfo("zh");
     }
@@ -36,12 +34,12 @@ namespace Faker.NET.Locales.ZH
 
         public string Full => $"{Last} {First}";
 
-        public string Suffix => throw new NotImplementedException();
+        public string Suffix => ThrowHelper.NotImplementedException(Suffix);
 
-        public string Prefix => throw new NotImplementedException();
+        public string Prefix => ThrowHelper.NotImplementedException(Prefix);
 
-        public string Job => throw new NotImplementedException();
+        public string Job => ThrowHelper.NotImplementedException(Job);
 
-        public string Email => throw new NotImplementedException();
+        public string Email => ThrowHelper.NotImplementedException(Email);
     }
 }

@@ -5,14 +5,12 @@ using System.Globalization;
 
 namespace Faker.NET.Locales.ES
 {
-    internal class ESLocale : IFakerInstance
+    internal class ESLocale : IFakerLocaleInstance
     {
         public ESLocale()
         {
             Lorem = new Lorem(LoremIpsum.Words);
         }
-
-        public IFakerComputer Computer => throw new NotImplementedException();
 
         public IFakerName Name => throw new NotImplementedException();
 

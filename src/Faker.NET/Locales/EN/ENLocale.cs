@@ -5,16 +5,15 @@ using System.Globalization;
 
 namespace Faker.NET.Locales.EN
 {
-    internal class ENLocale : IFakerInstance
+    internal class ENLocale : IFakerLocaleInstance
     {
         public ENLocale()
         {
-            Computer = new Computer();
-            Name = new Name();
+            Name = new EnFakerName();
             User = new User();
             Lorem = new Lorem(LoremIpsum.Words);
             Location = new Location();
-            PhoneNumber = new PhoneNumber();
+            PhoneNumber = new EnFakerPhoneNumber();
         }
 
         public IFakerName Name { get; }
@@ -27,36 +26,7 @@ namespace Faker.NET.Locales.EN
 
         public IFakerPhoneNumber PhoneNumber { get; }
 
-        public IFakerComputer Computer { get; }
-
         public CultureInfo Culture { get; } = CultureInfo.GetCultureInfo("en");
-    }
-
-    internal class Name : IFakerName
-    {
-        public string First => Names.First.GetRandom();
-
-        public string Last => Names.Last.GetRandom();
-
-        public string Full => $"{First} {Last}";
-
-        public string Suffix => Names.Suffix.GetRandom();
-
-        public string Prefix => Names.Prefix.GetRandom();
-
-        public string Job => $"{Names.TitleLevel.GetRandom()} {Names.TitleDescriptor.GetRandom()} {Names.TitleJob.GetRandom()}";
-
-        public string Email => InternetHelper.GenerateEmail(First, Last);
-    }
-
-    internal class PhoneNumber : IFakerPhoneNumber
-    {
-        public string Number => $"{PhoneNumbers.AreaCodes.GetRandom()}{PhoneNumbers.Formats.ToRandomFormat()}";
-
-        public string NumberWithCountryCode => $"+{CountryCode} {Number}";
-
-        public int CountryCode { get; } = 1;
-
     }
 
     internal class Commerce : IFakerCommerce

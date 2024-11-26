@@ -15,14 +15,14 @@ namespace Faker.NET
             FakerInstance = FakerLocaleFactory.Create(locale);
         }
 
-        public static void SetInstance(IFakerInstance faker)
+        public static void SetInstance(IFakerLocaleInstance faker)
         {
             FakerInstance = faker;
         }
 
         public static CultureInfo Culture => FakerInstance.Culture;
 
-        public static IFakerComputer Computer => FakerInstance.Computer;
+        public static IFakerComputer Computer => Technology.TechnologyFakerFactory.GetComputerFaker(Culture);
 
         public static IFakerName Name => FakerInstance.Name;
 
@@ -40,16 +40,6 @@ namespace Faker.NET
 
         public static Randomizer Randomizer { get; private set; } = new Randomizer();
 
-        public static IFakerInstance FakerInstance { get; private set; } = new ENLocale();
-    }
-
-    public enum FakerLocale
-    {
-        English,
-        Arabic,
-        French,
-        Russian,
-        Mandarin,
-        German,
+        public static IFakerLocaleInstance FakerInstance { get; private set; } = new ENLocale();
     }
 }
