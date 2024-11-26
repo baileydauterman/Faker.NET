@@ -170,9 +170,9 @@ namespace Faker.NET.Tests.Files
                 .AddColumn("name", () => Faker.Name.First)
                 .AddColumn("date", () => Faker.Date.FullDateTime)
                 .AddColumn("update_date", () => Faker.Date.NowFormatted("dddd, dd MMMM yyyy HH:mm:ss"))
-                .AddColumn("text", () => Faker.Lorem.GetText(35))
+                .AddColumn("text", () => Faker.Lorem.GetWords(35))
                 .AddColumn("ip", () => Faker.Computer.IPv4Address)
-                .AddColumn("small_variable_message", () => Faker.Lorem.GetText(5, 10));
+                .AddColumn("small_variable_message", () => Faker.Lorem.GetWords(5, 10));
         }
 
         private CsvFaker CreateCsvFaker(string tempPath)
@@ -181,9 +181,9 @@ namespace Faker.NET.Tests.Files
                 .AddColumn("name", () => Faker.Name.First)
                 .AddColumn("date", () => Faker.Date.FullDateTime)
                 .AddColumn("update_date", () => Faker.Date.NowFormatted("dddd, dd MMMM yyyy HH:mm:ss"))
-                .AddColumn("text", () => Faker.Lorem.GetText(35))
+                .AddColumn("text", () => Faker.Lorem.GetWords(35))
                 .AddColumn("ip", () => Faker.Computer.IPv4Address)
-                .AddColumn("small_variable_message", () => Faker.Lorem.GetText(5, 10));
+                .AddColumn("small_variable_message", () => Faker.Lorem.GetWords(5, 10));
         }
 
         private CsvFaker CreateCsvFaker(Stream stream)
@@ -192,9 +192,9 @@ namespace Faker.NET.Tests.Files
                 .AddColumn("name", () => Faker.Name.First)
                 .AddColumn("date", () => Faker.Date.FullDateTime)
                 .AddColumn("update_date", () => Faker.Date.NowFormatted("dddd, dd MMMM yyyy HH:mm:ss"))
-                .AddColumn("text", () => Faker.Lorem.GetText(35))
+                .AddColumn("text", () => Faker.Lorem.GetWords(35))
                 .AddColumn("ip", () => Faker.Computer.IPv4Address)
-                .AddColumn("small_variable_message", () => Faker.Lorem.GetText(5, 10));
+                .AddColumn("small_variable_message", () => Faker.Lorem.GetWords(5, 10));
         }
 
         public class FakeClass : IMyClass

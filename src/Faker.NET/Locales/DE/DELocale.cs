@@ -14,7 +14,7 @@ namespace Faker.NET.Locales.DE
             Name = new Name();
             PhoneNumber = new PhoneNumber();
             Location = new Location();
-            Lorem = new Common.Lorem(Data.Lorem.Words);
+            Lorem = new Common.FakerLorem(Data.Lorem.Words);
         }
 
         public IFakerName Name { get; }

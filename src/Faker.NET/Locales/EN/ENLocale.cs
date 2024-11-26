@@ -11,7 +11,7 @@ internal class ENLocale : IFakerLocaleInstance
     {
         Name = new EnFakerName();
         User = new EnFakerUser();
-        Lorem = new Lorem(LoremIpsum.Words);
+        Lorem = new FakerLorem(LoremIpsum.Words);
         Location = new EnFakerLocation();
         PhoneNumber = new EnFakerPhoneNumber();
     }

@@ -1,6 +1,6 @@
 ﻿using Faker.NET.Common;
 using Faker.NET.Interfaces;
-using Faker.NET.Locales.EN;
+using Faker.NET.Technology;
 using System.Globalization;
 
 namespace Faker.NET
@@ -30,9 +30,13 @@ namespace Faker.NET
             Randomizer = new FakerRandomizer();
         }
 
+        /// <summary>
+        /// <see cref="Culture"/> can be used internally to display things like DateTimes and other
+        /// things that might be dependent on the given culture.
+        /// </summary>
         public static CultureInfo Culture => FakerInstance.Culture;
 
-        public static IFakerComputer Computer => Technology.TechnologyFakerFactory.GetComputerFaker(Culture);
+        public static IFakerComputer Computer => TechnologyFakerFactory.GetComputerFaker(Culture);
 
         public static IFakerName Name => FakerInstance.Name;
 
@@ -50,6 +54,6 @@ namespace Faker.NET
 
         public static FakerRandomizer Randomizer { get; private set; } = new FakerRandomizer();
 
-        public static IFakerLocaleInstance FakerInstance { get; private set; } = new ENLocale();
+        public static IFakerLocaleInstance FakerInstance { get; private set; } = FakerLocaleFactory.Create(FakerLocale.English);
     }
 }

@@ -9,7 +9,7 @@ namespace Faker.NET.Locales.ES
     {
         public ESLocale()
         {
-            Lorem = new Lorem(LoremIpsum.Words);
+            Lorem = new FakerLorem(LoremIpsum.Words);
         }
 
         public IFakerName Name => throw new NotImplementedException();

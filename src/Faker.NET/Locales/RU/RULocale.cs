@@ -12,7 +12,7 @@ namespace Faker.NET.Locales.RU
         public RULocale()
         {
             Name = new Name();
-            Lorem = new Lorem(LoremIpsum.Words);
+            Lorem = new FakerLorem(LoremIpsum.Words);
             PhoneNumber = new PhoneNumber();
             Location = new Location();
         }
