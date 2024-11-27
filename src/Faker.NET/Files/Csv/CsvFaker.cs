@@ -1,4 +1,6 @@
-﻿namespace Faker.NET.Files.Csv
+﻿using Faker.NET.Attributes;
+
+namespace Faker.NET.Files.Csv
 {
     public class CsvFaker
     {
@@ -95,11 +97,11 @@
 
             foreach (var prop in type.GetProperties())
             {
-                var attrs = prop.GetCustomAttributes(typeof(CsvMapAttribute), false) as CsvMapAttribute[];
+                var attrs = prop.GetCustomAttributes(typeof(FakerAttribute), true) as FakerAttribute[];
 
                 foreach (var attr in attrs)
                 {
-                    _headers.Add(attr.DisplayName, () => (string)attr.GetPropertyValue());
+                    _headers.Add(prop.Name, () => (string)attr.GetPropertyValue());
                 }
             }
 

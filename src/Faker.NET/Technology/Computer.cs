@@ -26,6 +26,7 @@ namespace Faker.NET.Technology
         private static int Ipv4Octet => Faker.Randomizer.Next(1, 256);
 
         private string[] _domains;
+        
         private FakerPasswordGenerator _passwordGenerator;
     }
 }

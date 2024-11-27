@@ -1,4 +1,5 @@
-﻿using Faker.NET.Attributes;
+﻿using System.Net;
+using Faker.NET.Attributes;
 using Faker.NET.Files.Csv;
 using Faker.NET.Interfaces;
 
@@ -127,6 +128,13 @@ namespace Faker.NET.Tests.Files
                 .Iterations(100)
                 .Generate<FakeClass>();
 
+            foreach (var line in csvFaker)
+            {
+                // make sure there is actually data there
+                var lines = line.Split(',', StringSplitOptions.RemoveEmptyEntries);
+                Assert.That(lines.Length, Is.GreaterThanOrEqualTo(3));
+            }
+
             Assert.That(csvFaker.Count(), Is.EqualTo(101));
         }
 
@@ -200,13 +208,13 @@ namespace Faker.NET.Tests.Files
 
         public class FakeClass : IMyClass
         {
-            [FakerName(Field = FakerNameAttributes.First)]
+            [FakerNameFirst]
             public string Name { get; set; } = string.Empty;
 
-            [CsvMap(DisplayName = "last", Property = typeof(IFakerName), Field = "Last")]
+            [FakerNameLast]
             public string Last { get; set; } = string.Empty;
 
-            [CsvMap(DisplayName = "ip_address", Property = typeof(IFakerComputer), Field = "IPv4Address")]
+            [FakerComputerIPv4Address]
             public string IPAddress { get; set; } = string.Empty;
         }
 
