@@ -11,7 +11,7 @@
 
         string GetParagraphs(int count);
 
-        string GetParagrphs(int min, int max);
+        string GetParagraphs(int min, int max);
 
         string GetSentences(int count);
 

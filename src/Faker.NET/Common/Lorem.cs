@@ -28,7 +28,7 @@ namespace Faker.NET.Common
             return builder.ToString().Trim();
         }
 
-        public string GetParagrphs(int min, int max)
+        public string GetParagraphs(int min, int max)
         {
             var exact = Faker.Randomizer.Next(min, max);
             return GetParagraphs(exact);

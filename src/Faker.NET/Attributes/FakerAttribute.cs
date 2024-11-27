@@ -1,5 +1,3 @@
-using System;
-
 namespace Faker.NET.Attributes;
 
 public abstract class FakerAttribute : Attribute
