@@ -1,6 +1,7 @@
 ﻿using Faker.NET.Common;
 using Faker.NET.Common.Exceptions;
 using Faker.NET.Extensions;
+using Faker.NET.Geo;
 using Faker.NET.Interfaces;
 using Faker.NET.Locales.RU.Data;
 using System.Globalization;
@@ -47,6 +48,12 @@ namespace Faker.NET.Locales.RU
         public string PostalCode => Faker.Randomizer.Next(100000, 162817).ToString();
 
         public string PostalCodeAlternate => PostalCode;
+
+        public string Latitude => _geoFaker.Latitude;
+
+        public string Longitude => _geoFaker.Longitude;
+
+        private readonly GeoFaker _geoFaker = new GeoFaker();
     }
 
     internal class PhoneNumber : IFakerPhoneNumber

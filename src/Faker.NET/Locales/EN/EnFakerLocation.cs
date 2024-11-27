@@ -1,5 +1,6 @@
 using Faker.NET.Common;
 using Faker.NET.Extensions;
+using Faker.NET.Geo;
 using Faker.NET.Interfaces;
 using Faker.NET.Locales.EN.Data;
 
@@ -23,6 +24,13 @@ internal class EnFakerLocation : IFakerLocation
 
     public string Street => LocationData.StreetNames.GetRandom();
 
+    public string Latitude => _geoFaker.Latitude;
+
+    public string Longitude => _geoFaker.Longitude;
+
     public const string _postalCodeFormat = "#####";
+
     public const string _postalCodeAltFormat = "#####-####";
+
+    private readonly GeoFaker _geoFaker = new GeoFaker();
 }

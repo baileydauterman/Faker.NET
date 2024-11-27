@@ -17,5 +17,9 @@
         string PostalCode { get; }
 
         string PostalCodeAlternate { get; }
+
+        string Latitude { get; }
+
+        string Longitude { get; }
     }
 }

@@ -26,6 +26,15 @@
             NextBytes(bytes);
             return bytes;
         }
+
+        public double DoubleInRange(int min, int max)
+        {
+            var integral = (double)Faker.Randomizer.Next(min, max);
+            var dec = Faker.Randomizer.NextDouble();
+
+            // subtract to make sure we stay under the max
+            return integral > 0 ? integral - dec : dec + integral;
+        }
     }
 
     public enum Coin

@@ -4,6 +4,7 @@ using Faker.NET.Common.Exceptions;
 using Faker.NET.Interfaces;
 using Faker.NET.Locales.DE.Data;
 using System.Globalization;
+using Faker.NET.Geo;
 
 namespace Faker.NET.Locales.DE
 {
@@ -65,7 +66,13 @@ namespace Faker.NET.Locales.DE
 
         public string Street => Locations.StreetNames.GetRandom();
 
+        public string Latitude => _geoFaker.Latitude;
+
+        public string Longitude => _geoFaker.Longitude;
+
         private static readonly string _postalCodeFormat = "#####";
+
+        private readonly GeoFaker _geoFaker = new GeoFaker();
     }
 
     internal class PhoneNumber : IFakerPhoneNumber
