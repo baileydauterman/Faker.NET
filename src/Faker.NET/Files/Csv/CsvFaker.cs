@@ -101,7 +101,7 @@ namespace Faker.NET.Files.Csv
 
                 foreach (var attr in attrs)
                 {
-                    _headers.Add(prop.Name, () => (string)attr.GetPropertyValue());
+                    _headers.Add(prop.Name, () => attr.GetPropertyValue().ToString());
                 }
             }
 

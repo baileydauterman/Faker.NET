@@ -1,104 +1,101 @@
-using System;
-using System.Linq.Expressions;
-
 namespace Faker.NET.Attributes;
 
-public class LoremWordsAttribute : FakerAttribute
+public class FakerLoremWordsAttribute : FakerAttribute
 {
-    public int WordCount = 0;
+    public int Count = 0;
 
-    public int MinWords = 0;
+    public int Min = 0;
 
-    public int MaxWords = 0;
+    public int Max = 0;
 
     public override object GetPropertyValue()
     {
-        if (WordCount == 0 && MinWords == 0 && MaxWords == 0)
+        if (Count == 0 && Min == 0 && Max == 0)
         {
             return string.Empty;
         }
 
-        if (WordCount != 0 && MinWords != 0 && MaxWords != 0)
+        if (Count != 0 && Min != 0 && Max != 0)
         {
-            throw new ArgumentException("WordCount should be used by itself, or use MinWords and MaxWords together");
+            throw new ArgumentException($"{nameof(Count)} should be used by itself, or use {nameof(Min)} and {nameof(Max)} together");
         }
 
-        if (WordCount > 0)
+        if (Count > 0)
         {
-            return Faker.Lorem.GetWords(WordCount);
+            return Faker.Lorem.GetWords(Count);
         }
 
-        if (MinWords >= 0 && MaxWords > 0)
+        if (Min >= 0 && Max > 0)
         {
-            return Faker.Lorem.GetWords(MinWords, MaxWords);
+            return Faker.Lorem.GetWords(Min, Max);
         }
 
         return string.Empty;
     }
 }
 
-public class LoremSentencesAttribute : FakerAttribute
+public class FakerLoremSentencesAttribute : FakerAttribute
 {
-    public int SentenceCount = 0;
+    public int Count = 0;
 
-    public int MinSentences = 0;
+    public int Min = 0;
 
-    public int MaxSentences = 0;
+    public int Max = 0;
 
     public override object GetPropertyValue()
     {
-        if (SentenceCount == 0 && MinSentences == 0 && MaxSentences == 0)
+        if (Count == 0 && Min == 0 && Max == 0)
         {
             return string.Empty;
         }
 
-        if (SentenceCount != 0 && MinSentences != 0 && MaxSentences != 0)
+        if (Count != 0 && Min != 0 && Max != 0)
         {
-            throw new ArgumentException("WordCount should be used by itself, or use MinWords and MaxWords together");
+            throw new ArgumentException($"{nameof(Count)} should be used by itself, or use {nameof(Min)} and {nameof(Max)} together");
         }
 
-        if (SentenceCount > 0)
+        if (Count > 0)
         {
-            return Faker.Lorem.GetSentences(SentenceCount);
+            return Faker.Lorem.GetSentences(Count);
         }
 
-        if (MinSentences >= 0 && MaxSentences > 0)
+        if (Min >= 0 && Max > 0)
         {
-            return Faker.Lorem.GetSentences(MinSentences, MaxSentences);
+            return Faker.Lorem.GetSentences(Min, Max);
         }
 
         return string.Empty;
     }
 }
 
-public class LoremParagraphAttribute : FakerAttribute
+public class FakerLoremParagraphAttribute : FakerAttribute
 {
-    public int ParagraphCount = 0;
+    public int Count = 0;
 
-    public int MinParagraphs = 0;
+    public int Min = 0;
 
-    public int MaxParagraphss = 0;
+    public int Max = 0;
 
     public override object GetPropertyValue()
     {
-        if (ParagraphCount == 0 && MinParagraphs == 0 && MaxParagraphss == 0)
+        if (Count == 0 && Min == 0 && Max == 0)
         {
             return string.Empty;
         }
 
-        if (ParagraphCount != 0 && MinParagraphs != 0 && MaxParagraphss != 0)
+        if (Count != 0 && Min != 0 && Max != 0)
         {
-            throw new ArgumentException("WordCount should be used by itself, or use MinWords and MaxWords together");
+            throw new ArgumentException($"{nameof(Count)} should be used by itself, or use {nameof(Min)} and {nameof(Max)} together");
         }
 
-        if (ParagraphCount > 0)
+        if (Count > 0)
         {
-            return Faker.Lorem.GetParagraphs(ParagraphCount);
+            return Faker.Lorem.GetParagraphs(Count);
         }
 
-        if (MinParagraphs >= 0 && MaxParagraphss > 0)
+        if (Min >= 0 && Max > 0)
         {
-            return Faker.Lorem.GetParagraphs(MinParagraphs, MaxParagraphss);
+            return Faker.Lorem.GetParagraphs(Min, Max);
         }
 
         return string.Empty;

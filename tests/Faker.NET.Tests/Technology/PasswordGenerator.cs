@@ -1,6 +1,3 @@
-using System;
-using Faker.NET.Technology.PasswordGenerator;
-
 namespace Faker.NET.Tests.Technology;
 
 public class PasswordGenerator
