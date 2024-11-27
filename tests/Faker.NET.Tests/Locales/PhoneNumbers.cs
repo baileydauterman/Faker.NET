@@ -7,14 +7,14 @@
     {
         public PhoneNumbers(FakerLocale locale)
         {
-            Faker.SetInstance(locale);
+            Faker.SetLocale(locale);
         }
 
         [Test]
         public void GeneratePhoneNumber()
         {
-            Assert.IsNotNull(Faker.Phone.Number);
-            Assert.IsNotNull(Faker.Phone.NumberWithCountryCode);
+            Assert.That(Faker.Phone.Number, Is.Not.Null);
+            Assert.That(Faker.Phone.NumberWithCountryCode, Is.Not.Null);
         }
     }
 }

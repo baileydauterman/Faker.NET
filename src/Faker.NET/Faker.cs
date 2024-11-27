@@ -1,6 +1,6 @@
 ﻿using Faker.NET.Common;
 using Faker.NET.Interfaces;
-using Faker.NET.Locales.EN;
+using Faker.NET.Technology;
 using System.Globalization;
 
 namespace Faker.NET
@@ -10,19 +10,33 @@ namespace Faker.NET
     /// </summary>
     public class Faker
     {
-        public static void SetInstance(FakerLocale locale)
+        public static void SetLocale(FakerLocale locale)
         {
             FakerInstance = FakerLocaleFactory.Create(locale);
         }
 
-        public static void SetInstance(IFakerInstance faker)
+        public static void SetLocale(IFakerLocaleInstance faker)
         {
             FakerInstance = faker;
         }
 
+        public static void SetRandomizerSeed(int seed)
+        {
+            Randomizer = new FakerRandomizer(seed);
+        }
+
+        public static void ResetRandomizer()
+        {
+            Randomizer = new FakerRandomizer();
+        }
+
+        /// <summary>
+        /// <see cref="Culture"/> can be used internally to display things like DateTimes and other
+        /// things that might be dependent on the given culture.
+        /// </summary>
         public static CultureInfo Culture => FakerInstance.Culture;
 
-        public static IFakerComputer Computer => FakerInstance.Computer;
+        public static IFakerComputer Computer => TechnologyFakerFactory.GetComputerFaker(Culture);
 
         public static IFakerName Name => FakerInstance.Name;
 
@@ -38,18 +52,8 @@ namespace Faker.NET
 
         public static IFakerCustom Custom { get; set; }
 
-        public static Randomizer Randomizer { get; private set; } = new Randomizer();
+        public static FakerRandomizer Randomizer { get; private set; } = new FakerRandomizer();
 
-        public static IFakerInstance FakerInstance { get; private set; } = new ENLocale();
-    }
-
-    public enum FakerLocale
-    {
-        English,
-        Arabic,
-        French,
-        Russian,
-        Mandarin,
-        German,
+        public static IFakerLocaleInstance FakerInstance { get; private set; } = FakerLocaleFactory.Create(FakerLocale.English);
     }
 }

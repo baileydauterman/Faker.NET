@@ -3,10 +3,8 @@ using System.Globalization;
 
 namespace Faker.NET
 {
-    public class NoOpFakerInstance : IFakerInstance
+    public class NoOpFakerInstance : IFakerLocaleInstance
     {
-        public IFakerComputer Computer => throw new NotImplementedException();
-
         public IFakerName Name => throw new NotImplementedException();
 
         public IFakerLocation Location => throw new NotImplementedException();

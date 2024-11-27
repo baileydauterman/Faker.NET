@@ -8,6 +8,8 @@
 
         string UserAgent { get; }
 
+        string Password { get; }
+
         string Domain { get; }
     }
 }

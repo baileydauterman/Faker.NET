@@ -1,13 +1,10 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
+<Project Sdk="Microsoft.NET.Sdk">
   <Import Project="../../version.props" />
-	
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
-	<PackageOutputPath>./nupkg</PackageOutputPath>
+    <PackageOutputPath>./nupkg</PackageOutputPath>
   </PropertyGroup>
-	
   <ItemGroup>
     <Compile Remove="nupkg\**" />
     <EmbeddedResource Remove="nupkg\**" />

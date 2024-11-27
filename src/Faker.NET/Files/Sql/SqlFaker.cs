@@ -1,4 +1,4 @@
-﻿using Faker.NET.Common;
+﻿using Faker.NET.Extensions;
 using System.Data;
 using System.Text;
 

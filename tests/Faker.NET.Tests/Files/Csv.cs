@@ -1,4 +1,6 @@
-﻿using Faker.NET.Files.Csv;
+﻿using System.Net;
+using Faker.NET.Attributes;
+using Faker.NET.Files.Csv;
 using Faker.NET.Interfaces;
 
 namespace Faker.NET.Tests.Files
@@ -126,6 +128,13 @@ namespace Faker.NET.Tests.Files
                 .Iterations(100)
                 .Generate<FakeClass>();
 
+            foreach (var line in csvFaker)
+            {
+                // make sure there is actually data there
+                var lines = line.Split(',', StringSplitOptions.RemoveEmptyEntries);
+                Assert.That(lines.Length, Is.GreaterThanOrEqualTo(3));
+            }
+
             Assert.That(csvFaker.Count(), Is.EqualTo(101));
         }
 
@@ -170,9 +179,9 @@ namespace Faker.NET.Tests.Files
                 .AddColumn("name", () => Faker.Name.First)
                 .AddColumn("date", () => Faker.Date.FullDateTime)
                 .AddColumn("update_date", () => Faker.Date.NowFormatted("dddd, dd MMMM yyyy HH:mm:ss"))
-                .AddColumn("text", () => Faker.Lorem.GetText(35))
+                .AddColumn("text", () => Faker.Lorem.GetWords(35))
                 .AddColumn("ip", () => Faker.Computer.IPv4Address)
-                .AddColumn("small_variable_message", () => Faker.Lorem.GetText(5, 10));
+                .AddColumn("small_variable_message", () => Faker.Lorem.GetWords(5, 10));
         }
 
         private CsvFaker CreateCsvFaker(string tempPath)
@@ -181,9 +190,9 @@ namespace Faker.NET.Tests.Files
                 .AddColumn("name", () => Faker.Name.First)
                 .AddColumn("date", () => Faker.Date.FullDateTime)
                 .AddColumn("update_date", () => Faker.Date.NowFormatted("dddd, dd MMMM yyyy HH:mm:ss"))
-                .AddColumn("text", () => Faker.Lorem.GetText(35))
+                .AddColumn("text", () => Faker.Lorem.GetWords(35))
                 .AddColumn("ip", () => Faker.Computer.IPv4Address)
-                .AddColumn("small_variable_message", () => Faker.Lorem.GetText(5, 10));
+                .AddColumn("small_variable_message", () => Faker.Lorem.GetWords(5, 10));
         }
 
         private CsvFaker CreateCsvFaker(Stream stream)
@@ -192,20 +201,20 @@ namespace Faker.NET.Tests.Files
                 .AddColumn("name", () => Faker.Name.First)
                 .AddColumn("date", () => Faker.Date.FullDateTime)
                 .AddColumn("update_date", () => Faker.Date.NowFormatted("dddd, dd MMMM yyyy HH:mm:ss"))
-                .AddColumn("text", () => Faker.Lorem.GetText(35))
+                .AddColumn("text", () => Faker.Lorem.GetWords(35))
                 .AddColumn("ip", () => Faker.Computer.IPv4Address)
-                .AddColumn("small_variable_message", () => Faker.Lorem.GetText(5, 10));
+                .AddColumn("small_variable_message", () => Faker.Lorem.GetWords(5, 10));
         }
 
         public class FakeClass : IMyClass
         {
-            [CsvMap(DisplayName = "name", Property = typeof(IFakerName), Field = "First")]
+            [FakerNameFirst]
             public string Name { get; set; } = string.Empty;
 
-            [CsvMap(DisplayName = "last", Property = typeof(IFakerName), Field = "Last")]
+            [FakerNameLast]
             public string Last { get; set; } = string.Empty;
 
-            [CsvMap(DisplayName = "ip_address", Property = typeof(IFakerComputer), Field = "IPv4Address")]
+            [FakerComputerIPv4Address]
             public string IPAddress { get; set; } = string.Empty;
         }
 

@@ -1,4 +1,4 @@
-﻿namespace Faker.NET.Common
+﻿namespace Faker.NET.Common.Exceptions
 {
     public class FakerInstanceNotImplementedException : Exception
     {

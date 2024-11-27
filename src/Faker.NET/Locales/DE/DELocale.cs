@@ -1,22 +1,21 @@
 ﻿using Faker.NET.Common;
+using Faker.NET.Extensions;
+using Faker.NET.Common.Exceptions;
 using Faker.NET.Interfaces;
 using Faker.NET.Locales.DE.Data;
 using System.Globalization;
 
 namespace Faker.NET.Locales.DE
 {
-    internal class DELocale : IFakerInstance
+    internal class DELocale : IFakerLocaleInstance
     {
         public DELocale()
         {
-            Computer = new Computer();
             Name = new Name();
             PhoneNumber = new PhoneNumber();
             Location = new Location();
-            Lorem = new Common.Lorem(Data.Lorem.Words);
+            Lorem = new Common.FakerLorem(Data.Lorem.Words);
         }
-
-        public IFakerComputer Computer { get; }
 
         public IFakerName Name { get; }
 
@@ -24,7 +23,7 @@ namespace Faker.NET.Locales.DE
 
         public IFakerLorem Lorem { get; }
 
-        public IFakerUser User => throw new FakerInstanceNotImplementedException(nameof(User));
+        public IFakerUser User => ThrowHelper.FakerInstanceNotImplementedException(User, nameof(User));
 
         public IFakerPhoneNumber PhoneNumber { get; }
 

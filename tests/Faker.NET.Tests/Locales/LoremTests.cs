@@ -7,7 +7,7 @@
     {
         public LoremTests(FakerLocale locale)
         {
-            Faker.SetInstance(locale);
+            Faker.SetLocale(locale);
         }
 
         [TestCase(5)]
@@ -15,7 +15,7 @@
         [TestCase(500)]
         public void Lorem(int count)
         {
-            Assert.That(Faker.Lorem.GetText(count), Is.Not.Null);
+            Assert.That(Faker.Lorem.GetWords(count), Is.Not.Null);
         }
     }
 }

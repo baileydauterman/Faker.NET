@@ -1,4 +1,4 @@
-﻿using Faker.NET.Common;
+﻿using Faker.NET.Common.Exceptions;
 using Faker.NET.Interfaces;
 using Faker.NET.Locales.AR;
 using Faker.NET.Locales.DE;
@@ -12,9 +12,9 @@ namespace Faker.NET
 {
     public static class FakerLocaleFactory
     {
-        public static IFakerInstance Create(FakerLocale locale)
+        public static IFakerLocaleInstance Create(FakerLocale locale)
         {
-            return locale switch
+            IFakerLocaleInstance faker = locale switch
             {
                 FakerLocale.Arabic => new ARLocale(),
                 FakerLocale.English => new ENLocale(),
@@ -22,13 +22,20 @@ namespace Faker.NET
                 FakerLocale.French => new FRLocale(),
                 FakerLocale.Russian => new RULocale(),
                 FakerLocale.Mandarin => new ZHLocale(),
-                _ => throw new FakerInstanceNotImplementedException(locale.ToString()),
+                _ => null,
             };
+
+            if (faker is null)
+            {
+                ThrowHelper.FakerLocaleNotImplementedException(locale, nameof(Create));
+            }
+
+            return faker;
         }
 
         public static FakerLocale GetLocale(CultureInfo culture)
         {
-            return culture.TwoLetterISOLanguageName switch
+            FakerLocale locale =  culture.TwoLetterISOLanguageName switch
             {
                 "ar" => FakerLocale.Arabic,
                 "de" => FakerLocale.German,
@@ -36,8 +43,15 @@ namespace Faker.NET
                 "fr" => FakerLocale.French,
                 "ru" => FakerLocale.Russian,
                 "zh" => FakerLocale.Mandarin,
-                _ => throw new FakerInstanceNotImplementedException(culture.TwoLetterISOLanguageName),
+                _ => FakerLocale.Unknown,
             };
+
+            if (locale is FakerLocale.Unknown)
+            {
+                ThrowHelper.FakerInstanceNotImplementedException(culture.TwoLetterISOLanguageName);
+            }
+
+            return locale;
         }
     }
 }

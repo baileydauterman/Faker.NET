@@ -7,7 +7,7 @@
     {
         public Locations(FakerLocale locale)
         {
-            Faker.SetInstance(locale);
+            Faker.SetLocale(locale);
         }
 
         [Test]

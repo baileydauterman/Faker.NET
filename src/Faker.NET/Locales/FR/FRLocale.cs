@@ -1,19 +1,16 @@
-﻿using Faker.NET.Common;
+﻿using Faker.NET.Extensions;
 using Faker.NET.Interfaces;
 using Faker.NET.Locales.FR.Data;
 using System.Globalization;
 
 namespace Faker.NET.Locales.FR
 {
-    internal class FRLocale : IFakerInstance
+    internal class FRLocale : IFakerLocaleInstance
     {
         public FRLocale()
         {
-            Computer = new Computer();
             Name = new Name();
         }
-
-        public IFakerComputer Computer { get; }
 
         public IFakerName Name { get; }
 

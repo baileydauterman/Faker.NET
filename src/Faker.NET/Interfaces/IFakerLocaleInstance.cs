@@ -5,10 +5,8 @@ namespace Faker.NET.Interfaces
     /// <summary>
     /// Instance that contains all faker instances related to an <see cref="FakerLocale"/>
     /// </summary>
-    public interface IFakerInstance
+    public interface IFakerLocaleInstance
     {
-        IFakerComputer Computer { get; }
-
         IFakerName Name { get; }
 
         IFakerLocation Location { get; }

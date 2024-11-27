@@ -1,4 +1,4 @@
-﻿using Faker.NET.Common;
+﻿using Faker.NET.Extensions;
 using Faker.NET.Interfaces;
 using NUnit.Framework.Internal;
 using System.Globalization;
@@ -10,8 +10,8 @@ namespace Faker.NET.Tests.Custom
         [Test]
         public void CreateCustom()
         {
-            Faker.Randomizer.SetSeed(10000);
-            Faker.SetInstance(new CustomFaker());
+            Faker.SetRandomizerSeed(10000);
+            Faker.SetLocale(new CustomFaker());
             Assert.Multiple(() =>
             {
                 Assert.That(Faker.Name.First, Is.EqualTo("Morgana"));
@@ -23,14 +23,12 @@ namespace Faker.NET.Tests.Custom
         }
     }
 
-    internal class CustomFaker : IFakerInstance
+    internal class CustomFaker : IFakerLocaleInstance
     {
         public CustomFaker()
         {
             Name = new CustomName();
         }
-
-        public IFakerComputer Computer => throw new NotImplementedException();
 
         public IFakerName Name { get; }
 
