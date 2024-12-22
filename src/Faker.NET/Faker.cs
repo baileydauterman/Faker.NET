@@ -1,6 +1,6 @@
 ﻿using Faker.NET.Common;
 using Faker.NET.Interfaces;
-using Faker.NET.Technology;
+using Faker.NET.Internet;
 using System.Globalization;
 
 namespace Faker.NET
@@ -36,7 +36,7 @@ namespace Faker.NET
         /// </summary>
         public static CultureInfo Culture => FakerInstance.Culture;
 
-        public static IFakerComputer Computer => TechnologyFakerFactory.GetComputerFaker(Culture);
+        public static IFakerInternet Internet => new FakerInternet();
 
         public static IFakerName Name => FakerInstance.Name;
 

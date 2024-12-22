@@ -1,9 +1,9 @@
 using System.Text;
 using Faker.NET.Extensions;
 
-namespace Faker.NET.Technology.PasswordGenerator;
+namespace Faker.NET.Internet.Generators;
 
-internal class FakerPasswordGenerator
+internal class PasswordGenerator
 {
     public string Generate(int length, PasswordGeneratorFlags settings = PasswordGeneratorFlags.All)
     {
@@ -67,6 +67,6 @@ internal class FakerPasswordGenerator
     }
 
     private readonly Dictionary<PasswordGeneratorFlags, Func<char>> _characterGenerators = new Dictionary<PasswordGeneratorFlags, Func<char>>();
-    
+
     private readonly List<PasswordGeneratorFlags> _randomGetter = new List<PasswordGeneratorFlags>();
 }

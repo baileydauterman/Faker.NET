@@ -13,7 +13,7 @@
                 Assert.That(Faker.Name.Job, Is.Not.Null);
                 Assert.That(Faker.Name.Suffix, Is.Not.Null);
                 Assert.That(Faker.Name.Prefix, Is.Not.Null);
-                Assert.That(Faker.Name.Email, Is.Not.Null);
+                Assert.That(Faker.Internet.Email(), Is.Not.Null);
             });
         }
     }

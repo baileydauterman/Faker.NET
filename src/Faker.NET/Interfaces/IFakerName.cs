@@ -34,10 +34,5 @@
         /// Generate a random job
         /// </summary>
         string Job { get; }
-
-        /// <summary>
-        /// Generate a random email
-        /// </summary>
-        string Email { get; }
     }
 }

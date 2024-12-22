@@ -43,7 +43,7 @@ public class NamesAttributes
     [FakerNameFull]
     public string Full { get; set; }
 
-    [FakerNameEmail]
+    [FakerInternetEmail]
     public string Email { get; set; }
 
     [FakerNamePrefix]

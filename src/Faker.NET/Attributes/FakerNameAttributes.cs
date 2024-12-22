@@ -29,8 +29,3 @@ public class FakerNameJobAttribute : FakerAttribute
 {
     public override object GetPropertyValue() => Faker.Name.Job;
 }
-
-public class FakerNameEmailAttribute : FakerAttribute
-{
-    public override object GetPropertyValue() => Faker.Name.Email;
-}

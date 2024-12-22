@@ -24,7 +24,7 @@
             return Property.Name switch
             {
                 "IFakerName" => GetFieldValue(Faker.Name),
-                "IFakerComputer" => GetFieldValue(Faker.Computer),
+                "IFakerComputer" => GetFieldValue(Faker.Internet),
                 "IFakerUser" => GetFieldValue(Faker.User),
                 "IFakerLorem" => GetFieldValue(Faker.Lorem),
                 "IFakerLocation" => GetFieldValue(Faker.Location),

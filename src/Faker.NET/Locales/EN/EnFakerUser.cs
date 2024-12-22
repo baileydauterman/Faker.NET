@@ -18,9 +18,6 @@ internal class EnFakerUser : IFakerUser
             Prefix = Faker.Name.Prefix,
         };
 
-        user.Username = InternetHelper.GenerateUsername(user.FirstName, user.LastName);
-        user.Email = InternetHelper.GenerateEmail(user.Username);
-
         return user;
     }
 }

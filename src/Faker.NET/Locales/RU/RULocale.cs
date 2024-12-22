@@ -78,7 +78,5 @@ namespace Faker.NET.Locales.RU
         public string Prefix => throw new NotImplementedException();
 
         public string Job => $"{NameData.TitleLevel.GetRandom()} {NameData.TitleDescriptor.GetRandom()} {NameData.TitleJob.GetRandom()}";
-
-        public string Email => InternetHelper.GenerateEmail(First, Last);
     }
 }

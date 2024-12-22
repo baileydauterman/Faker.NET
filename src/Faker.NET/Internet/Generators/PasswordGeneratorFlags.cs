@@ -1,4 +1,4 @@
-namespace Faker.NET.Technology.PasswordGenerator;
+namespace Faker.NET.Internet.Generators;
 
 [Flags]
 public enum PasswordGeneratorFlags

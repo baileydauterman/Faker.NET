@@ -1,16 +1,10 @@
-using Faker.NET.Extensions;
+using System;
 
-namespace Faker.NET.Technology.Data;
+namespace Faker.NET.Internet.Data;
 
 public class UserAgents
 {
-    public static string Get()
-    {
-        return _userAgents.GetRandom();
-    }
-
-    private static readonly string[] _userAgents =
-    {
+    public static readonly string[] Values = {
         "Mozilla/5.0 (iPhone14,6; U; CPU iPhone OS 15_4 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) Version/10.0 Mobile/19E241 Safari/602.1",
         "Mozilla/5.0 (iPhone14,3; U; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) Version/10.0 Mobile/19A346 Safari/602.1",
         "Mozilla/5.0 (iPhone13,2; U; CPU iPhone OS 14_0 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) Version/10.0 Mobile/15E148 Safari/602.1",

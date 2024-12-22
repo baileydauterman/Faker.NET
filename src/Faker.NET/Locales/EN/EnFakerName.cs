@@ -18,6 +18,4 @@ public class EnFakerName : IFakerName
     public string Prefix => Names.Prefix.GetRandom();
 
     public string Job => $"{Names.TitleLevel.GetRandom()} {Names.TitleDescriptor.GetRandom()} {Names.TitleJob.GetRandom()}";
-
-    public string Email => InternetHelper.GenerateEmail(First, Last);
 }
