@@ -1,4 +1,4 @@
-using System;
+using Faker.NET.Common;
 using Faker.NET.Extensions;
 using Faker.NET.Interfaces;
 
@@ -8,7 +8,7 @@ public class FakerAirline : IFakerAirline
 {
     public AircraftType AircraftType()
     {
-        throw new NotImplementedException();
+        return RandomizerExtensions.GetRandom<AircraftType>();
     }
 
     public Airline Airline()
@@ -18,7 +18,7 @@ public class FakerAirline : IFakerAirline
 
     public Airplane Airplane()
     {
-        throw new NotImplementedException();
+        return Data.Airplanes.Frames.GetRandom();
     }
 
     public Airport Airport()
@@ -26,14 +26,31 @@ public class FakerAirline : IFakerAirline
         return Data.Airports.UnitedStatesAirports.GetRandom();
     }
 
-    public string FlightNumber(int? length, bool addLeadingZeros = false)
+    public string FlightNumber(Airline? airline, int? length, bool addLeadingZeros = false)
     {
-        throw new NotImplementedException();
+        airline ??= Airline();
+        length ??= Faker.Randomizer.Next(1, 5);
+
+        var number = Faker.Randomizer.String(length.Value, StringCharacterTypes.Numbers);
+        if (addLeadingZeros)
+        {
+            number = number.PadLeft(4, '0');
+        }
+
+        return $"{airline.IataCode}{number}";
     }
 
     public string RecordLocator(bool allowNumerics = false)
     {
-        throw new NotImplementedException();
+        var settings = StringCharacterTypes.UpperCase;
+        var length = Faker.Randomizer.Next(7, 9);
+
+        if (allowNumerics)
+        {
+            settings |= StringCharacterTypes.Numbers;
+        }
+
+        return Faker.Randomizer.String(length, settings);
     }
 
     public string Seat(AircraftType? aircraftType)

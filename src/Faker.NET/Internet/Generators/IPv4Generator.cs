@@ -1,6 +1,4 @@
-using System;
 using System.Net;
-using Faker.NET.Common.Exceptions;
 
 namespace Faker.NET.Internet.Generators;
 
@@ -8,12 +6,23 @@ internal class IPv4Generator
 {
     public string Generate()
     {
-        return new IPAddress(Faker.Randomizer.NextBytes(4).ToArray()).ToString();
+        var addressBytes = NewAddress();
+        return new IPAddress(addressBytes).ToString();
     }
 
     public string Generate(string? cidrBlock, NetworkTypes network)
     {
         throw new NotImplementedException();
+    }
+
+    private byte[] NewAddress()
+    {
+        return new byte[4] {
+            Faker.Randomizer.NextByte(1),
+            Faker.Randomizer.NextByte(),
+            Faker.Randomizer.NextByte(),
+            Faker.Randomizer.NextByte(),
+        };
     }
 
     private int GetOctet()

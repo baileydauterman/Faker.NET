@@ -1,5 +1,6 @@
 using System;
 using System.Net;
+using Faker.NET.Common;
 using Faker.NET.Extensions;
 using Faker.NET.Interfaces;
 using Faker.NET.Internet.Data;
@@ -78,9 +79,9 @@ public class FakerInternet : IFakerInternet
         return string.Join(separator, arr);
     }
 
-    public string Password(int length = 15, bool memorable = false, string prefix = "")
+    public string Password(int length = 15, bool memorable = false, string prefix = "", StringCharacterTypes characterTypes = StringCharacterTypes.All)
     {
-        var password = _passwordGenerator.Value.Generate(length);
+        var password = Faker.Randomizer.String(length, characterTypes);
         return $"{prefix}{password}";
     }
 
@@ -133,7 +134,6 @@ public class FakerInternet : IFakerInternet
         return userName.ToLower();
     }
 
-    private Lazy<PasswordGenerator> _passwordGenerator = new Lazy<PasswordGenerator>();
     private Lazy<IPv4Generator> _ipv4Generator = new Lazy<IPv4Generator>();
     private Lazy<HexGenerator> _hexGenerator = new Lazy<HexGenerator>();
 }

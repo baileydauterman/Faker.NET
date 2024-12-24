@@ -14,6 +14,18 @@ public static class RandomizerExtensions
         return array[Faker.Randomizer.Next(array.Count)];
     }
 
+    public static T? GetRandom<T>() where T : Enum
+    {
+        var values = Enum.GetValues(typeof(T));
+        if (values is not null && values.Length > 0)
+        {
+            var index = Faker.Randomizer.Next(values.Length);
+            return (T)values.GetValue(index);
+        }
+
+        return default(T);
+    }
+
     public static string CreateRandomString(this string[] array, int numberOfWords)
     {
         var wordArray = new string[numberOfWords];

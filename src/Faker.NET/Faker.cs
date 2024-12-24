@@ -50,8 +50,6 @@ namespace Faker.NET
 
         public static Date Date { get; } = new Date();
 
-        public static IFakerCustom Custom { get; set; }
-
         public static FakerRandomizer Randomizer { get; private set; } = new FakerRandomizer();
 
         public static IFakerLocaleInstance FakerInstance { get; private set; } = FakerLocaleFactory.Create(FakerLocale.English);

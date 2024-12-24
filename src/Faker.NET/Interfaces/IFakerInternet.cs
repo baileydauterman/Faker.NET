@@ -1,3 +1,4 @@
+using Faker.NET.Common;
 using Faker.NET.Internet;
 
 namespace Faker.NET.Interfaces;
@@ -30,7 +31,7 @@ public interface IFakerInternet
 
     string Mac(string? separator = null);
 
-    string Password(int length = 15, bool memorable = false, string prefix = "");
+    string Password(int length = 15, bool memorable = false, string prefix = "", StringCharacterTypes characterTypes = StringCharacterTypes.All);
 
     string Port();
 

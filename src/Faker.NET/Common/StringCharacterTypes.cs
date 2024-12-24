@@ -1,7 +1,7 @@
-namespace Faker.NET.Internet.Generators;
+namespace Faker.NET.Common;
 
 [Flags]
-public enum PasswordGeneratorFlags
+public enum StringCharacterTypes
 {
     None = 0,
     UpperCase = 1,
