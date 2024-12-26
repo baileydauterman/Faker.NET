@@ -24,9 +24,9 @@ internal class EnFakerLocation : IFakerLocation
 
     public string Street => LocationData.StreetNames.GetRandom();
 
-    public string Latitude => _geoFaker.Latitude;
+    public string Latitude => _geoFaker.Latitude();
 
-    public string Longitude => _geoFaker.Longitude;
+    public string Longitude => _geoFaker.Longitude();
 
     public const string _postalCodeFormat = "#####";
 

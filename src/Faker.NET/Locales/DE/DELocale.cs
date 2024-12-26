@@ -66,9 +66,9 @@ namespace Faker.NET.Locales.DE
 
         public string Street => Locations.StreetNames.GetRandom();
 
-        public string Latitude => _geoFaker.Latitude;
+        public string Latitude => _geoFaker.Latitude();
 
-        public string Longitude => _geoFaker.Longitude;
+        public string Longitude => _geoFaker.Longitude();
 
         private static readonly string _postalCodeFormat = "#####";
 

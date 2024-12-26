@@ -1,5 +1,3 @@
-using System;
-
 namespace Faker.NET.Extensions;
 
 public static class DateTimeExtensions
@@ -9,100 +7,106 @@ public static class DateTimeExtensions
         return new DateTime(year, 1, 1);
     }
 
-    public static void AddMonthsInBetweenDates(this DateTime newDt, DateTime start, DateTime end)
+    public static void AddMonthsInBetweenDates(ref this DateTime newDt, DateTime start, DateTime end)
     {
         if (newDt.Year == start.Year)
         {
-            newDt.AddMonths(Faker.Randomizer.Next(start.Month, 12));
+            newDt = newDt.AddMonths(Faker.Randomizer.Next(start.Month, 12));
         }
         else if (newDt.Year == end.Year)
         {
-            newDt.AddMonths(Faker.Randomizer.Next(1, end.Month));
+            newDt = newDt.AddMonths(Faker.Randomizer.Next(1, end.Month));
         }
         else
         {
-            newDt.AddMonths(Faker.Randomizer.Next(1, 13));
+            newDt = newDt.AddMonths(Faker.Randomizer.Next(1, 13));
         }
     }
 
-    public static void AddDaysInBetweenDates(this DateTime newDt, DateTime start, DateTime end)
+    public static void AddDaysInBetweenDates(ref this DateTime newDt, DateTime start, DateTime end)
     {
         var daysInMonth = DateTime.DaysInMonth(newDt.Year, newDt.Month);
         if (newDt.Year == start.Year && newDt.Month == start.Month)
         {
-            newDt.AddDays(Faker.Randomizer.Next(start.Day, daysInMonth));
+            newDt = newDt.AddDays(Faker.Randomizer.Next(start.Day, daysInMonth));
         }
         else if (newDt.Year == end.Year && newDt.Month == end.Month)
         {
-            newDt.AddDays(Faker.Randomizer.Next(1, end.Day));
+            newDt = newDt.AddDays(Faker.Randomizer.Next(1, end.Day));
         }
         else
         {
-            newDt.AddDays(Faker.Randomizer.Next(1, daysInMonth));
+            newDt = newDt.AddDays(Faker.Randomizer.Next(1, daysInMonth));
         }
     }
 
-    public static void AddHoursInBetweenDates(this DateTime newDt, DateTime start, DateTime end)
+    public static void AddHoursInBetweenDates(ref this DateTime newDt, DateTime start, DateTime end)
     {
+        int startHours, endHours;
         if (newDt.Year == start.Year && newDt.Month == start.Month && newDt.Day == start.Day)
         {
-            newDt.AddHours(Faker.Randomizer.Next(start.Hour, 24));
+            startHours = start.Hour;
+            endHours = 24;
         }
         else if (newDt.Year == end.Year && newDt.Month == end.Month && newDt.Day == end.Day)
         {
-            newDt.AddHours(Faker.Randomizer.Next(0, end.Hour));
+            startHours = 0;
+            endHours = end.Hour;
         }
         else
         {
-            newDt.AddHours(Faker.Randomizer.Next(0, 24));
+            startHours = 0;
+            endHours = 24;
         }
+
+        newDt = newDt.AddHours(Faker.Randomizer.Next(startHours, endHours));
     }
 
-    public static void AddMinutesInBetweenDates(this DateTime newDt, DateTime start, DateTime end)
+    public static void AddMinutesInBetweenDates(ref this DateTime newDt, DateTime start, DateTime end)
     {
         if (newDt.Year == start.Year && newDt.Month == start.Month && newDt.Day == start.Day && newDt.Hour == start.Hour)
         {
-            newDt.AddMinutes(Faker.Randomizer.Next(start.Minute, 60));
+            newDt = newDt.AddMinutes(Faker.Randomizer.Next(start.Minute, 60));
         }
         else if (newDt.Year == end.Year && newDt.Month == end.Month && newDt.Day == end.Day && newDt.Hour == end.Hour)
         {
-            newDt.AddMinutes(Faker.Randomizer.Next(0, end.Minute));
+            newDt = newDt.AddMinutes(Faker.Randomizer.Next(0, end.Minute));
         }
         else
         {
-            newDt.AddMinutes(Faker.Randomizer.Next(0, 60));
+            newDt = newDt.AddMinutes(Faker.Randomizer.Next(0, 60));
         }
     }
 
-    public static void AddSecondsInBetweenDates(this DateTime newDt, DateTime start, DateTime end)
+    public static void AddSecondsInBetweenDates(ref this DateTime newDt, DateTime start, DateTime end)
     {
         if (newDt.Year == start.Year && newDt.Month == start.Month && newDt.Day == start.Day && newDt.Hour == start.Hour && newDt.Minute == start.Minute)
         {
-            newDt.AddSeconds(Faker.Randomizer.Next(start.Second, 60));
+            newDt = newDt.AddSeconds(Faker.Randomizer.Next(start.Second, 60));
         }
         else if (newDt.Year == end.Year && newDt.Month == end.Month && newDt.Day == end.Day && newDt.Hour == end.Hour && newDt.Minute == end.Minute)
         {
-            newDt.AddSeconds(Faker.Randomizer.Next(0, end.Second));
+            newDt = newDt.AddSeconds(Faker.Randomizer.Next(0, end.Second));
         }
         else
         {
-            newDt.AddSeconds(Faker.Randomizer.Next(0, 60));
+            newDt = newDt.AddSeconds(Faker.Randomizer.Next(0, 60));
         }
     }
 
-    public static void AddMillisecondsInBetweenDates(this DateTime newDt, DateTime start, DateTime end)
+    public static void AddMillisecondsInBetweenDates(ref this DateTime newDt, DateTime start, DateTime end)
     {
         if (newDt.Year == start.Year && newDt.Month == start.Month && newDt.Day == start.Day && newDt.Hour == start.Hour && newDt.Minute == start.Minute && newDt.Second == start.Second)
         {
-            newDt.AddMilliseconds(Faker.Randomizer.Next(start.Millisecond, 1000));
+            newDt = newDt.AddMilliseconds(Faker.Randomizer.Next(start.Millisecond, 1000));
         }
         else if (newDt.Year == end.Year && newDt.Month == end.Month && newDt.Day == end.Day && newDt.Hour == end.Hour && newDt.Minute == end.Minute && newDt.Second == end.Second)
         {
-            newDt.AddMilliseconds(Faker.Randomizer.Next(0, end.Millisecond));
+            newDt = newDt.AddMilliseconds(Faker.Randomizer.Next(0, end.Millisecond));
         }
         else
         {
-            newDt.AddMilliseconds(Faker.Randomizer.Next(0, 1000));
+            newDt = newDt.AddMilliseconds(Faker.Randomizer.Next(0, 1000));
         }
     }
 }

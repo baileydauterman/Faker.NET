@@ -49,9 +49,9 @@ namespace Faker.NET.Locales.RU
 
         public string PostalCodeAlternate => PostalCode;
 
-        public string Latitude => _geoFaker.Latitude;
+        public string Latitude => _geoFaker.Latitude();
 
-        public string Longitude => _geoFaker.Longitude;
+        public string Longitude => _geoFaker.Longitude();
 
         private readonly GeoFaker _geoFaker = new GeoFaker();
     }

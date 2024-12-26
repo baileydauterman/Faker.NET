@@ -12,7 +12,7 @@ public interface IFakerDate
 
     public DateTime Future(DateTime? farthestDate = null);
 
-    public DateTime Month();
+    public string Month(bool abbreviated = false, bool useCurrentFakerCulture = true);
 
     public DateTime Past(DateTime? earliestDate = null);
 
@@ -20,7 +20,7 @@ public interface IFakerDate
 
     public DateTime Soon(int days = 5);
 
-    public DateTime TimeZone();
+    public TimeZoneInfo TimeZone();
 
-    public DateTime Weekday();
+    public string Weekday(bool abbreviated = false, bool useCurrentFakerCulture = true);
 }
