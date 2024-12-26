@@ -10,11 +10,11 @@ public class Names : DeterministicTestClass
     {
         string[] expected = {
             "First,Last,Full,Email,Prefix,Suffix,Job",
-            "Johann,Daugherty,Lily Jacobson,Terence@Pfannerstill,Mr.,PhD,Customer Assurance Orchestrator",
-            "Zechariah,Wilderman,Jaquelin Volkman,Kathlyn@Towne,Mr.,MD,Forward Creative Producer",
-            "Sonia,Little,Gina Rippin,Maegan@Simonis,Mr.,Sr.,Legacy Interactions Strategist",
-            "Mallory,Gulgowski,Brionna Lindgren,Candelario@Cole,Dr.,PhD,Investor Identity Administrator",
-            "Neal,McKenzie,Riley Lemke,Percy@Hodkiewicz,Dr.,V,Central Accountability Architect",
+            "Johann,Daugherty,Lily Jacobson,terenceb@innocent-volume.navy,Dr.,DVM,Central Interactions Designer",
+            "Sidney,Boyer,Macy Sauer,rtremblay@fancy-appointment.online,Dr.,Sr.,Corporate Mobility Agent",
+            "Wayne,O'Reilly,Elenor Collins,kamrync@tense-disaster.fishing,Ms.,DDS,Customer Creative Designer",
+            "Percy,Hodkiewicz,Violette McLaughlin,jaylink@disgusted-science.ai,Mr.,Jr.,Future Data Administrator",
+            "Yasmine,Raynor,Alan Green,caltenwerth@wicked-conclusion.trade,Mrs.,III,Central Data Consultant"
         };
 
         var csvFaker = CsvUtils.ToCsvRows<NamesAttributes>();

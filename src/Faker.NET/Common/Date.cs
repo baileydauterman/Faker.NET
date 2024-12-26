@@ -1,16 +1,18 @@
-﻿namespace Faker.NET.Common
+﻿using Faker.NET.Extensions;
+
+namespace Faker.NET.Common
 {
     public class Date
     {
         /// <summary>
         /// Returns full name of Day (e.g. Monday, Tuesday, etc.)
         /// </summary>
-        public string Day => Faker.Culture.DateTimeFormat.DayNames[Faker.Randomizer.Next(7)];
+        public string Day => Faker.Culture.DateTimeFormat.DayNames.GetRandom();
 
         /// <summary>
         /// Returns abbreviated name of Day (e.g. Mon, Tue, etc.)
         /// </summary>
-        public string DayAbbreviated => Faker.Culture.DateTimeFormat.AbbreviatedDayNames[Faker.Randomizer.Next(7)];
+        public string DayAbbreviated => Faker.Culture.DateTimeFormat.AbbreviatedDayNames.GetRandom();
 
         /// <summary>
         /// Returns random day between 1 and 31
@@ -20,7 +22,7 @@
         /// <summary>
         /// Returns full name of month (e.g. January, February, etc.)
         /// </summary>
-        public string Month => Faker.Culture.DateTimeFormat.MonthNames[Faker.Randomizer.Next(12)];
+        public string Month => Faker.Culture.DateTimeFormat.MonthNames.GetRandom();
 
         /// <summary>
         /// Returns abbreviated name of month (e.g. Jan, Feb, etc.)

@@ -177,10 +177,10 @@ namespace Faker.NET.Tests.Files
         {
             return new CsvFaker()
                 .AddColumn("name", () => Faker.Name.First)
-                .AddColumn("date", () => Faker.Date.FullDateTime)
-                .AddColumn("update_date", () => Faker.Date.NowFormatted("dddd, dd MMMM yyyy HH:mm:ss"))
+                .AddColumn("date", () => Faker.Date.Anytime().ToString())
+                .AddColumn("update_date", () => DateTime.Now.ToString("dddd, dd MMMM yyyy HH:mm:ss"))
                 .AddColumn("text", () => Faker.Lorem.GetWords(35))
-                .AddColumn("ip", () => Faker.Computer.IPv4Address)
+                .AddColumn("ip", () => Faker.Internet.IPv4())
                 .AddColumn("small_variable_message", () => Faker.Lorem.GetWords(5, 10));
         }
 
@@ -188,10 +188,10 @@ namespace Faker.NET.Tests.Files
         {
             return new CsvFaker(tempPath)
                 .AddColumn("name", () => Faker.Name.First)
-                .AddColumn("date", () => Faker.Date.FullDateTime)
-                .AddColumn("update_date", () => Faker.Date.NowFormatted("dddd, dd MMMM yyyy HH:mm:ss"))
+                .AddColumn("date", () => Faker.Date.Anytime().ToString())
+                .AddColumn("update_date", () => DateTime.Now.ToString("dddd, dd MMMM yyyy HH:mm:ss"))
                 .AddColumn("text", () => Faker.Lorem.GetWords(35))
-                .AddColumn("ip", () => Faker.Computer.IPv4Address)
+                .AddColumn("ip", () => Faker.Internet.IPv4())
                 .AddColumn("small_variable_message", () => Faker.Lorem.GetWords(5, 10));
         }
 
@@ -199,10 +199,10 @@ namespace Faker.NET.Tests.Files
         {
             return new CsvFaker(stream)
                 .AddColumn("name", () => Faker.Name.First)
-                .AddColumn("date", () => Faker.Date.FullDateTime)
-                .AddColumn("update_date", () => Faker.Date.NowFormatted("dddd, dd MMMM yyyy HH:mm:ss"))
+                .AddColumn("date", () => Faker.Date.Anytime().ToString())
+                .AddColumn("update_date", () => DateTime.Now.ToString("dddd, dd MMMM yyyy HH:mm:ss"))
                 .AddColumn("text", () => Faker.Lorem.GetWords(35))
-                .AddColumn("ip", () => Faker.Computer.IPv4Address)
+                .AddColumn("ip", () => Faker.Internet.IPv4())
                 .AddColumn("small_variable_message", () => Faker.Lorem.GetWords(5, 10));
         }
 
@@ -222,7 +222,7 @@ namespace Faker.NET.Tests.Files
         {
             public string Name { get => Faker.Name.First; set => throw new NotImplementedException(); }
             public string Last { get => Faker.Name.Last; set => throw new NotImplementedException(); }
-            public string IPAddress { get => Faker.Computer.IPv4Address; set => throw new NotImplementedException(); }
+            public string IPAddress { get => Faker.Internet.IPv4(); set => throw new NotImplementedException(); }
         }
 
         public interface IMyClass

@@ -27,7 +27,7 @@ public class FakerInternet : IFakerInternet
 
     public string DomainWord()
     {
-        throw new NotImplementedException();
+        return $"{Domains.DomainAdjectives.GetRandom()}-{Domains.DomainNouns.GetRandom()}";
     }
 
     public string Email(string? firstName = null, string? middleName = null, string? lastName = null, string? provider = null, bool allowSpecialCharacters = true)
@@ -54,6 +54,11 @@ public class FakerInternet : IFakerInternet
 
     public string IPv4(string? cidrBlock, NetworkTypes network = NetworkTypes.Any)
     {
+        if (string.IsNullOrWhiteSpace(cidrBlock) && network == NetworkTypes.Any)
+        {
+            return _ipv4Generator.Value.Generate();
+        }
+
         return _ipv4Generator.Value.Generate(cidrBlock, network);
     }
 

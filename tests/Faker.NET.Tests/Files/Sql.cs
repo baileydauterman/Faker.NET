@@ -44,7 +44,7 @@ namespace Faker.NET.Tests.Files
 
         private string GetUserAgent()
         {
-            return Faker.Computer.UserAgent;
+            return Faker.Internet.UserAgent();
         }
     }
 }

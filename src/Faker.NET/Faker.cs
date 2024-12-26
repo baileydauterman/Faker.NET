@@ -1,4 +1,5 @@
 ﻿using Faker.NET.Common;
+using Faker.NET.Dates;
 using Faker.NET.Interfaces;
 using Faker.NET.Internet;
 using System.Globalization;
@@ -36,6 +37,8 @@ namespace Faker.NET
         /// </summary>
         public static CultureInfo Culture => FakerInstance.Culture;
 
+        public static IFakerDate Date => new FakerDate();
+
         public static IFakerInternet Internet => new FakerInternet();
 
         public static IFakerName Name => FakerInstance.Name;
@@ -47,8 +50,6 @@ namespace Faker.NET
         public static IFakerLocation Location => FakerInstance.Location;
 
         public static IFakerPhoneNumber Phone => FakerInstance.PhoneNumber;
-
-        public static Date Date { get; } = new Date();
 
         public static FakerRandomizer Randomizer { get; private set; } = new FakerRandomizer();
 

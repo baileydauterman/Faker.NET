@@ -73,7 +73,7 @@ namespace Faker.NET.Tests.Files
             {
                 return new AnotherValue
                 {
-                    AValue = Faker.Computer.IPv4Address,
+                    AValue = Faker.Internet.IPv4(),
                     BValue = Faker.Name.Full,
                     CValue = string.Empty,
                     nested = SomeValue.AsValue()
@@ -102,7 +102,7 @@ namespace Faker.NET.Tests.Files
         }
 
         private const string _singleFaked = "{\"firstValue\":\"Camryn Feil\",\"secondvalue\":\"Legacy Solutions Developer\"}";
-        private const string _singleNestedFaked = "{\"AValue\":\"39.61.193.1\",\"BValue\":\"Mathias Koch\",\"CValue\":\"\",\"nested\":{\"firstValue\":\"Vincent Cassin\",\"secondvalue\":\"International Solutions Supervisor\"}}";
+        private const string _singleNestedFaked = "{\"AValue\":\"39.60.192.0\",\"BValue\":\"Mathias Koch\",\"CValue\":\"\",\"nested\":{\"firstValue\":\"Vincent Cassin\",\"secondvalue\":\"International Solutions Supervisor\"}}";
         private readonly JsonSerializerOptions jsonSerializerOptions = new JsonSerializerOptions
         {
             WriteIndented = false

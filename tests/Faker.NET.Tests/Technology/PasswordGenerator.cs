@@ -5,7 +5,7 @@ public class PasswordGenerator
     [Test]
     public void GeneratePassword()
     {
-        var password = Faker.Computer.Password;
-        Assert.That(password.Length, Is.InRange(15,28));
+        var password = Faker.Internet.Password();
+        Assert.That(password.Length, Is.InRange(15, 28));
     }
 }

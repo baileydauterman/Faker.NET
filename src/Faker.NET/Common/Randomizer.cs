@@ -61,11 +61,12 @@ namespace Faker.NET.Common
 
             var builder = new StringBuilder(length);
             var generators = AddGenerators(settings);
+            var generatorKeys = generators.Keys.ToList();
 
             while (length > 0)
             {
                 length--;
-                var random = generators.Keys.ToList().GetRandom();
+                var random = generatorKeys.GetRandom();
                 var randChar = generators[random].Invoke();
                 builder.Append(randChar);
             }
