@@ -4,13 +4,8 @@ using Faker.NET.Interfaces.Definitions;
 
 namespace Faker.NET.Implementations;
 
-public class FakerWord<T> : IFakerWord where T : IFakerWordDefinition
+public class FakerWord<T> : FakerDefinitionHandler<T>, IFakerWord where T : IFakerWordDefinition
 {
-    public FakerWord()
-    {
-        Data = Activator.CreateInstance<T>();
-    }
-
     public string Adjective()
     {
         return Data.Adjective.GetRandom();
@@ -73,6 +68,4 @@ public class FakerWord<T> : IFakerWord where T : IFakerWordDefinition
 
         return string.Join(' ', words);
     }
-
-    private readonly IFakerWordDefinition Data;
 }

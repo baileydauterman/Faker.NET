@@ -5,13 +5,8 @@ using Faker.NET.Interfaces.Definitions;
 
 namespace Faker.NET.Implementations;
 
-public class FakerPerson<T> : IFakerPerson where T : IFakerPersonDefinition
+public class FakerPerson<T> : FakerDefinitionHandler<T>, IFakerPerson where T : IFakerPersonDefinition
 {
-    public FakerPerson()
-    {
-        Data = Activator.CreateInstance<T>();
-    }
-
     public string Bio()
     {
         throw new NotImplementedException();
@@ -95,6 +90,4 @@ public class FakerPerson<T> : IFakerPerson where T : IFakerPersonDefinition
     {
         return Data.ZodiacSign.GetRandom();
     }
-
-    private readonly IFakerPersonDefinition Data;
 }

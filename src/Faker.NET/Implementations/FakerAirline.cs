@@ -6,13 +6,8 @@ using Faker.NET.Interfaces.Definitions;
 
 namespace Faker.NET.Implementations;
 
-public class FakerAirline<T> : IFakerAirline where T : IFakerAirlineDefinition
+public class FakerAirline<T> : FakerDefinitionHandler<T>, IFakerAirline where T : IFakerAirlineDefinition
 {
-    public FakerAirline()
-    {
-        Data = Activator.CreateInstance<T>();
-    }
-
     public AircraftType AircraftType()
     {
         return RandomizerExtensions.GetRandom<AircraftType>();
@@ -64,6 +59,4 @@ public class FakerAirline<T> : IFakerAirline where T : IFakerAirlineDefinition
     {
         throw new NotImplementedException();
     }
-
-    private readonly IFakerAirlineDefinition Data;
 }

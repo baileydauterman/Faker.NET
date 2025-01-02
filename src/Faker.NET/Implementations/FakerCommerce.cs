@@ -4,13 +4,8 @@ using Faker.NET.Interfaces.Definitions;
 
 namespace Faker.NET.Implementations;
 
-public class FakerCommerce<T> : IFakerCommerce where T : IFakerCommerceDefinition
+public class FakerCommerce<T> : FakerDefinitionHandler<T>, IFakerCommerce where T : IFakerCommerceDefinition
 {
-    public FakerCommerce()
-    {
-        Data = Activator.CreateInstance<T>();
-    }
-
     public string Department()
     {
         return Data.Department.GetRandom();
@@ -50,6 +45,4 @@ public class FakerCommerce<T> : IFakerCommerce where T : IFakerCommerceDefinitio
     {
         return $"{ProductAdjective()} {ProductMaterial()} {Product()}";
     }
-
-    private readonly IFakerCommerceDefinition Data;
 }

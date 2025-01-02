@@ -7,13 +7,8 @@ using Faker.NET.Location;
 
 namespace Faker.NET.Implementations;
 
-public class FakerLocation<T> : IFakerLocation where T : IFakerLocationDefinition
+public class FakerLocation<T> : FakerDefinitionHandler<T>, IFakerLocation where T : IFakerLocationDefinition
 {
-    public FakerLocation()
-    {
-        Data = Activator.CreateInstance<T>();
-    }
-
     public string BuildingNumber()
     {
         return Data.BuildingNumber.GetRandom().ToRandomString();
@@ -157,6 +152,5 @@ public class FakerLocation<T> : IFakerLocation where T : IFakerLocationDefinitio
         return Data.Postcode.GetRandom().ToRandomString();
     }
 
-    private IFakerLocationDefinition Data;
     private LocationState? _state = null;
 }
