@@ -19,6 +19,8 @@ namespace Faker.NET.Interfaces
 
         IFakerPhoneNumber PhoneNumber { get; }
 
+        IFakerWord Word { get; }
+
         CultureInfo Culture { get; }
     }
 }

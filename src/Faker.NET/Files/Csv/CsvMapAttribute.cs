@@ -7,7 +7,7 @@
         /// The value that will be displayed in the csv when it is created.
         /// Can be used as the value to get property if the name is the same
         /// </summary>
-        public string DisplayName { get; set; }
+        public string DisplayName { get; set; } = string.Empty;
 
         /// <summary>
         /// The value used to get the specified property. E.g. "Name.First"
@@ -17,7 +17,7 @@
         /// <summary>
         /// Name of field
         /// </summary>
-        public string Field { get; set; }
+        public string Field { get; set; } = string.Empty;
 
         public object GetPropertyValue()
         {

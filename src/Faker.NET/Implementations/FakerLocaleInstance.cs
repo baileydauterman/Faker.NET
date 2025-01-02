@@ -1,9 +1,9 @@
-using System;
 using System.Globalization;
 using Faker.NET.Interfaces;
 
 namespace Faker.NET.Implementations;
 
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.
 public abstract class FakerLocaleInstance : IFakerLocaleInstance
 {
     public virtual IFakerName Name { get; set; }
@@ -19,4 +19,7 @@ public abstract class FakerLocaleInstance : IFakerLocaleInstance
     public virtual IFakerPhoneNumber PhoneNumber { get; set; }
 
     public virtual CultureInfo Culture { get; set; }
+
+    public IFakerWord Word { get; set; }
 }
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.

@@ -1,4 +1,4 @@
-using System;
+using Faker.NET.Common.Location;
 using Faker.NET.Extensions;
 using Faker.NET.Interfaces.Definitions;
 using Faker.NET.Location;
