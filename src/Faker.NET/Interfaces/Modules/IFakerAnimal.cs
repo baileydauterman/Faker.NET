@@ -1,4 +1,4 @@
-namespace Faker.NET.Interfaces;
+namespace Faker.NET.Modules.Interfaces;
 
 public interface IFakerAnimal
 {

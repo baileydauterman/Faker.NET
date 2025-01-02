@@ -1,9 +1,8 @@
 using Faker.NET.Common.Airline;
 using Faker.NET.Common;
 using Faker.NET.Extensions;
-using Faker.NET.Interfaces;
 using Faker.NET.Interfaces.Definitions;
-using System.Reflection.Metadata.Ecma335;
+using Faker.NET.Modules.Interfaces;
 
 namespace Faker.NET.Implementations;
 

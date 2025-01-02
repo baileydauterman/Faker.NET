@@ -1,6 +1,6 @@
 using Faker.NET.Common.Airline;
 
-namespace Faker.NET.Interfaces;
+namespace Faker.NET.Modules.Interfaces;
 
 public interface IFakerAirline
 {

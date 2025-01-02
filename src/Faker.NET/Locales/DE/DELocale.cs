@@ -4,6 +4,7 @@ using Faker.NET.Interfaces;
 using Faker.NET.Locales.DE.Data;
 using System.Globalization;
 using Faker.NET.Implementations;
+using Faker.NET.Modules.Interfaces;
 
 namespace Faker.NET.Locales.DE
 {
@@ -13,7 +14,7 @@ namespace Faker.NET.Locales.DE
         {
             Name = new Name();
             PhoneNumber = new PhoneNumber();
-            Lorem = new Common.FakerLorem(Data.Lorem.Words);
+            Lorem = new FakerLorem(Data.Lorem.Words);
             Culture = CultureInfo.GetCultureInfo("de");
         }
     }

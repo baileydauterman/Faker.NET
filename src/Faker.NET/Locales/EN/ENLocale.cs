@@ -1,4 +1,4 @@
-﻿using Faker.NET.Common;
+﻿using Faker.NET.Common.Internet;
 using Faker.NET.Implementations;
 using Faker.NET.Locales.EN.Data;
 
@@ -12,6 +12,8 @@ internal class ENLocale : FakerLocaleInstance
         Commerce = new FakerCommerce<EnCommerce>();
         Location = new FakerLocation<EnLocationData>();
         Word = new FakerWord<EnWordData>();
+        Date = new FakerDate();
+        Internet = new FakerInternet<EnFakerInternetData>();
 
         Name = new EnFakerName();
         User = new EnFakerUser();

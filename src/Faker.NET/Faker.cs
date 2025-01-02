@@ -1,8 +1,6 @@
 ﻿using Faker.NET.Common;
-using Faker.NET.Common.Internet;
-using Faker.NET.Implementations;
 using Faker.NET.Interfaces;
-using Faker.NET.Internet;
+using Faker.NET.Modules.Interfaces;
 using System.Globalization;
 
 namespace Faker.NET
@@ -39,6 +37,7 @@ namespace Faker.NET
         public static CultureInfo Culture => FakerInstance.Culture;
 
         public static IFakerAirline Airline => FakerInstance.Airline;
+
         public static IFakerDate Date => FakerInstance.Date;
 
         public static IFakerInternet Internet => FakerInstance.Internet;

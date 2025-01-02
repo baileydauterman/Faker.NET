@@ -1,9 +1,9 @@
 ﻿using Faker.NET.Common;
-using Faker.NET.Common.Exceptions;
 using Faker.NET.Extensions;
 using Faker.NET.Implementations;
 using Faker.NET.Interfaces;
 using Faker.NET.Locales.RU.Data;
+using Faker.NET.Modules.Interfaces;
 using System.Globalization;
 
 namespace Faker.NET.Locales.RU

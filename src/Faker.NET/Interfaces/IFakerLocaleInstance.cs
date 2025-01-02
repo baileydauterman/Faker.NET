@@ -1,4 +1,5 @@
 ﻿using System.Globalization;
+using Faker.NET.Modules.Interfaces;
 
 namespace Faker.NET.Interfaces
 {

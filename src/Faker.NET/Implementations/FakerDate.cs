@@ -1,7 +1,7 @@
 using System.Globalization;
 using Faker.NET.Common.Dates;
 using Faker.NET.Extensions;
-using Faker.NET.Interfaces;
+using Faker.NET.Modules.Interfaces;
 
 namespace Faker.NET.Implementations;
 

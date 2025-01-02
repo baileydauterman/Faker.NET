@@ -1,7 +1,6 @@
-using System;
 using Faker.NET.Common.Location;
 
-namespace Faker.NET.Interfaces;
+namespace Faker.NET.Modules.Interfaces;
 
 public interface IFakerLocation
 {
