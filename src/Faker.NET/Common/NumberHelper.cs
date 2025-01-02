@@ -5,20 +5,21 @@ namespace Faker.NET.Common
 {
     internal static class NumberHelper
     {
-        public static string ToRandomString(this string format, char delim = '#')
+        public static string ToRandomString(this string format)
         {
             var charArray = Encoding.UTF8.GetChars(Encoding.UTF8.GetBytes(format));
-            var i = 0;
 
-            foreach (var ch in format)
+            for (int i = 0; i < charArray.Length; i++)
             {
-                // take the first value of the string to put into the charArray
-
-                if (ch == delim)
+                var ch = charArray[i];
+                var v = ch switch
                 {
-                    var num = $"{Faker.Randomizer.Next(0, 9)}"[0];
-                    charArray[i++] = ch == delim ? num : ch;
-                }
+                    '#' => Faker.Randomizer.Next(0, 10),
+                    '!' => Faker.Randomizer.Next(1, 10),
+                    _ => ch
+                };
+
+                charArray[i] = $"{v}"[0];
             }
 
             return new string(charArray);
@@ -30,10 +31,10 @@ namespace Faker.NET.Common
         /// <param name="formats">The array of formats</param>
         /// <param name="replacementChar">The character to replace in the formats</param>
         /// <returns>Randomly formatted string</returns>
-        public static string ToRandomFormat(this string[] formats, char replacementChar = '#')
+        public static string ToRandomFormat(this string[] formats)
         {
             var format = formats.GetRandom();
-            return format.ToRandomString(replacementChar);
+            return format.ToRandomString();
         }
     }
 }

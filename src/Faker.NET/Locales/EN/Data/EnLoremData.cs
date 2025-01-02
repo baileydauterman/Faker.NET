@@ -1,8 +1,10 @@
-﻿namespace Faker.NET.Locales.EN.Data
+﻿using Faker.NET.Interfaces.Definitions;
+
+namespace Faker.NET.Locales.EN.Data
 {
-    internal class LoremIpsum
+    internal class EnLoremData : IFakerLoremDefinition
     {
-        public static readonly string[] Words = new string[]
+        public string[] Words { get; } =
         {
             "alias","consequatur","aut","perferendis","sit","voluptatem","accusantium","doloremque","aperiam","eaque",
             "ipsa","quae","ab","illo","inventore","veritatis","et","quasi","architecto","beatae",

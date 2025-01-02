@@ -1,10 +1,8 @@
-﻿using Faker.NET.Common;
-using Faker.NET.Extensions;
+﻿using Faker.NET.Extensions;
 using Faker.NET.Interfaces;
 using Faker.NET.Locales.DE.Data;
 using System.Globalization;
 using Faker.NET.Implementations;
-using Faker.NET.Modules.Interfaces;
 
 namespace Faker.NET.Locales.DE
 {
@@ -13,8 +11,8 @@ namespace Faker.NET.Locales.DE
         public DELocale()
         {
             Name = new Name();
-            PhoneNumber = new PhoneNumber();
-            Lorem = new FakerLorem(Data.Lorem.Words);
+            PhoneNumber = new FakerPhone<DePhoneNumberData>();
+            Lorem = new FakerLorem<DeLoremData>();
             Culture = CultureInfo.GetCultureInfo("de");
         }
     }
@@ -34,15 +32,6 @@ namespace Faker.NET.Locales.DE
         public string Job => throw new NotImplementedException();
 
         public string Email => throw new NotImplementedException();
-    }
-
-    internal class PhoneNumber : IFakerPhoneNumber
-    {
-        public string Number => $"1{PhoneNumbers.Formats.ToRandomFormat()}";
-
-        public string NumberWithCountryCode => $"+{CountryCode}-1{Number}";
-
-        public int CountryCode { get; } = 49;
     }
 }
 

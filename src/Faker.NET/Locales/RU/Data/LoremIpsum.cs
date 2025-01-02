@@ -1,8 +1,10 @@
-﻿namespace Faker.NET.Locales.RU.Data
+﻿using Faker.NET.Interfaces.Definitions;
+
+namespace Faker.NET.Locales.RU.Data
 {
-    internal class LoremIpsum
+    internal class RuLoremData : IFakerLoremDefinition
     {
-        public static readonly string[] Words = new string[]
+        public string[] Words { get; } =
         {
             "а","административных","активизации","активности","активом","актуальность","анализа","базы","богатый","в",
             "важную","важные","влечёт","внедрения","воздействия","всего","выбранный","вызывает","выполнять","высокотехнологичная",

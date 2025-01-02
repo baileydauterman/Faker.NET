@@ -13,8 +13,9 @@
         [Test]
         public void GeneratePhoneNumber()
         {
-            Assert.That(Faker.Phone.Number, Is.Not.Null);
-            Assert.That(Faker.Phone.NumberWithCountryCode, Is.Not.Null);
+            Assert.That(Faker.Phone.Number(), Is.Not.Null);
+            Assert.That(Faker.Phone.Number(NET.Common.Phone.PhoneNumberType.National), Is.Not.Null);
+            Assert.That(Faker.Phone.Number(NET.Common.Phone.PhoneNumberType.International), Is.Not.Null);
         }
     }
 }

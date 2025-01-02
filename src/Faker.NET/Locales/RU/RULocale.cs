@@ -1,9 +1,9 @@
 ﻿using Faker.NET.Common;
+using Faker.NET.Common.Phone;
 using Faker.NET.Extensions;
 using Faker.NET.Implementations;
 using Faker.NET.Interfaces;
 using Faker.NET.Locales.RU.Data;
-using Faker.NET.Modules.Interfaces;
 using System.Globalization;
 
 namespace Faker.NET.Locales.RU
@@ -13,20 +13,11 @@ namespace Faker.NET.Locales.RU
         public RULocale()
         {
             Name = new Name();
-            Lorem = new FakerLorem(LoremIpsum.Words);
-            PhoneNumber = new PhoneNumber();
+            Lorem = new FakerLorem<RuLoremData>();
+            PhoneNumber = new FakerPhone<RuPhoneNumberData>();
             // Location = new Location();
             Culture = CultureInfo.GetCultureInfo("ru");
         }
-    }
-
-    internal class PhoneNumber : IFakerPhoneNumber
-    {
-        public string Number => $"{PhoneNumbers.AreaCodes.GetRandom()} {PhoneNumbers.Formats.ToRandomFormat()}";
-
-        public string NumberWithCountryCode => $"+{CountryCode} {Number}";
-
-        public int CountryCode => 8;
     }
 
     internal class Name : IFakerName

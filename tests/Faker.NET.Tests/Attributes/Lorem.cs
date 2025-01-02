@@ -29,7 +29,7 @@ public class LoremAttributes
     [FakerLoremWords(Min = 3, Max = 10)]
     public string LoremWords { get; set; }
 
-    [FakerLoremSentences(Count = 3)]
+    [FakerLoremSentences(Max = 3)]
     public string LoremSentences { get; set; }
 
     [FakerLoremParagraph(Min = 1, Max = 10)]

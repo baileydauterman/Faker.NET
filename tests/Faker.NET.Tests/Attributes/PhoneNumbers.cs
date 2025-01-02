@@ -1,5 +1,6 @@
 using System;
 using Faker.NET.Attributes;
+using Faker.NET.Common.Phone;
 using Faker.NET.Tests.Utils;
 
 namespace Faker.NET.Tests.Attributes;
@@ -39,10 +40,10 @@ public class PhoneNumbersAttributes
     [FakerPhoneNumber]
     public string PhoneNumber { get; set; }
 
-    [FakerPhoneNumberCountryCode]
+    [FakerPhoneNumber(Type = PhoneNumberType.International)]
     public int CountryCode { get; set; }
 
-    [FakerPhoneNumberWithAreaCode]
+    [FakerPhoneNumber(Type = PhoneNumberType.National)]
     public string WithAreaCode { get; set; }
 }
 #pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.

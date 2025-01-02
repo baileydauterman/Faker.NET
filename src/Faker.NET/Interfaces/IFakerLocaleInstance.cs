@@ -24,7 +24,7 @@ namespace Faker.NET.Interfaces
 
         IFakerUser User { get; }
 
-        IFakerPhoneNumber PhoneNumber { get; }
+        IFakerPhone PhoneNumber { get; }
 
         IFakerWord Word { get; }
 

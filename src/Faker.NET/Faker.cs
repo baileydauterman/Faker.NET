@@ -50,7 +50,7 @@ namespace Faker.NET
 
         public static IFakerLocation Location => FakerInstance.Location;
 
-        public static IFakerPhoneNumber Phone => FakerInstance.PhoneNumber;
+        public static IFakerPhone Phone => FakerInstance.PhoneNumber;
 
         public static IFakerWord Word => FakerInstance.Word;
 

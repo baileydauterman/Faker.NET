@@ -1,8 +1,10 @@
-﻿namespace Faker.NET.Locales.DE.Data
+﻿using Faker.NET.Interfaces.Definitions;
+
+namespace Faker.NET.Locales.DE.Data
 {
-    internal class Lorem
+    internal class DeLoremData : IFakerLoremDefinition
     {
-        public static readonly string[] Words =
+        public string[] Words { get; } =
         {
             "ab",
             "abseits",

@@ -14,10 +14,10 @@ internal class ENLocale : FakerLocaleInstance
         Word = new FakerWord<EnWordData>();
         Date = new FakerDate();
         Internet = new FakerInternet<EnFakerInternetData>();
+        PhoneNumber = new FakerPhone<EnFakerPhoneData>();
+        Lorem = new FakerLorem<EnLoremData>();
 
         Name = new EnFakerName();
         User = new EnFakerUser();
-        Lorem = new FakerLorem(LoremIpsum.Words);
-        PhoneNumber = new EnFakerPhoneNumber();
     }
 }

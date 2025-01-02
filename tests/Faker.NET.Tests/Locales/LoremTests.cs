@@ -15,7 +15,7 @@
         [TestCase(500)]
         public void Lorem(int count)
         {
-            Assert.That(Faker.Lorem.GetWords(count), Is.Not.Null);
+            Assert.That(Faker.Lorem.Words(count), Is.Not.Null);
         }
     }
 }
