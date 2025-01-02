@@ -1,8 +1,9 @@
 using System.Globalization;
+using Faker.NET.Common.Dates;
 using Faker.NET.Extensions;
 using Faker.NET.Interfaces;
 
-namespace Faker.NET.Dates;
+namespace Faker.NET.Implementations;
 
 public class FakerDate : IFakerDate
 {

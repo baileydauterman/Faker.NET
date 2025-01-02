@@ -1,11 +1,18 @@
+using Faker.NET.Common.Airline;
 using Faker.NET.Common;
 using Faker.NET.Extensions;
 using Faker.NET.Interfaces;
+using Faker.NET.Interfaces.Definitions;
 
-namespace Faker.NET.Airline;
+namespace Faker.NET.Implementations;
 
-public class FakerAirline : IFakerAirline
+public class FakerAirline<T> : IFakerAirline where T : IFakerAirlineDefinition
 {
+    public FakerAirline()
+    {
+        Data = Activator.CreateInstance<T>();
+    }
+
     public AircraftType AircraftType()
     {
         return RandomizerExtensions.GetRandom<AircraftType>();
@@ -13,17 +20,17 @@ public class FakerAirline : IFakerAirline
 
     public Airline Airline()
     {
-        return Data.Airlines.MainlineAirlines.GetRandom();
+        return Data.Airlines.GetRandom();
     }
 
     public Airplane Airplane()
     {
-        return Data.Airplanes.Frames.GetRandom();
+        return Data.Airplanes.GetRandom();
     }
 
     public Airport Airport()
     {
-        return Data.Airports.UnitedStatesAirports.GetRandom();
+        return Data.Airports.GetRandom();
     }
 
     public string FlightNumber(Airline? airline, int? length, bool addLeadingZeros = false)
@@ -57,4 +64,6 @@ public class FakerAirline : IFakerAirline
     {
         throw new NotImplementedException();
     }
+
+    private readonly IFakerAirlineDefinition Data;
 }

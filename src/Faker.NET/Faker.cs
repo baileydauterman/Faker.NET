@@ -1,5 +1,5 @@
 ﻿using Faker.NET.Common;
-using Faker.NET.Dates;
+using Faker.NET.Implementations;
 using Faker.NET.Interfaces;
 using Faker.NET.Internet;
 using System.Globalization;

@@ -1,4 +1,4 @@
-namespace Faker.NET.Dates;
+namespace Faker.NET.Common.Dates;
 
 public class DateTimeDifferenceBuilder
 {

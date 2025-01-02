@@ -1,10 +1,10 @@
-using Faker.NET.Airline;
+using Faker.NET.Common.Airline;
 
 namespace Faker.NET.Interfaces.Definitions;
 
 public interface IFakerAirlineDefinition
 {
-    public Airline.Airline[] Airlines { get; }
+    public Airline[] Airlines { get; }
 
     public Airport[] Airports { get; }
 

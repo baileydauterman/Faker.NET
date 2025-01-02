@@ -1,4 +1,4 @@
-using Faker.NET.Airline;
+using Faker.NET.Common.Airline;
 
 namespace Faker.NET.Interfaces;
 
@@ -6,7 +6,7 @@ public interface IFakerAirline
 {
     public AircraftType AircraftType();
 
-    public Airline.Airline Airline();
+    public Airline Airline();
 
     public Airplane Airplane();
 
@@ -18,7 +18,7 @@ public interface IFakerAirline
     /// <param name="length">Must be between 1 and 4</param>
     /// <param name="addLeadingZeros">Whether or not to add leading zeros to the number</param>
     /// <returns></returns>
-    public string FlightNumber(Airline.Airline? airline, int? length, bool addLeadingZeros = false);
+    public string FlightNumber(Airline? airline, int? length, bool addLeadingZeros = false);
 
     public string RecordLocator(bool allowNumerics = false);
 
