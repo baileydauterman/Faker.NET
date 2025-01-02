@@ -38,6 +38,7 @@ namespace Faker.NET
         /// </summary>
         public static CultureInfo Culture => FakerInstance.Culture;
 
+        public static IFakerAirline Airline => FakerInstance.Airline;
         public static IFakerDate Date => FakerInstance.Date;
 
         public static IFakerInternet Internet => FakerInstance.Internet;

@@ -3,6 +3,7 @@ using Faker.NET.Common;
 using Faker.NET.Extensions;
 using Faker.NET.Interfaces;
 using Faker.NET.Interfaces.Definitions;
+using System.Reflection.Metadata.Ecma335;
 
 namespace Faker.NET.Implementations;
 
@@ -28,7 +29,7 @@ public class FakerAirline<T> : FakerDefinitionHandler<T>, IFakerAirline where T 
         return Data.Airports.GetRandom();
     }
 
-    public string FlightNumber(Airline? airline, int? length, bool addLeadingZeros = false)
+    public string FlightNumber(Airline? airline = null, int? length = null, bool addLeadingZeros = false)
     {
         airline ??= Airline();
         length ??= Faker.Randomizer.Next(1, 5);
@@ -55,8 +56,12 @@ public class FakerAirline<T> : FakerDefinitionHandler<T>, IFakerAirline where T 
         return Faker.Randomizer.String(length, settings);
     }
 
-    public string Seat(AircraftType? aircraftType)
+    public string Seat(AircraftType? aircraftType = null)
     {
-        throw new NotImplementedException();
+        aircraftType ??= RandomizerExtensions.GetRandom<AircraftType>();
+        var number = Faker.Randomizer.Next(1, 52);
+        var seatLetters = new char[] { 'A', 'B', 'C', 'D', 'E', 'F', 'H', 'G', 'I', 'J', 'K' };
+
+        return $"{number}{seatLetters.GetRandom()}";
     }
 }

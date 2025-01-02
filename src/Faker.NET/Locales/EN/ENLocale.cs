@@ -8,6 +8,7 @@ internal class ENLocale : FakerLocaleInstance
 {
     public ENLocale()
     {
+        Airline = new FakerAirline<EnAirlineData>();
         Commerce = new FakerCommerce<EnCommerce>();
         Location = new FakerLocation<EnLocationData>();
         Word = new FakerWord<EnWordData>();

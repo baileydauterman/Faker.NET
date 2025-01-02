@@ -7,6 +7,8 @@ namespace Faker.NET.Interfaces
     /// </summary>
     public interface IFakerLocaleInstance
     {
+        IFakerAirline Airline { get; }
+
         IFakerCommerce Commerce { get; }
 
         IFakerDate Date { get; }
