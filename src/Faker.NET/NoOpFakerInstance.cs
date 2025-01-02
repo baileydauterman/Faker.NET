@@ -1,20 +1,8 @@
-﻿using Faker.NET.Interfaces;
-using System.Globalization;
+﻿using Faker.NET.Implementations;
 
 namespace Faker.NET
 {
-    public class NoOpFakerInstance : IFakerLocaleInstance
+    public class NoOpFakerInstance : FakerLocaleInstance
     {
-        public IFakerName Name => throw new NotImplementedException();
-
-        public IFakerLocation Location => throw new NotImplementedException();
-
-        public IFakerLorem Lorem => throw new NotImplementedException();
-
-        public IFakerUser User => throw new NotImplementedException();
-
-        public IFakerPhoneNumber PhoneNumber => throw new NotImplementedException();
-
-        public CultureInfo Culture => throw new NotImplementedException();
     }
 }

@@ -3,27 +3,17 @@ using Faker.NET.Common.Exceptions;
 using Faker.NET.Interfaces;
 using Faker.NET.Locales.AR.Data;
 using System.Globalization;
+using Faker.NET.Implementations;
 
 namespace Faker.NET.Locales.AR
 {
-    internal class ARLocale : IFakerLocaleInstance
+    internal class ARLocale : FakerLocaleInstance
     {
         public ARLocale()
         {
             Name = new Name();
+            Culture = CultureInfo.GetCultureInfo("ar");
         }
-
-        public IFakerName Name { get; }
-
-        public IFakerLocation Location => ThrowHelper.FakerInstanceNotImplementedException(Location, nameof(Location));
-
-        public IFakerLorem Lorem => throw new FakerInstanceNotImplementedException(nameof(Lorem));
-
-        public IFakerUser User => throw new FakerInstanceNotImplementedException(nameof(User));
-
-        public IFakerPhoneNumber PhoneNumber => throw new FakerInstanceNotImplementedException(nameof(PhoneNumber));
-
-        public CultureInfo Culture => CultureInfo.GetCultureInfo("ar");
     }
 
     internal class Name : IFakerName

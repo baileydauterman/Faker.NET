@@ -9,6 +9,8 @@ namespace Faker.NET.Interfaces
     {
         IFakerName Name { get; }
 
+        IFakerCommerce Commerce { get; }
+
         IFakerLocation Location { get; }
 
         IFakerLorem Lorem { get; }

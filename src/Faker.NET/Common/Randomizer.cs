@@ -47,9 +47,19 @@ namespace Faker.NET.Common
             return integral > 0 ? integral - dec : dec + integral;
         }
 
+        public double NextDouble(double min, double max)
+        {
+            return NextDouble() * (max - min) + min;
+        }
+
         public char NextCharacter(int low, int high)
         {
             return (char)Next(low, high);
+        }
+
+        public double Radian()
+        {
+            return this.Next(1, 12) * Math.PI / 6;
         }
 
         public string String(int length, StringCharacterTypes settings = StringCharacterTypes.All)

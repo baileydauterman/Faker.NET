@@ -1,29 +1,18 @@
 ﻿using Faker.NET.Common.Exceptions;
 using Faker.NET.Extensions;
+using Faker.NET.Implementations;
 using Faker.NET.Interfaces;
 using Faker.NET.Locales.ZH.Data;
 using System.Globalization;
 
 namespace Faker.NET.Locales.ZH
 {
-    internal class ZHLocale : IFakerLocaleInstance
+    internal class ZHLocale : FakerLocaleInstance
     {
         public ZHLocale()
         {
             Name = new Name();
         }
-
-        public IFakerName Name { get; }
-
-        public IFakerLocation Location => ThrowHelper.FakerMemberNotImplementedException(Location, FakerLocale.Mandarin, nameof(Location));
-
-        public IFakerLorem Lorem => ThrowHelper.FakerMemberNotImplementedException(Lorem, FakerLocale.Mandarin, nameof(Lorem));
-
-        public IFakerUser User => ThrowHelper.FakerMemberNotImplementedException(User, FakerLocale.Mandarin, nameof(User));
-
-        public IFakerPhoneNumber PhoneNumber => ThrowHelper.FakerMemberNotImplementedException(PhoneNumber, FakerLocale.Mandarin, nameof(PhoneNumber));
-
-        public CultureInfo Culture { get; } = CultureInfo.GetCultureInfo("zh");
     }
 
     internal class Name : IFakerName

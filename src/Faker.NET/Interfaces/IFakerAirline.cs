@@ -1,4 +1,3 @@
-using System;
 using Faker.NET.Airline;
 
 namespace Faker.NET.Interfaces;

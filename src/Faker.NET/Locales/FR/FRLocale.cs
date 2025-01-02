@@ -1,28 +1,18 @@
 ﻿using Faker.NET.Extensions;
+using Faker.NET.Implementations;
 using Faker.NET.Interfaces;
 using Faker.NET.Locales.FR.Data;
 using System.Globalization;
 
 namespace Faker.NET.Locales.FR
 {
-    internal class FRLocale : IFakerLocaleInstance
+    internal class FRLocale : FakerLocaleInstance
     {
         public FRLocale()
         {
             Name = new Name();
+            Culture = CultureInfo.GetCultureInfo("fr");
         }
-
-        public IFakerName Name { get; }
-
-        public IFakerLocation Location => throw new NotImplementedException();
-
-        public IFakerLorem Lorem => throw new NotImplementedException();
-
-        public IFakerUser User => throw new NotImplementedException();
-
-        public IFakerPhoneNumber PhoneNumber => throw new NotImplementedException();
-
-        public CultureInfo Culture { get; } = CultureInfo.GetCultureInfo("fr");
     }
 
     internal class Name : IFakerName

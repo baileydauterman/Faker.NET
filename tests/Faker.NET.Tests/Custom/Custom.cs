@@ -1,4 +1,5 @@
 ﻿using Faker.NET.Extensions;
+using Faker.NET.Implementations;
 using Faker.NET.Interfaces;
 using NUnit.Framework.Internal;
 using System.Globalization;
@@ -23,24 +24,12 @@ namespace Faker.NET.Tests.Custom
         }
     }
 
-    internal class CustomFaker : IFakerLocaleInstance
+    internal class CustomFaker : FakerLocaleInstance
     {
         public CustomFaker()
         {
             Name = new CustomName();
         }
-
-        public IFakerName Name { get; }
-
-        public IFakerLocation Location => throw new NotImplementedException();
-
-        public IFakerLorem Lorem => throw new NotImplementedException();
-
-        public IFakerUser User => throw new NotImplementedException();
-
-        public IFakerPhoneNumber PhoneNumber => throw new NotImplementedException();
-
-        public CultureInfo Culture => throw new NotImplementedException();
     }
 
     internal class CustomName : IFakerName

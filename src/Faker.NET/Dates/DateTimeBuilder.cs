@@ -1,6 +1,3 @@
-using System;
-using System.Formats.Asn1;
-
 namespace Faker.NET.Dates;
 
 public class DateTimeDifferenceBuilder
@@ -21,11 +18,11 @@ public class DateTimeDifferenceBuilder
     {
         if (Year == _startDt.Year)
         {
-            Month = Faker.Randomizer.Next(_startDt.Month, 12);
+            Month = _startDt.Month == _endDt.Month ? _startDt.Month : Faker.Randomizer.Next(_startDt.Month, 12);
         }
         else if (Year == _endDt.Year)
         {
-            Month = Faker.Randomizer.Next(1, _endDt.Month);
+            Month = _startDt.Month == _endDt.Month ? _startDt.Month : Faker.Randomizer.Next(1, _endDt.Month);
         }
         else
         {

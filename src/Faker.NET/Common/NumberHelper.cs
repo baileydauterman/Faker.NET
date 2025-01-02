@@ -13,8 +13,12 @@ namespace Faker.NET.Common
             foreach (var ch in format)
             {
                 // take the first value of the string to put into the charArray
-                var num = $"{Faker.Randomizer.Next(0, 9)}"[0];
-                charArray[i++] = ch == delim ? num : ch;
+
+                if (ch == delim)
+                {
+                    var num = $"{Faker.Randomizer.Next(0, 9)}"[0];
+                    charArray[i++] = ch == delim ? num : ch;
+                }
             }
 
             return new string(charArray);
