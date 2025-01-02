@@ -1,4 +1,4 @@
-namespace Faker.NET.Internet.Data;
+namespace Faker.NET.Common.Internet.Data;
 
 public class Http
 {

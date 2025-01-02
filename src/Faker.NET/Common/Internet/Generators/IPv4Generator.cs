@@ -1,4 +1,5 @@
 using System.Net;
+using Faker.NET.Common.Internet;
 
 namespace Faker.NET.Internet.Generators;
 

@@ -1,5 +1,5 @@
 using Faker.NET.Common;
-using Faker.NET.Internet;
+using Faker.NET.Common.Internet;
 
 namespace Faker.NET.Interfaces;
 
@@ -17,7 +17,7 @@ public interface IFakerInternet
 
     string Email(string? firstName = null, string? middleName = null, string? lastName = null, string? provider = null, bool allowSpecialCharacters = true);
 
-    string Emoji();
+    string Emoji(EmojiTypes? type);
 
     string HttpMethod();
 

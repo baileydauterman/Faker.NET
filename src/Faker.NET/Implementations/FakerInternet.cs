@@ -1,15 +1,19 @@
-using System;
 using System.Net;
-using Faker.NET.Common;
+using Faker.NET.Common.Internet.Data;
 using Faker.NET.Extensions;
 using Faker.NET.Interfaces;
-using Faker.NET.Internet.Data;
+using Faker.NET.Interfaces.Definitions;
 using Faker.NET.Internet.Generators;
 
-namespace Faker.NET.Internet;
+namespace Faker.NET.Common.Internet;
 
-public class FakerInternet : IFakerInternet
+public class FakerInternet<T> : IFakerInternet where T : IFakerInternetDefinition
 {
+    public FakerInternet()
+    {
+        Data = Activator.CreateInstance<T>();
+    }
+
     public string DisplayName(string? first = null, string? middle = null, string? last = null)
     {
         return Username(first, middle, last);
@@ -22,12 +26,12 @@ public class FakerInternet : IFakerInternet
 
     public string DomainSuffix()
     {
-        return Domains.TopLevelDomains.GetRandom();
+        return Data.TopLevelDomains.GetRandom();
     }
 
     public string DomainWord()
     {
-        return $"{Domains.DomainAdjectives.GetRandom()}-{Domains.DomainNouns.GetRandom()}";
+        return $"{Faker.Word.Adjective()}-{Faker.Word.Noun()}";
     }
 
     public string Email(string? firstName = null, string? middleName = null, string? lastName = null, string? provider = null, bool allowSpecialCharacters = true)
@@ -37,9 +41,10 @@ public class FakerInternet : IFakerInternet
         return $"{userName}@{provider}";
     }
 
-    public string Emoji()
+    public string Emoji(EmojiTypes? type)
     {
-        throw new NotImplementedException();
+        type ??= RandomizerExtensions.GetRandom<EmojiTypes>();
+        return Data.Emojis.Get(type.Value);
     }
 
     public string HttpMethod()
@@ -139,6 +144,7 @@ public class FakerInternet : IFakerInternet
         return userName.ToLower();
     }
 
+    private readonly IFakerInternetDefinition Data;
     private Lazy<IPv4Generator> _ipv4Generator = new Lazy<IPv4Generator>();
     private Lazy<HexGenerator> _hexGenerator = new Lazy<HexGenerator>();
 }

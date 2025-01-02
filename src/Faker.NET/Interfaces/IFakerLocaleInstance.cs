@@ -7,9 +7,13 @@ namespace Faker.NET.Interfaces
     /// </summary>
     public interface IFakerLocaleInstance
     {
-        IFakerName Name { get; }
-
         IFakerCommerce Commerce { get; }
+
+        IFakerDate Date { get; }
+
+        IFakerInternet Internet { get; }
+
+        IFakerName Name { get; }
 
         IFakerLocation Location { get; }
 

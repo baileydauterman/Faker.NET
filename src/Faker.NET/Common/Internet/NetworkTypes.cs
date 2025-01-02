@@ -1,4 +1,4 @@
-namespace Faker.NET.Internet;
+namespace Faker.NET.Common.Internet;
 
 [Flags]
 public enum NetworkTypes
