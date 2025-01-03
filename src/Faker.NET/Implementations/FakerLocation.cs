@@ -81,33 +81,34 @@ public class FakerLocation<T> : FakerDefinitionHandler<T>, IFakerLocation where 
     /// <returns></returns>
     public Coordinate NearbyCoordinate(Coordinate origin, Distance radius)
     {
-        const int kmPerDegree = 40_000 / 360;
+        double R = 6371; // Radius of the Earth in kilometers
 
-        // doing all conversions by kilometers to have a standard unit of measurement
-        var angleRadians = Faker.Randomizer.Radian(); // random radian to look at
-        var radiusInKm = radius.ToKilometers(); // normalize to km
-        var errorCorrection = 0.995; // avoid float issues
-        var distanceInKm = Faker.Randomizer.NextDouble(0, radiusInKm.Length) * errorCorrection;
-        var distanceInDegree = distanceInKm / kmPerDegree; // in °
+        // Convert latitude and longitude from degrees to radians
+        double lat1 = origin.Latitude * Math.PI / 180;
+        double lon1 = origin.Longitude * Math.PI / 180;
 
-        var coordinate = new Coordinate
+        // Random distance within the radius
+        double d = radius.ToKilometers().Length * Faker.Randomizer.NextDouble();
+
+        // Random bearing in radians
+        double theta = 2 * Math.PI * Faker.Randomizer.NextDouble();
+
+        // Calculate new latitude
+        double lat2 = Math.Asin(Math.Sin(lat1) * Math.Cos(d / R) + Math.Cos(lat1) * Math.Sin(d / R) * Math.Cos(theta));
+
+        // Calculate new longitude
+        double lon2 = lon1 + Math.Atan2(Math.Sin(theta) * Math.Sin(d / R) * Math.Cos(lat1),
+                                        Math.Cos(d / R) - Math.Sin(lat1) * Math.Sin(lat2));
+
+        // Convert back to degrees
+        lat2 = lat2 * 180 / Math.PI;
+        lon2 = lon2 * 180 / Math.PI;
+
+        return new Coordinate
         {
-            Latitude = origin.Latitude + Math.Sin(angleRadians) * distanceInDegree,
-            Longitude = origin.Longitude + Math.Cos(angleRadians) * distanceInDegree,
+            Latitude = lat2,
+            Longitude = lon2,
         };
-
-        // Box latitude [-90°, 90°]
-        coordinate.Latitude = coordinate.Latitude % 180;
-        if (coordinate.Latitude < -90 || coordinate.Latitude > 90)
-        {
-            coordinate.Latitude = Math.Sign(coordinate.Latitude) * 180 - coordinate.Latitude;
-            coordinate.Longitude += 180;
-        }
-
-        // Box longitude [-180°, 180°]
-        coordinate.Longitude = (((coordinate.Longitude % 360) + 540) % 360) - 180;
-
-        return coordinate;
     }
 
     public string OrdinalDirection(bool abbreviated = false)
@@ -129,12 +130,13 @@ public class FakerLocation<T> : FakerDefinitionHandler<T>, IFakerLocation where 
 
     public string Street()
     {
-        throw new NotImplementedException();
+        return Data.StreetName.GetRandom();
     }
 
     public string StreetAddress(bool useFullAddress = false)
     {
-        throw new NotImplementedException();
+        return useFullAddress ? Data.StreetAddress.Full.Invoke(this) :
+                                Data.StreetAddress.Normal.Invoke(this);
     }
 
     public string TimeZone()

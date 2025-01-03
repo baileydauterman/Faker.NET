@@ -2,6 +2,7 @@ using Faker.NET.Common.Location;
 using Faker.NET.Extensions;
 using Faker.NET.Interfaces.Definitions;
 using Faker.NET.Location;
+using Faker.NET.Modules.Interfaces;
 
 namespace Faker.NET.Locales.EN.Data;
 
@@ -943,14 +944,6 @@ public class EnLocationData : IFakerLocationDefinition
         "Yuma"
     };
 
-    public string[] CityPattern { get; } = {
-        "{{location.city_prefix}} {{person.first_name.generic}}{{location.city_suffix}}",
-        "{{location.city_prefix}} {{person.first_name.generic}}",
-        "{{person.first_name.generic}}{{location.city_suffix}}",
-        "{{person.last_name.generic}}{{location.city_suffix}}",
-        "{{location.city_name}}"
-    };
-
     public string[] CityPrefix { get; } = {
         "North",
         "East",
@@ -1793,11 +1786,12 @@ public class EnLocationData : IFakerLocationDefinition
 
     public StreetAddress StreetAddress { get; } = new StreetAddress
     {
-        Normal = "{{location.buildingNumber}} {{location.street}}",
-        Full = "{{location.buildingNumber}} {{location.street}} {{location.secondaryAddress}}"
+        Normal = location => $"{location.BuildingNumber()} {location.Street()}",
+        Full = location => $"{location.BuildingNumber()} {location.Street()} {location.SecondaryAddress()}",
     };
 
-    public string[] StreetName { get; } = { "10th Street",
+    public string[] StreetName { get; } = {
+        "10th Street",
         "11th Street",
         "12th Street",
         "13th Street",
@@ -2547,14 +2541,10 @@ public class EnLocationData : IFakerLocationDefinition
         "York Road",
         "York Street"};
 
-    public string[] StreetPattern { get; } = {
-        "{{person.first_name.generic}} {{location.street_suffix}}",
-        "{{person.last_name.generic}} {{location.street_suffix}}",
-        "{{location.street_name}}"
- };
+    public string[] StreetPattern => throw new NotImplementedException();
 
     public string[] StreetSuffix { get; } = {
-    "Alley",
+        "Alley",
         "Avenue",
         "Branch",
         "Bridge",

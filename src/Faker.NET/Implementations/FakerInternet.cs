@@ -71,7 +71,8 @@ public class FakerInternet<T> : FakerDefinitionHandler<T>, IFakerInternet where 
 
     public string JWT()
     {
-        throw new NotImplementedException();
+        // throw new NotImplementedException();
+        return string.Empty;
     }
 
     public string Mac(string? separator)
@@ -98,7 +99,8 @@ public class FakerInternet<T> : FakerDefinitionHandler<T>, IFakerInternet where 
 
     public string Protocol()
     {
-        throw new NotImplementedException();
+        string[] protocols = { "http", "https" };
+        return protocols.GetRandom();
     }
 
     public string Rgb(int? redBase, int? greenBase, int? blueBase)

@@ -1,5 +1,6 @@
 using Faker.NET.Common.Location;
 using Faker.NET.Location;
+using Faker.NET.Modules.Interfaces;
 
 namespace Faker.NET.Interfaces.Definitions;
 
@@ -7,7 +8,6 @@ public interface IFakerLocationDefinition
 {
     public string[] BuildingNumber { get; }
     public string[] CityName { get; }
-    public string[] CityPattern { get; }
     public string[] CityPrefix { get; }
     public string[] CitySuffix { get; }
     public string[] Continent { get; }

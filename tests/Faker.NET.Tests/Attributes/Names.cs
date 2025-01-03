@@ -6,16 +6,15 @@ namespace Faker.NET.Tests.Attributes;
 public class Names : DeterministicTestClass
 {
     [Test]
-    [Ignore("PITA to update")]
     public void ClassAttributesCsv()
     {
         string[] expected = {
             "First,Last,Full,Email,Prefix,Suffix,Job",
-            "Johann,Daugherty,Lily Jacobson,terenceb@innocent-volume.navy,Dr.,DVM,Central Interactions Designer",
-            "Sidney,Boyer,Macy Sauer,rtremblay@fancy-appointment.online,Dr.,Sr.,Corporate Mobility Agent",
-            "Wayne,O'Reilly,Elenor Collins,kamrync@tense-disaster.fishing,Ms.,DDS,Customer Creative Designer",
-            "Percy,Hodkiewicz,Violette McLaughlin,jaylink@disgusted-science.ai,Mr.,Jr.,Future Data Administrator",
-            "Yasmine,Raynor,Alan Green,caltenwerth@wicked-conclusion.trade,Mrs.,III,Central Data Consultant"
+            "Johann,Daugherty,Lily Jacobson,terenceb@nippy-range.navy,Dr.,DVM,Central Interactions Designer",
+            "Sidney,Boyer,Macy Sauer,rtremblay@illiterate-reconsideration.online,Dr.,Sr.,Corporate Mobility Agent",
+            "Wayne,O'Reilly,Elenor Collins,kamrync@turbulent-obesity.fishing,Ms.,DDS,Customer Creative Designer",
+            "Percy,Hodkiewicz,Violette McLaughlin,jaylink@flustered-bid.ai,Mr.,Jr.,Future Data Administrator",
+            "Yasmine,Raynor,Alan Green,caltenwerth@white-solution.trade,Mrs.,III,Central Data Consultant",
         };
 
         var csvFaker = CsvUtils.ToCsvRows<NamesAttributes>();

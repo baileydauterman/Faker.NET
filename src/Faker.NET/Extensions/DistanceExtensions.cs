@@ -95,7 +95,26 @@ public static class DistanceExtensions
 
     public static Distance ToMeters(this Distance distance)
     {
-        throw new NotImplementedException();
+        var meters = distance.Unit switch
+        {
+            UnitOfMeasurement.Inch => distance.Length * 0.0254,
+            UnitOfMeasurement.Foot => distance.Length * 0.3048,
+            UnitOfMeasurement.Yard => distance.Length * 0.9144,
+            UnitOfMeasurement.Rod => distance.Length * 5.0292,
+            UnitOfMeasurement.Chain => distance.Length * 20.1168,
+            UnitOfMeasurement.Furlong => distance.Length * 201.168,
+            UnitOfMeasurement.Mile => distance.Length * 1609.34,
+            UnitOfMeasurement.Millimeter => distance.Length * 0.001,
+            UnitOfMeasurement.Centimeter => distance.Length * 0.01,
+            UnitOfMeasurement.Decimeter => distance.Length * 0.1,
+            UnitOfMeasurement.Meter => distance.Length,
+            UnitOfMeasurement.Decameter => distance.Length * 10,
+            UnitOfMeasurement.Hectometer => distance.Length * 100,
+            UnitOfMeasurement.Kilometer => distance.Length * 1000,
+            _ => throw new Exception($"Unhandled unit of measurement: {distance.Unit}"),
+        };
+
+        return Distance.Meters(meters);
     }
 
     public static Distance ToDecameters(this Distance distance)
@@ -110,15 +129,15 @@ public static class DistanceExtensions
 
     public static Distance ToKilometers(this Distance distance)
     {
-        var km = distance.Unit switch
+        var kilometers = distance.Unit switch
         {
-            UnitOfMeasurement.Inch => distance.Length / 39370,
-            UnitOfMeasurement.Foot => distance.Length / 3281,
-            UnitOfMeasurement.Yard => distance.Length / 1094,
-            UnitOfMeasurement.Rod => distance.Length / 198.8,
-            UnitOfMeasurement.Chain => distance.Length / 49.71,
-            UnitOfMeasurement.Furlong => distance.Length / 4.971,
-            UnitOfMeasurement.Mile => distance.Length * 1.609,
+            UnitOfMeasurement.Inch => distance.Length * 0.0000254,
+            UnitOfMeasurement.Foot => distance.Length * 0.0003048,
+            UnitOfMeasurement.Yard => distance.Length * 0.0009144,
+            UnitOfMeasurement.Rod => distance.Length * 0.0050292,
+            UnitOfMeasurement.Chain => distance.Length * 0.0201168,
+            UnitOfMeasurement.Furlong => distance.Length * 0.201168,
+            UnitOfMeasurement.Mile => distance.Length * 1.60934,
             UnitOfMeasurement.Millimeter => distance.Length * 0.000001,
             UnitOfMeasurement.Centimeter => distance.Length * 0.00001,
             UnitOfMeasurement.Decimeter => distance.Length * 0.0001,
@@ -129,6 +148,6 @@ public static class DistanceExtensions
             _ => throw new Exception($"Unhandled unit of measurement: {distance.Unit}"),
         };
 
-        return Distance.Kilometers(km);
+        return Distance.Kilometers(kilometers);
     }
 }

@@ -14,12 +14,12 @@ namespace Faker.NET.Common
                 var ch = charArray[i];
                 var v = ch switch
                 {
-                    '#' => Faker.Randomizer.Next(0, 10),
-                    '!' => Faker.Randomizer.Next(1, 10),
+                    '#' => Faker.Randomizer.NextCharacter('1', '9'),
+                    '!' => Faker.Randomizer.NextCharacter('1', '9'),
                     _ => ch
                 };
 
-                charArray[i] = $"{v}"[0];
+                charArray[i] = v;
             }
 
             return new string(charArray);

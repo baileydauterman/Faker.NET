@@ -97,11 +97,11 @@ namespace Faker.NET.Files.Csv
 
             foreach (var prop in type.GetProperties())
             {
-                var attrs = prop.GetCustomAttributes(typeof(FakerAttribute), true) as FakerAttribute[];
-
+                var attrs = prop.GetCustomAttributes(typeof(FakerAttribute), true) as FakerAttribute[] ??
+                            throw new Exception();
                 foreach (var attr in attrs)
                 {
-                    _headers.Add(prop.Name, () => attr.GetPropertyValue().ToString());
+                    _headers.Add(prop.Name, () => attr.GetPropertyValue().ToString() ?? string.Empty);
                 }
             }
 
@@ -110,10 +110,19 @@ namespace Faker.NET.Files.Csv
 
         public IEnumerable<string> Generate<T>(T classInstance)
         {
+            if (classInstance is null)
+            {
+                return Array.Empty<string>();
+            }
+
             var type = classInstance.GetType();
 
             foreach (var prop in type.GetProperties())
             {
+                if (prop is null)
+                {
+                    throw new Exception();
+                }
                 _headers.Add(prop.Name, () => (string)prop.GetValue(classInstance));
             }
 

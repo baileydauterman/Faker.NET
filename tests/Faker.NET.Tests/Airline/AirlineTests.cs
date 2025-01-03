@@ -39,13 +39,13 @@ public class AirlineTests : DeterministicTestClass
     [Test]
     public void FlightNumber()
     {
-        Assert.That(Faker.Airline.FlightNumber(), Is.EqualTo("F93"));
+        Assert.That(Faker.Airline.FlightNumber(), Is.EqualTo("F95"));
     }
 
     [Test]
     public void RecordLocator()
     {
-        Assert.That(Faker.Airline.RecordLocator(), Is.EqualTo("PWCNPXWW"));
+        Assert.That(Faker.Airline.RecordLocator(), Is.EqualTo("EPKWRCWN"));
     }
 
     [Test]

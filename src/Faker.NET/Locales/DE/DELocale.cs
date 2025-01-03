@@ -13,6 +13,7 @@ namespace Faker.NET.Locales.DE
             Name = new Name();
             PhoneNumber = new FakerPhone<DePhoneNumberData>();
             Lorem = new FakerLorem<DeLoremData>();
+            Location = new FakerLocation<DeLocationData>();
             Culture = CultureInfo.GetCultureInfo("de");
         }
     }

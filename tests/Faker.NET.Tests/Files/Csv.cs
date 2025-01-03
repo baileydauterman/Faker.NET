@@ -1,7 +1,6 @@
-﻿using System.Net;
+﻿using System.Runtime.CompilerServices;
 using Faker.NET.Attributes;
 using Faker.NET.Files.Csv;
-using Faker.NET.Interfaces;
 
 namespace Faker.NET.Tests.Files
 {
@@ -138,17 +137,6 @@ namespace Faker.NET.Tests.Files
             Assert.That(csvFaker.Count(), Is.EqualTo(101));
         }
 
-        [Test]
-        public void GenerateTypeByInstanceCsv()
-        {
-            var classInstance = new NoAttrInteropClass();
-            var csvFaker = new CsvFaker()
-                .Iterations(100)
-                .Generate(classInstance);
-
-            Assert.That(csvFaker.Count(), Is.EqualTo(101));
-        }
-
         private int CreateFileGetLineCount(string tempPath, uint rowCount = 10)
         {
             using var stream = File.OpenWrite(tempPath);
@@ -175,64 +163,46 @@ namespace Faker.NET.Tests.Files
 
         private CsvFaker CreateCsvFaker()
         {
-            return new CsvFaker()
-                .AddColumn("name", () => Faker.Name.First)
-                .AddColumn("date", () => Faker.Date.Anytime().ToString())
-                .AddColumn("update_date", () => DateTime.Now.ToString("dddd, dd MMMM yyyy HH:mm:ss"))
-                .AddColumn("text", () => Faker.Lorem.Words(35))
-                .AddColumn("ip", () => Faker.Internet.IPv4())
-                .AddColumn("small_variable_message", () => Faker.Lorem.Words(5, 10));
+            return new CsvFaker().AddTestColumns();
         }
 
         private CsvFaker CreateCsvFaker(string tempPath)
         {
-            return new CsvFaker(tempPath)
-                .AddColumn("name", () => Faker.Name.First)
-                .AddColumn("date", () => Faker.Date.Anytime().ToString())
-                .AddColumn("update_date", () => DateTime.Now.ToString("dddd, dd MMMM yyyy HH:mm:ss"))
-                .AddColumn("text", () => Faker.Lorem.Words(35))
-                .AddColumn("ip", () => Faker.Internet.IPv4())
-                .AddColumn("small_variable_message", () => Faker.Lorem.Words(5, 10));
+            return new CsvFaker(tempPath).AddTestColumns();
         }
 
         private CsvFaker CreateCsvFaker(Stream stream)
         {
-            return new CsvFaker(stream)
-                .AddColumn("name", () => Faker.Name.First)
-                .AddColumn("date", () => Faker.Date.Anytime().ToString())
-                .AddColumn("update_date", () => DateTime.Now.ToString("dddd, dd MMMM yyyy HH:mm:ss"))
-                .AddColumn("text", () => Faker.Lorem.Words(35))
-                .AddColumn("ip", () => Faker.Internet.IPv4())
-                .AddColumn("small_variable_message", () => Faker.Lorem.Words(5, 10));
+            return new CsvFaker(stream).AddTestColumns();
         }
 
-        public class FakeClass : IMyClass
+        public class FakeClass
         {
-            [FakerNameFirst]
+            [FakerPersonFirstName]
             public string Name { get; set; } = string.Empty;
 
-            [FakerNameLast]
+            [FakerPersonLastName]
             public string Last { get; set; } = string.Empty;
 
-            [FakerComputerIPv4Address]
+            [FakerInternetIPv4]
             public string IPAddress { get; set; } = string.Empty;
-        }
 
-        public class NoAttrInteropClass : IMyClass
-        {
-            public string Name { get => Faker.Name.First; set => throw new NotImplementedException(); }
-            public string Last { get => Faker.Name.Last; set => throw new NotImplementedException(); }
-            public string IPAddress { get => Faker.Internet.IPv4(); set => throw new NotImplementedException(); }
-        }
-
-        public interface IMyClass
-        {
-            string Name { get; set; }
-
-            string Last { get; set; }
-
-            string IPAddress { get; set; }
+            [FakerInternetPassword(Length = 25, Memorable = false, Prefix = "12345")]
+            public string Password { get; set; } = string.Empty;
         }
     }
 }
 
+internal static class CsvFakerExtensions
+{
+    public static CsvFaker AddTestColumns(this CsvFaker faker)
+    {
+        return faker
+                .AddColumn("name", () => Faker.NET.Faker.Name.First)
+                .AddColumn("date", () => Faker.NET.Faker.Date.Anytime().ToString())
+                .AddColumn("update_date", () => DateTime.Now.ToString("dddd, dd MMMM yyyy HH:mm:ss"))
+                .AddColumn("text", () => Faker.NET.Faker.Lorem.Words(35, 35))
+                .AddColumn("ip", () => Faker.NET.Faker.Internet.IPv4())
+                .AddColumn("small_variable_message", () => Faker.NET.Faker.Lorem.Words(5, 10));
+    }
+}

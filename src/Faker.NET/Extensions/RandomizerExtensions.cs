@@ -6,12 +6,24 @@ public static class RandomizerExtensions
 {
     public static T GetRandom<T>(this T[] array)
     {
-        return array[Faker.Randomizer.Next(array.Length)];
+        var arrLen = array.Length;
+        if (arrLen == 1)
+        {
+            return array[0];
+        }
+
+        return array[Faker.Randomizer.Next(arrLen)];
     }
 
-    public static T GetRandom<T>(this IList<T> array)
+    public static T GetRandom<T>(this IList<T> collection)
     {
-        return array[Faker.Randomizer.Next(array.Count)];
+        var len = collection.Count;
+        if (len == 1)
+        {
+            return collection[0];
+        }
+
+        return collection[Faker.Randomizer.Next(len)];
     }
 
     public static T? GetRandom<T>() where T : Enum
@@ -23,7 +35,7 @@ public static class RandomizerExtensions
             return (T)values.GetValue(index);
         }
 
-        return default(T);
+        return default;
     }
 
     public static string CreateRandomString(this string[] array, int numberOfWords)

@@ -57,6 +57,16 @@ namespace Faker.NET.Common
             return (char)Next(low, high);
         }
 
+        public char NextCharacter(char low, char high)
+        {
+            if (low > high)
+            {
+                throw new Exception($"Low character cannot be greater than high");
+            }
+
+            return (char)Next(low, high);
+        }
+
         public double Radian()
         {
             return this.Next(1, 12) * Math.PI / 6;
