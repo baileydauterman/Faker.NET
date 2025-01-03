@@ -5,19 +5,21 @@
 /// </summary>
 public interface IFakerLorem
 {
-    string Word();
-
-    string Words(int min = 1, int max = 3);
+    string Lines(int min = 1, int max = 3);
 
     string Paragraph();
 
     string Paragraphs(int min = 1, int max = 3);
 
-    string Sentences();
+    string Sentence();
 
-    string Sentences(int min, int max);
+    string Sentences(int min = 1, int max = 2);
 
     string Slug(int min = 1, int max = 3);
 
     string Text();
+
+    string Word();
+
+    string Words(int min = 1, int max = 3);
 }

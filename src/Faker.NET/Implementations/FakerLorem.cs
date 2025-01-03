@@ -7,37 +7,16 @@ namespace Faker.NET.Implementations;
 
 internal class FakerLorem<T> : FakerDefinitionHandler<T>, IFakerLorem where T : IFakerLoremDefinition
 {
-    public string Words(int words) => Data.Words.CreateRandomString(words);
-
-    public string Words(int min, int max) => Data.Words.CreateRandomLengthString(min, max);
-
-    public string Paragraphs(int count)
-    {
-        var builder = new StringBuilder();
-
-        for (int i = 0; i < count; i++)
-        {
-            var paragraph = Sentences(4, 12);
-            builder.Append(paragraph);
-        }
-
-        return builder.ToString().Trim();
-    }
+    public string Words(int min, int max) => Data.Words.CreateRandomString(min, max);
 
     public string Paragraphs(int min, int max)
     {
-        var exact = Faker.Randomizer.Next(min, max);
-        return Paragraphs(exact);
-    }
-
-    public string Sentences(int count)
-    {
+        var count = Faker.Randomizer.Next(min, max);
         var builder = new StringBuilder();
 
         for (int i = 0; i < count; i++)
         {
-            var sentence = Words(4, 18);
-            builder.Append($"{sentence}. ");
+            builder.Append(Paragraph());
         }
 
         return builder.ToString().Trim();
@@ -45,32 +24,52 @@ internal class FakerLorem<T> : FakerDefinitionHandler<T>, IFakerLorem where T : 
 
     public string Sentences(int min, int max)
     {
-        var exact = Faker.Randomizer.Next(min, max);
-        return Sentences(exact);
+        var count = Faker.Randomizer.Next(min, max);
+        var builder = new StringBuilder();
+
+        for (int i = 0; i < count; i++)
+        {
+            builder.Append($"{Sentence()} ");
+        }
+
+        return builder.ToString().Trim();
     }
 
     public string Word()
     {
-        throw new NotImplementedException();
+        return Data.Words.GetRandom();
     }
 
     public string Paragraph()
     {
-        throw new NotImplementedException();
+        return Sentences(4, 12);
     }
 
-    public string Sentences()
+    public string Sentence()
     {
-        throw new NotImplementedException();
+        return $"{Words(4, 18)}.";
     }
 
     public string Slug(int min = 1, int max = 3)
     {
-        throw new NotImplementedException();
+        return Words(min, max).ToSlug();
     }
 
     public string Text()
     {
-        throw new NotImplementedException();
+        return Words(5, 150);
+    }
+
+    public string Lines(int min = 1, int max = 3)
+    {
+        var builder = new StringBuilder();
+        var count = Faker.Randomizer.Next(1, 3);
+
+        while (count-- > 0)
+        {
+            builder.AppendLine(Sentence());
+        }
+
+        return builder.ToString();
     }
 }
