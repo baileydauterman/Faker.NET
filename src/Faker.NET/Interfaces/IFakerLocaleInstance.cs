@@ -22,8 +22,6 @@ namespace Faker.NET.Interfaces
 
         IFakerLorem Lorem { get; }
 
-        IFakerUser User { get; }
-
         IFakerPerson Person { get; }
 
         IFakerPhone PhoneNumber { get; }

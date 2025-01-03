@@ -3,9 +3,9 @@ using Faker.NET.Interfaces.Definitions;
 
 namespace Faker.NET.Locales.EN.Data;
 
-public class EnCommerceProductName : IFakerCommerceProductNameDefinition
+internal class EnCommerceProductName : IFakerCommerceProductNameDefinition
 {
-    public string[] Adjective { get; } = {
+  public string[] Adjective { get; } = {
     "Awesome",
     "Bespoke",
     "Electronic",
@@ -32,7 +32,7 @@ public class EnCommerceProductName : IFakerCommerceProductNameDefinition
     "Unbranded",
   };
 
-    public string[] Material { get; } = {
+  public string[] Material { get; } = {
     "Bronze",
     "Concrete",
     "Cotton",
@@ -47,7 +47,7 @@ public class EnCommerceProductName : IFakerCommerceProductNameDefinition
     "Wooden",
     };
 
-    public string[] Product { get; } = {
+  public string[] Product { get; } = {
     "Bacon",
     "Ball",
     "Bike",

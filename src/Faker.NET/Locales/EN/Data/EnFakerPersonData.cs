@@ -1,11 +1,11 @@
-using Faker.NET.Common.Objects;
+using Faker.NET.Common;
 using Faker.NET.Common.Person;
 using Faker.NET.Extensions;
 using Faker.NET.Interfaces.Definitions;
 
 namespace Faker.NET.Locales.EN.Data;
 
-public class EnFakerPersonData : IFakerPersonDefinition
+internal class EnFakerPersonData : IFakerPersonDefinition
 {
     public string[] BioPart { get; } = {
         "activist",

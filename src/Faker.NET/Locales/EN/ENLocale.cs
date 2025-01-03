@@ -19,6 +19,5 @@ internal class ENLocale : FakerLocaleInstance
         Lorem = new FakerLorem<EnLoremData>();
 
         Name = new EnFakerName();
-        User = new EnFakerUser();
     }
 }

@@ -1,6 +1,8 @@
+using Faker.NET.Tests.Utils;
+
 namespace Faker.NET.Tests.Technology;
 
-public class PasswordGenerator
+public class PasswordGenerator : DeterministicTestClass
 {
     [Test]
     public void GeneratePassword()

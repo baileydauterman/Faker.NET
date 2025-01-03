@@ -2,11 +2,10 @@ using Faker.NET.Common.Location;
 using Faker.NET.Extensions;
 using Faker.NET.Interfaces.Definitions;
 using Faker.NET.Location;
-using Faker.NET.Modules.Interfaces;
 
 namespace Faker.NET.Locales.EN.Data;
 
-public class EnLocationData : IFakerLocationDefinition
+internal class EnLocationData : IFakerLocationDefinition
 {
     public string[] BuildingNumber { get; } = {
         "#####",

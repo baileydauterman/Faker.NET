@@ -1,4 +1,3 @@
-using System;
 using Faker.NET.Common.Location;
 
 namespace Faker.NET.Extensions;

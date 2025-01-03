@@ -5,7 +5,7 @@ using Faker.NET.Modules.Interfaces;
 
 namespace Faker.NET.Implementations;
 
-public class FakerDate : IFakerDate
+internal class FakerDate : IFakerDate
 {
     /// <summary>
     /// Get any date between <see cref="DateTime.MinValue"/> to <see cref="DateTime.MaxValue"/>

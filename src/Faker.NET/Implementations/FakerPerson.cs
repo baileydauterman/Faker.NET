@@ -5,7 +5,7 @@ using Faker.NET.Modules.Interfaces;
 
 namespace Faker.NET.Implementations;
 
-public class FakerPerson<T> : FakerDefinitionHandler<T>, IFakerPerson where T : IFakerPersonDefinition
+internal class FakerPerson<T> : FakerDefinitionHandler<T>, IFakerPerson where T : IFakerPersonDefinition
 {
     public string Bio()
     {

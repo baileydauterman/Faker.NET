@@ -4,7 +4,7 @@ using Faker.NET.Modules.Interfaces;
 
 namespace Faker.NET.Implementations;
 
-public class FakerWord<T> : FakerDefinitionHandler<T>, IFakerWord where T : IFakerWordDefinition
+internal class FakerWord<T> : FakerDefinitionHandler<T>, IFakerWord where T : IFakerWordDefinition
 {
     public string Adjective()
     {

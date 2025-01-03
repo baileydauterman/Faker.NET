@@ -2,7 +2,7 @@ using Faker.NET.Interfaces.Definitions;
 
 namespace Faker.NET.Locales.EN.Data;
 
-public class EnCommerce : IFakerCommerceDefinition
+internal class EnCommerce : IFakerCommerceDefinition
 {
     public string[] Department { get; } =
     {

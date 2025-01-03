@@ -120,9 +120,9 @@ namespace Faker.NET.Files.Sql
                    type == SqlDbType.VarChar || type == SqlDbType.NVarChar;
         }
 
-        public string DbName { get; set; }
+        public string DbName { get; set; } = string.Empty;
 
-        public string Table { get; set; }
+        public string Table { get; set; } = string.Empty;
 
         public Stream BaseStream { get; }
 

@@ -7,7 +7,7 @@ using Faker.NET.Modules.Interfaces;
 
 namespace Faker.NET.Implementations;
 
-public class FakerLocation<T> : FakerDefinitionHandler<T>, IFakerLocation where T : IFakerLocationDefinition
+internal class FakerLocation<T> : FakerDefinitionHandler<T>, IFakerLocation where T : IFakerLocationDefinition
 {
     public string BuildingNumber()
     {

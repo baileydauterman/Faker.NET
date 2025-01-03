@@ -44,8 +44,6 @@ namespace Faker.NET
 
         public static IFakerName Name => FakerInstance.Name;
 
-        public static IFakerUser User => FakerInstance.User;
-
         public static IFakerLorem Lorem => FakerInstance.Lorem;
 
         public static IFakerLocation Location => FakerInstance.Location;

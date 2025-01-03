@@ -2,10 +2,11 @@
 
 namespace Faker.NET.Files.Json
 {
-	public class JsonFaker
-	{
+    public class JsonFaker
+    {
         public JsonFaker(bool indentation = false)
         {
+            BaseStream = new MemoryStream();
             _jsonSerializerOptions = new JsonSerializerOptions
             {
                 WriteIndented = indentation
@@ -31,7 +32,7 @@ namespace Faker.NET.Files.Json
             BaseStream = stream;
         }
 
-        public static string FromObject<T>(Func<T> processingFunc, JsonSerializerOptions options = null)
+        public static string FromObject<T>(Func<T> processingFunc, JsonSerializerOptions options)
         {
             return JsonSerializer.Serialize(processingFunc(), options);
         }
@@ -49,22 +50,29 @@ namespace Faker.NET.Files.Json
         }
 
         public string CreateJsonString()
-		{
+        {
             var nodes = new List<System.Text.Json.Nodes.JsonNode>();
 
             foreach ((var key, var value) in _processingDict)
             {
-                nodes.Add(JsonSerializer.SerializeToNode(value.Func()));
+                var valueData = JsonSerializer.SerializeToNode(value.Func());
+                if (valueData is not null)
+                {
+                    nodes.Add(valueData);
+                }
             }
 
             return JsonSerializer.Serialize(nodes, options: _jsonSerializerOptions);
-		}
+        }
 
         public Stream BaseStream { get; }
 
-        private readonly JsonSerializerOptions _jsonSerializerOptions;
+        private readonly JsonSerializerOptions _jsonSerializerOptions = new JsonSerializerOptions
+        {
+            WriteIndented = false,
+        };
 
-        private Dictionary<Type, (int Iterations, Func<object>Func)> _processingDict = new();
-	}
+        private Dictionary<Type, (int Iterations, Func<object> Func)> _processingDict = new();
+    }
 }
 

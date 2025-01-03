@@ -1,4 +1,4 @@
-using Faker.NET.Common.Objects;
+using Faker.NET.Common;
 using Faker.NET.Common.Person;
 
 namespace Faker.NET.Interfaces.Definitions;

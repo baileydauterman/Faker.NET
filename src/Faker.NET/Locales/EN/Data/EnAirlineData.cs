@@ -1,10 +1,9 @@
-using System;
 using Faker.NET.Common.Airline;
 using Faker.NET.Interfaces.Definitions;
 
 namespace Faker.NET.Locales.EN.Data;
 
-public class EnAirlineData : IFakerAirlineDefinition
+internal class EnAirlineData : IFakerAirlineDefinition
 {
     public Airline[] Airlines { get; } = {
         new Airline("Alaska Airlines","AS"),

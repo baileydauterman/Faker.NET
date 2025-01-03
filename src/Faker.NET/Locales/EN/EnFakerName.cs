@@ -4,7 +4,7 @@ using Faker.NET.Locales.EN.Data;
 
 namespace Faker.NET.Locales.EN;
 
-public class EnFakerName : IFakerName
+internal class EnFakerName : IFakerName
 {
     public string First => Names.First.GetRandom();
 

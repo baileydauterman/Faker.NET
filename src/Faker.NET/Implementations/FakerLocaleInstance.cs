@@ -15,8 +15,6 @@ public abstract class FakerLocaleInstance : IFakerLocaleInstance
 
     public virtual IFakerLorem Lorem { get; set; }
 
-    public virtual IFakerUser User { get; set; }
-
     public virtual IFakerPhone PhoneNumber { get; set; }
 
     public virtual CultureInfo Culture { get; set; }

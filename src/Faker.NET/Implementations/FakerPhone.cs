@@ -6,7 +6,7 @@ using Faker.NET.Modules.Interfaces;
 
 namespace Faker.NET.Implementations;
 
-public class FakerPhone<T> : FakerDefinitionHandler<T>, IFakerPhone where T : IFakerPhoneDefinition
+internal class FakerPhone<T> : FakerDefinitionHandler<T>, IFakerPhone where T : IFakerPhoneDefinition
 {
     public string IMEI()
     {

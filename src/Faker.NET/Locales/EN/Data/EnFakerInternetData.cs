@@ -3,7 +3,7 @@ using Faker.NET.Interfaces.Definitions;
 
 namespace Faker.NET.Locales.EN.Data;
 
-public class EnFakerInternetData : IFakerInternetDefinition
+internal class EnFakerInternetData : IFakerInternetDefinition
 {
     public string[] TopLevelDomains { get; } = {
         ".ac",

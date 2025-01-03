@@ -2,7 +2,7 @@ using Faker.NET.Interfaces.Definitions;
 
 namespace Faker.NET.Locales.EN.Data;
 
-public class EnWordData : IFakerWordDefinition
+internal class EnWordData : IFakerWordDefinition
 {
     public string[] Adjective { get; } = {
         "abandoned",

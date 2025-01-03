@@ -1,6 +1,6 @@
 using Faker.NET.Extensions;
 
-namespace Faker.NET.Common.Objects;
+namespace Faker.NET.Common;
 
 public class WeightedList<T>
 {

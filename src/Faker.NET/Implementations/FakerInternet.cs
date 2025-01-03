@@ -8,7 +8,7 @@ using Faker.NET.Modules.Interfaces;
 
 namespace Faker.NET.Common.Internet;
 
-public class FakerInternet<T> : FakerDefinitionHandler<T>, IFakerInternet where T : IFakerInternetDefinition
+internal class FakerInternet<T> : FakerDefinitionHandler<T>, IFakerInternet where T : IFakerInternetDefinition
 {
     public string DisplayName(string? first = null, string? middle = null, string? last = null)
     {

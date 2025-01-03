@@ -1,9 +1,8 @@
-using System;
 using Faker.NET.Interfaces.Definitions;
 
 namespace Faker.NET.Locales.EN.Data;
 
-public class EnFakerPhoneData : IFakerPhoneDefinition
+internal class EnFakerPhoneData : IFakerPhoneDefinition
 {
     public string[] Human { get; } = {
         "!##-!##-####",

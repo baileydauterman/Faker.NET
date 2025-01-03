@@ -32,7 +32,7 @@ public static class RandomizerExtensions
         if (values is not null && values.Length > 0)
         {
             var index = Faker.Randomizer.Next(values.Length);
-            return (T)values.GetValue(index);
+            return (T)(values.GetValue(index) ?? throw new NullReferenceException());
         }
 
         return default;

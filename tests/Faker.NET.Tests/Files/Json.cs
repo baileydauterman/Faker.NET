@@ -9,7 +9,7 @@ namespace Faker.NET.Tests.Files
         public void SingleObject()
         {
             Faker.SetRandomizerSeed(1000);
-            var fakedData = JsonFaker.FromObject(SomeValue.SetTestValues).Trim();
+            var fakedData = JsonFaker.FromObject(SomeValue.SetTestValues, jsonSerializerOptions).Trim();
             Assert.That(fakedData, Is.EqualTo(_singleFaked));
 
             Faker.ResetRandomizer();

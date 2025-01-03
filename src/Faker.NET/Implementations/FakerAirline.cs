@@ -6,7 +6,7 @@ using Faker.NET.Modules.Interfaces;
 
 namespace Faker.NET.Implementations;
 
-public class FakerAirline<T> : FakerDefinitionHandler<T>, IFakerAirline where T : IFakerAirlineDefinition
+internal class FakerAirline<T> : FakerDefinitionHandler<T>, IFakerAirline where T : IFakerAirlineDefinition
 {
     public AircraftType AircraftType()
     {
