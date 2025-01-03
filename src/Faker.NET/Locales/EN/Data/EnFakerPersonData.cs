@@ -1,5 +1,6 @@
 using Faker.NET.Common.Objects;
 using Faker.NET.Common.Person;
+using Faker.NET.Extensions;
 using Faker.NET.Interfaces.Definitions;
 
 namespace Faker.NET.Locales.EN.Data;
@@ -50,15 +51,15 @@ public class EnFakerPersonData : IFakerPersonDefinition
         "writer",
     };
 
-    public string[] BioPattern { get; } = {
-        "{{person.bio_part}}",
-        "{{person.bio_part}}, {{person.bio_part}}",
-        "{{person.bio_part}}, {{person.bio_part}}, {{person.bio_part}}",
-        "{{person.bio_part}}, {{person.bio_part}}, {{person.bio_part}} {{internet.emoji}}",
-        "{{word.noun}} {{person.bio_supporter}}",
-        "{{word.noun}} {{person.bio_supporter}}  {{internet.emoji}}",
-        "{{word.noun}} {{person.bio_supporter}}, {{person.bio_part}}",
-        "{{word.noun}} {{person.bio_supporter}}, {{person.bio_part}} {{internet.emoji}}",
+    public Func<IFakerPersonDefinition, string>[] BioPattern { get; } = {
+        person => $"{person.BioPart.GetRandom()}",
+        person => $"{person.BioPart.GetRandom()}, {person.BioPart.GetRandom()}",
+        person => $"{person.BioPart.GetRandom()}, {person.BioPart.GetRandom()}, {person.BioPart.GetRandom()}",
+        person => $"{person.BioPart.GetRandom()}, {person.BioPart.GetRandom()}, {person.BioPart.GetRandom()} {Faker.Internet.Emoji()}",
+        person => $"{Faker.Word.Noun()} {person.BioSupporter.GetRandom()}",
+        person => $"{Faker.Word.Noun()} {person.BioSupporter.GetRandom()}  {Faker.Internet.Emoji()}",
+        person => $"{Faker.Word.Noun()} {person.BioSupporter.GetRandom()}, {person.BioPart.GetRandom()}",
+        person => $"{Faker.Word.Noun()} {person.BioSupporter.GetRandom()}, {person.BioPart.GetRandom()} {Faker.Internet.Emoji}",
     };
 
     public string[] BioSupporter { get; } = {
@@ -4229,8 +4230,8 @@ public class EnFakerPersonData : IFakerPersonDefinition
         "Principal",
     };
 
-    public string[] JobTitlePattern { get; } = {
-        "{{person.jobDescriptor}} {{person.jobArea}} {{person.jobType}}",
+    public Func<string>[] JobTitlePattern { get; } = {
+        () => $"{Faker.Person.JobDescriptor()} {Faker.Person.JobArea()} {Faker.Person.JobType()}",
     };
 
     public string[] JobType { get; } = {
@@ -4740,7 +4741,12 @@ public class EnFakerPersonData : IFakerPersonDefinition
         }
     };
 
-    public WeightedList<string> LastNamePattern => throw new NotImplementedException();
+    public WeightedList<Func<IFakerPersonDefinition, Sex, string>> LastNamePattern { get; } = new WeightedList<Func<IFakerPersonDefinition, Sex, string>>(
+        new Dictionary<Func<IFakerPersonDefinition, Sex, string>, int> {
+            { (data, sex) => $"{data.LastName.Get(sex)}", 95},
+            { (data, sex) => $"{data.LastName.Unisex.GetRandom()}-{data.LastName.Get(sex)}", 5}
+        }
+    );
 
     public SexSpecificValues<string> MiddleName { get; } = new SexSpecificValues<string>
     {
@@ -5122,12 +5128,12 @@ public class EnFakerPersonData : IFakerPersonDefinition
   },
     };
 
-    public WeightedList<string> Name { get; } = new WeightedList<string>(new Dictionary<string, int>{
-        {"{{person.firstName}} {{person.lastName}}", 49 },
-        {"{{person.prefix}} {{person.firstName}} {{person.lastName}}", 7},
-        {"{{person.firstName}} {{person.lastName}} {{person.suffix}}",7},
-        {"{{person.prefix}} {{person.firstName}} {{person.lastName}} {{person.suffix}}",1
-        },
+    public WeightedList<Func<string>> Name { get; } = new WeightedList<Func<string>>(
+        new Dictionary<Func<string>, int>{
+            {() => $"{Faker.Person.FirstName()} {Faker.Person.LastName()}", 49 },
+            {() => $"{Faker.Person.Prefix()} {Faker.Person.FirstName()} {Faker.Person.LastName()}", 7},
+            {() => $"{Faker.Person.FirstName()} {Faker.Person.LastName()} {Faker.Person.Suffix()}",7},
+            {() => $"{Faker.Person.Prefix()} {Faker.Person.FirstName()} {Faker.Person.LastName()} {Faker.Person.Suffix()}",1},
     });
 
     public SexSpecificValues<string> Prefix { get; } = new SexSpecificValues<string>

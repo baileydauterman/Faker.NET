@@ -9,7 +9,7 @@ public class FakerPerson<T> : FakerDefinitionHandler<T>, IFakerPerson where T : 
 {
     public string Bio()
     {
-        throw new NotImplementedException();
+        return Data.BioPattern.GetRandom().Invoke(Data);
     }
 
     public string FirstName(Sex? sex)
@@ -55,15 +55,9 @@ public class FakerPerson<T> : FakerDefinitionHandler<T>, IFakerPerson where T : 
 
     public string LastName(Sex? sex)
     {
-        var weight = Faker.Randomizer.Next(100);
-        if (weight < 95)
-        {
-            return Data.LastName.Get(sex);
-        }
-        else
-        {
-            return $"{Data.LastName.Unisex.GetRandom()}-{Data.LastName.Unisex.GetRandom()}";
-        }
+        sex ??= Sex();
+        var pattern = Data.LastNamePattern.GetValue();
+        return pattern is null ? string.Empty : pattern.Invoke(Data, sex.Value);
     }
 
     public string MiddleName(Sex? sex)

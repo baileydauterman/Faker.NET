@@ -17,7 +17,7 @@ public interface IFakerInternet
 
     string Email(string? firstName = null, string? middleName = null, string? lastName = null, string? provider = null, bool allowSpecialCharacters = true);
 
-    string Emoji(EmojiTypes? type);
+    string Emoji(EmojiTypes? type = null);
 
     string HttpMethod();
 
