@@ -8,6 +8,7 @@ public class DeterministicTestClass
     [SetUp]
     public void SetUp()
     {
+        Faker.SetLocale(FakerLocale.English);
         Faker.SetRandomizerSeed(123456789);
     }
 

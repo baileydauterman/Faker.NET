@@ -1,30 +1,21 @@
-﻿using Faker.NET.Common;
-using Faker.NET.Interfaces;
+﻿using Faker.NET.Common.Internet;
+using Faker.NET.Implementations;
 using Faker.NET.Locales.EN.Data;
-using System.Globalization;
 
 namespace Faker.NET.Locales.EN;
 
-internal class ENLocale : IFakerLocaleInstance
+internal class ENLocale : FakerLocaleInstance
 {
     public ENLocale()
     {
-        Name = new EnFakerName();
-        User = new EnFakerUser();
-        Lorem = new FakerLorem(LoremIpsum.Words);
-        Location = new EnFakerLocation();
-        PhoneNumber = new EnFakerPhoneNumber();
+        Person = new FakerPerson<EnFakerPersonData>();
+        Airline = new FakerAirline<EnAirlineData>();
+        Commerce = new FakerCommerce<EnCommerce>();
+        Location = new FakerLocation<EnLocationData>();
+        Word = new FakerWord<EnWordData>();
+        Date = new FakerDate();
+        Internet = new FakerInternet<EnFakerInternetData>();
+        PhoneNumber = new FakerPhone<EnFakerPhoneData>();
+        Lorem = new FakerLorem<EnLoremData>();
     }
-
-    public IFakerName Name { get; }
-
-    public IFakerUser User { get; }
-
-    public IFakerLorem Lorem { get; }
-
-    public IFakerLocation Location { get; }
-
-    public IFakerPhoneNumber PhoneNumber { get; }
-
-    public CultureInfo Culture { get; } = CultureInfo.GetCultureInfo("en");
 }

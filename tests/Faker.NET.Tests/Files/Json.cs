@@ -1,5 +1,5 @@
-﻿using Faker.NET.Files.Json;
-using System.Text.Json;
+﻿using System.Text.Json;
+using Faker.NET.Files.Json;
 
 namespace Faker.NET.Tests.Files
 {
@@ -9,7 +9,7 @@ namespace Faker.NET.Tests.Files
         public void SingleObject()
         {
             Faker.SetRandomizerSeed(1000);
-            var fakedData = JsonFaker.FromObject(SomeValue.SetTestValues).Trim();
+            var fakedData = JsonFaker.FromObject(SomeValue.SetTestValues, jsonSerializerOptions).Trim();
             Assert.That(fakedData, Is.EqualTo(_singleFaked));
 
             Faker.ResetRandomizer();
@@ -28,7 +28,7 @@ namespace Faker.NET.Tests.Files
         public void MultipleNodes()
         {
             var faker = new JsonFaker()
-                .AddField<KeyValuePair<string, object>>(() => CreateNameNode("name", Faker.Name.First))
+                .AddField<KeyValuePair<string, object>>(() => CreateNameNode("name", Faker.Person.FirstName()))
                 .AddField<SomeValue>(SomeValue.SetTestValues)
                 .AddField<AnotherValue>(AnotherValue.SetTestValues)
                 .AddField<DoubleNested>(DoubleNested.SetTestValues);
@@ -51,8 +51,8 @@ namespace Faker.NET.Tests.Files
             {
                 return new SomeValue
                 {
-                    firstValue = Faker.Name.Full,
-                    secondvalue = Faker.Name.Job,
+                    firstValue = Faker.Person.FullName(),
+                    secondvalue = Faker.Person.JobTitle(),
                 };
             }
 
@@ -73,8 +73,8 @@ namespace Faker.NET.Tests.Files
             {
                 return new AnotherValue
                 {
-                    AValue = Faker.Computer.IPv4Address,
-                    BValue = Faker.Name.Full,
+                    AValue = Faker.Internet.IPv4(),
+                    BValue = Faker.Person.FullName(),
                     CValue = string.Empty,
                     nested = SomeValue.AsValue()
                 };
@@ -101,8 +101,8 @@ namespace Faker.NET.Tests.Files
             }
         }
 
-        private const string _singleFaked = "{\"firstValue\":\"Camryn Feil\",\"secondvalue\":\"Legacy Solutions Developer\"}";
-        private const string _singleNestedFaked = "{\"AValue\":\"39.61.193.1\",\"BValue\":\"Mathias Koch\",\"CValue\":\"\",\"nested\":{\"firstValue\":\"Vincent Cassin\",\"secondvalue\":\"International Solutions Supervisor\"}}";
+        private const string _singleFaked = "{\"firstValue\":\"Dolores Pax Pouros\",\"secondvalue\":\"District Usability Liaison\"}";
+        private const string _singleNestedFaked = "{\"AValue\":\"39.60.192.0\",\"BValue\":\"Johanna Vera Powlowski\",\"CValue\":\"\",\"nested\":{\"firstValue\":\"Alyssa Carelyn Reilly\",\"secondvalue\":\"Principal Infrastructure Manager\"}}";
         private readonly JsonSerializerOptions jsonSerializerOptions = new JsonSerializerOptions
         {
             WriteIndented = false

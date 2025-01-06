@@ -9,6 +9,7 @@ namespace Faker.NET.Files.Csv
         /// </summary>
         public CsvFaker()
         {
+            BaseStream = new MemoryStream();
         }
 
         /// <summary>
@@ -87,7 +88,7 @@ namespace Faker.NET.Files.Csv
         }
 
         /// <summary>
-        /// Generate a csv based on a type. Requires use of <see cref="CsvMapAttribute"/>
+        /// Generate a csv based on a type. Properties to have data generated must use an attribute that extends <see cref="FakerAttribute"/>
         /// </summary>
         /// <typeparam name="T">Type to generate csv from</typeparam>
         /// <returns></returns>
@@ -97,24 +98,13 @@ namespace Faker.NET.Files.Csv
 
             foreach (var prop in type.GetProperties())
             {
-                var attrs = prop.GetCustomAttributes(typeof(FakerAttribute), true) as FakerAttribute[];
+                var attrs = prop.GetCustomAttributes(typeof(FakerAttribute), true) as FakerAttribute[] ??
+                            throw new Exception();
 
                 foreach (var attr in attrs)
                 {
-                    _headers.Add(prop.Name, () => attr.GetPropertyValue().ToString());
+                    _headers.Add(prop.Name, () => attr.GetPropertyValue().ToString() ?? string.Empty);
                 }
-            }
-
-            return Generate();
-        }
-
-        public IEnumerable<string> Generate<T>(T classInstance)
-        {
-            var type = classInstance.GetType();
-
-            foreach (var prop in type.GetProperties())
-            {
-                _headers.Add(prop.Name, () => (string)prop.GetValue(classInstance));
             }
 
             return Generate();
@@ -172,7 +162,8 @@ namespace Faker.NET.Files.Csv
         }
 
         /// <summary>
-        /// Outputs the data to the <see cref="BaseStream"/>
+        /// Outputs the data to the <see cref="BaseStream"/>.
+        /// Writes to a <see cref="MemoryStream"/> if a file is not given.
         /// </summary>
         public void WriteRows()
         {

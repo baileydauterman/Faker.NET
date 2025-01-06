@@ -1,4 +1,6 @@
 ﻿using System.Globalization;
+using Faker.NET.Interfaces.Modules;
+using Faker.NET.Modules.Interfaces;
 
 namespace Faker.NET.Interfaces
 {
@@ -7,15 +9,25 @@ namespace Faker.NET.Interfaces
     /// </summary>
     public interface IFakerLocaleInstance
     {
-        IFakerName Name { get; }
+        IFakerAirline Airline { get; }
+
+        IFakerColor Color { get; }
+
+        IFakerCommerce Commerce { get; }
+
+        IFakerDate Date { get; }
+
+        IFakerInternet Internet { get; }
 
         IFakerLocation Location { get; }
 
         IFakerLorem Lorem { get; }
 
-        IFakerUser User { get; }
+        IFakerPerson Person { get; }
 
-        IFakerPhoneNumber PhoneNumber { get; }
+        IFakerPhone PhoneNumber { get; }
+
+        IFakerWord Word { get; }
 
         CultureInfo Culture { get; }
     }

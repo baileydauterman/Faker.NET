@@ -10,12 +10,12 @@
             Faker.SetLocale(locale);
         }
 
-        [TestCase(5)]
-        [TestCase(50)]
-        [TestCase(500)]
-        public void Lorem(int count)
+        [TestCase(0, 5)]
+        [TestCase(0, 50)]
+        [TestCase(0, 500)]
+        public void Lorem(int min, int max)
         {
-            Assert.That(Faker.Lorem.GetWords(count), Is.Not.Null);
+            Assert.That(Faker.Lorem.Words(min, max), Is.Not.Null);
         }
     }
 }

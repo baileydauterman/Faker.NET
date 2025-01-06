@@ -22,10 +22,11 @@ namespace Faker.NET
                 FakerLocale.French => new FRLocale(),
                 FakerLocale.Russian => new RULocale(),
                 FakerLocale.Mandarin => new ZHLocale(),
-                _ => null,
+                FakerLocale.Unknown => new NoOpFakerInstance(),
+                _ => new NoOpFakerInstance(),
             };
 
-            if (faker is null)
+            if (faker is NoOpFakerInstance)
             {
                 ThrowHelper.FakerLocaleNotImplementedException(locale, nameof(Create));
             }
@@ -35,7 +36,7 @@ namespace Faker.NET
 
         public static FakerLocale GetLocale(CultureInfo culture)
         {
-            FakerLocale locale =  culture.TwoLetterISOLanguageName switch
+            FakerLocale locale = culture.TwoLetterISOLanguageName switch
             {
                 "ar" => FakerLocale.Arabic,
                 "de" => FakerLocale.German,

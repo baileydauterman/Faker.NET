@@ -34,7 +34,7 @@ namespace Faker.NET.Tests.Files
 
         private string GetUserName()
         {
-            return Faker.User.New.Username;
+            return Faker.Internet.Username();
         }
 
         private string GetPassword()
@@ -44,7 +44,7 @@ namespace Faker.NET.Tests.Files
 
         private string GetUserAgent()
         {
-            return Faker.Computer.UserAgent;
+            return Faker.Internet.UserAgent();
         }
     }
 }

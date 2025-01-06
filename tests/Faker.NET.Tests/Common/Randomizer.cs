@@ -1,18 +1,18 @@
-﻿namespace Faker.NET.Tests.Common
+﻿using Faker.NET.Tests.Utils;
+
+namespace Faker.NET.Tests.Common
 {
-    internal class Randomizer
+    internal class Randomizer : DeterministicTestClass
     {
         [Test]
         public void SeedSetter()
         {
-            Faker.SetRandomizerSeed(192876453);
-
             Assert.Multiple(() =>
             {
-                Assert.That(Faker.Name.First, Is.EqualTo("Edd"));
-                Assert.That(Faker.Name.Last, Is.EqualTo("Bahringer"));
-                Assert.That(Faker.Name.Full, Is.EqualTo("Angelina Walter"));
-                Assert.That(Faker.Name.Job, Is.EqualTo("Future Data Architect"));
+                Assert.That(Faker.Person.FirstName(), Is.EqualTo("Johan"));
+                Assert.That(Faker.Person.LastName(), Is.EqualTo("Jacobson"));
+                Assert.That(Faker.Person.FullName(), Is.EqualTo("Melanie Arya Lynch"));
+                Assert.That(Faker.Person.JobTitle(), Is.EqualTo("Legacy Web Strategist"));
             });
         }
     }

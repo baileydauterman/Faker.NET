@@ -2,44 +2,34 @@ namespace Faker.NET.Attributes;
 
 public class FakerLocationStreetAttribute : FakerAttribute
 {
-    public override object GetPropertyValue() => Faker.Location.Street;
+    public override object GetPropertyValue() => Faker.Location.Street();
 }
 
 public class FakerLocationCityAttribute : FakerAttribute
 {
-    public override object GetPropertyValue() => Faker.Location.City;
+    public override object GetPropertyValue() => Faker.Location.City();
 }
 
 public class FakerLocationStateAttribute : FakerAttribute
 {
-    public override object GetPropertyValue() => Faker.Location.State;
-}
-
-public class FakerLocationStateAbbreviationAttribute : FakerAttribute
-{
-    public override object GetPropertyValue() => Faker.Location.StateAbbreviation;
+    public bool Abbreviated = false;
+    public override object GetPropertyValue()
+    {
+        return Faker.Location.State(Abbreviated);
+    }
 }
 
 public class FakerLocationBuildingNumberAttribute : FakerAttribute
 {
-    public override object GetPropertyValue() => Faker.Location.BuildingNumber;
+    public override object GetPropertyValue() => Faker.Location.BuildingNumber();
 }
 
 public class FakerLocationAddressAttribute : FakerAttribute
 {
-    public override object GetPropertyValue() => Faker.Location.Address;
+    public override object GetPropertyValue() => Faker.Location.StreetAddress();
 }
 
 public class FakerLocationPostalCodeAttribute : FakerAttribute
 {
-    public bool UseAlternate {get;set;} = false;
-    public override object GetPropertyValue() 
-    {
-        if (UseAlternate)
-        {
-            return Faker.Location.PostalCodeAlternate;
-        }
-
-        return Faker.Location.PostalCode;
-    }
+    public override object GetPropertyValue() => Faker.Location.ZipCode();
 }

@@ -1,7 +1,8 @@
-﻿using Faker.NET.Common;
+﻿using System.Globalization;
+using Faker.NET.Common;
 using Faker.NET.Interfaces;
-using Faker.NET.Technology;
-using System.Globalization;
+using Faker.NET.Interfaces.Modules;
+using Faker.NET.Modules.Interfaces;
 
 namespace Faker.NET
 {
@@ -15,7 +16,7 @@ namespace Faker.NET
             FakerInstance = FakerLocaleFactory.Create(locale);
         }
 
-        public static void SetLocale(IFakerLocaleInstance faker)
+        public static void Set(IFakerLocaleInstance faker)
         {
             FakerInstance = faker;
         }
@@ -36,21 +37,23 @@ namespace Faker.NET
         /// </summary>
         public static CultureInfo Culture => FakerInstance.Culture;
 
-        public static IFakerComputer Computer => TechnologyFakerFactory.GetComputerFaker(Culture);
+        public static IFakerAirline Airline => FakerInstance.Airline;
 
-        public static IFakerName Name => FakerInstance.Name;
+        public static IFakerColor Color => FakerInstance.Color;
 
-        public static IFakerUser User => FakerInstance.User;
+        public static IFakerDate Date => FakerInstance.Date;
+
+        public static IFakerInternet Internet => FakerInstance.Internet;
 
         public static IFakerLorem Lorem => FakerInstance.Lorem;
 
         public static IFakerLocation Location => FakerInstance.Location;
 
-        public static IFakerPhoneNumber Phone => FakerInstance.PhoneNumber;
+        public static IFakerPerson Person => FakerInstance.Person;
 
-        public static Date Date { get; } = new Date();
+        public static IFakerPhone Phone => FakerInstance.PhoneNumber;
 
-        public static IFakerCustom Custom { get; set; }
+        public static IFakerWord Word => FakerInstance.Word;
 
         public static FakerRandomizer Randomizer { get; private set; } = new FakerRandomizer();
 

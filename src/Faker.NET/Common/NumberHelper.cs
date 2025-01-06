@@ -5,16 +5,31 @@ namespace Faker.NET.Common
 {
     internal static class NumberHelper
     {
-        public static string ToRandomString(this string format, char delim = '#')
+        public static NumericRange<int> AsRange(this (int Min, int Max) range)
+        {
+            return new NumericRange<int>(range.Min, range.Max);
+        }
+
+        public static int ToPercentage(this double value)
+        {
+            return (int)(value * 100);
+        }
+
+        public static string ToRandomString(this string format)
         {
             var charArray = Encoding.UTF8.GetChars(Encoding.UTF8.GetBytes(format));
-            var i = 0;
 
-            foreach (var ch in format)
+            for (int i = 0; i < charArray.Length; i++)
             {
-                // take the first value of the string to put into the charArray
-                var num = $"{Faker.Randomizer.Next(0, 9)}"[0];
-                charArray[i++] = ch == delim ? num : ch;
+                var ch = charArray[i];
+                var v = ch switch
+                {
+                    '#' => Faker.Randomizer.NextCharacter('1', '9'),
+                    '!' => Faker.Randomizer.NextCharacter('1', '9'),
+                    _ => ch
+                };
+
+                charArray[i] = v;
             }
 
             return new string(charArray);
@@ -26,10 +41,10 @@ namespace Faker.NET.Common
         /// <param name="formats">The array of formats</param>
         /// <param name="replacementChar">The character to replace in the formats</param>
         /// <returns>Randomly formatted string</returns>
-        public static string ToRandomFormat(this string[] formats, char replacementChar = '#')
+        public static string ToRandomFormat(this string[] formats)
         {
             var format = formats.GetRandom();
-            return format.ToRandomString(replacementChar);
+            return format.ToRandomString();
         }
     }
 }

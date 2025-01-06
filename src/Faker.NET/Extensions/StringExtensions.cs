@@ -12,6 +12,6 @@ public static class StringExtensions
 
     public static string ToSlug(this string[] value)
     {
-        return String.Join("-", value);
+        return string.Join("-", value);
     }
 }
