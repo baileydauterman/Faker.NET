@@ -16,13 +16,13 @@ using Faker.NET;
 Faker.SetLocale("en");
 Faker.SetSeed(10000); // allows for deterministic fake data creation
 
-var firstName = Faker.Name.First;
-var lastName = Faker.Name.Last;
-var fulleName = Faker.Name.Full;
-var user = Faker.User.New;
-var ipAddr = Faker.Computer.IPv4Address;
+var firstName = Faker.Person.FirstName();
+var lastName = Faker.Person.LastName();
+var fullName = Faker.Person.FullName(firstName: firstName, lastName: lastName;
+var ipAddr = Faker.Internet.IPv4();
 
+// if using a supported culture as your current culture
 Faker.SetLocale(CultureInfo.CurrentCulture);
 
-var user = Faker.User.New;
+var fullName = Faker.Person.FullName();
 ```
