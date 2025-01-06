@@ -1,7 +1,7 @@
-﻿using Faker.NET.Common;
+﻿using System.Globalization;
+using Faker.NET.Common;
 using Faker.NET.Interfaces;
 using Faker.NET.Modules.Interfaces;
-using System.Globalization;
 
 namespace Faker.NET
 {
@@ -15,7 +15,7 @@ namespace Faker.NET
             FakerInstance = FakerLocaleFactory.Create(locale);
         }
 
-        public static void SetLocale(IFakerLocaleInstance faker)
+        public static void Set(IFakerLocaleInstance faker)
         {
             FakerInstance = faker;
         }
@@ -41,8 +41,6 @@ namespace Faker.NET
         public static IFakerDate Date => FakerInstance.Date;
 
         public static IFakerInternet Internet => FakerInstance.Internet;
-
-        public static IFakerName Name => FakerInstance.Name;
 
         public static IFakerLorem Lorem => FakerInstance.Lorem;
 

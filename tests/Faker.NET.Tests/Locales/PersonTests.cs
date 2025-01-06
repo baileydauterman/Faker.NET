@@ -1,3 +1,4 @@
+using Faker.NET.Common.Person;
 using Faker.NET.Tests.Utils;
 
 namespace Faker.NET.Tests.Locales;
@@ -17,7 +18,7 @@ public class PersonTests : DeterministicLocaleTestClass
         {
             Assert.That(Faker.Person.Bio(), Is.Not.Null);
             Assert.That(Faker.Person.FirstName(), Is.Not.Null);
-            Assert.That(Faker.Person.FirstName(NET.Common.Person.Sex.Female), Is.Not.Null);
+            Assert.That(Faker.Person.FirstName(Sex.Female), Is.Not.Null);
             Assert.That(Faker.Person.FullName(), Is.Not.Null);
             Assert.That(Faker.Person.Gender(), Is.Not.Null);
             Assert.That(Faker.Person.JobArea(), Is.Not.Null);

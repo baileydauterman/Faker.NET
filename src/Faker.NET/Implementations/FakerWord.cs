@@ -1,3 +1,4 @@
+using Faker.NET.Common;
 using Faker.NET.Extensions;
 using Faker.NET.Interfaces.Definitions;
 using Faker.NET.Modules.Interfaces;
@@ -56,9 +57,14 @@ internal class FakerWord<T> : FakerDefinitionHandler<T>, IFakerWord where T : IF
         return Data.Verb.GetRandom();
     }
 
-    public string Words(int min = 1, int max = 3)
+    public string Words(uint min = 0, uint max = 100)
     {
-        var target = Faker.Randomizer.Next(min, max);
+        return Words((0, 100).AsRange());
+    }
+
+    public string Words(NumericRange<int> range)
+    {
+        var target = Faker.Randomizer.Next(range);
         var words = new string[target];
 
         while (target-- != 0)

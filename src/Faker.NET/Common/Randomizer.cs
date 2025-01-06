@@ -18,6 +18,11 @@ namespace Faker.NET.Common
             return NextDouble() > 0.5 ? Coin.Heads : Coin.Tails;
         }
 
+        public int Next(NumericRange<int> range)
+        {
+            return Next(range.Min, range.Max);
+        }
+
         /// <summary>
         /// Creates a random byte array of given length
         /// </summary>

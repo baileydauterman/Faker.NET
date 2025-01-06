@@ -1,5 +1,4 @@
-﻿using System.Runtime.CompilerServices;
-using Faker.NET.Attributes;
+﻿using Faker.NET.Attributes;
 using Faker.NET.Files.Csv;
 
 namespace Faker.NET.Tests.Files
@@ -198,7 +197,7 @@ internal static class CsvFakerExtensions
     public static CsvFaker AddTestColumns(this CsvFaker faker)
     {
         return faker
-                .AddColumn("name", () => Faker.NET.Faker.Name.First)
+                .AddColumn("name", () => Faker.NET.Faker.Person.FirstName())
                 .AddColumn("date", () => Faker.NET.Faker.Date.Anytime().ToString())
                 .AddColumn("update_date", () => DateTime.Now.ToString("dddd, dd MMMM yyyy HH:mm:ss"))
                 .AddColumn("text", () => Faker.NET.Faker.Lorem.Words(35, 35))

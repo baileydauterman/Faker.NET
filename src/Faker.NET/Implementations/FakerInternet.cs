@@ -125,9 +125,9 @@ internal class FakerInternet<T> : FakerDefinitionHandler<T>, IFakerInternet wher
 
     public string Username(string? first, string? middle, string? last)
     {
-        first ??= Faker.Name.First;
-        middle ??= Faker.Name.First;
-        last ??= Faker.Name.Last;
+        first ??= Faker.Person.FirstName();
+        middle ??= Faker.Person.MiddleName();
+        last ??= Faker.Person.LastName();
 
         var userName = Faker.Randomizer.Next(1, 5) switch
         {

@@ -5,6 +5,11 @@ namespace Faker.NET.Common
 {
     internal static class NumberHelper
     {
+        public static NumericRange<int> AsRange(this (int Min, int Max) range)
+        {
+            return new NumericRange<int>(range.Min, range.Max);
+        }
+
         public static string ToRandomString(this string format)
         {
             var charArray = Encoding.UTF8.GetChars(Encoding.UTF8.GetBytes(format));

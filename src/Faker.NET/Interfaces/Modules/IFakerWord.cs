@@ -1,3 +1,5 @@
+using Faker.NET.Common;
+
 namespace Faker.NET.Modules.Interfaces;
 
 public interface IFakerWord
@@ -10,5 +12,6 @@ public interface IFakerWord
     public string Preposition();
     public string Sample();
     public string Verb();
-    public string Words(int min = 1, int max = 3);
+    public string Words(uint min = 0, uint max = 100);
+    public string Words(NumericRange<int> range);
 }

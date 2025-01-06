@@ -6,9 +6,9 @@ namespace Faker.NET.Tests.Locales
 {
     [TestFixture(FakerLocale.English)]
     [TestFixture(FakerLocale.German)]
-    internal class Locations : DeterministicLocaleTestClass
+    internal class LocationTests : DeterministicLocaleTestClass
     {
-        public Locations(FakerLocale locale) : base(locale)
+        public LocationTests(FakerLocale locale) : base(locale)
         {
         }
 

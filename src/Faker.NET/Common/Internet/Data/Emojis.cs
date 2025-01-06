@@ -6,6 +6,11 @@ public class Emojis
 {
     public string Get(EmojiTypes type)
     {
+        if (type == EmojiTypes.None)
+        {
+            type = EmojiTypes.Smiley;
+        }
+
         return type switch
         {
             EmojiTypes.Smiley => Smiley.GetRandom(),

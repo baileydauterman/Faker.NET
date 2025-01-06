@@ -16,8 +16,6 @@ namespace Faker.NET.Interfaces
 
         IFakerInternet Internet { get; }
 
-        IFakerName Name { get; }
-
         IFakerLocation Location { get; }
 
         IFakerLorem Lorem { get; }

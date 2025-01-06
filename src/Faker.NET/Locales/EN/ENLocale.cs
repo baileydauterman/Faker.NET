@@ -17,7 +17,5 @@ internal class ENLocale : FakerLocaleInstance
         Internet = new FakerInternet<EnFakerInternetData>();
         PhoneNumber = new FakerPhone<EnFakerPhoneData>();
         Lorem = new FakerLorem<EnLoremData>();
-
-        Name = new EnFakerName();
     }
 }

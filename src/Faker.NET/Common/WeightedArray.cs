@@ -30,6 +30,10 @@ public class WeightedList<T>
     /// <returns>The value or <see langword="null"/> if unable to find value (shouldn't happen)</returns>
     public T? GetValue()
     {
+        if (_values.Count == 1)
+        {
+            return _values[0];
+        }
         var value = Faker.Randomizer.Next(_totalWeight);
 
         for (int i = 0; i < _weights.Count; i++)
