@@ -1,7 +1,7 @@
 using Faker.NET.Common;
 using Faker.NET.Extensions;
 using Faker.NET.Interfaces.Definitions;
-using Faker.NET.Modules.Interfaces;
+using Faker.NET.Interfaces.Modules;
 
 namespace Faker.NET.Implementations;
 

@@ -1,7 +1,7 @@
 using Faker.NET.Common;
 using Faker.NET.Common.Internet;
 
-namespace Faker.NET.Modules.Interfaces;
+namespace Faker.NET.Interfaces.Modules;
 
 public interface IFakerInternet
 {

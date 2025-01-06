@@ -1,5 +1,5 @@
 using System;
-using Faker.NET.Modules.Interfaces;
+using Faker.NET.Interfaces.Modules;
 
 namespace Faker.NET.Common.Location;
 

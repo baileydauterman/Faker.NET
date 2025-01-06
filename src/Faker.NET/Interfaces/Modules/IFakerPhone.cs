@@ -1,6 +1,6 @@
 ﻿using Faker.NET.Common.Phone;
 
-namespace Faker.NET.Modules.Interfaces;
+namespace Faker.NET.Interfaces.Modules;
 
 public interface IFakerPhone
 {

@@ -1,6 +1,6 @@
 using Faker.NET.Common.Person;
 
-namespace Faker.NET.Modules.Interfaces;
+namespace Faker.NET.Interfaces.Modules;
 
 public interface IFakerPerson
 {

@@ -3,8 +3,8 @@ using Faker.NET.Common.Internet.Data;
 using Faker.NET.Extensions;
 using Faker.NET.Implementations;
 using Faker.NET.Interfaces.Definitions;
+using Faker.NET.Interfaces.Modules;
 using Faker.NET.Internet.Generators;
-using Faker.NET.Modules.Interfaces;
 
 namespace Faker.NET.Common.Internet;
 

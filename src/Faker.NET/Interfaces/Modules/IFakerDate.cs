@@ -1,4 +1,4 @@
-namespace Faker.NET.Modules.Interfaces;
+namespace Faker.NET.Interfaces.Modules;
 
 public interface IFakerDate
 {
