@@ -1,6 +1,5 @@
 using Faker.NET.Common.Location;
 using Faker.NET.Location;
-using Faker.NET.Modules.Interfaces;
 
 namespace Faker.NET.Interfaces.Definitions;
 

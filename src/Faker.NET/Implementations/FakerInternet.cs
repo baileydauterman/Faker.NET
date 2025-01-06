@@ -103,15 +103,6 @@ internal class FakerInternet<T> : FakerDefinitionHandler<T>, IFakerInternet wher
         return protocols.GetRandom();
     }
 
-    public string Rgb(int? redBase, int? greenBase, int? blueBase)
-    {
-        redBase ??= Faker.Randomizer.Next(0, 255);
-        greenBase ??= Faker.Randomizer.Next(0, 255);
-        blueBase ??= Faker.Randomizer.Next(0, 255);
-
-        return $"({redBase}, {greenBase}, {blueBase})";
-    }
-
     public string Url(bool appendSlash = false, string protocol = "https")
     {
         var slash = appendSlash ? "/" : "";

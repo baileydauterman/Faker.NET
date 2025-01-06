@@ -13,7 +13,7 @@ namespace Faker.NET.Interfaces.Modules
         public string Hwb();
         public string Lab();
         public string Lch();
-        public string Rgb();
+        public Rgb Rgb(byte? redBase = null, byte? greenBase = null, byte? blueBase = null);
         public string Space();
     }
 }

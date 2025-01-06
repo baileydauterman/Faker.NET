@@ -10,6 +10,11 @@ namespace Faker.NET.Common
             return new NumericRange<int>(range.Min, range.Max);
         }
 
+        public static int ToPercentage(this double value)
+        {
+            return (int)(value * 100);
+        }
+
         public static string ToRandomString(this string format)
         {
             var charArray = Encoding.UTF8.GetChars(Encoding.UTF8.GetBytes(format));

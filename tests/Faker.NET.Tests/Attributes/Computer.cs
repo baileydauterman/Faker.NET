@@ -1,20 +1,19 @@
 using Faker.NET.Attributes;
 using Faker.NET.Tests.Utils;
-
+using NUnit.Framework.Internal;
 namespace Faker.NET.Tests.Attributes;
-
 public class Computer : DeterministicTestClass
 {
     [Test]
     public void ClassAttributesCsv()
     {
         string[] expected = {
-            "Rgb,DisplayName,DomainName,DomainSuffix,DomainWord,Email,Emoji,HttpMethod,HttpStatusCode,IPv4,IPv6,JWT,Mac,Password,Port,Protocol,Url,UserAgent,Username",
-            "\"(129, 45, 158)\",gullrich,shadowy-other.yoga,.vodka,linear-toaster,kathlyns@skeletal-teammate.legal,🐛,DELETE,500 Internal Server Error,29.35.188.232,89ed:19a4:b177:f932:fdb9:f42:fbc5:3c49,,C6F97E7C4102,g36hts71L71sdCn,56025,http,https://content-validity.sexy,\"Mozilla/5.0 (Linux; Android 13; SM-S901U) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Mobile Safari/537.36\",rmante",
-            "\"(90, 4, 93)\",dannyf,flimsy-cutlet.dentist,.town,earnest-babushka,dblock@utter-management.me.uk,😆,POST,400 Bad Request,110.4.196.58,c6d3:c119:d509:5e24:b882:9317:5d2a:99cc,,CB9BA7B1DA99,;7?1rH9l3+v7A<x,35889,http,https://unsung-cinema.gratis,\"Mozilla/5.0 (iPhone12,1; U; CPU iPhone OS 13_0 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) Version/10.0 Mobile/15E148 Safari/602.1\",daijar",
-            "\"(55, 19, 106)\",edyth.franecki,late-vanadyl.direct,.industries,sudden-disadvantage,dante.armstrong@firm-character.win,🐿️,POST,101 Switching Protocols,65.168.175.186,6333:43e9:85b2:7fad:818:d55f:1d51:64b6,,DFD38CAFF7ED,H42$r25G\"98g4u6,39366,https,https://excited-travel.degree,\"Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A5370a Safari/604.1\",rtowne",
-            "\"(114, 31, 15)\",jerde.keeley,unhappy-solvency.blog,.clothing,shadowy-castanet,volkman.muriel@late-cap.black,🙉,POST,300 Multiple Choices,118.97.185.121,d0b3:401a:1bb8:a7f6:59ae:13c5:5f53:d6d9,,11701F1F0F8C,\"0iaB.SEjv7j6Xh,3606,http,https://shrill-desk.se.net,\"Mozilla/5.0 (Linux; Android 12; DE2118) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Mobile Safari/537.36\",ezboncak",
-            "\"(28, 12, 138)\",abdulw,plain-trench.org,.report,qualified-translation,keven.fisher-windler@accomplished-farmer.press,💨,PATCH,501 Not Implemented,212.215.96.223,58a8:37d7:a116:6bdf:8d50:ca56:f8db:5608,,B31BCCF034B6,$t9=6o85\"13p6l\",40287,https,https://cute-mouser.org,\"Mozilla/5.0 (iPhone14,6; U; CPU iPhone OS 15_4 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) Version/10.0 Mobile/19E241 Safari/602.1\",hunter.wunsch",
+            "DisplayName,DomainName,DomainSuffix,DomainWord,Email,Emoji,HttpMethod,HttpStatusCode,IPv4,IPv6,JWT,Mac,Password,Port,Protocol,Url,UserAgent,Username",
+            "jvon,boring-testimonial.limited,.quebec,precious-yeast,velda.towne@qualified-scale.ski,🪟,PUT,400 Bad Request,188.167.211.28,ab44:dc89:ed19:a4b1:77f9:32fd:b90f:42fb,,9D8C6F97E7C4,aatY!E0>8jT8a&k,6298,http,https://natural-stitcher.hn,\"Mozilla/5.0 (iPhone; CPU iPhone OS 12_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/69.0.3497.105 Mobile/15E148 Safari/605.1\",wilderman.vella",
+            "auer.alessia,enchanting-order.one,.wedding,extroverted-gerbil,reilly.turcotte@back-designation.srl,👩🏿‍❤️‍💋‍👩🏿,GET,417 Expectation Failed,235.139.152.2,c31e:2fd:9e2e:1dc6:d3c1:19d5:95e:24b8,,202EAE6CB9BA,Ru46848e*M1WQD5,46972,http,https://amazing-morning.tokyo,\"Mozilla/5.0 (iPhone13,2; U; CPU iPhone OS 14_0 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) Version/10.0 Mobile/15E148 Safari/602.1\",corwin.theron",
+            "aubreew,sneaky-cycle.blackfriday,.gives,forsaken-deer,rosaleek@formal-jump.ski,🤞🏼,POST,408 Request Timeout,101.4.20.69,6ba3:3cc7:e3ae:f0da:6e8b:6333:43e9:85b2,,CB8CB159A9DF,18>37H42$r25G\"9,45834,https,https://different-distinction.software,\"Mozilla/5.0 (Linux; Android 13; Pixel 6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Mobile Safari/537.36\",clairm",
+            "dedric.schroeder,glorious-challenge.tienda,.lease,key-cassava,graham.angela@illustrious-t-shirt.solar,😝,DELETE,203 Non-Authoritative Information,187.183.68.8,33a2:a90e:f02a:15c8:4569:6286:9fd0:b340,,134F4845B02C,\"$lc0044xdEknG,d\",26213,http,https://trim-yeast.style,\"Mozilla/5.0 (iPhone; CPU iPhone OS 12_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.0 Mobile/15E148 Safari/604.1\",gerald.watsica",
+            "elsef,lively-farmer.education,.lighting,regal-word,nehaa@hefty-mountain.video,#️⃣,PATCH,421 Misdirected Request,192.166.236.145,876d:c7fe:4996:3c84:cfcc:8ae5:402d:7e2,,E3B1DEE05177,BD8b88fSRa447%>,58661,https,https://quick-witted-meal.at,\"Mozilla/5.0 (Linux; Android 13; SM-S908B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Mobile Safari/537.36\",katelinm"
         };
 
         var csvFaker = CsvUtils.ToCsvRows<ComputerAttributes>();
@@ -25,7 +24,7 @@ public class Computer : DeterministicTestClass
         {
             for (int i = 0; i < csvFaker.Count; i++)
             {
-                Console.WriteLine(expected[i]);
+                Console.WriteLine(csvFaker[i]);
                 Assert.That(csvFaker[i], Is.EqualTo(expected[i]));
             }
         });
@@ -35,8 +34,6 @@ public class Computer : DeterministicTestClass
 #pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.
 public class ComputerAttributes
 {
-    [FakerInternetRgb]
-    public string Rgb { get; set; }
     [FakerInternetDisplayName]
     public string DisplayName { get; set; }
     [FakerInternetDomainName]

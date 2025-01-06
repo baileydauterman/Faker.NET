@@ -120,14 +120,6 @@ public class FakerInternetUsernameAttribute : FakerAttribute
     public override object GetPropertyValue() => Faker.Internet.Username(First, Middle, Last);
 }
 
-public class FakerInternetRgbAttribute : FakerAttribute
-{
-    public int? RedBase { get; set; } = null;
-    public int? GreenBase { get; set; } = null;
-    public int? BlueBase { get; set; } = null;
-    public override object GetPropertyValue() => Faker.Internet.Rgb(RedBase, GreenBase, BlueBase);
-}
-
 public class FakerInternetEmojiAttribute : FakerAttribute
 {
     public EmojiTypes? EmojiType { get; set; } = null;

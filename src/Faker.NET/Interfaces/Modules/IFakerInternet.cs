@@ -5,8 +5,6 @@ namespace Faker.NET.Modules.Interfaces;
 
 public interface IFakerInternet
 {
-    string Rgb(int? redBase = null, int? greenBase = null, int? blueBase = null);
-
     string DisplayName(string? first = null, string? middle = null, string? last = null);
 
     string DomainName();

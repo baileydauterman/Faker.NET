@@ -43,6 +43,11 @@ namespace Faker.NET.Common
             return (byte)Next(low.Value, high.Value);
         }
 
+        public double NextPreciseDouble(int precision)
+        {
+            return NextDouble().SetPrecision(precision);
+        }
+
         public double NextDouble(int min, int max)
         {
             var integral = (double)this.Next(min, max);
