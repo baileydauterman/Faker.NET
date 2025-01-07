@@ -1,4 +1,3 @@
-using System;
 using Faker.NET.Attributes;
 using Faker.NET.Common.Phone;
 using Faker.NET.Tests.Utils;
@@ -12,11 +11,11 @@ public class PhoneNumbers : DeterministicTestClass
     {
         string[] expected = {
             "PhoneNumber,CountryCode,WithAreaCode",
-            "254-861-8566 x8848,816-777-8546 x6712,886.325.2277 x5346",
-            "(757) 485-4847 x3112,274-861-3271,878.244.7782 x1622",
-            "1-125-742-8767 x841,(531) 326-6833 x7323,1-212-738-1685 x51134",
-            "1-172-371-3857 x182,286-847-6566,617.655.6787 x588",
-            "1-263-357-1483,1-327-564-1581 x8538,1-412-268-7721",
+            "253-860-8565 x8848,805-776-8436 x5711,885.314.1177 x5336",
+            "(747) 485-4746 x2001,273-860-2160,878.234.7781 x0611",
+            "1-114-741-8757 x840,(530) 325-5823 x7212,1-202-728-0584 x50023",
+            "1-162-360-3846 x181,286-836-6565,607.655.6787 x488",
+            "1-262-347-1473,1-317-563-0580 x8428,1-401-268-6610",
         };
 
         var csvFaker = CsvUtils.ToCsvRows<PhoneNumbersAttributes>();
@@ -27,6 +26,7 @@ public class PhoneNumbers : DeterministicTestClass
         {
             for (int i = 0; i < csvFaker.Count; i++)
             {
+                Console.WriteLine(csvFaker[i]);
                 Assert.That(csvFaker[i], Is.EqualTo(expected[i]));
             }
         });

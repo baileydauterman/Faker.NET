@@ -11,24 +11,19 @@ internal class IPv4Generator
         return new IPAddress(addressBytes).ToString();
     }
 
-    public string Generate(string? cidrBlock, NetworkTypes network)
+    public string Generate(string cidrBlock, NetworkTypes network)
     {
-        throw new NotImplementedException();
+        return GenerateRandomIPFromCIDR(cidrBlock);
     }
 
     private byte[] NewAddress()
     {
         return new byte[4] {
-            Faker.Randomizer.NextByte(1),
-            Faker.Randomizer.NextByte(),
-            Faker.Randomizer.NextByte(),
-            Faker.Randomizer.NextByte(),
+            GetOctet(low: 1),
+            GetOctet(),
+            GetOctet(),
+            GetOctet(),
         };
-    }
-
-    private int GetOctet()
-    {
-        return Faker.Randomizer.Next(1, 256);
     }
 
     /// <summary>
@@ -40,42 +35,115 @@ internal class IPv4Generator
     /// <remarks>
     /// Adds one to the random number because we want to return something between 1 and 256
     /// </remarks>
-    private int GetOctet(byte? low = null, byte? high = null)
+    private static byte GetOctet(byte? low = null, byte? high = null)
     {
         low ??= byte.MinValue;
         high ??= byte.MaxValue;
 
-        return Faker.Randomizer.Next(low.Value, high.Value) + 1;
+        if (high == 0)
+        {
+            high = byte.MaxValue;
+        }
+
+        return (byte)Faker.Randomizer.Next(low.Value, high.Value);
     }
 
-    private (byte[], byte) ParseCidrBlock(string? cidrBlock)
+    public static string GenerateRandomIPFromCIDR(string cidr)
     {
-        if (string.IsNullOrWhiteSpace(cidrBlock))
+        var (ipAddress, subnetMask) = ParseCidr(cidr);
+
+        // Convert the IP Address to a uint (integer)
+        uint ipUint = IpToUint(ipAddress);
+
+        // Get the prefix length
+        int prefixLength = int.Parse(cidr.Split('/')[1]);
+
+        // Calculate the range of usable IPs based on the subnet mask
+        uint subnetSize = (uint)(Math.Pow(2, 32 - prefixLength)); // Number of IPs in the subnet
+        uint firstUsableIP = ipUint + 1; // Network address + 1
+        uint lastUsableIP = ipUint + subnetSize - 2; // Broadcast address - 1
+
+        // Generate a random IP in the range of usable IPs
+        uint randomIp = (uint)Faker.Randomizer.Next((int)firstUsableIP, (int)lastUsableIP + 1);
+
+        // Convert the random IP back to the dotted-decimal format
+        return UintToIp(randomIp).ToString();
+    }
+
+    private static (byte[] address, byte[] subnetMash) ParseCidr(string cidr)
+    {
+        // Split the CIDR into IP Address and Prefix Length
+        var parts = cidr.Split('/');
+        if (parts.Length != 2)
         {
-            throw new ArgumentNullException(nameof(cidrBlock));
+            throw new ArgumentException("Invalid CIDR format");
         }
 
-        var index = cidrBlock.IndexOf('/');
-        var ip = cidrBlock.Substring(0, index);
-        var cidrSubstr = cidrBlock.Substring(index + 1);
-        if (!byte.TryParse(cidrSubstr, out var cidr))
+        var ipAddress = StringToByteArray(parts[0]);
+        int prefixLength = int.Parse(parts[1]);
+
+        // Validate prefix length (should be between 0 and 32 for IPv4)
+        if (prefixLength < 0 || prefixLength > 32)
         {
-            throw new Exception($"Unable to process cidr: {cidrSubstr}");
+            throw new ArgumentOutOfRangeException("Prefix length must be between 0 and 32");
         }
 
-        var ipParts = new byte[4];
-        var parts = ip.Split('.');
-        for (int i = 0; i < parts.Length; i++)
+        // Generate the Subnet Mask based on prefix length
+        var subnetMask = GetSubnetMaskFromPrefixLength(prefixLength);
+
+        return (ipAddress, subnetMask);
+    }
+
+    private static byte[] StringToByteArray(string str)
+    {
+        var split = str.Split('.');
+
+        if (split.Length != 4)
         {
-            if (byte.TryParse(parts[i], out var temp))
+            throw new Exception("ip string must have all 4 parts");
+        }
+
+        return new byte[4]
+        {
+            byte.Parse(split[0]),
+            byte.Parse(split[1]),
+            byte.Parse(split[2]),
+            byte.Parse(split[3]),
+        };
+    }
+
+    private static byte[] GetSubnetMaskFromPrefixLength(int prefixLength)
+    {
+        uint mask = uint.MaxValue << (32 - prefixLength);
+        return new byte[]
             {
-                ipParts[i] = temp;
-                continue;
-            }
+                (byte)((mask >> 24) & 0xFF),
+                (byte)((mask >> 16) & 0xFF),
+                (byte)((mask >> 8) & 0xFF),
+                (byte)(mask & 0xFF)
+            };
+    }
 
-            throw new Exception($"Unable to parse ip portion of cidr block: {parts[i]}");
+    // Convert IP Address to a uint (32-bit integer)
+    private static uint IpToUint(byte[] ipParts)
+    {
+        uint result = 0;
+        for (int i = 0; i < 4; i++)
+        {
+            result |= (uint)(ipParts[i] << (24 - (8 * i)));
         }
+        return result;
+    }
 
-        return (ipParts, cidr);
+    // Convert a uint back to an IP Address in dotted-decimal format
+    private static IPAddress UintToIp(uint ipUint)
+    {
+        return new IPAddress(new byte[]
+        {
+            (byte)((ipUint >> 24) & 0xFF),
+            (byte)((ipUint >> 16) & 0xFF),
+            (byte)((ipUint >> 8) & 0xFF),
+            (byte)(ipUint & 0xFF)
+        });
     }
 }

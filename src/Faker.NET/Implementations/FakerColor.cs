@@ -31,9 +31,9 @@ namespace Faker.NET.Implementations
             throw new NotImplementedException();
         }
 
-        public string Hsl()
+        public Hsl Hsl()
         {
-            throw new NotImplementedException();
+            return Common.Colors.Hsl.Random();
         }
 
         public string Human()
@@ -41,9 +41,9 @@ namespace Faker.NET.Implementations
             throw new NotImplementedException();
         }
 
-        public string Hwb()
+        public Hwb Hwb()
         {
-            throw new NotImplementedException();
+            return Common.Colors.Hwb.Random();
         }
 
         public string Lab()
@@ -51,9 +51,9 @@ namespace Faker.NET.Implementations
             throw new NotImplementedException();
         }
 
-        public string Lch()
+        public Lch Lch()
         {
-            throw new NotImplementedException();
+            return Common.Colors.Lch.Random();
         }
 
         public Rgb Rgb(byte? redBase = null, byte? greenBase = null, byte? blueBase = null)

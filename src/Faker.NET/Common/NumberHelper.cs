@@ -24,7 +24,7 @@ namespace Faker.NET.Common
                 var ch = charArray[i];
                 var v = ch switch
                 {
-                    '#' => Faker.Randomizer.NextCharacter('1', '9'),
+                    '#' => Faker.Randomizer.NextCharacter('0', '9'),
                     '!' => Faker.Randomizer.NextCharacter('1', '9'),
                     _ => ch
                 };

@@ -55,7 +55,7 @@ internal class FakerInternet<T> : FakerDefinitionHandler<T>, IFakerInternet wher
 
     public string IPv4(string? cidrBlock, NetworkTypes network = NetworkTypes.Any)
     {
-        if (string.IsNullOrWhiteSpace(cidrBlock) && network == NetworkTypes.Any)
+        if (string.IsNullOrWhiteSpace(cidrBlock))
         {
             return _ipv4Generator.Value.Generate();
         }
