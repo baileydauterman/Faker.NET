@@ -55,7 +55,7 @@ namespace Faker.NET.Common
             return template;
         }
 
-        private readonly Regex _mustaches = new Regex("{{(?<word>\\w+)(?:\\[(?<index>\\d+)\\])?}}");
+        private readonly Regex _mustaches = new Regex("{{(?<word>(?:\\w|\\.)+)(?:\\[(?<index>\\d+)\\])?");
 
         private readonly Dictionary<string, Func<string>> _commonReplacements = new Dictionary<string, Func<string>>
         {

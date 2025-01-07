@@ -36,5 +36,16 @@ namespace Faker.NET.Tests.Common
 
             Assert.That(handled.ToLower(), Is.EqualTo(expectedOutput));
         }
+
+        [TestCase("{{person.firstName}}.{{person.lastName}}", "johan.mueller")]
+        [TestCase("{{person.firstName}}.{{person.middleName}}.{{person.lastName}}", "johan.bowie.jacobson")]
+        [TestCase("{{person.firstName}}.{{person.middleName[0]}}.{{person.lastName}}", "johan.b.jacobson")]
+        public void DefaultValues(string template, string expectedOutput)
+        {
+            var handler = new MustacheHandler();
+            var handled = handler.Replace(template);
+
+            Assert.That(handled.ToLower(), Is.EqualTo(expectedOutput));
+        }
     }
 }
