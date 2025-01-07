@@ -8,7 +8,7 @@ namespace Faker.NET.Tests.Common
         [TestCase("{{first}}.{{last}}", "johan.jacobson")]
         [TestCase("{{first}}.{{middle}}.{{last}}", "johan.sasha.jacobson")]
         [TestCase("{{first}}.{{middle[0]}}.{{last}}", "johan.s.jacobson")]
-        public void Test(string template, string expectedOutput)
+        public void HardcodedValues(string template, string expectedOutput)
         {
             var handler = new MustacheHandler();
             var handled = handler.Replace(template, new Dictionary<string, string>
@@ -16,6 +16,22 @@ namespace Faker.NET.Tests.Common
                 { "first", Faker.Person.FirstName() },
                 { "last", Faker.Person.LastName() },
                 { "middle", Faker.Person.MiddleName() },
+            });
+
+            Assert.That(handled.ToLower(), Is.EqualTo(expectedOutput));
+        }
+
+        [TestCase("{{first}}.{{last}}", "johan.jacobson")]
+        [TestCase("{{first}}.{{middle}}.{{last}}", "johan.bowie.von")]
+        [TestCase("{{first}}.{{middle[0]}}.{{last}}", "johan.b.von")]
+        public void Lambdas(string template, string expectedOutput)
+        {
+            var handler = new MustacheHandler();
+            var handled = handler.Replace(template, new Dictionary<string, Func<string>>
+            {
+                { "first", () => Faker.Person.FirstName() },
+                { "last", () => Faker.Person.LastName() },
+                { "middle", () => Faker.Person.MiddleName() },
             });
 
             Assert.That(handled.ToLower(), Is.EqualTo(expectedOutput));
