@@ -11,22 +11,19 @@ public class Emojis
             type = EmojiTypes.Smiley;
         }
 
-        return type switch
+        if (!AllEmojis.TryGetValue(type, out var values))
         {
-            EmojiTypes.Smiley => Smiley.GetRandom(),
-            EmojiTypes.Body => Body.GetRandom(),
-            EmojiTypes.Person => Person.GetRandom(),
-            EmojiTypes.Nature => Nature.GetRandom(),
-            EmojiTypes.Food => Food.GetRandom(),
-            EmojiTypes.Travel => Travel.GetRandom(),
-            EmojiTypes.Activity => Activity.GetRandom(),
-            EmojiTypes.Object => Object.GetRandom(),
-            EmojiTypes.Symbol => Symbol.GetRandom(),
-            EmojiTypes.Flag => Flag.GetRandom(),
-            _ => throw new Exception($"Unhandled emoji type: {type}")
-        };
+            throw new Exception($"Unkown emoji type: {type}");
+        }
+
+
+        return values.GetRandom();
     }
-    public string[] Smiley ={
+
+    public Dictionary<EmojiTypes, string[]> AllEmojis = new Dictionary<EmojiTypes, string[]>
+    {
+        { EmojiTypes.Smiley, new string[]
+        {
         "😀",
         "😃",
         "😄",
@@ -183,9 +180,9 @@ public class Emojis
         "🗯️",
         "💭",
         "💤",
-    };
-
-    public string[] Body = {
+        } },
+        { EmojiTypes.Body, new string[]
+        {
         "👋",
         "👋🏻",
         "👋🏼",
@@ -432,9 +429,9 @@ public class Emojis
         "👁️",
         "👅",
         "👄",
-    };
-
-    public string[] Person ={
+        } },
+        { EmojiTypes.Person, new string[]
+        {
         "👶",
         "👶🏻",
         "👶🏼",
@@ -2238,9 +2235,9 @@ public class Emojis
         "👥",
         "🫂",
         "👣",
-    };
-
-    public string[] Nature ={
+        } },
+        { EmojiTypes.Nature, new string[]
+        {
         "🐵",
         "🐒",
         "🦍",
@@ -2381,9 +2378,9 @@ public class Emojis
         "🍁",
         "🍂",
         "🍃",
-    };
-
-    public string[] Food ={
+        } },
+        { EmojiTypes.Food, new string[]
+        {
         "🍇",
         "🍈",
         "🍉",
@@ -2513,9 +2510,9 @@ public class Emojis
         "🥄",
         "🔪",
         "🏺",
-    };
-
-    public string[] Travel = {
+        } },
+        { EmojiTypes.Travel, new string[]
+        {
         "🌍",
         "🌎",
         "🌏",
@@ -2731,9 +2728,9 @@ public class Emojis
         "🔥",
         "💧",
         "🌊",
-    };
-
-    public string[] Activity = {
+        } },
+        { EmojiTypes.Activity, new string[]
+        {
         "🎃",
         "🎄",
         "🎆",
@@ -2818,9 +2815,9 @@ public class Emojis
         "🪡",
         "🧶",
         "🪢",
-    };
-
-    public string[] Object ={
+        } },
+        { EmojiTypes.Object, new string[]
+        {
         "👓",
         "🕶️",
         "🥽",
@@ -3071,9 +3068,9 @@ public class Emojis
         "⚱️",
         "🗿",
         "🪧",
-    };
-
-    public string[] Symbol ={
+        } },
+        { EmojiTypes.Symbol, new string[]
+        {
         "🏧",
         "🚮",
         "🚰",
@@ -3294,9 +3291,9 @@ public class Emojis
         "🔘",
         "🔳",
         "🔲",
-    };
-
-    public string[] Flag ={
+        } },
+        { EmojiTypes.Flag, new string[]
+        {
         "🏁",
         "🚩",
         "🎌",
@@ -3563,5 +3560,6 @@ public class Emojis
         "🇿🇦",
         "🇿🇲",
         "🇿🇼",
+        } }
     };
 }

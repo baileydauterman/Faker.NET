@@ -1,4 +1,3 @@
-using Faker.NET.Common.Internet.Data;
 using Faker.NET.Interfaces.Definitions;
 
 namespace Faker.NET.Locales.EN.Data;
@@ -432,5 +431,13 @@ internal class EnFakerInternetData : IFakerInternetDefinition
         ".zone",
     };
 
-    public Emojis Emojis { get; } = new Emojis();
+    public string[] UsernamePatterns { get; } =
+    {
+        "{{first}}.{{last}}", // john.doe
+        "{{last}}.{{first}}", // doe.john
+        "{{first[0]}}{{last}}", //jdoe
+        "{{first}}{{last[0]}}", // johnd
+        "{{first}}.{{middle[0]}}.{{last}}", // john.e.doe
+        "{{first}}{{last}}", // johndoe
+    };
 }

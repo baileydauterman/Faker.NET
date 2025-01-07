@@ -40,7 +40,7 @@ internal class FakerInternet<T> : FakerDefinitionHandler<T>, IFakerInternet wher
     public string Emoji(EmojiTypes? type)
     {
         type ??= RandomizerExtensions.GetRandom<EmojiTypes>();
-        return Data.Emojis.Get(type.Value);
+        return _emojiGenerator.Value.Get(type.Value);
     }
 
     public string HttpMethod()
@@ -120,6 +120,8 @@ internal class FakerInternet<T> : FakerDefinitionHandler<T>, IFakerInternet wher
         middle ??= Faker.Person.MiddleName();
         last ??= Faker.Person.LastName();
 
+
+
         var userName = Faker.Randomizer.Next(1, 5) switch
         {
             1 => $"{first}.{last}", // john.doe
@@ -135,4 +137,5 @@ internal class FakerInternet<T> : FakerDefinitionHandler<T>, IFakerInternet wher
 
     private Lazy<IPv4Generator> _ipv4Generator = new Lazy<IPv4Generator>();
     private Lazy<HexGenerator> _hexGenerator = new Lazy<HexGenerator>();
+    private Lazy<Emojis> _emojiGenerator = new Lazy<Emojis>();
 }

@@ -11,6 +11,8 @@ namespace Faker.NET
     /// </summary>
     public class Faker
     {
+        internal static MustacheHandler Mustache { get; } = new MustacheHandler();
+
         public static void SetLocale(FakerLocale locale)
         {
             FakerInstance = FakerLocaleFactory.Create(locale);

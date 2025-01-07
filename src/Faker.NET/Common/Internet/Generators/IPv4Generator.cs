@@ -80,7 +80,7 @@ internal class IPv4Generator
         }
 
         var ipAddress = StringToByteArray(parts[0]);
-        int prefixLength = int.Parse(parts[1]);
+        var prefixLength = byte.Parse(parts[1]);
 
         // Validate prefix length (should be between 0 and 32 for IPv4)
         if (prefixLength < 0 || prefixLength > 32)
@@ -112,7 +112,7 @@ internal class IPv4Generator
         };
     }
 
-    private static byte[] GetSubnetMaskFromPrefixLength(int prefixLength)
+    private static byte[] GetSubnetMaskFromPrefixLength(byte prefixLength)
     {
         uint mask = uint.MaxValue << (32 - prefixLength);
         return new byte[]
