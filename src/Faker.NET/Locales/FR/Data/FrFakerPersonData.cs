@@ -8,7 +8,7 @@ namespace Faker.NET.Locales.FR.Data
     {
         public string[] BioPart => throw new NotImplementedException();
 
-        public Func<IFakerPersonDefinition, string>[] BioPattern => throw new NotImplementedException();
+        public string[] BioPattern => throw new NotImplementedException();
 
         public string[] BioSupporter => throw new NotImplementedException();
 
@@ -61,7 +61,7 @@ namespace Faker.NET.Locales.FR.Data
 
         public string[] JobDescriptor => throw new NotImplementedException();
 
-        public Func<string>[] JobTitlePattern => throw new NotImplementedException();
+        public string[] JobTitlePattern => throw new NotImplementedException();
 
         public string[] JobType => throw new NotImplementedException();
 
@@ -84,9 +84,9 @@ namespace Faker.NET.Locales.FR.Data
             },
         };
 
-        public WeightedList<Func<IFakerPersonDefinition, Sex, string>> LastNamePattern { get; } = new WeightedList<Func<IFakerPersonDefinition, Sex, string>>(new Dictionary<Func<IFakerPersonDefinition, Sex, string>, int>
+        public WeightedList<string> LastNamePattern { get; } = new WeightedList<string>(new Dictionary<string, int>
         {
-            { (person, sex) => $"{person.LastName.Get(sex)}", 1 }
+            { "{{person.LastName}}", 1 }
         });
 
         public SexSpecificValues<string> MiddleName => FirstName;

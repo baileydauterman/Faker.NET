@@ -9,7 +9,7 @@ internal class FakerPerson<T> : FakerDefinitionHandler<T>, IFakerPerson where T 
 {
     public string Bio()
     {
-        return Data.BioPattern.GetRandom().Invoke(Data);
+        return Faker.Mustache.Replace(Data.BioPattern.GetRandom());
     }
 
     public string FirstName(Sex? sex)
@@ -56,8 +56,13 @@ internal class FakerPerson<T> : FakerDefinitionHandler<T>, IFakerPerson where T 
     public string LastName(Sex? sex)
     {
         sex ??= Sex();
-        var pattern = Data.LastNamePattern.GetValue();
-        return pattern is null ? string.Empty : pattern.Invoke(Data, sex.Value);
+        return Data.LastName.Get(sex);
+    }
+
+    public string LastNamePattern()
+    {
+        var template = Data.LastNamePattern.GetValue();
+        return Faker.Mustache.Replace(template);
     }
 
     public string MiddleName(Sex? sex)

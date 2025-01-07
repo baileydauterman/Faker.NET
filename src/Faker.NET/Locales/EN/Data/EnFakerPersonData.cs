@@ -1,6 +1,5 @@
 using Faker.NET.Common;
 using Faker.NET.Common.Person;
-using Faker.NET.Extensions;
 using Faker.NET.Interfaces.Definitions;
 
 namespace Faker.NET.Locales.EN.Data;
@@ -51,15 +50,15 @@ internal class EnFakerPersonData : IFakerPersonDefinition
         "writer",
     };
 
-    public Func<IFakerPersonDefinition, string>[] BioPattern { get; } = {
-        person => $"{person.BioPart.GetRandom()}",
-        person => $"{person.BioPart.GetRandom()}, {person.BioPart.GetRandom()}",
-        person => $"{person.BioPart.GetRandom()}, {person.BioPart.GetRandom()}, {person.BioPart.GetRandom()}",
-        person => $"{person.BioPart.GetRandom()}, {person.BioPart.GetRandom()}, {person.BioPart.GetRandom()} {Faker.Internet.Emoji()}",
-        person => $"{Faker.Word.Noun()} {person.BioSupporter.GetRandom()}",
-        person => $"{Faker.Word.Noun()} {person.BioSupporter.GetRandom()}  {Faker.Internet.Emoji()}",
-        person => $"{Faker.Word.Noun()} {person.BioSupporter.GetRandom()}, {person.BioPart.GetRandom()}",
-        person => $"{Faker.Word.Noun()} {person.BioSupporter.GetRandom()}, {person.BioPart.GetRandom()} {Faker.Internet.Emoji}",
+    public string[] BioPattern { get; } = {
+"{{person.bioPart}}",
+"{{person.bioPart}}, {{person.bioPart}}",
+"{{person.bioPart}}, {{person.bioPart}}, {{person.bioPart}}",
+"{{person.bioPart}}, {{person.bioPart}}, {{person.bioPart}} {{internet.emoji}}",
+"{{word.noun}} {{persion.bioSupporter}}",
+"{{word.noun}} {{persion.bioSupporter}}  {{internet.emoji}}",
+"{{word.noun}} {{persion.bioSupporter}}, {{person.bioPart}}",
+"{{word.noun}} {{persion.bioSupporter}}, {{person.bioPart}} {{internet.emoji}}",
     };
 
     public string[] BioSupporter { get; } = {
@@ -4230,8 +4229,8 @@ internal class EnFakerPersonData : IFakerPersonDefinition
         "Principal",
     };
 
-    public Func<string>[] JobTitlePattern { get; } = {
-        () => $"{Faker.Person.JobDescriptor()} {Faker.Person.JobArea()} {Faker.Person.JobType()}",
+    public string[] JobTitlePattern { get; } = {
+        "{{person.jobDescriptor}} {{person.jobArea}} {person.jobType}}",
     };
 
     public string[] JobType { get; } = {
@@ -4741,10 +4740,10 @@ internal class EnFakerPersonData : IFakerPersonDefinition
         }
     };
 
-    public WeightedList<Func<IFakerPersonDefinition, Sex, string>> LastNamePattern { get; } = new WeightedList<Func<IFakerPersonDefinition, Sex, string>>(
-        new Dictionary<Func<IFakerPersonDefinition, Sex, string>, int> {
-            { (data, sex) => $"{data.LastName.Get(sex)}", 95},
-            { (data, sex) => $"{data.LastName.Unisex.GetRandom()}-{data.LastName.Get(sex)}", 5}
+    public WeightedList<string> LastNamePattern { get; } = new WeightedList<string>(
+        new Dictionary<string, int> {
+            { "{{person.LastName}}", 95},
+            { "{{person.lastName}}-{person.LastName}", 5}
         }
     );
 

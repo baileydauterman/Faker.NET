@@ -433,11 +433,11 @@ internal class EnFakerInternetData : IFakerInternetDefinition
 
     public string[] UsernamePatterns { get; } =
     {
-        "{{first}}.{{last}}", // john.doe
-        "{{last}}.{{first}}", // doe.john
-        "{{first[0]}}{{last}}", //jdoe
-        "{{first}}{{last[0]}}", // johnd
-        "{{first}}.{{middle[0]}}.{{last}}", // john.e.doe
-        "{{first}}{{last}}", // johndoe
+        "{{person.firstName}}.{{person.person.lastNameName}}", // john.doe
+        "{{person.lastName}}.{{person.firstName}}", // doe.john
+        "{{person.firstName[0]}}{{person.lastName}}", //jdoe
+        "{{person.firstName}}{{person.lastName[0]}}", // johnd
+        "{{person.firstName}}.{{person.middleName[0]}}.{{person.lastName}}", // john.e.doe
+        "{{person.firstName}}{{person.lastName}}", // johndoe
     };
 }

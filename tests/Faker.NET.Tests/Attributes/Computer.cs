@@ -9,11 +9,11 @@ public class Computer : DeterministicTestClass
     {
         string[] expected = {
             "DisplayName,DomainName,DomainSuffix,DomainWord,Email,Emoji,HttpMethod,HttpStatusCode,IPv4,IPv6,JWT,Mac,Password,Port,Protocol,Url,UserAgent,Username",
-            "jvon,boring-testimonial.limited,.quebec,precious-yeast,velda.towne@qualified-scale.ski,🪟,PUT,400 Bad Request,188.167.211.28,ab44:dc89:ed19:a4b1:77f9:32fd:b90f:42fb,,9D8C6F97E7C4,aatY!E0>8jT8a&k,6298,http,https://natural-stitcher.hn,\"Mozilla/5.0 (iPhone; CPU iPhone OS 12_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/69.0.3497.105 Mobile/15E148 Safari/605.1\",wilderman.vella",
-            "auer.alessia,enchanting-order.one,.wedding,extroverted-gerbil,reilly.turcotte@back-designation.srl,👩🏿‍❤️‍💋‍👩🏿,GET,417 Expectation Failed,235.139.152.2,c31e:2fd:9e2e:1dc6:d3c1:19d5:95e:24b8,,202EAE6CB9BA,Ru46848e*M1WQD5,46972,http,https://amazing-morning.tokyo,\"Mozilla/5.0 (iPhone13,2; U; CPU iPhone OS 14_0 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) Version/10.0 Mobile/15E148 Safari/602.1\",corwin.theron",
-            "aubreew,sneaky-cycle.blackfriday,.gives,forsaken-deer,rosaleek@formal-jump.ski,🤞🏼,POST,408 Request Timeout,101.4.20.69,6ba3:3cc7:e3ae:f0da:6e8b:6333:43e9:85b2,,CB8CB159A9DF,18>37H42$r25G\"9,45834,https,https://different-distinction.software,\"Mozilla/5.0 (Linux; Android 13; Pixel 6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Mobile Safari/537.36\",clairm",
-            "dedric.schroeder,glorious-challenge.tienda,.lease,key-cassava,graham.angela@illustrious-t-shirt.solar,😝,DELETE,203 Non-Authoritative Information,187.183.68.8,33a2:a90e:f02a:15c8:4569:6286:9fd0:b340,,134F4845B02C,\"$lc0044xdEknG,d\",26213,http,https://trim-yeast.style,\"Mozilla/5.0 (iPhone; CPU iPhone OS 12_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.0 Mobile/15E148 Safari/604.1\",gerald.watsica",
-            "elsef,lively-farmer.education,.lighting,regal-word,nehaa@hefty-mountain.video,#️⃣,PATCH,421 Misdirected Request,192.166.236.145,876d:c7fe:4996:3c84:cfcc:8ae5:402d:7e2,,E3B1DEE05177,BD8b88fSRa447%>,58661,https,https://quick-witted-meal.at,\"Mozilla/5.0 (Linux; Android 13; SM-S908B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Mobile Safari/537.36\",katelinm"
+            "johanj,ripe-birdbath.toys,.limited,shadowy-other,zvolkman@uniform-bowling.okinawa,🪝,DELETE,504 Gateway Timeout,139.99.188.167,d661:ab44:dc89:ed19:a4b1:77f9:32fd:b90f,,6B9D8C6F97E7,2aatY!E0>8jT8a&,9821,http,https://bustling-cruelty.lawyer,\"Mozilla/5.0 (Linux; Android 12; SM-G973F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Mobile Safari/537.36\",jschmeler",
+            "rbarrows,neat-fork.am,.fish,enchanting-order,madelynnh@flimsy-cutlet.dentist,🔝,GET,300 Multiple Choices,214.73.235.20,d083:4092:acc3:1e02:fd9e:2e1d:c6d3:c119,,F8C1F202EAE6,67/#54;7?1rH9l3,44138,http,https://concerned-sunbeam.moe,\"Mozilla/5.0 (Linux; Android 13; SM-G991U) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Mobile Safari/537.36\",halle.tremblay",
+            "theron.turner,jagged-bookcase.consulting,.cooking,red-tusk,blick.obie@forsaken-deer.stream,👨‍🍳,POST,404 Not Found,243.73.124.209,c924:e90f:23be:d5eb:6ba3:3cc7:e3ae:f0da,,BB85A841CB8C,#P4818>37H42$r2,44880,https,https://lighthearted-dress.lighting,\"Mozilla/5.0 (iPhone13,2; U; CPU iPhone OS 14_0 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) Version/10.0 Mobile/15E148 Safari/602.1\",letitia.rohan",
+            "devanted,right-procurement.media,.supplies,excited-travel,dach.dimitri@confused-tabletop.lease,🐅,GET,413 Content Too Large,129.227.72.105,d0b:4fba:a3d3:a40f:7416:3033:a2a9:ef0,,0C6376B7E241,g2)Re4bByyy8\"0i,11298,http,https://intent-bakeware.la,\"Mozilla/5.0 (Linux; Android 12; 2201116SG) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Mobile Safari/537.36\",drake.cruickshank",
+            "greggz,colorful-godparent.us.com,.pet,huge-tributary,aemmerich@excellent-seal.hosting,👨🏿‍🎤,PUT,422 Unprocessable Content (WebDAV),252.190.28.12,4e82:7d:b18:ac83:19f4:c658:ebd4:876d,,F3F105B0FEDD,32#80CLBD8b88fS,27620,https,https://buttery-agreement.reviews,\"Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Mobile Safari/537.36\",ostanton",
         };
 
         var csvFaker = CsvUtils.ToCsvRows<ComputerAttributes>();
@@ -24,8 +24,7 @@ public class Computer : DeterministicTestClass
         {
             for (int i = 0; i < csvFaker.Count; i++)
             {
-                Console.WriteLine(csvFaker[i]);
-                Assert.That(csvFaker[i], Is.EqualTo(expected[i]));
+                Asserts.IsEqual(csvFaker[i], expected[i]);
             }
         });
     }

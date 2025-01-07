@@ -8,7 +8,7 @@ namespace Faker.NET.Locales.DE.Data
     {
         public string[] BioPart => throw new NotImplementedException();
 
-        public Func<IFakerPersonDefinition, string>[] BioPattern => throw new NotImplementedException();
+        public string[] BioPattern => throw new NotImplementedException();
 
         public string[] BioSupporter => throw new NotImplementedException();
 
@@ -20,13 +20,13 @@ namespace Faker.NET.Locales.DE.Data
 
         public string[] JobDescriptor => throw new NotImplementedException();
 
-        public Func<string>[] JobTitlePattern => throw new NotImplementedException();
+        public string[] JobTitlePattern => throw new NotImplementedException();
 
         public string[] JobType => throw new NotImplementedException();
 
         public SexSpecificValues<string> LastName => throw new NotImplementedException();
 
-        public WeightedList<Func<IFakerPersonDefinition, Sex, string>> LastNamePattern => throw new NotImplementedException();
+        public WeightedList<string> LastNamePattern => throw new NotImplementedException();
 
         public SexSpecificValues<string> MiddleName => throw new NotImplementedException();
 

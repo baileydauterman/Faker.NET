@@ -28,7 +28,7 @@ public class WeightedList<T>
     /// Gets a value by its weight.
     /// </summary>
     /// <returns>The value or <see langword="null"/> if unable to find value (shouldn't happen)</returns>
-    public T? GetValue()
+    public T GetValue()
     {
         if (_values.Count == 1)
         {

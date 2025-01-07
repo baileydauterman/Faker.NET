@@ -2540,7 +2540,12 @@ internal class EnLocationData : IFakerLocationDefinition
         "York Road",
         "York Street"};
 
-    public string[] StreetPattern => throw new NotImplementedException();
+    public string[] StreetPattern { get; } =
+    {
+        "{{person.first_name}} {{location.street_suffix}}",
+        "{{person.last_name}} {{location.street_suffix}}",
+        "{{location.street_name}}"
+    };
 
     public string[] StreetSuffix { get; } = {
         "Alley",

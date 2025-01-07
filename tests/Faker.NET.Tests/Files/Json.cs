@@ -1,27 +1,23 @@
 ﻿using System.Text.Json;
 using Faker.NET.Files.Json;
+using Faker.NET.Tests.Utils;
 
 namespace Faker.NET.Tests.Files
 {
-    public class Json
+    public class Json : DeterministicTestClass
     {
         [Test]
         public void SingleObject()
         {
-            Faker.SetRandomizerSeed(1000);
             var fakedData = JsonFaker.FromObject(SomeValue.SetTestValues, jsonSerializerOptions).Trim();
-            Assert.That(fakedData, Is.EqualTo(_singleFaked));
-
-            Faker.ResetRandomizer();
+            Asserts.IsEqual(fakedData, _singleFaked);
         }
 
         [Test]
         public void SingleNestedObject()
         {
-            Faker.SetRandomizerSeed(1000);
             var fakedData = JsonFaker.FromObject(AnotherValue.AsValue, jsonSerializerOptions);
-            Assert.That(fakedData, Is.EqualTo(_singleNestedFaked));
-            Faker.ResetRandomizer();
+            Asserts.IsEqual(fakedData, _singleNestedFaked);
         }
 
         [Test]
@@ -101,8 +97,8 @@ namespace Faker.NET.Tests.Files
             }
         }
 
-        private const string _singleFaked = "{\"firstValue\":\"Dolores Pax Pouros\",\"secondvalue\":\"District Usability Liaison\"}";
-        private const string _singleNestedFaked = "{\"AValue\":\"39.60.192.0\",\"BValue\":\"Johanna Vera Powlowski\",\"CValue\":\"\",\"nested\":{\"firstValue\":\"Alyssa Carelyn Reilly\",\"secondvalue\":\"Principal Infrastructure Manager\"}}";
+        private const string _singleFaked = "{\"firstValue\":\"Clinton Liam Jacobson\",\"secondvalue\":\"Chief Quality Executive\"}";
+        private const string _singleNestedFaked = "{\"AValue\":\"130.45.158.102\",\"BValue\":\"Melanie Arya Ullrich\",\"CValue\":\"\",\"nested\":{\"firstValue\":\"Orville Lincoln Ziemann\",\"secondvalue\":\"Principal Applications Agent\"}}";
         private readonly JsonSerializerOptions jsonSerializerOptions = new JsonSerializerOptions
         {
             WriteIndented = false

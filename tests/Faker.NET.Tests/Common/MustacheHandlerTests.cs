@@ -5,9 +5,9 @@ namespace Faker.NET.Tests.Common
 {
     internal class MustacheHandlerTests : DeterministicTestClass
     {
-        [TestCase("{{first}}.{{last}}", "johan.jacobson")]
-        [TestCase("{{first}}.{{middle}}.{{last}}", "johan.sasha.jacobson")]
-        [TestCase("{{first}}.{{middle[0]}}.{{last}}", "johan.s.jacobson")]
+        [TestCase("{{first}}.{{last}}", "johan.mueller")]
+        [TestCase("{{first}}.{{middle}}.{{last}}", "johan.harper.mueller")]
+        [TestCase("{{first}}.{{middle[0]}}.{{last}}", "johan.h.mueller")]
         public void HardcodedValues(string template, string expectedOutput)
         {
             var handler = new MustacheHandler();
@@ -21,9 +21,9 @@ namespace Faker.NET.Tests.Common
             Assert.That(handled.ToLower(), Is.EqualTo(expectedOutput));
         }
 
-        [TestCase("{{first}}.{{last}}", "johan.jacobson")]
-        [TestCase("{{first}}.{{middle}}.{{last}}", "johan.bowie.von")]
-        [TestCase("{{first}}.{{middle[0]}}.{{last}}", "johan.b.von")]
+        [TestCase("{{first}}.{{last}}", "johan.mueller")]
+        [TestCase("{{first}}.{{middle}}.{{last}}", "johan.bowie.jacobson")]
+        [TestCase("{{first}}.{{middle[0]}}.{{last}}", "johan.b.jacobson")]
         public void Lambdas(string template, string expectedOutput)
         {
             var handler = new MustacheHandler();
