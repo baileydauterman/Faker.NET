@@ -55,10 +55,10 @@ internal class EnFakerPersonData : IFakerPersonDefinition
 "{{person.bioPart}}, {{person.bioPart}}",
 "{{person.bioPart}}, {{person.bioPart}}, {{person.bioPart}}",
 "{{person.bioPart}}, {{person.bioPart}}, {{person.bioPart}} {{internet.emoji}}",
-"{{word.noun}} {{persion.bioSupporter}}",
-"{{word.noun}} {{persion.bioSupporter}}  {{internet.emoji}}",
-"{{word.noun}} {{persion.bioSupporter}}, {{person.bioPart}}",
-"{{word.noun}} {{persion.bioSupporter}}, {{person.bioPart}} {{internet.emoji}}",
+"{{word.noun}} {{person.bioSupporter}}",
+"{{word.noun}} {{person.bioSupporter}}  {{internet.emoji}}",
+"{{word.noun}} {{person.bioSupporter}}, {{person.bioPart}}",
+"{{word.noun}} {{person.bioSupporter}}, {{person.bioPart}} {{internet.emoji}}",
     };
 
     public string[] BioSupporter { get; } = {

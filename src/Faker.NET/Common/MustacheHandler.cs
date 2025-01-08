@@ -55,10 +55,13 @@ namespace Faker.NET.Common
             return template;
         }
 
-        private readonly Regex _mustaches = new Regex("{{(?<word>(?:\\w|\\.)+)(?:\\[(?<index>\\d+)\\])?");
+        private readonly Regex _mustaches = new Regex("{{(?<word>[\\w\\.]+)(?:\\[(?<index>\\d+)\\])?");
 
         private readonly Dictionary<string, Func<string>> _commonReplacements = new Dictionary<string, Func<string>>
         {
+            { "person.bio", () => Faker.Person.Bio() },
+            { "person.bioPart", () => Faker.Person.BioPart() },
+            { "person.bioSupporter", () => Faker.Person.BioSupporter() },
             { "person.firstName", () => Faker.Person.FirstName() },
             { "person.fullName", () => Faker.Person.FullName() },
             { "person.gender", () => Faker.Person.Gender() },
@@ -72,6 +75,10 @@ namespace Faker.NET.Common
             { "person.sex", () => Faker.Person.Sex().ToString() },
             { "person.Suffix", () => Faker.Person.Suffix() },
             { "person.zodiacSign", () => Faker.Person.ZodiacSign() },
+
+            { "word.noun", () => Faker.Word.Noun() },
+
+            { "internet.emoji", () => Faker.Internet.Emoji() }
         };
     }
 }

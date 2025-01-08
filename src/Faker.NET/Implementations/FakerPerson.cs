@@ -12,6 +12,16 @@ internal class FakerPerson<T> : FakerDefinitionHandler<T>, IFakerPerson where T 
         return Faker.Mustache.Replace(Data.BioPattern.GetRandom());
     }
 
+    public string BioPart()
+    {
+        return Data.BioPart.GetRandom();
+    }
+
+    public string BioSupporter()
+    {
+        return Data.BioSupporter.GetRandom();
+    }
+
     public string FirstName(Sex? sex)
     {
         return Data.FirstName.Get(sex);

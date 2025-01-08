@@ -5,6 +5,8 @@ namespace Faker.NET.Interfaces.Modules;
 public interface IFakerPerson
 {
     public string Bio();
+    public string BioPart();
+    public string BioSupporter();
     public string FirstName(Sex? sex = null);
     public string FullName(string? firstName = null, string? lastName = null, Sex? sex = null);
     public string Gender();
