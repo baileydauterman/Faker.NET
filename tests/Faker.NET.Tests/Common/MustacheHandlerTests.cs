@@ -6,22 +6,6 @@ namespace Faker.NET.Tests.Common
     internal class MustacheHandlerTests : DeterministicTestClass
     {
         [TestCase("{{first}}.{{last}}", "johan.mueller")]
-        [TestCase("{{first}}.{{middle}}.{{last}}", "johan.harper.mueller")]
-        [TestCase("{{first}}.{{middle[0]}}.{{last}}", "johan.h.mueller")]
-        public void HardcodedValues(string template, string expectedOutput)
-        {
-            var handler = new MustacheHandler();
-            var handled = handler.Replace(template, new Dictionary<string, string>
-            {
-                { "first", Faker.Person.FirstName() },
-                { "last", Faker.Person.LastName() },
-                { "middle", Faker.Person.MiddleName() },
-            });
-
-            Assert.That(handled.ToLower(), Is.EqualTo(expectedOutput));
-        }
-
-        [TestCase("{{first}}.{{last}}", "johan.mueller")]
         [TestCase("{{first}}.{{middle}}.{{last}}", "johan.bowie.jacobson")]
         [TestCase("{{first}}.{{middle[0]}}.{{last}}", "johan.b.jacobson")]
         public void Lambdas(string template, string expectedOutput)
@@ -46,6 +30,15 @@ namespace Faker.NET.Tests.Common
             var handled = handler.Replace(template);
 
             Assert.That(handled.ToLower(), Is.EqualTo(expectedOutput));
+        }
+
+        [TestCase("{{person.firstName}}.{{person.firstName}}", "Johan.Chase")]
+        [TestCase("Hello, my name is {{person.firstName}}.{{person.firstName}}", "Hello, my name is Johan.Chase")]
+        public void UniqueReplace(string template, string expectedOutput)
+        {
+            var handler = new MustacheHandler();
+            var handled = handler.Replace(template);
+            Assert.That(handled, Is.EqualTo(expectedOutput));
         }
     }
 }

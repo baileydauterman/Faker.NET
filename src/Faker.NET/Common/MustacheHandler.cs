@@ -1,62 +1,66 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.Text;
+using System.Text.RegularExpressions;
 
 namespace Faker.NET.Common
 {
     public class MustacheHandler
     {
-        public string Replace(string template)
+        public MustacheHandler()
         {
-            return Replace(template, _commonReplacements);
         }
 
-        public string Replace(string template, Dictionary<string, string> parameters)
+        public string Replace(string template) => Replace(template, _commonReplacements);
+
+        public string Replace(string template, Dictionary<string, Func<string>> replacements)
         {
-            var matches = _mustaches.Matches(template);
-            foreach (Match match in matches)
+            _builder = new StringBuilder();
+            var index = MoveToNextStartIndex(ref template);
+
+            while (index > -1)
             {
-                var word = match.Groups["word"].Value;
-                var value = parameters[word];
-                if (match.Groups["index"].Captures.Count > 0)
-                {
-                    var index = int.Parse(match.Groups["index"].Value);
-                    var replaceValue = $"{word}[{index}]";
-                    value = $"{value[index]}";
-                    template = template.Replace($"{{{{{replaceValue}}}}}", value);
-                }
-                else
-                {
-                    template = template.Replace($"{{{{{word}}}}}", value);
-                }
+                var endIndex = template.IndexOf("}}");
+                var word = template.Substring(index + 2, endIndex - index - 2);
+                HandleReplacement(word, replacements);
+                template = template.Substring(endIndex + 2);
+                index = MoveToNextStartIndex(ref template);
             }
 
-            return template;
+            return _builder.ToString();
         }
 
-        public string Replace(string template, Dictionary<string, Func<string>> parameters)
+        private int MoveToNextStartIndex(ref string template)
         {
-            var matches = _mustaches.Matches(template);
-            foreach (Match match in matches)
+            var index = template.IndexOf("{{");
+
+            if (index != 0 && index != -1)
             {
-                var word = match.Groups["word"].Value;
-                var value = parameters[word].Invoke();
-                if (match.Groups["index"].Captures.Count > 0)
-                {
-                    var index = int.Parse(match.Groups["index"].Value);
-                    var replaceValue = $"{word}[{index}]";
-                    value = $"{value[index]}";
-                    template = template.Replace($"{{{{{replaceValue}}}}}", value);
-                }
-                else
-                {
-                    template = template.Replace($"{{{{{word}}}}}", value);
-                }
+                _builder.Append(template.Substring(0, index));
+                template = template.Substring(index);
+                index = 0;
             }
 
-            return template;
+            return index;
         }
 
-        private readonly Regex _mustaches = new Regex("{{(?<word>[\\w\\.]+)(?:\\[(?<index>\\d+)\\])?");
+        private void HandleReplacement(string word, Dictionary<string, Func<string>> replacement)
+        {
+            var match = _index.Match(word);
+            var index = -1;
+            if (match.Success)
+            {
+                word = word.Substring(0, word.IndexOf('['));
+                index = int.Parse(match.Groups["idx"].Value);
+            }
 
+            var output = replacement[word].Invoke();
+            output = index > -1 ? output.Substring(index, 1) : output;
+            _builder.Append(output);
+        }
+
+        private StringBuilder _builder;
+
+        // private readonly Regex _mustaches = new Regex("^{{(?<word>[\\w\\.]+)(?:\\[(?<index>\\d+)\\])?");
+        private readonly Regex _index = new Regex("\\[(?<idx>\\d+)\\]");
         private readonly Dictionary<string, Func<string>> _commonReplacements = new Dictionary<string, Func<string>>
         {
             { "airline.aircraftType", () => Faker.Airline.AircraftType().ToString() },
