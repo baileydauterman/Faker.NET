@@ -59,6 +59,14 @@ namespace Faker.NET.Common
 
         private readonly Dictionary<string, Func<string>> _commonReplacements = new Dictionary<string, Func<string>>
         {
+            { "airline.aircraftType", () => Faker.Airline.AircraftType().ToString() },
+            { "airline.airline", () => Faker.Airline.Airline().ToString() },
+            { "airline.airplane", () => Faker.Airline.Airplane().ToString() },
+            { "airline.airport", () => Faker.Airline.Airport().ToString() },
+            { "airline.flightNumber", () => Faker.Airline.FlightNumber() },
+            { "airline.recordLocator", () => Faker.Airline.RecordLocator() },
+            { "airline.seat", () => Faker.Airline.Seat() },
+
             { "person.bio", () => Faker.Person.Bio() },
             { "person.bioPart", () => Faker.Person.BioPart() },
             { "person.bioSupporter", () => Faker.Person.BioSupporter() },
@@ -76,7 +84,14 @@ namespace Faker.NET.Common
             { "person.Suffix", () => Faker.Person.Suffix() },
             { "person.zodiacSign", () => Faker.Person.ZodiacSign() },
 
+            { "word.adverb", () => Faker.Word.Adverb() },
+            { "word.conjunction", () => Faker.Word.Conjunction() },
+            { "word.interjection", () => Faker.Word.Interjection() },
             { "word.noun", () => Faker.Word.Noun() },
+            { "word.preposition", () => Faker.Word.Preposition() },
+            { "word.sample", () => Faker.Word.Sample() },
+            { "word.verb", () => Faker.Word.Verb() },
+            { "word.words", () => Faker.Word.Words() },
 
             { "internet.emoji", () => Faker.Internet.Emoji() }
         };

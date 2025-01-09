@@ -11,4 +11,9 @@ public class Airplane
     public string Name { get; }
 
     public string IataTypeCode { get; }
+
+    public override string ToString()
+    {
+        return Name;
+    }
 }
