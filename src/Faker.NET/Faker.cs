@@ -43,6 +43,8 @@ namespace Faker.NET
 
         public static IFakerColor Color => FakerInstance.Color;
 
+        public static IFakerCommerce Commerce => FakerInstance.Commerce;
+
         public static IFakerDate Date => FakerInstance.Date;
 
         public static IFakerInternet Internet => FakerInstance.Internet;
