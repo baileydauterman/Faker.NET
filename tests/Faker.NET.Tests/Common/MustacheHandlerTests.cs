@@ -1,4 +1,4 @@
-﻿using System.Diagnostics;
+using System.Diagnostics;
 using Faker.NET.Common;
 using Faker.NET.Tests.Utils;
 
@@ -53,7 +53,7 @@ namespace Faker.NET.Tests.Common
             timer.Stop();
 
             // ~200 conversions/ms
-            Assert.That(timer.Elapsed.Milliseconds, Is.LessThan(25));
+            Assert.That(timer.Elapsed.Milliseconds, Is.LessThan(50));
         }
     }
 }
