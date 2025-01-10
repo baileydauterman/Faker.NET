@@ -5,44 +5,37 @@ namespace Faker.NET.Common
 {
     public class MustacheHandler
     {
-        public MustacheHandler()
-        {
-        }
-
         public string Replace(string template) => Replace(template, _commonReplacements);
 
         public string Replace(string template, Dictionary<string, Func<string>> replacements)
         {
-            _builder = new StringBuilder();
-            var index = MoveToNextStartIndex(ref template);
+            // var value = FindAll(template, "{{").ToArray();
+            var indexStarts = Task.Run(() => FindAll(template, "{{").ToArray());
+            var indexEnds = Task.Run(() => FindAll(template, "}}").ToArray());
 
-            while (index > -1)
+            _builder = new StringBuilder();
+            Task.WaitAll(indexStarts, indexEnds);
+
+            int previousEnd = 0;
+
+            foreach (var (start, end) in indexStarts.Result.Zip(indexEnds.Result))
             {
-                var endIndex = template.IndexOf("}}");
-                var word = template.Substring(index + 2, endIndex - index - 2);
-                HandleReplacement(word, replacements);
-                template = template.Substring(endIndex + 2);
-                index = MoveToNextStartIndex(ref template);
+                if (previousEnd < start)
+                {
+                    _builder.Append(template.AsSpan(previousEnd, start - previousEnd));
+                }
+
+                var startToEnd = start + 2;
+                var word = template.Substring(startToEnd, end - startToEnd);
+                _builder.Append(GetWordReplacement(word, replacements));
+
+                previousEnd = end + 2;
             }
 
             return _builder.ToString();
         }
 
-        private int MoveToNextStartIndex(ref string template)
-        {
-            var index = template.IndexOf("{{");
-
-            if (index != 0 && index != -1)
-            {
-                _builder.Append(template.Substring(0, index));
-                template = template.Substring(index);
-                index = 0;
-            }
-
-            return index;
-        }
-
-        private void HandleReplacement(string word, Dictionary<string, Func<string>> replacement)
+        private string GetWordReplacement(string word, Dictionary<string, Func<string>> replacement)
         {
             var match = _index.Match(word);
             var index = -1;
@@ -53,8 +46,20 @@ namespace Faker.NET.Common
             }
 
             var output = replacement[word].Invoke();
-            output = index > -1 ? output.Substring(index, 1) : output;
-            _builder.Append(output);
+            return index > -1 ? output.Substring(index, 1) : output;
+        }
+
+        private IEnumerable<int> FindAll(string template, string characters)
+        {
+            int index = template.IndexOf(characters);
+            int charsLen = characters.Length;
+            while (index != -1)
+            {
+                yield return index;
+                index = template.IndexOf(characters, index + charsLen);
+            }
+
+            yield break;
         }
 
         private StringBuilder _builder;
