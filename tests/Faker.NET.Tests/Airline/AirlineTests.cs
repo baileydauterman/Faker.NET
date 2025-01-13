@@ -11,7 +11,7 @@ public class AirlineTests : DeterministicTestClass
     {
         var airplane = Faker.Airline.Airplane();
         Assert.That(airplane.Name, Is.EqualTo("Cessna Citation I"));
-        Assert.That(airplane.IataTypeCode, Is.EqualTo("CNJ"));
+        Assert.That(airplane.IataCode, Is.EqualTo("CNJ"));
     }
 
     [Test]

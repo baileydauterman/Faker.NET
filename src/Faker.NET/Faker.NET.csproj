@@ -11,4 +11,22 @@
     <EmbeddedResource Remove="nupkg\**" />
     <None Remove="nupkg\**" />
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="Locales\EN\Airline\en_airlines.json" />
+    <None Remove="Locales\EN\Airline\en_airports.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Locales\EN\Airline\en_airplanes.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Locales\EN\Airline\en_airlines.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Locales\EN\Airline\en_airports.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Locales\EN\Data\" />
+  </ItemGroup>
 </Project>

@@ -13,9 +13,19 @@ namespace Faker.NET
     {
         internal static MustacheHandler Mustache { get; } = new MustacheHandler();
 
+        internal static ResourceRetriever ResourceRetriever { get; } = new ResourceRetriever();
+
+        internal static FakerLocale Locale { get; private set; } = FakerLocale.English;
+
         public static void SetLocale(FakerLocale locale)
         {
+            if (Locale == locale)
+            {
+                return;
+            }
+
             FakerInstance = FakerLocaleFactory.Create(locale);
+            Locale = locale;
         }
 
         public static void Set(IFakerLocaleInstance faker)

@@ -1,0 +1,1538 @@
+[
+    {
+        "name": "Birmingham-Shuttlesworth International Airport",
+        "iataCode": "BHM"
+    },
+    {
+        "name": "Dothan Regional Airport",
+        "iataCode": "DHN"
+    },
+    {
+        "name": "Huntsville International Airport (Carl T. Jones Field)",
+        "iataCode": "HSV"
+    },
+    {
+        "name": "Mobile Regional Airport",
+        "iataCode": "MOB"
+    },
+    {
+        "name": "Montgomery Regional Airport (Dannelly Field)",
+        "iataCode": "MGM"
+    },
+    {
+        "name": "Merrill Field",
+        "iataCode": "MRI"
+    },
+    {
+        "name": "Ted Stevens Anchorage International Airport",
+        "iataCode": "ANC"
+    },
+    {
+        "name": "Bethel Airport",
+        "iataCode": "BET"
+    },
+    {
+        "name": "Merle K. (Mudhole) Smith Airport",
+        "iataCode": "CDV"
+    },
+    {
+        "name": "Deadhorse Airport (Prudhoe Bay Airport)",
+        "iataCode": "SCC"
+    },
+    {
+        "name": "Dillingham Airport",
+        "iataCode": "DLG"
+    },
+    {
+        "name": "Fairbanks International Airport",
+        "iataCode": "FAI"
+    },
+    {
+        "name": "Gustavus Airport",
+        "iataCode": "GST"
+    },
+    {
+        "name": "Homer Airport",
+        "iataCode": "HOM"
+    },
+    {
+        "name": "Juneau International Airport",
+        "iataCode": "JNU"
+    },
+    {
+        "name": "Kenai Municipal Airport",
+        "iataCode": "ENA"
+    },
+    {
+        "name": "Ketchikan International Airport",
+        "iataCode": "KTN"
+    },
+    {
+        "name": "King Salmon Airport",
+        "iataCode": "AKN"
+    },
+    {
+        "name": "Klawock Airport",
+        "iataCode": "KLW"
+    },
+    {
+        "name": "Kodiak Airport (Benny Benson State Airport)",
+        "iataCode": "ADQ"
+    },
+    {
+        "name": "Ralph Wien Memorial Airport",
+        "iataCode": "OTZ"
+    },
+    {
+        "name": "Nome Airport",
+        "iataCode": "OME"
+    },
+    {
+        "name": "Petersburg James A. Johnson Airport",
+        "iataCode": "PSG"
+    },
+    {
+        "name": "Sitka Rocky Gutierrez Airport",
+        "iataCode": "SIT"
+    },
+    {
+        "name": "Unalaska Airport (Tom Madsen/Dutch Harbor Airport)",
+        "iataCode": "DUT"
+    },
+    {
+        "name": "Wiley Post-Will Rogers Memorial Airport",
+        "iataCode": "BRW"
+    },
+    {
+        "name": "Wrangell Airport",
+        "iataCode": "WRG"
+    },
+    {
+        "name": "Yakutat Airport",
+        "iataCode": "YAK"
+    },
+    {
+        "name": "Flagstaff Pulliam Airport",
+        "iataCode": "FLG"
+    },
+    {
+        "name": "Phoenix-Mesa Gateway Airport (formerly Williams AFB)",
+        "iataCode": "AZA"
+    },
+    {
+        "name": "Page Municipal Airport",
+        "iataCode": "PGA"
+    },
+    {
+        "name": "Phoenix Sky Harbor International Airport",
+        "iataCode": "PHX"
+    },
+    {
+        "name": "Prescott Municipal Airport (Ernest A. Love Field)",
+        "iataCode": "PRC"
+    },
+    {
+        "name": "Tucson International Airport",
+        "iataCode": "TUS"
+    },
+    {
+        "name": "Yuma International Airport / MCAS Yuma",
+        "iataCode": "YUM"
+    },
+    {
+        "name": "Northwest Arkansas National Airport",
+        "iataCode": "XNA"
+    },
+    {
+        "name": "Fort Smith Regional Airport",
+        "iataCode": "FSM"
+    },
+    {
+        "name": "Bill and Hillary Clinton National Airport (Adams Field) (was Little Rock National)",
+        "iataCode": "LIT"
+    },
+    {
+        "name": "Texarkana Regional Airport (Webb Field)",
+        "iataCode": "TXK"
+    },
+    {
+        "name": "California Redwood Coast-Humboldt County Airport",
+        "iataCode": "ACV"
+    },
+    {
+        "name": "Meadows Field",
+        "iataCode": "BFL"
+    },
+    {
+        "name": "Hollywood Burbank Airport",
+        "iataCode": "BUR"
+    },
+    {
+        "name": "Fresno Yosemite International Airport",
+        "iataCode": "FAT"
+    },
+    {
+        "name": "Long Beach Airport (Daugherty Field)",
+        "iataCode": "LGB"
+    },
+    {
+        "name": "Los Angeles International Airport",
+        "iataCode": "LAX"
+    },
+    {
+        "name": "Monterey Regional Airport",
+        "iataCode": "MRY"
+    },
+    {
+        "name": "Oakland International Airport",
+        "iataCode": "OAK"
+    },
+    {
+        "name": "Ontario International Airport",
+        "iataCode": "ONT"
+    },
+    {
+        "name": "Palm Springs International Airport",
+        "iataCode": "PSP"
+    },
+    {
+        "name": "Redding Regional Airport",
+        "iataCode": "RDD"
+    },
+    {
+        "name": "Sacramento International Airport",
+        "iataCode": "SMF"
+    },
+    {
+        "name": "San Diego International Airport",
+        "iataCode": "SAN"
+    },
+    {
+        "name": "San Francisco International Airport",
+        "iataCode": "SFO"
+    },
+    {
+        "name": "San Jose International Airport",
+        "iataCode": "SJC"
+    },
+    {
+        "name": "San Luis Obispo County Regional Airport (McChesney Field)",
+        "iataCode": "SBP"
+    },
+    {
+        "name": "John Wayne Airport",
+        "iataCode": "SNA"
+    },
+    {
+        "name": "Santa Barbara Municipal Airport (Santa Barbara Airport)",
+        "iataCode": "SBA"
+    },
+    {
+        "name": "Santa Maria Public Airport (Capt G. Allan Hancock Field)",
+        "iataCode": "SMX"
+    },
+    {
+        "name": "Charles M. Schulz-Sonoma County Airport",
+        "iataCode": "STS"
+    },
+    {
+        "name": "Stockton Metropolitan Airport",
+        "iataCode": "SCK"
+    },
+    {
+        "name": "San Luis Valley Regional Airport (Bergman Field)",
+        "iataCode": "ALS"
+    },
+    {
+        "name": "Aspen/Pitkin County Airport (Sardy Field)",
+        "iataCode": "ASE"
+    },
+    {
+        "name": "City of Colorado Springs Municipal Airport",
+        "iataCode": "COS"
+    },
+    {
+        "name": "Denver International Airport",
+        "iataCode": "DEN"
+    },
+    {
+        "name": "Durango-La Plata County Airport",
+        "iataCode": "DRO"
+    },
+    {
+        "name": "Eagle County Regional Airport",
+        "iataCode": "EGE"
+    },
+    {
+        "name": "Grand Junction Regional Airport (Walker Field)",
+        "iataCode": "GJT"
+    },
+    {
+        "name": "Gunnison-Crested Butte Regional Airport",
+        "iataCode": "GUC"
+    },
+    {
+        "name": "Yampa Valley Airport (Yampa Valley Regional)",
+        "iataCode": "HDN"
+    },
+    {
+        "name": "Montrose Regional Airport",
+        "iataCode": "MTJ"
+    },
+    {
+        "name": "Bradley International Airport",
+        "iataCode": "BDL"
+    },
+    {
+        "name": "Tweed-New Haven Airport",
+        "iataCode": "HVN"
+    },
+    {
+        "name": "Wilmington Airport",
+        "iataCode": "ILG"
+    },
+    {
+        "name": "Daytona Beach International Airport",
+        "iataCode": "DAB"
+    },
+    {
+        "name": "Fort Lauderdale-Hollywood International Airport",
+        "iataCode": "FLL"
+    },
+    {
+        "name": "Southwest Florida International Airport",
+        "iataCode": "RSW"
+    },
+    {
+        "name": "Destin-Fort Walton Beach Airport / Eglin Air Force Base",
+        "iataCode": "VPS"
+    },
+    {
+        "name": "Gainesville Regional Airport",
+        "iataCode": "GNV"
+    },
+    {
+        "name": "Jacksonville International Airport",
+        "iataCode": "JAX"
+    },
+    {
+        "name": "Key West International Airport",
+        "iataCode": "EYW"
+    },
+    {
+        "name": "Melbourne Orlando International Airport",
+        "iataCode": "MLB"
+    },
+    {
+        "name": "Miami International Airport",
+        "iataCode": "MIA"
+    },
+    {
+        "name": "Orlando International Airport",
+        "iataCode": "MCO"
+    },
+    {
+        "name": "Northwest Florida Beaches International Airport",
+        "iataCode": "ECP"
+    },
+    {
+        "name": "Pensacola International Airport",
+        "iataCode": "PNS"
+    },
+    {
+        "name": "Punta Gorda Airport",
+        "iataCode": "PGD"
+    },
+    {
+        "name": "Orlando Sanford International Airport",
+        "iataCode": "SFB"
+    },
+    {
+        "name": "Sarasota-Bradenton International Airport",
+        "iataCode": "SRQ"
+    },
+    {
+        "name": "St. Pete-Clearwater International Airport",
+        "iataCode": "PIE"
+    },
+    {
+        "name": "Tallahassee International Airport",
+        "iataCode": "TLH"
+    },
+    {
+        "name": "Tampa International Airport",
+        "iataCode": "TPA"
+    },
+    {
+        "name": "Palm Beach International Airport",
+        "iataCode": "PBI"
+    },
+    {
+        "name": "Southwest Georgia Regional Airport",
+        "iataCode": "ABY"
+    },
+    {
+        "name": "Hartsfield-Jackson Atlanta International Airport",
+        "iataCode": "ATL"
+    },
+    {
+        "name": "Augusta Regional Airport (Bush Field)",
+        "iataCode": "AGS"
+    },
+    {
+        "name": "Brunswick Golden Isles Airport",
+        "iataCode": "BQK"
+    },
+    {
+        "name": "Columbus Airport",
+        "iataCode": "CSG"
+    },
+    {
+        "name": "Middle Georgia Regional Airport",
+        "iataCode": "MCN"
+    },
+    {
+        "name": "Savannah/Hilton Head International Airport",
+        "iataCode": "SAV"
+    },
+    {
+        "name": "Valdosta Regional Airport",
+        "iataCode": "VLD"
+    },
+    {
+        "name": "Hilo International Airport",
+        "iataCode": "ITO"
+    },
+    {
+        "name": "Daniel K. Inouye International Airport",
+        "iataCode": "HNL"
+    },
+    {
+        "name": "Kahului Airport",
+        "iataCode": "OGG"
+    },
+    {
+        "name": "Ellison Onizuka Kona International Airport at Keahole",
+        "iataCode": "KOA"
+    },
+    {
+        "name": "Molokai Airport (Hoolehua Airport)",
+        "iataCode": "MKK"
+    },
+    {
+        "name": "Lanai Airport",
+        "iataCode": "LNY"
+    },
+    {
+        "name": "Lihue Airport",
+        "iataCode": "LIH"
+    },
+    {
+        "name": "Boise Airport (Boise Air Terminal) (Gowen Field)",
+        "iataCode": "BOI"
+    },
+    {
+        "name": "Friedman Memorial Airport",
+        "iataCode": "SUN"
+    },
+    {
+        "name": "Idaho Falls Regional Airport (Fanning Field)",
+        "iataCode": "IDA"
+    },
+    {
+        "name": "Lewiston-Nez Perce County Airport",
+        "iataCode": "LWS"
+    },
+    {
+        "name": "Pocatello Regional Airport",
+        "iataCode": "PIH"
+    },
+    {
+        "name": "Magic Valley Regional Airport (Joslin Field)",
+        "iataCode": "TWF"
+    },
+    {
+        "name": "MidAmerica St. Louis Airport / Scott Air Force Base",
+        "iataCode": "BLV"
+    },
+    {
+        "name": "Central Illinois Regional Airport at Bloomington-Normal",
+        "iataCode": "BMI"
+    },
+    {
+        "name": "University of Illinois - Willard Airport",
+        "iataCode": "CMI"
+    },
+    {
+        "name": "Chicago Midway International Airport",
+        "iataCode": "MDW"
+    },
+    {
+        "name": "Chicago O'Hare International Airport",
+        "iataCode": "ORD"
+    },
+    {
+        "name": "Decatur Airport",
+        "iataCode": "DEC"
+    },
+    {
+        "name": "Veterans Airport of Southern Illinois (Williamson County Regional Airport)",
+        "iataCode": "MWA"
+    },
+    {
+        "name": "Quad Cities International Airport",
+        "iataCode": "MLI"
+    },
+    {
+        "name": "Peoria International Airport",
+        "iataCode": "PIA"
+    },
+    {
+        "name": "Chicago Rockford International Airport (was Northwest Chicagoland Regional Airport at Rockford)",
+        "iataCode": "RFD"
+    },
+    {
+        "name": "Abraham Lincoln Capital Airport",
+        "iataCode": "SPI"
+    },
+    {
+        "name": "Evansville Regional Airport",
+        "iataCode": "EVV"
+    },
+    {
+        "name": "Fort Wayne International Airport",
+        "iataCode": "FWA"
+    },
+    {
+        "name": "Indianapolis International Airport",
+        "iataCode": "IND"
+    },
+    {
+        "name": "South Bend International Airport",
+        "iataCode": "SBN"
+    },
+    {
+        "name": "Eastern Iowa Airport",
+        "iataCode": "CID"
+    },
+    {
+        "name": "Des Moines International Airport",
+        "iataCode": "DSM"
+    },
+    {
+        "name": "Dubuque Regional Airport",
+        "iataCode": "DBQ"
+    },
+    {
+        "name": "Sioux Gateway Airport (Brig. General Bud Day Field)",
+        "iataCode": "SUX"
+    },
+    {
+        "name": "Waterloo Regional Airport",
+        "iataCode": "ALO"
+    },
+    {
+        "name": "Garden City Regional Airport",
+        "iataCode": "GCK"
+    },
+    {
+        "name": "Hays Regional Airport",
+        "iataCode": "HYS"
+    },
+    {
+        "name": "Manhattan Regional Airport",
+        "iataCode": "MHK"
+    },
+    {
+        "name": "Salina Regional Airport",
+        "iataCode": "SLN"
+    },
+    {
+        "name": "Wichita Dwight D. Eisenhower National Airport (was Wichita Mid-Continent Airport)",
+        "iataCode": "ICT"
+    },
+    {
+        "name": "Cincinnati/Northern Kentucky International Airport",
+        "iataCode": "CVG"
+    },
+    {
+        "name": "Blue Grass Airport",
+        "iataCode": "LEX"
+    },
+    {
+        "name": "Louisville Muhammad Ali International Airport (Standiford Field)",
+        "iataCode": "SDF"
+    },
+    {
+        "name": "Owensboro-Daviess County Regional Airport",
+        "iataCode": "OWB"
+    },
+    {
+        "name": "Barkley Regional Airport",
+        "iataCode": "PAH"
+    },
+    {
+        "name": "Alexandria International Airport",
+        "iataCode": "AEX"
+    },
+    {
+        "name": "Baton Rouge Metropolitan Airport (Ryan Field)",
+        "iataCode": "BTR"
+    },
+    {
+        "name": "Lafayette Regional Airport (Paul Fournet Field)",
+        "iataCode": "LFT"
+    },
+    {
+        "name": "Lake Charles Regional Airport",
+        "iataCode": "LCH"
+    },
+    {
+        "name": "Monroe Regional Airport",
+        "iataCode": "MLU"
+    },
+    {
+        "name": "Louis Armstrong New Orleans International Airport",
+        "iataCode": "MSY"
+    },
+    {
+        "name": "Shreveport Regional Airport",
+        "iataCode": "SHV"
+    },
+    {
+        "name": "Bangor International Airport",
+        "iataCode": "BGR"
+    },
+    {
+        "name": "Portland International Jetport",
+        "iataCode": "PWM"
+    },
+    {
+        "name": "Presque Isle International Airport",
+        "iataCode": "PQI"
+    },
+    {
+        "name": "Knox County Regional Airport",
+        "iataCode": "RKD"
+    },
+    {
+        "name": "Baltimore/Washington International Airport",
+        "iataCode": "BWI"
+    },
+    {
+        "name": "Hagerstown Regional Airport (Richard A. Henson Field)",
+        "iataCode": "HGR"
+    },
+    {
+        "name": "Salisbury Regional Airport",
+        "iataCode": "SBY"
+    },
+    {
+        "name": "Gen. Edward Lawrence Logan International Airport",
+        "iataCode": "BOS"
+    },
+    {
+        "name": "Cape Cod Gateway Airport (Boardman/Polando Field)",
+        "iataCode": "HYA"
+    },
+    {
+        "name": "Nantucket Memorial Airport",
+        "iataCode": "ACK"
+    },
+    {
+        "name": "Martha's Vineyard Airport",
+        "iataCode": "MVY"
+    },
+    {
+        "name": "Worcester Regional Airport",
+        "iataCode": "ORH"
+    },
+    {
+        "name": "Alpena County Regional Airport",
+        "iataCode": "APN"
+    },
+    {
+        "name": "Detroit Metro Wayne County Airport",
+        "iataCode": "DTW"
+    },
+    {
+        "name": "Delta County Airport",
+        "iataCode": "ESC"
+    },
+    {
+        "name": "Bishop International Airport",
+        "iataCode": "FNT"
+    },
+    {
+        "name": "Gerald R. Ford International Airport",
+        "iataCode": "GRR"
+    },
+    {
+        "name": "Houghton County Memorial Airport",
+        "iataCode": "CMX"
+    },
+    {
+        "name": "Ford Airport",
+        "iataCode": "IMT"
+    },
+    {
+        "name": "Kalamazoo/Battle Creek International Airport",
+        "iataCode": "AZO"
+    },
+    {
+        "name": "Capital Region International Airport (was Lansing Capital City)",
+        "iataCode": "LAN"
+    },
+    {
+        "name": "Marquette Sawyer Regional Airport",
+        "iataCode": "MQT"
+    },
+    {
+        "name": "Muskegon County Airport",
+        "iataCode": "MKG"
+    },
+    {
+        "name": "Pellston Regional/Emmet County Airport",
+        "iataCode": "PLN"
+    },
+    {
+        "name": "MBS International Airport",
+        "iataCode": "MBS"
+    },
+    {
+        "name": "Chippewa County International Airport",
+        "iataCode": "CIU"
+    },
+    {
+        "name": "Cherry Capital Airport (was Cherry County Airpark)",
+        "iataCode": "TVC"
+    },
+    {
+        "name": "Bemidji Regional Airport",
+        "iataCode": "BJI"
+    },
+    {
+        "name": "Brainerd Lakes Regional Airport",
+        "iataCode": "BRD"
+    },
+    {
+        "name": "Duluth International Airport",
+        "iataCode": "DLH"
+    },
+    {
+        "name": "Range Regional Airport (was Chisholm-Hibbing Airport)",
+        "iataCode": "HIB"
+    },
+    {
+        "name": "Minneapolis-St. Paul International/Wold-Chamberlain Airport",
+        "iataCode": "MSP"
+    },
+    {
+        "name": "Rochester International Airport",
+        "iataCode": "RST"
+    },
+    {
+        "name": "St. Cloud Regional Airport",
+        "iataCode": "STC"
+    },
+    {
+        "name": "Golden Triangle Regional Airport",
+        "iataCode": "GTR"
+    },
+    {
+        "name": "Gulfport-Biloxi International Airport",
+        "iataCode": "GPT"
+    },
+    {
+        "name": "Hattiesburg-Laurel Regional Airport",
+        "iataCode": "PIB"
+    },
+    {
+        "name": "Jackson-Medgar Wiley Evers International Airport",
+        "iataCode": "JAN"
+    },
+    {
+        "name": "Key Field",
+        "iataCode": "MEI"
+    },
+    {
+        "name": "Tupelo Regional Airport (C.D. Lemons Field)",
+        "iataCode": "TUP"
+    },
+    {
+        "name": "Branson Airport",
+        "iataCode": "BKG"
+    },
+    {
+        "name": "Columbia Regional Airport",
+        "iataCode": "COU"
+    },
+    {
+        "name": "Waynesville-St. Robert Regional Airport (Forney Field)",
+        "iataCode": "TBN"
+    },
+    {
+        "name": "Joplin Regional Airport",
+        "iataCode": "JLN"
+    },
+    {
+        "name": "Kansas City International Airport (was Mid-Continent International)",
+        "iataCode": "MCI"
+    },
+    {
+        "name": "St. Louis Lambert International Airport",
+        "iataCode": "STL"
+    },
+    {
+        "name": "Springfield-Branson National Airport",
+        "iataCode": "SGF"
+    },
+    {
+        "name": "Billings Logan International Airport",
+        "iataCode": "BIL"
+    },
+    {
+        "name": "Bozeman Yellowstone International Airport (was Gallatin Field)",
+        "iataCode": "BZN"
+    },
+    {
+        "name": "Bert Mooney Airport",
+        "iataCode": "BTM"
+    },
+    {
+        "name": "Great Falls International Airport",
+        "iataCode": "GTF"
+    },
+    {
+        "name": "Helena Regional Airport",
+        "iataCode": "HLN"
+    },
+    {
+        "name": "Glacier Park International Airport",
+        "iataCode": "FCA"
+    },
+    {
+        "name": "Missoula Montana Airport (was Missoula International Airport)",
+        "iataCode": "MSO"
+    },
+    {
+        "name": "Yellowstone Airport",
+        "iataCode": "WYS"
+    },
+    {
+        "name": "Central Nebraska Regional Airport",
+        "iataCode": "GRI"
+    },
+    {
+        "name": "Kearney Regional Airport (was Kearney Municipal)",
+        "iataCode": "EAR"
+    },
+    {
+        "name": "Lincoln Airport (was Lincoln Municipal)",
+        "iataCode": "LNK"
+    },
+    {
+        "name": "North Platte Regional Airport (Lee Bird Field)",
+        "iataCode": "LBF"
+    },
+    {
+        "name": "Eppley Airfield",
+        "iataCode": "OMA"
+    },
+    {
+        "name": "Western Nebraska Regional Airport (William B. Heilig Field)",
+        "iataCode": "BFF"
+    },
+    {
+        "name": "Boulder City Municipal Airport",
+        "iataCode": "BLD"
+    },
+    {
+        "name": "Elko Regional Airport (J.C. Harris Field)",
+        "iataCode": "EKO"
+    },
+    {
+        "name": "Harry Reid International Airport",
+        "iataCode": "LAS"
+    },
+    {
+        "name": "Reno/Tahoe International Airport",
+        "iataCode": "RNO"
+    },
+    {
+        "name": "Manchester-Boston Regional Airport",
+        "iataCode": "MHT"
+    },
+    {
+        "name": "Portsmouth International Airport at Pease",
+        "iataCode": "PSM"
+    },
+    {
+        "name": "Atlantic City International Airport",
+        "iataCode": "ACY"
+    },
+    {
+        "name": "Newark Liberty International Airport",
+        "iataCode": "EWR"
+    },
+    {
+        "name": "Trenton-Mercer Airport",
+        "iataCode": "TTN"
+    },
+    {
+        "name": "Albuquerque International Sunport",
+        "iataCode": "ABQ"
+    },
+    {
+        "name": "Lea County Regional Airport",
+        "iataCode": "HOB"
+    },
+    {
+        "name": "Roswell Air Center",
+        "iataCode": "ROW"
+    },
+    {
+        "name": "Santa Fe Municipal Airport",
+        "iataCode": "SAF"
+    },
+    {
+        "name": "Albany International Airport",
+        "iataCode": "ALB"
+    },
+    {
+        "name": "Greater Binghamton Airport (Edwin A. Link Field)",
+        "iataCode": "BGM"
+    },
+    {
+        "name": "Buffalo Niagara International Airport",
+        "iataCode": "BUF"
+    },
+    {
+        "name": "Elmira/Corning Regional Airport",
+        "iataCode": "ELM"
+    },
+    {
+        "name": "Ithaca Tompkins International Airport",
+        "iataCode": "ITH"
+    },
+    {
+        "name": "John F. Kennedy International Airport (was New York International Airport)",
+        "iataCode": "JFK"
+    },
+    {
+        "name": "LaGuardia Airport (and Marine Air Terminal)",
+        "iataCode": "LGA"
+    },
+    {
+        "name": "Long Island MacArthur Airport",
+        "iataCode": "ISP"
+    },
+    {
+        "name": "New York Stewart International Airport",
+        "iataCode": "SWF"
+    },
+    {
+        "name": "Niagara Falls International Airport",
+        "iataCode": "IAG"
+    },
+    {
+        "name": "Ogdensburg International Airport",
+        "iataCode": "OGS"
+    },
+    {
+        "name": "Plattsburgh International Airport",
+        "iataCode": "PBG"
+    },
+    {
+        "name": "Frederick Douglass/Greater Rochester International Airport",
+        "iataCode": "ROC"
+    },
+    {
+        "name": "Syracuse Hancock International Airport",
+        "iataCode": "SYR"
+    },
+    {
+        "name": "Watertown International Airport",
+        "iataCode": "ART"
+    },
+    {
+        "name": "Westchester County Airport",
+        "iataCode": "HPN"
+    },
+    {
+        "name": "Asheville Regional Airport",
+        "iataCode": "AVL"
+    },
+    {
+        "name": "Charlotte Douglas International Airport",
+        "iataCode": "CLT"
+    },
+    {
+        "name": "Concord-Padgett Regional Airport",
+        "iataCode": "USA"
+    },
+    {
+        "name": "Fayetteville Regional Airport (Grannis Field)",
+        "iataCode": "FAY"
+    },
+    {
+        "name": "Piedmont Triad International Airport",
+        "iataCode": "GSO"
+    },
+    {
+        "name": "Pitt-Greenville Airport",
+        "iataCode": "PGV"
+    },
+    {
+        "name": "Albert J. Ellis Airport",
+        "iataCode": "OAJ"
+    },
+    {
+        "name": "Coastal Carolina Regional Airport (was Craven County Regional)",
+        "iataCode": "EWN"
+    },
+    {
+        "name": "Raleigh-Durham International Airport",
+        "iataCode": "RDU"
+    },
+    {
+        "name": "Wilmington International Airport",
+        "iataCode": "ILM"
+    },
+    {
+        "name": "Bismarck Municipal Airport",
+        "iataCode": "BIS"
+    },
+    {
+        "name": "Dickinson Theodore Roosevelt Regional Airport",
+        "iataCode": "DIK"
+    },
+    {
+        "name": "Hector International Airport",
+        "iataCode": "FAR"
+    },
+    {
+        "name": "Grand Forks International Airport",
+        "iataCode": "GFK"
+    },
+    {
+        "name": "Jamestown Regional Airport",
+        "iataCode": "JMS"
+    },
+    {
+        "name": "Minot International Airport",
+        "iataCode": "MOT"
+    },
+    {
+        "name": "Williston Basin International Airport",
+        "iataCode": "XWA"
+    },
+    {
+        "name": "Akron-Canton Airport",
+        "iataCode": "CAK"
+    },
+    {
+        "name": "Cleveland Hopkins International Airport",
+        "iataCode": "CLE"
+    },
+    {
+        "name": "John Glenn Columbus International Airport",
+        "iataCode": "CMH"
+    },
+    {
+        "name": "Rickenbacker International Airport",
+        "iataCode": "LCK"
+    },
+    {
+        "name": "James M. Cox Dayton International Airport",
+        "iataCode": "DAY"
+    },
+    {
+        "name": "Eugene F. Kranz Toledo Express Airport",
+        "iataCode": "TOL"
+    },
+    {
+        "name": "Lawton-Fort Sill Regional Airport",
+        "iataCode": "LAW"
+    },
+    {
+        "name": "Will Rogers World Airport",
+        "iataCode": "OKC"
+    },
+    {
+        "name": "Stillwater Regional Airport",
+        "iataCode": "SWO"
+    },
+    {
+        "name": "Tulsa International Airport",
+        "iataCode": "TUL"
+    },
+    {
+        "name": "Mahlon Sweet Field",
+        "iataCode": "EUG"
+    },
+    {
+        "name": "Rogue Valley International-Medford Airport",
+        "iataCode": "MFR"
+    },
+    {
+        "name": "Southwest Oregon Regional Airport (was North Bend Municipal)",
+        "iataCode": "OTH"
+    },
+    {
+        "name": "Portland International Airport",
+        "iataCode": "PDX"
+    },
+    {
+        "name": "Roberts Field",
+        "iataCode": "RDM"
+    },
+    {
+        "name": "Lehigh Valley International Airport (was Allentown-Bethlehem-Easton International Airport)",
+        "iataCode": "ABE"
+    },
+    {
+        "name": "Erie International Airport (Tom Ridge Field)",
+        "iataCode": "ERI"
+    },
+    {
+        "name": "Harrisburg International Airport",
+        "iataCode": "MDT"
+    },
+    {
+        "name": "Arnold Palmer Regional Airport",
+        "iataCode": "LBE"
+    },
+    {
+        "name": "Philadelphia International Airport",
+        "iataCode": "PHL"
+    },
+    {
+        "name": "Pittsburgh International Airport",
+        "iataCode": "PIT"
+    },
+    {
+        "name": "State College Regional Airport",
+        "iataCode": "SCE"
+    },
+    {
+        "name": "Wilkes-Barre/Scranton International Airport",
+        "iataCode": "AVP"
+    },
+    {
+        "name": "Block Island State Airport",
+        "iataCode": "BID"
+    },
+    {
+        "name": "Rhode Island T. F. Green International Airport",
+        "iataCode": "PVD"
+    },
+    {
+        "name": "Westerly State Airport",
+        "iataCode": "WST"
+    },
+    {
+        "name": "Charleston International Airport / Charleston AFB",
+        "iataCode": "CHS"
+    },
+    {
+        "name": "Columbia Metropolitan Airport",
+        "iataCode": "CAE"
+    },
+    {
+        "name": "Florence Regional Airport",
+        "iataCode": "FLO"
+    },
+    {
+        "name": "Greenville-Spartanburg International Airport (Roger Milliken Field)",
+        "iataCode": "GSP"
+    },
+    {
+        "name": "Hilton Head Airport",
+        "iataCode": "HHH"
+    },
+    {
+        "name": "Myrtle Beach International Airport",
+        "iataCode": "MYR"
+    },
+    {
+        "name": "Aberdeen Regional Airport",
+        "iataCode": "ABR"
+    },
+    {
+        "name": "Pierre Regional Airport",
+        "iataCode": "PIR"
+    },
+    {
+        "name": "Rapid City Regional Airport",
+        "iataCode": "RAP"
+    },
+    {
+        "name": "Sioux Falls Regional Airport (Joe Foss Field)",
+        "iataCode": "FSD"
+    },
+    {
+        "name": "Watertown Regional Airport",
+        "iataCode": "ATY"
+    },
+    {
+        "name": "Chattanooga Metropolitan Airport (Lovell Field)",
+        "iataCode": "CHA"
+    },
+    {
+        "name": "McGhee Tyson Airport",
+        "iataCode": "TYS"
+    },
+    {
+        "name": "Memphis International Airport",
+        "iataCode": "MEM"
+    },
+    {
+        "name": "Nashville International Airport (Berry Field)",
+        "iataCode": "BNA"
+    },
+    {
+        "name": "Tri-Cities Airport",
+        "iataCode": "TRI"
+    },
+    {
+        "name": "Abilene Regional Airport",
+        "iataCode": "ABI"
+    },
+    {
+        "name": "Rick Husband Amarillo International Airport",
+        "iataCode": "AMA"
+    },
+    {
+        "name": "Austin-Bergstrom International Airport",
+        "iataCode": "AUS"
+    },
+    {
+        "name": "Jack Brooks Regional Airport (was Southeast Texas Regional)",
+        "iataCode": "BPT"
+    },
+    {
+        "name": "Brownsville/South Padre Island International Airport",
+        "iataCode": "BRO"
+    },
+    {
+        "name": "Easterwood Field",
+        "iataCode": "CLL"
+    },
+    {
+        "name": "Corpus Christi International Airport",
+        "iataCode": "CRP"
+    },
+    {
+        "name": "Dallas Love Field",
+        "iataCode": "DAL"
+    },
+    {
+        "name": "Dallas Fort Worth International Airport",
+        "iataCode": "DFW"
+    },
+    {
+        "name": "Del Rio International Airport",
+        "iataCode": "DRT"
+    },
+    {
+        "name": "El Paso International Airport",
+        "iataCode": "ELP"
+    },
+    {
+        "name": "Valley International Airport",
+        "iataCode": "HRL"
+    },
+    {
+        "name": "George Bush Intercontinental/Houston Airport",
+        "iataCode": "IAH"
+    },
+    {
+        "name": "William P. Hobby Airport",
+        "iataCode": "HOU"
+    },
+    {
+        "name": "Killeen Regional Airport / Robert Gray Army Airfield",
+        "iataCode": "GRK"
+    },
+    {
+        "name": "Laredo International Airport",
+        "iataCode": "LRD"
+    },
+    {
+        "name": "East Texas Regional Airport",
+        "iataCode": "GGG"
+    },
+    {
+        "name": "Lubbock Preston Smith International Airport",
+        "iataCode": "LBB"
+    },
+    {
+        "name": "McAllen Miller International Airport",
+        "iataCode": "MFE"
+    },
+    {
+        "name": "Midland International Air and Space Port",
+        "iataCode": "MAF"
+    },
+    {
+        "name": "San Angelo Regional Airport (Mathis Field)",
+        "iataCode": "SJT"
+    },
+    {
+        "name": "San Antonio International Airport",
+        "iataCode": "SAT"
+    },
+    {
+        "name": "Tyler Pounds Regional Airport",
+        "iataCode": "TYR"
+    },
+    {
+        "name": "Waco Regional Airport",
+        "iataCode": "ACT"
+    },
+    {
+        "name": "Wichita Falls Municipal Airport / Sheppard Air Force Base",
+        "iataCode": "SPS"
+    },
+    {
+        "name": "Cedar City Regional Airport",
+        "iataCode": "CDC"
+    },
+    {
+        "name": "Canyonlands Regional Airport",
+        "iataCode": "CNY"
+    },
+    {
+        "name": "Ogden-Hinckley Airport",
+        "iataCode": "OGD"
+    },
+    {
+        "name": "Provo Municipal Airport",
+        "iataCode": "PVU"
+    },
+    {
+        "name": "St. George Regional Airport",
+        "iataCode": "SGU"
+    },
+    {
+        "name": "Salt Lake City International Airport",
+        "iataCode": "SLC"
+    },
+    {
+        "name": "Patrick Leahy Burlington International Airport",
+        "iataCode": "BTV"
+    },
+    {
+        "name": "Charlottesville-Albemarle Airport",
+        "iataCode": "CHO"
+    },
+    {
+        "name": "Lynchburg Regional Airport (Preston Glenn Field)",
+        "iataCode": "LYH"
+    },
+    {
+        "name": "Newport News/Williamsburg International Airport (Patrick Henry Field)",
+        "iataCode": "PHF"
+    },
+    {
+        "name": "Norfolk International Airport",
+        "iataCode": "ORF"
+    },
+    {
+        "name": "Richmond International Airport (Byrd Field)",
+        "iataCode": "RIC"
+    },
+    {
+        "name": "Roanoke-Blacksburg Regional Airport (Woodrum Field)",
+        "iataCode": "ROA"
+    },
+    {
+        "name": "Shenandoah Valley Regional Airport",
+        "iataCode": "SHD"
+    },
+    {
+        "name": "Ronald Reagan Washington National Airport",
+        "iataCode": "DCA"
+    },
+    {
+        "name": "Washington Dulles International Airport",
+        "iataCode": "IAD"
+    },
+    {
+        "name": "Bellingham International Airport",
+        "iataCode": "BLI"
+    },
+    {
+        "name": "Orcas Island Airport",
+        "iataCode": "ESD"
+    },
+    {
+        "name": "Paine Field (Snohomish County Airport)",
+        "iataCode": "PAE"
+    },
+    {
+        "name": "Friday Harbor Airport",
+        "iataCode": "FRD"
+    },
+    {
+        "name": "Tri-Cities Airport",
+        "iataCode": "PSC"
+    },
+    {
+        "name": "Pullman-Moscow Regional Airport",
+        "iataCode": "PUW"
+    },
+    {
+        "name": "King County International Airport (Boeing Field)",
+        "iataCode": "BFI"
+    },
+    {
+        "name": "Seattle-Tacoma International Airport",
+        "iataCode": "SEA"
+    },
+    {
+        "name": "Spokane International Airport (Geiger Field)",
+        "iataCode": "GEG"
+    },
+    {
+        "name": "Walla Walla Regional Airport",
+        "iataCode": "ALW"
+    },
+    {
+        "name": "Pangborn Memorial Airport",
+        "iataCode": "EAT"
+    },
+    {
+        "name": "Yakima Air Terminal (McAllister Field)",
+        "iataCode": "YKM"
+    },
+    {
+        "name": "Yeager Airport",
+        "iataCode": "CRW"
+    },
+    {
+        "name": "North Central West Virginia Airport (was Harrison-Marion Regional)",
+        "iataCode": "CKB"
+    },
+    {
+        "name": "Tri-State Airport (Milton J. Ferguson Field)",
+        "iataCode": "HTS"
+    },
+    {
+        "name": "Greenbrier Valley Airport",
+        "iataCode": "LWB"
+    },
+    {
+        "name": "Appleton International Airport",
+        "iataCode": "ATW"
+    },
+    {
+        "name": "Chippewa Valley Regional Airport",
+        "iataCode": "EAU"
+    },
+    {
+        "name": "Green Bay-Austin Straubel International Airport",
+        "iataCode": "GRB"
+    },
+    {
+        "name": "La Crosse Regional Airport",
+        "iataCode": "LSE"
+    },
+    {
+        "name": "Dane County Regional Airport (Truax Field)",
+        "iataCode": "MSN"
+    },
+    {
+        "name": "Milwaukee Mitchell International Airport",
+        "iataCode": "MKE"
+    },
+    {
+        "name": "Central Wisconsin Airport",
+        "iataCode": "CWA"
+    },
+    {
+        "name": "Rhinelander-Oneida County Airport",
+        "iataCode": "RHI"
+    },
+    {
+        "name": "Casper-Natrona County International Airport",
+        "iataCode": "CPR"
+    },
+    {
+        "name": "Yellowstone Regional Airport",
+        "iataCode": "COD"
+    },
+    {
+        "name": "Gillette-Campbell County Airport",
+        "iataCode": "GCC"
+    },
+    {
+        "name": "Jackson Hole Airport",
+        "iataCode": "JAC"
+    },
+    {
+        "name": "Laramie Regional Airport",
+        "iataCode": "LAR"
+    },
+    {
+        "name": "Central Wyoming Regional Airport (was Riverton Regional)",
+        "iataCode": "RIW"
+    },
+    {
+        "name": "Southwest Wyoming Regional Airport (Rock Springs-Sweetwater County Airport)",
+        "iataCode": "RKS"
+    },
+    {
+        "name": "Sheridan County Airport",
+        "iataCode": "SHR"
+    },
+    {
+        "name": "Antonio B. Won Pat International Airport",
+        "iataCode": "GUM"
+    },
+    {
+        "name": "Saipan International Airport (Francisco C. Ada)",
+        "iataCode": "SPN"
+    },
+    {
+        "name": "Tinian International Airport (West Tinian)",
+        "iataCode": "TIQ"
+    },
+    {
+        "name": "Rafael Hernández Airport",
+        "iataCode": "BQN"
+    },
+    {
+        "name": "José Aponte de la Torre Airport",
+        "iataCode": "NRR"
+    },
+    {
+        "name": "Benjamín Rivera Noriega Airport",
+        "iataCode": "CPX"
+    },
+    {
+        "name": "Mercedita Airport",
+        "iataCode": "PSE"
+    },
+    {
+        "name": "Fernando Luis Ribas Dominicci Airport (Isla Grande Airport)",
+        "iataCode": "SIG"
+    },
+    {
+        "name": "Luis Muñoz Marín International Airport",
+        "iataCode": "SJU"
+    },
+    {
+        "name": "Antonio Rivera Rodríguez Airport",
+        "iataCode": "VQS"
+    },
+    {
+        "name": "Cyril E. King Airport",
+        "iataCode": "STT"
+    },
+    {
+        "name": "Henry E. Rohlsen Airport",
+        "iataCode": "STX"
+    }
+]

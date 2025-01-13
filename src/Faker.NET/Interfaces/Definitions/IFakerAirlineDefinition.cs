@@ -4,9 +4,9 @@ namespace Faker.NET.Interfaces.Definitions;
 
 public interface IFakerAirlineDefinition
 {
-    public Airline[] Airlines { get; }
+    public IReadOnlyCollection<Airline> Airlines { get; }
 
-    public Airport[] Airports { get; }
+    public IReadOnlyCollection<Airport> Airports { get; }
 
-    public Airplane[] Airplanes { get; }
+    public IReadOnlyCollection<Airplane> Airplanes { get; }
 }

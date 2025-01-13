@@ -1,0 +1,58 @@
+[
+    {
+        "name": "Alaska Airlines",
+        "iataCode": "AS"
+    },
+    {
+        "name": "Allegiant Air",
+        "iataCode": "G4"
+    },
+    {
+        "name": "American Airlines",
+        "iataCode": "AA"
+    },
+    {
+        "name": "Avelo Airlines",
+        "iataCode": "XP"
+    },
+    {
+        "name": "Breeze Airways",
+        "iataCode": "MX"
+    },
+    {
+        "name": "Delta Air Lines",
+        "iataCode": "DL"
+    },
+    {
+        "name": "Eastern Airlines",
+        "iataCode": "2D"
+    },
+    {
+        "name": "Frontier Airlines",
+        "iataCode": "F9"
+    },
+    {
+        "name": "Hawaiian Airlines",
+        "iataCode": "HA"
+    },
+    {
+        "name": "JetBlue",
+        "iataCode": "B6"
+    },
+    {
+        "name": "Southwest Airlines",
+        "iataCode": "WN"
+    },
+    {
+        "name": "Spirit Airlines",
+        "iataCode": "NK"
+    },
+    {
+        "name": "Sun Country Airlines",
+        "iataCode": "SY"
+    },
+    {
+        "name": "United Airlines",
+        "iataCode": "UA"
+    }
+]

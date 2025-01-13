@@ -1,19 +1,5 @@
 namespace Faker.NET.Common.Airline;
 
-public class Airline
+public class Airline : BaseAirlineInformation
 {
-    public Airline(string name, string code)
-    {
-        Name = name;
-        IataCode = code;
-    }
-
-    public string Name { get; }
-
-    public string IataCode { get; }
-
-    public override string ToString()
-    {
-        return Name;
-    }
 }

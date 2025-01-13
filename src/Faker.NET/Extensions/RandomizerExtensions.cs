@@ -1,5 +1,3 @@
-using System;
-
 namespace Faker.NET.Extensions;
 
 public static class RandomizerExtensions
@@ -24,6 +22,17 @@ public static class RandomizerExtensions
         }
 
         return collection[Faker.Randomizer.Next(len)];
+    }
+
+    public static T GetRandom<T>(this IEnumerable<T> collection)
+    {
+        var len = collection.Count();
+        if (len == 1)
+        {
+            return collection.ElementAt(0);
+        }
+
+        return collection.ElementAt(Faker.Randomizer.Next(len));
     }
 
     public static T? GetRandom<T>() where T : Enum
