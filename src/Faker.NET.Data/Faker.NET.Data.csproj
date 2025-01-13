@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	<TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="EN\Commerce\departments.json" />
+    <None Remove="EN\Commerce\product_description_patterns.json" />
+    <None Remove="EN\Commerce\product_names.json" />
+    <None Remove="EN\Internet\top_level_domains.json" />
+    <None Remove="EN\Internet\username_patterns.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="EN\Airline\airlines.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EN\Airline\airplanes.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EN\Airline\airports.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EN\Commerce\departments.json" />
+    <EmbeddedResource Include="EN\Commerce\product_description_patterns.json" />
+    <EmbeddedResource Include="EN\Commerce\product_names.json" />
+    <EmbeddedResource Include="EN\Internet\top_level_domains.json" />
+    <EmbeddedResource Include="EN\Internet\username_patterns.json" />
+  </ItemGroup>
+
+</Project>

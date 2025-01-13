@@ -16,5 +16,17 @@ namespace Faker.NET.Tests.Locales
             address = Faker.Internet.IPv4("192.168.1.0/16");
             Assert.That(address, Is.EqualTo("192.168.160.55"));
         }
+
+        [Test]
+        public void DomainName()
+        {
+            Assert.That(Faker.Internet.DomainName(), Is.EqualTo("medium-concentration.monster"));
+        }
+
+        [Test]
+        public void Username()
+        {
+            Assert.That(Faker.Internet.Username(), Is.EqualTo("johanj"));
+        }
     }
 }

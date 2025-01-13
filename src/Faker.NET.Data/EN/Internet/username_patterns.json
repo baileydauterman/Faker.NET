@@ -1,0 +1,8 @@
+[
+    "{{person.firstName}}.{{person.person.lastNameName}}",
+    "{{person.lastName}}.{{person.firstName}}",
+    "{{person.firstName[0]}}{{person.lastName}}",
+    "{{person.firstName}}{{person.lastName[0]}}",
+    "{{person.firstName}}.{{person.middleName[0]}}.{{person.lastName}}",
+    "{{person.firstName}}{{person.lastName}}"
+]

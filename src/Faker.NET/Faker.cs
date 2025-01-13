@@ -1,5 +1,6 @@
 ﻿using System.Globalization;
 using Faker.NET.Common;
+using Faker.NET.Data;
 using Faker.NET.Interfaces;
 using Faker.NET.Interfaces.Modules;
 using Faker.NET.Modules.Interfaces;

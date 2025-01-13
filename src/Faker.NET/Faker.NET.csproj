@@ -12,21 +12,9 @@
     <None Remove="nupkg\**" />
   </ItemGroup>
   <ItemGroup>
-    <None Remove="Locales\EN\Airline\en_airlines.json" />
-    <None Remove="Locales\EN\Airline\en_airports.json" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Locales\EN\Airline\en_airplanes.json">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Locales\EN\Airline\en_airlines.json">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Locales\EN\Airline\en_airports.json">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="Locales\EN\Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Faker.NET.Data\Faker.NET.Data.csproj" />
   </ItemGroup>
 </Project>

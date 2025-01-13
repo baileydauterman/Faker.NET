@@ -2,7 +2,7 @@ namespace Faker.NET.Interfaces.Definitions;
 
 public interface IFakerInternetDefinition
 {
-    public string[] TopLevelDomains { get; }
+    public IReadOnlyCollection<string> TopLevelDomains { get; }
 
-    public string[] UsernamePatterns { get; }
+    public IReadOnlyCollection<string> UsernamePatterns { get; }
 }

@@ -27,6 +27,12 @@ public static class RandomizerExtensions
     public static T GetRandom<T>(this IEnumerable<T> collection)
     {
         var len = collection.Count();
+
+        if (len == 0)
+        {
+            throw new Exception("Given array has no values in it");
+        }
+
         if (len == 1)
         {
             return collection.ElementAt(0);
