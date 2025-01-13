@@ -1,10 +1,10 @@
-using Faker.NET.Common.Airline;
 using Faker.NET.Common;
+using Faker.NET.Common.Airline;
 using Faker.NET.Extensions;
 using Faker.NET.Interfaces.Definitions;
 using Faker.NET.Modules.Interfaces;
 
-namespace Faker.NET.Implementations;
+namespace Faker.NET.Implementations.Modules;
 
 internal class FakerAirline<T> : FakerDefinitionHandler<T>, IFakerAirline where T : IFakerAirlineDefinition
 {

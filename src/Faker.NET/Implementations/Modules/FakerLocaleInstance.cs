@@ -3,7 +3,7 @@ using Faker.NET.Interfaces;
 using Faker.NET.Interfaces.Modules;
 using Faker.NET.Modules.Interfaces;
 
-namespace Faker.NET.Implementations;
+namespace Faker.NET.Implementations.Modules;
 
 #pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.
 public abstract class FakerLocaleInstance : IFakerLocaleInstance

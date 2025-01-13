@@ -1,7 +1,7 @@
 ﻿using Faker.NET.Common.Colors;
 using Faker.NET.Interfaces.Modules;
 
-namespace Faker.NET.Implementations
+namespace Faker.NET.Implementations.Modules
 {
     internal class FakerColor : IFakerColor
     {

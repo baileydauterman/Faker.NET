@@ -1,12 +1,13 @@
 using System.Net;
+using Faker.NET.Common;
+using Faker.NET.Common.Internet;
 using Faker.NET.Common.Internet.Data;
 using Faker.NET.Extensions;
-using Faker.NET.Implementations;
 using Faker.NET.Interfaces.Definitions;
 using Faker.NET.Interfaces.Modules;
 using Faker.NET.Internet.Generators;
 
-namespace Faker.NET.Common.Internet;
+namespace Faker.NET.Implementations.Modules;
 
 internal class FakerInternet<T> : FakerDefinitionHandler<T>, IFakerInternet where T : IFakerInternetDefinition
 {

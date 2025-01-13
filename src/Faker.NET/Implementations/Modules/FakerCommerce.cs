@@ -2,7 +2,7 @@ using Faker.NET.Extensions;
 using Faker.NET.Interfaces.Definitions;
 using Faker.NET.Interfaces.Modules;
 
-namespace Faker.NET.Implementations;
+namespace Faker.NET.Implementations.Modules;
 
 internal class FakerCommerce<T> : FakerDefinitionHandler<T>, IFakerCommerce where T : IFakerCommerceDefinition
 {
@@ -35,7 +35,7 @@ internal class FakerCommerce<T> : FakerDefinitionHandler<T>, IFakerCommerce wher
 
         // Check digit when added to isbn makes it divisble by 10
         int remainder = sum % 10;
-        int checkDigit = (sum % 10 == 0) ? 0 : 10 - remainder;
+        int checkDigit = sum % 10 == 0 ? 0 : 10 - remainder;
 
         string isbn = string.Join("", digits) + checkDigit;
         return isbn;

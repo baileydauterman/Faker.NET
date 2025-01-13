@@ -1,5 +1,4 @@
-﻿using Faker.NET.Common.Internet;
-using Faker.NET.Implementations;
+﻿using Faker.NET.Implementations.Modules;
 using Faker.NET.Locales.EN.Airline;
 using Faker.NET.Locales.EN.Data;
 

@@ -3,7 +3,7 @@ using Faker.NET.Extensions;
 using Faker.NET.Interfaces.Definitions;
 using Faker.NET.Interfaces.Modules;
 
-namespace Faker.NET.Implementations;
+namespace Faker.NET.Implementations.Modules;
 
 internal class FakerWord<T> : FakerDefinitionHandler<T>, IFakerWord where T : IFakerWordDefinition
 {

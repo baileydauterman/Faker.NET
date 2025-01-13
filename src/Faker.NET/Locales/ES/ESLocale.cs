@@ -1,4 +1,5 @@
 ﻿using Faker.NET.Implementations;
+using Faker.NET.Implementations.Modules;
 using Faker.NET.Locales.ES.Data;
 using System.Globalization;
 

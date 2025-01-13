@@ -1,20 +1,14 @@
 using Faker.NET.Common.Airline;
-using Faker.NET.Interfaces.Definitions;
+using Faker.NET.Implementations.Definitions;
 
 namespace Faker.NET.Locales.EN.Airline;
 
-internal class EnAirlineData : IFakerAirlineDefinition
+internal class EnAirlineData : BaseFakerAirlineDefinition
 {
     public EnAirlineData()
     {
-        Airlines = Faker.ResourceRetriever.Get<Common.Airline.Airline>("EN.Airline.en_airlines.json");
-        Airports = Faker.ResourceRetriever.Get<Airport>("EN.Airline.en_airports.json");
-        Airplanes = Faker.ResourceRetriever.Get<Airplane>("EN.Airline.en_airplanes.json");
+        lazyAirlines = new(() => Faker.ResourceRetriever.Get<Common.Airline.Airline>("EN.Airline.en_airlines.json"));
+        lazyAirports = new(() => Faker.ResourceRetriever.Get<Airport>("EN.Airline.en_airports.json"));
+        lazyAirplanes = new(() => Faker.ResourceRetriever.Get<Airplane>("EN.Airline.en_airplanes.json"));
     }
-
-    public IReadOnlyCollection<Common.Airline.Airline> Airlines { get; }
-
-    public IReadOnlyCollection<Airport> Airports { get; }
-
-    public IReadOnlyCollection<Airplane> Airplanes { get; }
 }

@@ -1,4 +1,4 @@
-﻿using Faker.NET.Implementations;
+﻿using Faker.NET.Implementations.Modules;
 
 namespace Faker.NET
 {

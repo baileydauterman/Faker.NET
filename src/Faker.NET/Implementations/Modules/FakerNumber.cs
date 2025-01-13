@@ -2,7 +2,7 @@
 using Faker.NET.Common;
 using Faker.NET.Interfaces.Modules;
 
-namespace Faker.NET.Implementations
+namespace Faker.NET.Implementations.Modules
 {
     internal class FakerNumber : IFakerNumber
     {

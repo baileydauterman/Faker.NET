@@ -5,7 +5,7 @@ using Faker.NET.Interfaces.Definitions;
 using Faker.NET.Interfaces.Modules;
 using Faker.NET.Location;
 
-namespace Faker.NET.Implementations;
+namespace Faker.NET.Implementations.Modules;
 
 internal class FakerLocation<T> : FakerDefinitionHandler<T>, IFakerLocation where T : IFakerLocationDefinition
 {

@@ -3,7 +3,7 @@ using Faker.NET.Common.Dates;
 using Faker.NET.Extensions;
 using Faker.NET.Interfaces.Modules;
 
-namespace Faker.NET.Implementations;
+namespace Faker.NET.Implementations.Modules;
 
 internal class FakerDate : IFakerDate
 {

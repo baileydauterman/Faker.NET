@@ -4,7 +4,7 @@ using Faker.NET.Extensions;
 using Faker.NET.Interfaces.Definitions;
 using Faker.NET.Interfaces.Modules;
 
-namespace Faker.NET.Implementations;
+namespace Faker.NET.Implementations.Modules;
 
 internal class FakerPhone<T> : FakerDefinitionHandler<T>, IFakerPhone where T : IFakerPhoneDefinition
 {

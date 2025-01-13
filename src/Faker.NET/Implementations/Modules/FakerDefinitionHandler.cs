@@ -1,4 +1,4 @@
-namespace Faker.NET.Implementations;
+namespace Faker.NET.Implementations.Modules;
 
 internal abstract class FakerDefinitionHandler<T>
 {

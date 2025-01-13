@@ -1,11 +1,10 @@
-using System;
 using Faker.NET.Interfaces.Definitions;
 
 namespace Faker.NET.Locales.EN.Data;
 
 internal class EnCommerceProductName : IFakerCommerceProductNameDefinition
 {
-  public string[] Adjective { get; } = {
+    public string[] Adjective { get; } = {
     "Awesome",
     "Bespoke",
     "Electronic",
@@ -32,7 +31,7 @@ internal class EnCommerceProductName : IFakerCommerceProductNameDefinition
     "Unbranded",
   };
 
-  public string[] Material { get; } = {
+    public string[] Material { get; } = {
     "Bronze",
     "Concrete",
     "Cotton",
@@ -47,7 +46,7 @@ internal class EnCommerceProductName : IFakerCommerceProductNameDefinition
     "Wooden",
     };
 
-  public string[] Product { get; } = {
+    public string[] Product { get; } = {
     "Bacon",
     "Ball",
     "Bike",
