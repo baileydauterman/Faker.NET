@@ -15,8 +15,8 @@ namespace Faker.NET.Common
             name = $"Faker.NET.Locales.{name}";
             if (_availableResources.Contains(name))
             {
-                using var stream = new StreamReader(Assembly.GetExecutingAssembly().GetManifestResourceStream(name));
-                var deserialized = stream is null ? null : JsonSerializer.Deserialize<List<T>>(stream.BaseStream);
+                using var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream(name);
+                var deserialized = stream is null ? null : JsonSerializer.Deserialize<List<T>>(stream);
                 return deserialized ?? new List<T>();
             }
 
