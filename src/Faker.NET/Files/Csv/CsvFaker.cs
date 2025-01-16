@@ -1,4 +1,5 @@
-﻿using Faker.NET.Attributes;
+﻿using System.Collections.Concurrent;
+using Faker.NET.Attributes;
 
 namespace Faker.NET.Files.Csv
 {
@@ -159,6 +160,22 @@ namespace Faker.NET.Files.Csv
             {
                 yield return GenerateRow();
             }
+        }
+
+        public string[] GenerateParallel(int batchSize = 1000)
+        {
+            var arr = new string[_rowsCountToGenerate];
+            arr[0] = JoinColumns(_headers.Keys);
+
+            Parallel.ForEach(Partitioner.Create(1, arr.Length, batchSize), range =>
+            {
+                for (int i = range.Item1; i < range.Item2; i++)
+                {
+                    arr[i] = GenerateRow();
+                }
+            });
+
+            return arr;
         }
 
         /// <summary>

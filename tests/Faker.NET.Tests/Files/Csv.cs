@@ -33,9 +33,20 @@ namespace Faker.NET.Tests.Files
         [TestCase(500_000)]
         public void GenerateMassiveRows(int rowCount)
         {
+            // more of a proof of concept rather than testing because Generate() returns an IEnumerable
+            // at time of writing will generate 3,000,000 values in about 2.5 seconds
             var faker = CreateCsvFaker().Iterations((uint)rowCount);
+            faker.Generate().ToArray();
+        }
 
-            faker.Generate();
+        [Test]
+        [TestCase(100_000)]
+        [TestCase(200_000)]
+        [TestCase(500_000)]
+        public void GenerateParallelMassiveRows(int rowCount)
+        {
+            var faker = CreateCsvFaker().Iterations((uint)rowCount);
+            faker.GenerateParallel();
         }
 
         [Test]
