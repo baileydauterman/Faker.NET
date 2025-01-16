@@ -53,7 +53,7 @@ public static class RandomizerExtensions
         return default;
     }
 
-    public static string CreateRandomString(this string[] array, int numberOfWords)
+    public static string CreateRandomString(this IEnumerable<string> array, int numberOfWords)
     {
         var wordArray = new string[numberOfWords];
 
@@ -65,7 +65,7 @@ public static class RandomizerExtensions
         return string.Join(" ", wordArray);
     }
 
-    public static string CreateRandomString(this string[] array, int min, int max)
+    public static string CreateRandomString(this IEnumerable<string> array, int min, int max)
     {
         var value = Faker.Randomizer.Next(min, max);
         return array.CreateRandomString(value);

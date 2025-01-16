@@ -7,11 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="DE\Lorem\words.json" />
     <None Remove="EN\Commerce\departments.json" />
     <None Remove="EN\Commerce\product_description_patterns.json" />
     <None Remove="EN\Commerce\product_names.json" />
     <None Remove="EN\Internet\top_level_domains.json" />
     <None Remove="EN\Internet\username_patterns.json" />
+    <None Remove="EN\Lorem\words.json" />
     <None Remove="EN\Person\bio_parts.json" />
     <None Remove="EN\Person\bio_patterns.json" />
     <None Remove="EN\Person\bio_supporters.json" />
@@ -28,9 +30,12 @@
     <None Remove="EN\Person\prefixes.json" />
     <None Remove="EN\Person\suffixes.json" />
     <None Remove="EN\Person\zodiac_signs.json" />
+    <None Remove="ES\Lorem\words.json" />
+    <None Remove="RU\Lorem\words.json" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="DE\Lorem\words.json" />
     <EmbeddedResource Include="EN\Airline\airlines.json">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -45,6 +50,7 @@
     <EmbeddedResource Include="EN\Commerce\product_names.json" />
     <EmbeddedResource Include="EN\Internet\top_level_domains.json" />
     <EmbeddedResource Include="EN\Internet\username_patterns.json" />
+    <EmbeddedResource Include="EN\Lorem\words.json" />
     <EmbeddedResource Include="EN\Person\bio_parts.json" />
     <EmbeddedResource Include="EN\Person\bio_patterns.json" />
     <EmbeddedResource Include="EN\Person\bio_supporters.json" />
@@ -61,6 +67,8 @@
     <EmbeddedResource Include="EN\Person\prefixes.json" />
     <EmbeddedResource Include="EN\Person\suffixes.json" />
     <EmbeddedResource Include="EN\Person\zodiac_signs.json" />
+    <EmbeddedResource Include="ES\Lorem\words.json" />
+    <EmbeddedResource Include="RU\Lorem\words.json" />
   </ItemGroup>
 
 </Project>

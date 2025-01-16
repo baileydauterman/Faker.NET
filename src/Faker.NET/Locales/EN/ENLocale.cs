@@ -18,6 +18,6 @@ internal class ENLocale : FakerLocaleInstance
         Date = new FakerDate();
         Internet = new FakerInternet<BaseFakerInternetDefinition>();
         PhoneNumber = new FakerPhone<EnFakerPhoneData>();
-        Lorem = new FakerLorem<EnLoremData>();
+        Lorem = new FakerLorem<BaseFakerLoremDefinition>();
     }
 }

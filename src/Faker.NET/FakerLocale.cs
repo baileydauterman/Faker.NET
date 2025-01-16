@@ -9,4 +9,5 @@ public enum FakerLocale
     Russian,
     Mandarin,
     German,
+    Spanish,
 }

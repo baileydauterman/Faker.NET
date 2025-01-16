@@ -1,12 +1,13 @@
-﻿using Faker.NET.Common.Exceptions;
+﻿using System.Globalization;
+using Faker.NET.Common.Exceptions;
 using Faker.NET.Interfaces;
 using Faker.NET.Locales.AR;
 using Faker.NET.Locales.DE;
 using Faker.NET.Locales.EN;
+using Faker.NET.Locales.ES;
 using Faker.NET.Locales.FR;
 using Faker.NET.Locales.RU;
 using Faker.NET.Locales.ZH;
-using System.Globalization;
 
 namespace Faker.NET
 {
@@ -22,6 +23,7 @@ namespace Faker.NET
                 FakerLocale.French => new FRLocale(),
                 FakerLocale.Russian => new RULocale(),
                 FakerLocale.Mandarin => new ZHLocale(),
+                FakerLocale.Spanish => new ESLocale(),
                 FakerLocale.Unknown => new NoOpFakerInstance(),
                 _ => new NoOpFakerInstance(),
             };
