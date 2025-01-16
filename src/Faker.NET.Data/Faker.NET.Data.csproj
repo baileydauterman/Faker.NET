@@ -12,6 +12,22 @@
     <None Remove="EN\Commerce\product_names.json" />
     <None Remove="EN\Internet\top_level_domains.json" />
     <None Remove="EN\Internet\username_patterns.json" />
+    <None Remove="EN\Person\bio_parts.json" />
+    <None Remove="EN\Person\bio_patterns.json" />
+    <None Remove="EN\Person\bio_supporters.json" />
+    <None Remove="EN\Person\first_names.json" />
+    <None Remove="EN\Person\genders.json" />
+    <None Remove="EN\Person\job_areas.json" />
+    <None Remove="EN\Person\job_descriptors.json" />
+    <None Remove="EN\Person\job_title_patterns.json" />
+    <None Remove="EN\Person\job_types.json" />
+    <None Remove="EN\Person\last_names.json" />
+    <None Remove="EN\Person\last_name_patterns.json" />
+    <None Remove="EN\Person\middle_names.json" />
+    <None Remove="EN\Person\name_patterns.json" />
+    <None Remove="EN\Person\prefixes.json" />
+    <None Remove="EN\Person\suffixes.json" />
+    <None Remove="EN\Person\zodiac_signs.json" />
   </ItemGroup>
 
   <ItemGroup>
@@ -29,6 +45,22 @@
     <EmbeddedResource Include="EN\Commerce\product_names.json" />
     <EmbeddedResource Include="EN\Internet\top_level_domains.json" />
     <EmbeddedResource Include="EN\Internet\username_patterns.json" />
+    <EmbeddedResource Include="EN\Person\bio_parts.json" />
+    <EmbeddedResource Include="EN\Person\bio_patterns.json" />
+    <EmbeddedResource Include="EN\Person\bio_supporters.json" />
+    <EmbeddedResource Include="EN\Person\first_names.json" />
+    <EmbeddedResource Include="EN\Person\genders.json" />
+    <EmbeddedResource Include="EN\Person\job_areas.json" />
+    <EmbeddedResource Include="EN\Person\job_descriptors.json" />
+    <EmbeddedResource Include="EN\Person\job_title_patterns.json" />
+    <EmbeddedResource Include="EN\Person\job_types.json" />
+    <EmbeddedResource Include="EN\Person\last_names.json" />
+    <EmbeddedResource Include="EN\Person\last_name_patterns.json" />
+    <EmbeddedResource Include="EN\Person\middle_names.json" />
+    <EmbeddedResource Include="EN\Person\name_patterns.json" />
+    <EmbeddedResource Include="EN\Person\prefixes.json" />
+    <EmbeddedResource Include="EN\Person\suffixes.json" />
+    <EmbeddedResource Include="EN\Person\zodiac_signs.json" />
   </ItemGroup>
 
 </Project>

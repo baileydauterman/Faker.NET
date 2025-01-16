@@ -1,0 +1,4 @@
+{
+    "{{person.LastName}}": 95,
+    "{{person.lastName}}-{person.LastName}": 5
+}

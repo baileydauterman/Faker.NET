@@ -6,11 +6,11 @@ namespace Faker.NET.Locales.AR.Data
 {
     internal class ArPersonData : IFakerPersonDefinition
     {
-        public string[] BioPart => throw new NotImplementedException();
+        public IReadOnlyCollection<string> BioPart => throw new NotImplementedException();
 
-        public string[] BioPattern => throw new NotImplementedException();
+        public IReadOnlyCollection<string> BioPattern => throw new NotImplementedException();
 
-        public string[] BioSupporter => throw new NotImplementedException();
+        public IReadOnlyCollection<string> BioSupporter => throw new NotImplementedException();
 
         public SexSpecificValues<string> FirstName { get; } = new SexSpecificValues<string>
         {
@@ -689,15 +689,15 @@ namespace Faker.NET.Locales.AR.Data
     "يحيى",
                 }
         };
-        public string[] Gender => throw new NotImplementedException();
+        public IReadOnlyCollection<string> Gender => throw new NotImplementedException();
 
-        public string[] JobArea => throw new NotImplementedException();
+        public IReadOnlyCollection<string> JobArea => throw new NotImplementedException();
 
-        public string[] JobDescriptor => throw new NotImplementedException();
+        public IReadOnlyCollection<string> JobDescriptor => throw new NotImplementedException();
 
-        public string[] JobTitlePattern => throw new NotImplementedException();
+        public IReadOnlyCollection<string> JobTitlePattern => throw new NotImplementedException();
 
-        public string[] JobType => throw new NotImplementedException();
+        public IReadOnlyCollection<string> JobType => throw new NotImplementedException();
 
         public SexSpecificValues<string> LastName { get; } = new SexSpecificValues<string>
         {
@@ -788,7 +788,7 @@ namespace Faker.NET.Locales.AR.Data
 
         public SexSpecificValues<string> MiddleName => throw new NotImplementedException();
 
-        public WeightedList<Func<string>> Name => throw new NotImplementedException();
+        public WeightedList<string> Name => throw new NotImplementedException();
 
         public SexSpecificValues<string> Prefix { get; } = new SexSpecificValues<string>
         {
@@ -797,8 +797,8 @@ namespace Faker.NET.Locales.AR.Data
             Male = new string[] { "بروفيسور", "دكتور", "سيد" },
         };
 
-        public string[] Suffix { get; } = { "المحترم", "المبجل", "حفظه الله", "الموقر" };
+        public IReadOnlyCollection<string> Suffix { get; } = new string[] { "المحترم", "المبجل", "حفظه الله", "الموقر" };
 
-        public string[] ZodiacSign => throw new NotImplementedException();
+        public IReadOnlyCollection<string> ZodiacSign => throw new NotImplementedException();
     }
 }

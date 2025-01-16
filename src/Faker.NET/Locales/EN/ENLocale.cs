@@ -10,7 +10,7 @@ internal class ENLocale : FakerLocaleInstance
     {
         Culture = System.Globalization.CultureInfo.GetCultureInfo("en");
 
-        Person = new FakerPerson<EnFakerPersonData>();
+        Person = new FakerPerson<BaseFakerPersonDefinition>();
         Airline = new FakerAirline<BaseFakerAirlineDefinition>();
         Commerce = new FakerCommerce<BaseFakerCommerceDefinition>();
         Location = new FakerLocation<EnLocationData>();

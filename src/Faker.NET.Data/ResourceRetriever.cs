@@ -16,7 +16,10 @@ namespace Faker.NET.Data
             if (_availableResources.Contains(name))
             {
                 using var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream(name);
-                var deserialized = stream is null ? default : JsonSerializer.Deserialize<T>(stream);
+                var deserialized = stream is null ? default : JsonSerializer.Deserialize<T>(stream, new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true,
+                });
                 return deserialized;
             }
 
@@ -26,6 +29,11 @@ namespace Faker.NET.Data
         public IReadOnlyCollection<T> GetAsArray<T>(string locale, string module, string name)
         {
             return Get<List<T>>(locale, module, name) ?? new List<T>();
+        }
+
+        public Dictionary<T, U> Get<T, U>(string locale, string module, string name)
+        {
+            return Get<Dictionary<T, U>>(locale, module, name) ?? new Dictionary<T, U>();
         }
 
         private readonly string[] _availableResources;

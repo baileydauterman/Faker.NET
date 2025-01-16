@@ -1,0 +1,19 @@
+{
+    "Unisex": [
+        "Dr.",
+        "Miss",
+        "Mr.",
+        "Mrs.",
+        "Ms."
+    ],
+    "Female": [
+        "Dr.",
+        "Miss",
+        "Mrs.",
+        "Ms."
+    ],
+    "Male": [
+        "Dr.",
+        "Mr."
+    ]
+}
