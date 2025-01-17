@@ -1,11 +1,11 @@
 using Faker.NET.Common.Person;
 using Faker.NET.Extensions;
-using Faker.NET.Interfaces.Definitions;
+using Faker.NET.Implementations.Definitions;
 using Faker.NET.Interfaces.Modules;
 
 namespace Faker.NET.Implementations.Modules;
 
-internal class FakerPerson<T> : FakerDefinitionHandler<T>, IFakerPerson where T : IFakerPersonDefinition
+internal class FakerPerson : FakerDefinitionHandler<BaseFakerPersonDefinition>, IFakerPerson
 {
     public string Bio()
     {

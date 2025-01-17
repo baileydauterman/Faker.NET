@@ -1,13 +1,11 @@
-﻿using System.Globalization;
-using Faker.NET.Implementations.Modules;
+﻿using Faker.NET.Implementations.Modules;
 
 namespace Faker.NET.Locales.ES
 {
     internal class ESLocale : FakerLocaleInstance
     {
-        public ESLocale()
+        public ESLocale() : base("es")
         {
-            Culture = CultureInfo.GetCultureInfo("es");
             Lorem = new FakerLorem();
         }
     }

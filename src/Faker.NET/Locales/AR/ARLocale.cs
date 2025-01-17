@@ -1,16 +1,12 @@
-﻿using System.Globalization;
-using Faker.NET.Implementations;
-using Faker.NET.Implementations.Modules;
-using Faker.NET.Locales.AR.Data;
+﻿using Faker.NET.Implementations.Modules;
 
 namespace Faker.NET.Locales.AR
 {
     internal class ARLocale : FakerLocaleInstance
     {
-        public ARLocale()
+        public ARLocale() : base("ar")
         {
-            Person = new FakerPerson<ArPersonData>();
-            Culture = CultureInfo.GetCultureInfo("ar");
+            Person = new FakerPerson();
         }
     }
 }

@@ -1,16 +1,13 @@
-﻿using System.Globalization;
-using Faker.NET.Implementations.Modules;
+﻿using Faker.NET.Implementations.Modules;
 using Faker.NET.Locales.RU.Data;
 
 namespace Faker.NET.Locales.RU
 {
     internal class RULocale : FakerLocaleInstance
     {
-        public RULocale()
+        public RULocale() : base("ru")
         {
-            Culture = CultureInfo.GetCultureInfo("ru");
-
-            Person = new FakerPerson<RuFakerPersonData>();
+            Person = new FakerPerson();
             Lorem = new FakerLorem();
             PhoneNumber = new FakerPhone<RuPhoneNumberData>();
         }

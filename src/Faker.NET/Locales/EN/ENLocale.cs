@@ -6,11 +6,9 @@ namespace Faker.NET.Locales.EN;
 
 internal class ENLocale : FakerLocaleInstance
 {
-    public ENLocale()
+    public ENLocale() : base("en")
     {
-        Culture = System.Globalization.CultureInfo.GetCultureInfo("en");
-
-        Person = new FakerPerson<BaseFakerPersonDefinition>();
+        Person = new FakerPerson();
         Airline = new FakerAirline<BaseFakerAirlineDefinition>();
         Commerce = new FakerCommerce<BaseFakerCommerceDefinition>();
         Location = new FakerLocation<EnLocationData>();

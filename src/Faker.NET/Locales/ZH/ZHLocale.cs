@@ -1,14 +1,12 @@
-﻿using Faker.NET.Implementations;
-using Faker.NET.Implementations.Modules;
-using Faker.NET.Locales.ZH.Data;
+﻿using Faker.NET.Implementations.Modules;
 
 namespace Faker.NET.Locales.ZH
 {
     internal class ZHLocale : FakerLocaleInstance
     {
-        public ZHLocale()
+        public ZHLocale() : base("zh")
         {
-            Person = new FakerPerson<ZhFakerPersonData>();
+            Person = new FakerPerson();
         }
     }
 }

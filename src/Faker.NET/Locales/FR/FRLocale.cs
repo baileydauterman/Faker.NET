@@ -1,16 +1,12 @@
-﻿using System.Globalization;
-using Faker.NET.Implementations;
-using Faker.NET.Implementations.Modules;
-using Faker.NET.Locales.FR.Data;
+﻿using Faker.NET.Implementations.Modules;
 
 namespace Faker.NET.Locales.FR
 {
     internal class FRLocale : FakerLocaleInstance
     {
-        public FRLocale()
+        public FRLocale() : base("fr")
         {
-            Person = new FakerPerson<FrFakerPersonData>();
-            Culture = CultureInfo.GetCultureInfo("fr");
+            Person = new FakerPerson();
         }
     }
 }

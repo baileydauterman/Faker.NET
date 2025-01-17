@@ -1,18 +1,16 @@
-﻿using System.Globalization;
-using Faker.NET.Implementations.Modules;
+﻿using Faker.NET.Implementations.Modules;
 using Faker.NET.Locales.DE.Data;
 
 namespace Faker.NET.Locales.DE
 {
     internal class DELocale : FakerLocaleInstance
     {
-        public DELocale()
+        public DELocale() : base("de")
         {
-            Person = new FakerPerson<DeFakerPersonData>();
+            Person = new FakerPerson();
             PhoneNumber = new FakerPhone<DePhoneNumberData>();
             Lorem = new FakerLorem();
             Location = new FakerLocation<DeLocationData>();
-            Culture = CultureInfo.GetCultureInfo("de");
         }
     }
 }
