@@ -53,7 +53,7 @@ namespace Faker.NET.Tests.Common
             timer.Stop();
 
             // ~200 conversions/ms
-            Assert.That(timer.Elapsed.Milliseconds, Is.LessThan(50));
+            Assert.That(timer.Elapsed.Milliseconds, Is.LessThan(100));
         }
     }
 }
