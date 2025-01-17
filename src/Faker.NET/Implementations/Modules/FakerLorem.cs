@@ -1,11 +1,11 @@
 ﻿using System.Text;
 using Faker.NET.Extensions;
-using Faker.NET.Interfaces.Definitions;
+using Faker.NET.Implementations.Definitions;
 using Faker.NET.Interfaces.Modules;
 
 namespace Faker.NET.Implementations.Modules;
 
-internal class FakerLorem<T> : FakerDefinitionHandler<T>, IFakerLorem where T : IFakerLoremDefinition
+internal class FakerLorem : FakerDefinitionHandler<BaseFakerLoremDefinition>, IFakerLorem
 {
     public string Words(int min, int max) => Data.Words.CreateRandomString(min, max);
 

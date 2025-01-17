@@ -13,7 +13,7 @@ namespace Faker.NET.Common
             var indexStarts = Task.Run(() => FindAll(template, "{{").ToArray());
             var indexEnds = Task.Run(() => FindAll(template, "}}").ToArray());
 
-            _builder = new StringBuilder();
+            var builder = new StringBuilder();
             Task.WaitAll(indexStarts, indexEnds);
 
             int previousEnd = 0;
@@ -22,17 +22,17 @@ namespace Faker.NET.Common
             {
                 if (previousEnd < start)
                 {
-                    _builder.Append(template.AsSpan(previousEnd, start - previousEnd));
+                    builder.Append(template.AsSpan(previousEnd, start - previousEnd));
                 }
 
                 var startToEnd = start + 2;
                 var word = template.Substring(startToEnd, end - startToEnd);
-                _builder.Append(GetWordReplacement(word, replacements));
+                builder.Append(GetWordReplacement(word, replacements));
 
                 previousEnd = end + 2;
             }
 
-            return _builder.ToString();
+            return builder.ToString();
         }
 
         private string GetWordReplacement(string word, Dictionary<string, Func<string>> replacement)
@@ -61,8 +61,6 @@ namespace Faker.NET.Common
 
             yield break;
         }
-
-        private StringBuilder _builder;
 
         // private readonly Regex _mustaches = new Regex("^{{(?<word>[\\w\\.]+)(?:\\[(?<index>\\d+)\\])?");
         private readonly Regex _index = new Regex("\\[(?<idx>\\d+)\\]");

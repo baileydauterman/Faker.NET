@@ -1,5 +1,4 @@
 ﻿using System.Globalization;
-using Faker.NET.Implementations.Definitions;
 using Faker.NET.Implementations.Modules;
 using Faker.NET.Locales.DE.Data;
 
@@ -11,7 +10,7 @@ namespace Faker.NET.Locales.DE
         {
             Person = new FakerPerson<DeFakerPersonData>();
             PhoneNumber = new FakerPhone<DePhoneNumberData>();
-            Lorem = new FakerLorem<BaseFakerLoremDefinition>();
+            Lorem = new FakerLorem();
             Location = new FakerLocation<DeLocationData>();
             Culture = CultureInfo.GetCultureInfo("de");
         }

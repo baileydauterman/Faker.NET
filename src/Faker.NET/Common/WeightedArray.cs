@@ -2,7 +2,7 @@ using Faker.NET.Extensions;
 
 namespace Faker.NET.Common;
 
-public class WeightedList<T>
+public class WeightedList<T> where T : notnull
 {
     public WeightedList()
     {
@@ -34,6 +34,7 @@ public class WeightedList<T>
         {
             return _values[0];
         }
+
         var value = Faker.Randomizer.Next(_totalWeight);
 
         for (int i = 0; i < _weights.Count; i++)
@@ -44,7 +45,7 @@ public class WeightedList<T>
             }
         }
 
-        return default;
+        return Activator.CreateInstance<T>();
     }
 
     private List<T> _values = new List<T>();

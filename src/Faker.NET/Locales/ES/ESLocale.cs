@@ -1,5 +1,4 @@
 ﻿using System.Globalization;
-using Faker.NET.Implementations.Definitions;
 using Faker.NET.Implementations.Modules;
 
 namespace Faker.NET.Locales.ES
@@ -8,8 +7,8 @@ namespace Faker.NET.Locales.ES
     {
         public ESLocale()
         {
-            Lorem = new FakerLorem<BaseFakerLoremDefinition>();
             Culture = CultureInfo.GetCultureInfo("es");
+            Lorem = new FakerLorem();
         }
     }
 }
