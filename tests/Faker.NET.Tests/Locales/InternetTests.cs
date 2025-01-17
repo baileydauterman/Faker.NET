@@ -20,7 +20,7 @@ namespace Faker.NET.Tests.Locales
         [Test]
         public void DomainName()
         {
-            Assert.That(Faker.Internet.DomainName(), Is.EqualTo("medium-concentration.monster"));
+            Assert.That(Faker.Internet.DomainName(), Is.EqualTo("medium-definite.monster"));
         }
 
         [Test]

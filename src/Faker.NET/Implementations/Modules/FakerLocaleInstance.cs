@@ -21,6 +21,7 @@ public abstract class FakerLocaleInstance : IFakerLocaleInstance
         Lorem = new FakerLorem();
         Person = new FakerPerson();
         PhoneNumber = new FakerPhone();
+        Word = new FakerWord();
     }
 
     public virtual IFakerCommerce Commerce { get; set; }

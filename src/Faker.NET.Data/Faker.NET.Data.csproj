@@ -36,6 +36,13 @@
     <None Remove="EN\Phone\human.json" />
     <None Remove="EN\Phone\international.json" />
     <None Remove="EN\Phone\national.json" />
+    <None Remove="EN\Word\adjective.json" />
+    <None Remove="EN\Word\adverb.json" />
+    <None Remove="EN\Word\conjunction.json" />
+    <None Remove="EN\Word\interjection.json" />
+    <None Remove="EN\Word\noun.json" />
+    <None Remove="EN\Word\preposition.json" />
+    <None Remove="EN\Word\verb.json" />
     <None Remove="ES\Lorem\words.json" />
     <None Remove="RU\Lorem\words.json" />
   </ItemGroup>
@@ -79,6 +86,13 @@
     <EmbeddedResource Include="EN\Phone\human.json" />
     <EmbeddedResource Include="EN\Phone\international.json" />
     <EmbeddedResource Include="EN\Phone\national.json" />
+    <EmbeddedResource Include="EN\Word\adjective.json" />
+    <EmbeddedResource Include="EN\Word\adverb.json" />
+    <EmbeddedResource Include="EN\Word\conjunction.json" />
+    <EmbeddedResource Include="EN\Word\interjection.json" />
+    <EmbeddedResource Include="EN\Word\noun.json" />
+    <EmbeddedResource Include="EN\Word\preposition.json" />
+    <EmbeddedResource Include="EN\Word\verb.json" />
     <EmbeddedResource Include="ES\Lorem\words.json" />
     <EmbeddedResource Include="RU\Lorem\words.json" />
     <EmbeddedResource Include="RU\Phone\human.json" />

@@ -1,14 +1,12 @@
-using System;
-
 namespace Faker.NET.Interfaces.Definitions;
 
 public interface IFakerWordDefinition
 {
-    public string[] Adjective { get; }
-    public string[] Adverb { get; }
-    public string[] Conjunction { get; }
-    public string[] Interjection { get; }
-    public string[] Noun { get; }
-    public string[] Preposition { get; }
-    public string[] Verb { get; }
+    public IReadOnlyCollection<string> Adjective { get; }
+    public IReadOnlyCollection<string> Adverb { get; }
+    public IReadOnlyCollection<string> Conjunction { get; }
+    public IReadOnlyCollection<string> Interjection { get; }
+    public IReadOnlyCollection<string> Noun { get; }
+    public IReadOnlyCollection<string> Preposition { get; }
+    public IReadOnlyCollection<string> Verb { get; }
 }
