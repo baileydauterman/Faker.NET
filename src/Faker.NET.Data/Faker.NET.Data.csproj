@@ -8,6 +8,9 @@
 
   <ItemGroup>
     <None Remove="DE\Lorem\words.json" />
+    <None Remove="DE\Phone\human.json" />
+    <None Remove="DE\Phone\international.json" />
+    <None Remove="DE\Phone\national.json" />
     <None Remove="EN\Commerce\departments.json" />
     <None Remove="EN\Commerce\product_description_patterns.json" />
     <None Remove="EN\Commerce\product_names.json" />
@@ -30,12 +33,18 @@
     <None Remove="EN\Person\prefixes.json" />
     <None Remove="EN\Person\suffixes.json" />
     <None Remove="EN\Person\zodiac_signs.json" />
+    <None Remove="EN\Phone\human.json" />
+    <None Remove="EN\Phone\international.json" />
+    <None Remove="EN\Phone\national.json" />
     <None Remove="ES\Lorem\words.json" />
     <None Remove="RU\Lorem\words.json" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="DE\Lorem\words.json" />
+    <EmbeddedResource Include="DE\Phone\human.json" />
+    <EmbeddedResource Include="DE\Phone\international.json" />
+    <EmbeddedResource Include="DE\Phone\national.json" />
     <EmbeddedResource Include="EN\Airline\airlines.json">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -67,8 +76,14 @@
     <EmbeddedResource Include="EN\Person\prefixes.json" />
     <EmbeddedResource Include="EN\Person\suffixes.json" />
     <EmbeddedResource Include="EN\Person\zodiac_signs.json" />
+    <EmbeddedResource Include="EN\Phone\human.json" />
+    <EmbeddedResource Include="EN\Phone\international.json" />
+    <EmbeddedResource Include="EN\Phone\national.json" />
     <EmbeddedResource Include="ES\Lorem\words.json" />
     <EmbeddedResource Include="RU\Lorem\words.json" />
+    <EmbeddedResource Include="RU\Phone\human.json" />
+    <EmbeddedResource Include="RU\Phone\international.json" />
+    <EmbeddedResource Include="RU\Phone\national.json" />
   </ItemGroup>
 
 </Project>

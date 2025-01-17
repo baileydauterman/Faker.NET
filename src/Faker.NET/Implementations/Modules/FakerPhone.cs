@@ -1,12 +1,12 @@
 using Faker.NET.Common;
 using Faker.NET.Common.Phone;
 using Faker.NET.Extensions;
-using Faker.NET.Interfaces.Definitions;
+using Faker.NET.Implementations.Definitions;
 using Faker.NET.Interfaces.Modules;
 
 namespace Faker.NET.Implementations.Modules;
 
-internal class FakerPhone<T> : FakerDefinitionHandler<T>, IFakerPhone where T : IFakerPhoneDefinition
+internal class FakerPhone : FakerDefinitionHandler<BaseFakerPhoneDefinition>, IFakerPhone
 {
     public string IMEI()
     {

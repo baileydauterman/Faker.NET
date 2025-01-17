@@ -20,6 +20,7 @@ public abstract class FakerLocaleInstance : IFakerLocaleInstance
         Internet = new FakerInternet();
         Lorem = new FakerLorem();
         Person = new FakerPerson();
+        PhoneNumber = new FakerPhone();
     }
 
     public virtual IFakerCommerce Commerce { get; set; }

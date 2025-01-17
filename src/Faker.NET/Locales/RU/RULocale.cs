@@ -1,5 +1,4 @@
 ﻿using Faker.NET.Implementations.Modules;
-using Faker.NET.Locales.RU.Data;
 
 namespace Faker.NET.Locales.RU
 {
@@ -7,7 +6,6 @@ namespace Faker.NET.Locales.RU
     {
         public RULocale() : base("ru")
         {
-            PhoneNumber = new FakerPhone<RuPhoneNumberData>();
         }
     }
 }

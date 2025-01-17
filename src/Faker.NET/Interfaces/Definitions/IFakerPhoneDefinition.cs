@@ -1,12 +1,10 @@
-using System;
-
 namespace Faker.NET.Interfaces.Definitions;
 
 public interface IFakerPhoneDefinition
 {
-    public string[] Human { get; }
+    public IReadOnlyCollection<string> Human { get; }
 
-    public string[] National { get; }
+    public IReadOnlyCollection<string> National { get; }
 
-    public string[] International { get; }
+    public IReadOnlyCollection<string> International { get; }
 }

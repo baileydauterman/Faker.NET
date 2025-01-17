@@ -12,6 +12,5 @@ internal class ENLocale : FakerLocaleInstance
         Commerce = new FakerCommerce<BaseFakerCommerceDefinition>();
         Location = new FakerLocation<EnLocationData>();
         Word = new FakerWord<EnWordData>();
-        PhoneNumber = new FakerPhone<EnFakerPhoneData>();
     }
 }

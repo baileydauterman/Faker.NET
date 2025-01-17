@@ -7,7 +7,6 @@ namespace Faker.NET.Locales.DE
     {
         public DELocale() : base("de")
         {
-            PhoneNumber = new FakerPhone<DePhoneNumberData>();
             Location = new FakerLocation<DeLocationData>();
         }
     }
