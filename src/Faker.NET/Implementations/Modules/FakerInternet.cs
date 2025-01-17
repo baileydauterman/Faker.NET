@@ -3,13 +3,13 @@ using Faker.NET.Common;
 using Faker.NET.Common.Internet;
 using Faker.NET.Common.Internet.Data;
 using Faker.NET.Extensions;
-using Faker.NET.Interfaces.Definitions;
+using Faker.NET.Implementations.Definitions;
 using Faker.NET.Interfaces.Modules;
 using Faker.NET.Internet.Generators;
 
 namespace Faker.NET.Implementations.Modules;
 
-internal class FakerInternet<T> : FakerDefinitionHandler<T>, IFakerInternet where T : IFakerInternetDefinition
+internal class FakerInternet : FakerDefinitionHandler<BaseFakerInternetDefinition>, IFakerInternet
 {
     public string DisplayName(string? first = null, string? middle = null, string? last = null)
     {

@@ -6,7 +6,6 @@ namespace Faker.NET.Locales.AR
     {
         public ARLocale() : base("ar")
         {
-            Person = new FakerPerson();
         }
     }
 }

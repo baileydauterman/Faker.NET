@@ -6,7 +6,6 @@ namespace Faker.NET.Locales.ES
     {
         public ESLocale() : base("es")
         {
-            Lorem = new FakerLorem();
         }
     }
 }

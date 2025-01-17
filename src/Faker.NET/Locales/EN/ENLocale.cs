@@ -8,14 +8,10 @@ internal class ENLocale : FakerLocaleInstance
 {
     public ENLocale() : base("en")
     {
-        Person = new FakerPerson();
         Airline = new FakerAirline<BaseFakerAirlineDefinition>();
         Commerce = new FakerCommerce<BaseFakerCommerceDefinition>();
         Location = new FakerLocation<EnLocationData>();
         Word = new FakerWord<EnWordData>();
-        Date = new FakerDate();
-        Internet = new FakerInternet<BaseFakerInternetDefinition>();
         PhoneNumber = new FakerPhone<EnFakerPhoneData>();
-        Lorem = new FakerLorem();
     }
 }

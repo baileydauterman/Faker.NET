@@ -6,7 +6,6 @@ namespace Faker.NET.Locales.FR
     {
         public FRLocale() : base("fr")
         {
-            Person = new FakerPerson();
         }
     }
 }

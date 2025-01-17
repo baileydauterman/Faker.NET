@@ -7,8 +7,6 @@ namespace Faker.NET.Locales.RU
     {
         public RULocale() : base("ru")
         {
-            Person = new FakerPerson();
-            Lorem = new FakerLorem();
             PhoneNumber = new FakerPhone<RuPhoneNumberData>();
         }
     }

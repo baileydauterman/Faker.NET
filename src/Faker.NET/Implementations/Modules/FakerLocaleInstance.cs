@@ -15,6 +15,11 @@ public abstract class FakerLocaleInstance : IFakerLocaleInstance
     public FakerLocaleInstance(string twoLetterIsoCultureCode)
     {
         Culture = CultureInfo.GetCultureInfo(twoLetterIsoCultureCode);
+
+        Date = new FakerDate();
+        Internet = new FakerInternet();
+        Lorem = new FakerLorem();
+        Person = new FakerPerson();
     }
 
     public virtual IFakerCommerce Commerce { get; set; }
@@ -35,7 +40,7 @@ public abstract class FakerLocaleInstance : IFakerLocaleInstance
 
     public virtual IFakerAirline Airline { get; set; }
 
-    public IFakerPerson Person { get; set; }
+    public virtual IFakerPerson Person { get; set; }
 
     public virtual IFakerColor Color { get; set; } = new FakerColor();
 }

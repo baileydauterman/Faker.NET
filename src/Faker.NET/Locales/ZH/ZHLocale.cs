@@ -6,7 +6,6 @@ namespace Faker.NET.Locales.ZH
     {
         public ZHLocale() : base("zh")
         {
-            Person = new FakerPerson();
         }
     }
 }
