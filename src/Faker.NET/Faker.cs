@@ -10,7 +10,7 @@ namespace Faker.NET
     /// <summary>
     /// Static entry point into creating fake data. Can be changed with any SetLocale method
     /// </summary>
-    public class Faker
+    public static class Faker
     {
         internal static MustacheHandler Mustache { get; } = new MustacheHandler();
 
@@ -44,6 +44,8 @@ namespace Faker.NET
             Randomizer = new FakerRandomizer();
         }
 
+        public static IFakerLocaleInstance FakerInstance { get; private set; } = FakerLocaleFactory.Create(FakerLocale.English);
+
         /// <summary>
         /// <see cref="Culture"/> can be used internally to display things like DateTimes and other
         /// things that might be dependent on the given culture.
@@ -71,7 +73,5 @@ namespace Faker.NET
         public static IFakerWord Word => FakerInstance.Word;
 
         public static FakerRandomizer Randomizer { get; private set; } = new FakerRandomizer();
-
-        public static IFakerLocaleInstance FakerInstance { get; private set; } = FakerLocaleFactory.Create(FakerLocale.English);
     }
 }

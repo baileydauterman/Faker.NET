@@ -1,0 +1,26 @@
+{
+    "cardinal": [
+        "Norden",
+        "Süden",
+        "Osten",
+        "Westen"
+    ],
+    "cardinalAbbreviated": [
+        "N",
+        "S",
+        "O",
+        "W"
+    ],
+    "ordinal": [
+        "Nordosten",
+        "Südosten",
+        "Südwesten",
+        "Nordwesten"
+    ],
+    "ordinalAbbreviated": [
+        "NO",
+        "SO",
+        "SW",
+        "NW"
+    ]
+}

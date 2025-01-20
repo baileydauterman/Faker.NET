@@ -16,8 +16,11 @@ public abstract class FakerLocaleInstance : IFakerLocaleInstance
     {
         Culture = CultureInfo.GetCultureInfo(twoLetterIsoCultureCode);
 
+        Airline = new FakerAirline();
+        Commerce = new FakerCommerce();
         Date = new FakerDate();
         Internet = new FakerInternet();
+        Location = new FakerLocation();
         Lorem = new FakerLorem();
         Person = new FakerPerson();
         PhoneNumber = new FakerPhone();

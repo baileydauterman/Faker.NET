@@ -1,13 +1,13 @@
 using Faker.NET.Common;
 using Faker.NET.Common.Location;
 using Faker.NET.Extensions;
-using Faker.NET.Interfaces.Definitions;
+using Faker.NET.Implementations.Definitions;
 using Faker.NET.Interfaces.Modules;
 using Faker.NET.Location;
 
 namespace Faker.NET.Implementations.Modules;
 
-internal class FakerLocation<T> : FakerDefinitionHandler<T>, IFakerLocation where T : IFakerLocationDefinition
+internal class FakerLocation : FakerDefinitionHandler<BaseFakerLocationDefinition>, IFakerLocation
 {
     public string BuildingNumber()
     {
@@ -135,8 +135,8 @@ internal class FakerLocation<T> : FakerDefinitionHandler<T>, IFakerLocation wher
 
     public string StreetAddress(bool useFullAddress = false)
     {
-        return useFullAddress ? Data.StreetAddress.Full.Invoke(this) :
-                                Data.StreetAddress.Normal.Invoke(this);
+        return useFullAddress ? Faker.Mustache.Replace(Data.StreetAddress.Full) :
+                                Faker.Mustache.Replace(Data.StreetAddress.Normal);
     }
 
     public string TimeZone()
@@ -152,6 +152,11 @@ internal class FakerLocation<T> : FakerDefinitionHandler<T>, IFakerLocation wher
         }
 
         return Data.Postcode.GetRandom().ToRandomString();
+    }
+
+    public string StreetSuffix()
+    {
+        return Data.StreetSuffix.GetRandom();
     }
 
     private LocationState? _state = null;

@@ -74,6 +74,11 @@ namespace Faker.NET.Common
             { "airline.recordLocator", () => Faker.Airline.RecordLocator() },
             { "airline.seat", () => Faker.Airline.Seat() },
 
+            { "location.buildingNumber", () => Faker.Location.BuildingNumber() },
+            { "location.state", () => Faker.Location.State() },
+            { "location.streetSuffix", () => Faker.Location.StreetSuffix() },
+            { "location.street", () => Faker.Location.Street() },
+
             { "person.bio", () => Faker.Person.Bio() },
             { "person.bioPart", () => Faker.Person.BioPart() },
             { "person.bioSupporter", () => Faker.Person.BioSupporter() },

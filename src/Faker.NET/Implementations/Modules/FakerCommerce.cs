@@ -1,10 +1,10 @@
 using Faker.NET.Extensions;
-using Faker.NET.Interfaces.Definitions;
+using Faker.NET.Implementations.Definitions;
 using Faker.NET.Interfaces.Modules;
 
 namespace Faker.NET.Implementations.Modules;
 
-internal class FakerCommerce<T> : FakerDefinitionHandler<T>, IFakerCommerce where T : IFakerCommerceDefinition
+internal class FakerCommerce : FakerDefinitionHandler<BaseFakerCommerceDefinition>, IFakerCommerce
 {
     public string Department()
     {

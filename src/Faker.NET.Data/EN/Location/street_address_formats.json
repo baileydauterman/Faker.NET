@@ -1,0 +1,4 @@
+{
+    "normal": "{{location.buildingNumber}} {{location.street}}",
+    "full":  "{{location.buildingNumber}} {{location.Street}} {{location.secondaryAddress}}"
+}

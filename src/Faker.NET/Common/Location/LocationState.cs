@@ -2,6 +2,11 @@ namespace Faker.NET.Location;
 
 public class LocationState
 {
+    public LocationState()
+    {
+
+    }
+
     public LocationState(string abbreviation, string name, IEnumerable<int> zipCodes)
     {
         Abbreviation = abbreviation;
@@ -9,9 +14,9 @@ public class LocationState
         ZipCodes = zipCodes.ToArray();
     }
 
-    public string Abbreviation { get; set; }
+    public string Abbreviation { get; set; } = string.Empty;
 
-    public string Name { get; set; }
+    public string Name { get; set; } = string.Empty;
 
-    public int[] ZipCodes { get; set; }
+    public IReadOnlyCollection<int> ZipCodes { get; set; } = Array.Empty<int>();
 }

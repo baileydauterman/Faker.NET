@@ -1,0 +1,26 @@
+{
+    "cardinal": [
+        "North",
+        "East",
+        "South",
+        "West"
+    ],
+    "cardinalAbbreviated": [
+        "N",
+        "E",
+        "S",
+        "W"
+    ],
+    "ordinal": [
+        "Northeast",
+        "Northwest",
+        "Southeast",
+        "Southwest"
+    ],
+    "ordinalAbbreviated": [
+        "NE",
+        "NW",
+        "SE",
+        "SW"
+    ]
+}

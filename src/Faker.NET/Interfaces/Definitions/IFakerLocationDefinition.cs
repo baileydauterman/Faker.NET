@@ -5,20 +5,20 @@ namespace Faker.NET.Interfaces.Definitions;
 
 public interface IFakerLocationDefinition
 {
-    public string[] BuildingNumber { get; }
-    public string[] CityName { get; }
-    public string[] CityPrefix { get; }
-    public string[] CitySuffix { get; }
-    public string[] Continent { get; }
-    public string[] Country { get; }
-    public string[] County { get; }
+    public IReadOnlyCollection<string> BuildingNumber { get; }
+    public IReadOnlyCollection<string> CityName { get; }
+    public IReadOnlyCollection<string> CityPrefix { get; }
+    public IReadOnlyCollection<string> CitySuffix { get; }
+    public IReadOnlyCollection<string> Continent { get; }
+    public IReadOnlyCollection<string> Country { get; }
+    public IReadOnlyCollection<string> County { get; }
     public Direction Direction { get; }
-    public Language[] Language { get; }
-    public string[] Postcode { get; }
-    public string[] SecondaryAddress { get; }
-    public LocationState[] State { get; }
+    public IReadOnlyCollection<Language> Language { get; }
+    public IReadOnlyCollection<string> Postcode { get; }
+    public IReadOnlyCollection<string> SecondaryAddress { get; }
+    public IReadOnlyCollection<LocationState> State { get; }
     public StreetAddress StreetAddress { get; }
-    public string[] StreetName { get; }
-    public string[] StreetPattern { get; }
-    public string[] StreetSuffix { get; }
+    public IReadOnlyCollection<string> StreetName { get; }
+    public IReadOnlyCollection<string> StreetPattern { get; }
+    public IReadOnlyCollection<string> StreetSuffix { get; }
 }

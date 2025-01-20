@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="DE\Location\city_names.json" />
     <None Remove="DE\Lorem\words.json" />
     <None Remove="DE\Phone\human.json" />
     <None Remove="DE\Phone\international.json" />
@@ -16,6 +17,22 @@
     <None Remove="EN\Commerce\product_names.json" />
     <None Remove="EN\Internet\top_level_domains.json" />
     <None Remove="EN\Internet\username_patterns.json" />
+    <None Remove="EN\Location\building_number_formats.json" />
+    <None Remove="EN\Location\city_names.json" />
+    <None Remove="EN\Location\city_prefixes.json" />
+    <None Remove="EN\Location\city_suffixes.json" />
+    <None Remove="EN\Location\continents.json" />
+    <None Remove="EN\Location\counties.json" />
+    <None Remove="EN\Location\countries.json" />
+    <None Remove="EN\Location\directions.json" />
+    <None Remove="EN\Location\languages.json" />
+    <None Remove="EN\Location\postcode_formats.json" />
+    <None Remove="EN\Location\secondary_address_formats.json" />
+    <None Remove="EN\Location\states.json" />
+    <None Remove="EN\Location\street_address_formats.json" />
+    <None Remove="EN\Location\street_names.json" />
+    <None Remove="EN\Location\street_patterns.json" />
+    <None Remove="EN\Location\street_suffixes.json" />
     <None Remove="EN\Lorem\words.json" />
     <None Remove="EN\Person\bio_parts.json" />
     <None Remove="EN\Person\bio_patterns.json" />
@@ -48,6 +65,22 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="DE\Location\building_number_formats.json" />
+    <EmbeddedResource Include="DE\Location\city_names.json" />
+    <EmbeddedResource Include="DE\Location\city_prefixes.json" />
+    <EmbeddedResource Include="DE\Location\city_suffixes.json" />
+    <EmbeddedResource Include="DE\Location\continents.json" />
+    <EmbeddedResource Include="DE\Location\counties.json" />
+    <EmbeddedResource Include="DE\Location\countries.json" />
+    <EmbeddedResource Include="DE\Location\directions.json" />
+    <EmbeddedResource Include="DE\Location\languages.json" />
+    <EmbeddedResource Include="DE\Location\postcode_formats.json" />
+    <EmbeddedResource Include="DE\Location\secondary_address_formats.json" />
+    <EmbeddedResource Include="DE\Location\states.json" />
+    <EmbeddedResource Include="DE\Location\street_address_formats.json" />
+    <EmbeddedResource Include="DE\Location\street_names.json" />
+    <EmbeddedResource Include="DE\Location\street_patterns.json" />
+    <EmbeddedResource Include="DE\Location\street_suffixes.json" />
     <EmbeddedResource Include="DE\Lorem\words.json" />
     <EmbeddedResource Include="DE\Phone\human.json" />
     <EmbeddedResource Include="DE\Phone\international.json" />
@@ -66,6 +99,22 @@
     <EmbeddedResource Include="EN\Commerce\product_names.json" />
     <EmbeddedResource Include="EN\Internet\top_level_domains.json" />
     <EmbeddedResource Include="EN\Internet\username_patterns.json" />
+    <EmbeddedResource Include="EN\Location\building_number_formats.json" />
+    <EmbeddedResource Include="EN\Location\city_names.json" />
+    <EmbeddedResource Include="EN\Location\city_prefixes.json" />
+    <EmbeddedResource Include="EN\Location\city_suffixes.json" />
+    <EmbeddedResource Include="EN\Location\continents.json" />
+    <EmbeddedResource Include="EN\Location\counties.json" />
+    <EmbeddedResource Include="EN\Location\countries.json" />
+    <EmbeddedResource Include="EN\Location\directions.json" />
+    <EmbeddedResource Include="EN\Location\languages.json" />
+    <EmbeddedResource Include="EN\Location\postcode_formats.json" />
+    <EmbeddedResource Include="EN\Location\secondary_address_formats.json" />
+    <EmbeddedResource Include="EN\Location\states.json" />
+    <EmbeddedResource Include="EN\Location\street_address_formats.json" />
+    <EmbeddedResource Include="EN\Location\street_names.json" />
+    <EmbeddedResource Include="EN\Location\street_patterns.json" />
+    <EmbeddedResource Include="EN\Location\street_suffixes.json" />
     <EmbeddedResource Include="EN\Lorem\words.json" />
     <EmbeddedResource Include="EN\Person\bio_parts.json" />
     <EmbeddedResource Include="EN\Person\bio_patterns.json" />

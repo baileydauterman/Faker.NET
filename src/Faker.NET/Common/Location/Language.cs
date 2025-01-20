@@ -1,5 +1,3 @@
-using System;
-
 namespace Faker.NET.Common.Location;
 
 public class Language

@@ -19,6 +19,7 @@ public interface IFakerLocation
     public string SecondaryAddress();
     public string State(bool abbreviated = false);
     public string Street();
+    public string StreetSuffix();
     public string StreetAddress(bool useFullAddress = false);
     public string TimeZone();
     public string ZipCode();
