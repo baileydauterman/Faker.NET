@@ -1,5 +1,3 @@
-using System;
-
 namespace Faker.NET.Extensions;
 
 public static class CollectionExtensions

@@ -12,6 +12,7 @@
     <None Remove="nupkg\**" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Faker.NET.Json\Faker.NET.Json.csproj" />
     <ProjectReference Include="..\Faker.NET.Data\Faker.NET.Data.csproj" />
   </ItemGroup>
 </Project>

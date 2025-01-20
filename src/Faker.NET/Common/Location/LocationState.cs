@@ -1,3 +1,6 @@
+using System.Text.Json.Serialization;
+using Faker.NET.Data.Converters;
+
 namespace Faker.NET.Location;
 
 public class LocationState
@@ -18,5 +21,6 @@ public class LocationState
 
     public string Name { get; set; } = string.Empty;
 
+    [JsonConverter(typeof(IntArrayConverter))]
     public IReadOnlyCollection<int> ZipCodes { get; set; } = Array.Empty<int>();
 }

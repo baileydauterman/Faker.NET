@@ -1,5 +1,4 @@
 ﻿using System.Text;
-using Faker.NET.Common;
 using Faker.NET.Interfaces.Modules;
 
 namespace Faker.NET.Implementations.Modules
@@ -11,17 +10,7 @@ namespace Faker.NET.Implementations.Modules
             throw new NotImplementedException();
         }
 
-        public long BigInt(NumericRange<long> range)
-        {
-            throw new NotImplementedException();
-        }
-
         public string Binary(int min = int.MinValue, int max = int.MaxValue)
-        {
-            throw new NotImplementedException();
-        }
-
-        public string Binary(NumericRange<int> range)
         {
             throw new NotImplementedException();
         }
@@ -31,17 +20,7 @@ namespace Faker.NET.Implementations.Modules
             throw new NotImplementedException();
         }
 
-        public float Float(NumericRange<float> range)
-        {
-            throw new NotImplementedException();
-        }
-
         public string Hex(int min = 0, int max = 15)
-        {
-            throw new NotImplementedException();
-        }
-
-        public string Hex(NumericRange<int> range)
         {
             throw new NotImplementedException();
         }
@@ -51,34 +30,19 @@ namespace Faker.NET.Implementations.Modules
             throw new NotImplementedException();
         }
 
-        public string Int(NumericRange<int> range)
-        {
-            throw new NotImplementedException();
-        }
-
         public string Octal(int min = 0, int max = 7)
-        {
-            throw new NotImplementedException();
-        }
-
-        public string Octal(NumericRange<int> range)
         {
             throw new NotImplementedException();
         }
 
         public string RomanNumeral(int min = 0, int max = 3999)
         {
-            throw new NotImplementedException();
-        }
-
-        public string RomanNumeral(NumericRange<int> range)
-        {
-            if (range.Min <= 0 || range.Max > 3999)
+            if (min <= 0 || max > 3999)
             {
-                throw new ArgumentOutOfRangeException("num", "Input must be between 1 and 3999.");
+                throw new ArgumentOutOfRangeException($"Input must be between 1 and 3999.\nmin: {min}\nmax: {max}");
             }
 
-            var num = Faker.Randomizer.Next(range);
+            var num = Faker.Randomizer.Next(min, max);
             StringBuilder roman = new StringBuilder();
 
             (int value, string numeral)[] map = new (int, string)[]

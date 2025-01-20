@@ -7,7 +7,9 @@ public class ResourceRetriever
 {
     public ResourceRetriever()
     {
-        _availableResources = Assembly.GetExecutingAssembly().GetManifestResourceNames() ?? Array.Empty<string>();
+        _availableResources = Assembly.GetExecutingAssembly().GetManifestResourceNames()!;
+        _options = new JsonSerializerOptions();
+        _options.PropertyNameCaseInsensitive = true;
     }
 
     public ResourceRetriever(string locale, string module)
@@ -31,10 +33,7 @@ public class ResourceRetriever
         if (_availableResources.Contains(name))
         {
             using var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream(name);
-            var deserialized = stream is null ? default : JsonSerializer.Deserialize<T>(stream, new JsonSerializerOptions
-            {
-                PropertyNameCaseInsensitive = true,
-            });
+            var deserialized = JsonSerializer.Deserialize<T>(stream!, _options);
             return deserialized ?? Activator.CreateInstance<T>();
         }
 
@@ -68,6 +67,7 @@ public class ResourceRetriever
     }
 
     private readonly string[] _availableResources;
+    private readonly JsonSerializerOptions _options;
     private readonly string _locale = string.Empty;
     private readonly string _module = string.Empty;
 }

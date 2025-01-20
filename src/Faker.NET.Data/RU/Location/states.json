@@ -1,0 +1,82 @@
+[
+    {
+        "Abbreviation": "MOS",
+        "Name": "Moscow",
+        "ZipCodes": {
+            "Min": 101000,
+            "Max": 101999
+        }
+    },
+    {
+        "Abbreviation": "LEN",
+        "Name": "Leningrad Oblast",
+        "ZipCodes": {
+            "Min": 187000,
+            "Max": 187999
+        }
+    },
+    {
+        "Abbreviation": "SPE",
+        "Name": "Saint Petersburg",
+        "ZipCodes": {
+            "Min": 190000,
+            "Max": 199999
+        }
+    },
+    {
+        "Abbreviation": "TAT",
+        "Name": "Republic of Tatarstan",
+        "ZipCodes": {
+            "Min": 420000,
+            "Max": 420999
+        }
+    },
+    {
+        "Abbreviation": "SVE",
+        "Name": "Sverdlovsk Oblast",
+        "ZipCodes": {
+            "Min": 620000,
+            "Max": 629999
+        }
+    },
+    {
+        "Abbreviation": "ROS",
+        "Name": "Rostov Oblast",
+        "ZipCodes": {
+            "Min": 344000,
+            "Max": 344999
+        }
+    },
+    {
+        "Abbreviation": "NSK",
+        "Name": "Novosibirsk Oblast",
+        "ZipCodes": {
+            "Min": 630000,
+            "Max": 639999
+        }
+    },
+    {
+        "Abbreviation": "PER",
+        "Name": "Perm Krai",
+        "ZipCodes": {
+            "Min": 614000,
+            "Max": 614999
+        }
+    },
+    {
+        "Abbreviation": "KRD",
+        "Name": "Krasnodar Krai",
+        "ZipCodes": {
+            "Min": 350000,
+            "Max": 359999
+        }
+    },
+    {
+        "Abbreviation": "VLG",
+        "Name": "Volgograd Oblast",
+        "ZipCodes": {
+            "Min": 400000,
+            "Max": 409999
+        }
+    }
+]

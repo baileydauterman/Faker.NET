@@ -14,6 +14,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Faker.NET.Tests", "tests\Fa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Faker.NET.Data", "src\Faker.NET.Data\Faker.NET.Data.csproj", "{5D184C0D-4792-4780-8CAF-0BA9672D833A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Faker.NET.Json", "Faker.NET.Json\Faker.NET.Json.csproj", "{F12A288E-77F7-4C74-957E-02DA7D00F264}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,6 +34,10 @@ Global
 		{5D184C0D-4792-4780-8CAF-0BA9672D833A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D184C0D-4792-4780-8CAF-0BA9672D833A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D184C0D-4792-4780-8CAF-0BA9672D833A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F12A288E-77F7-4C74-957E-02DA7D00F264}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F12A288E-77F7-4C74-957E-02DA7D00F264}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F12A288E-77F7-4C74-957E-02DA7D00F264}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F12A288E-77F7-4C74-957E-02DA7D00F264}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
