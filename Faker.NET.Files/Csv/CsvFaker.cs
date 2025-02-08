@@ -133,7 +133,7 @@ namespace Faker.NET.Files.Csv
             foreach ((var header, var func) in _headers)
             {
                 var val = func();
-                if (val.IndexOf(',') != -1)
+                if (val.Contains(','))
                 {
                     output.Add($"\"{val}\"");
                 }
