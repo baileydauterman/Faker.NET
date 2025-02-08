@@ -15,7 +15,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Faker.NET.Files\Faker.NET.Files.csproj" />
+    <ProjectReference Include="..\..\src\Faker.NET.Files\Faker.NET.Files.csproj" />
+    <ProjectReference Include="..\..\src\Faker.NET.Json\Faker.NET.Json.csproj" />
     <ProjectReference Include="..\..\src\Faker.NET\Faker.NET.csproj" />
   </ItemGroup>
 </Project>

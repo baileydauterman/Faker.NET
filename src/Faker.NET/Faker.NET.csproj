@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <Import Project="../../version.props" />
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -12,7 +12,7 @@
     <None Remove="nupkg\**" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Faker.NET.Json\Faker.NET.Json.csproj" />
     <ProjectReference Include="..\Faker.NET.Data\Faker.NET.Data.csproj" />
+    <ProjectReference Include="..\Faker.NET.Json\Faker.NET.Json.csproj" />
   </ItemGroup>
 </Project>
