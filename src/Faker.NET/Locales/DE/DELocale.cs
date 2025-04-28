@@ -1,12 +1,11 @@
 ﻿using Faker.NET.Implementations.Modules;
 
-namespace Faker.NET.Locales.DE
+namespace Faker.NET.Locales.DE;
+
+internal class DELocale : FakerLocaleInstance
 {
-    internal class DELocale : FakerLocaleInstance
+    public DELocale() : base("de")
     {
-        public DELocale() : base("de")
-        {
-        }
     }
 }
 

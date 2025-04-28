@@ -1,0 +1,552 @@
+﻿[
+    {
+        "icaoCode": "EDKA",
+        "iataCode": "AAH",
+        "name": "Aachen Merzbrück Airfield"
+    },
+    {
+        "icaoCode": "EDFQ",
+        "iataCode": "",
+        "name": "Allendorf Airport"
+    },
+    {
+        "icaoCode": "EDAC",
+        "iataCode": "AOC",
+        "name": "Leipzig-Altenburg Airport"
+    },
+    {
+        "icaoCode": "EDMA",
+        "iataCode": "AGB",
+        "name": "Augsburg Airport"
+    },
+    {
+        "icaoCode": "EDVA",
+        "iataCode": "",
+        "name": "Bad Gandersheim Aerodrome"
+    },
+    {
+        "icaoCode": "EDFK",
+        "iataCode": "",
+        "name": "Bad Kissingen Airfield"
+    },
+    {
+        "icaoCode": "ETEJ",
+        "iataCode": "ZCD",
+        "name": "Bamberg-Breitenau Airfield"
+    },
+    {
+        "icaoCode": "EDBH",
+        "iataCode": "BBH",
+        "name": "Stralsund-Barth Airport"
+    },
+    {
+        "icaoCode": "EDDB",
+        "iataCode": "BER",
+        "name": "Berlin Brandenburg Airport"
+    },
+    {
+        "icaoCode": "EDQD",
+        "iataCode": "BYU",
+        "name": "Bayreuth Airport"
+    },
+    {
+        "icaoCode": "EDRB",
+        "iataCode": "BBJ",
+        "name": "Bitburg Airport"
+    },
+    {
+        "icaoCode": "EDWR",
+        "iataCode": "BMK",
+        "name": "Borkum Airfield"
+    },
+    {
+        "icaoCode": "EDXA",
+        "iataCode": "",
+        "name": "Achmer Aerodrome"
+    },
+    {
+        "icaoCode": "EDVE",
+        "iataCode": "BWE",
+        "name": "Braunschweig Wolfsburg Airport"
+    },
+    {
+        "icaoCode": "EDDW",
+        "iataCode": "BRE",
+        "name": "Bremen Airport"
+    },
+    {
+        "icaoCode": "EDDK",
+        "iataCode": "CGN",
+        "name": "Cologne Bonn Airport"
+    },
+    {
+        "icaoCode": "ETMN",
+        "iataCode": "FCN",
+        "name": "Sea-Airport Cuxhaven/Nordholz"
+    },
+    {
+        "icaoCode": "EDLW",
+        "iataCode": "DTM",
+        "name": "Dortmund Airport"
+    },
+    {
+        "icaoCode": "EDDC",
+        "iataCode": "DRS",
+        "name": "Dresden Airport (Dresden-Klotzsche Airport)"
+    },
+    {
+        "icaoCode": "EDDL",
+        "iataCode": "DUS",
+        "name": "Düsseldorf Airport"
+    },
+    {
+        "icaoCode": "EDLN",
+        "iataCode": "MGL",
+        "name": "Mönchengladbach Airport"
+    },
+    {
+        "icaoCode": "EDFE",
+        "iataCode": "",
+        "name": "Frankfurt Egelsbach Airport"
+    },
+    {
+        "icaoCode": "EDWE",
+        "iataCode": "EME",
+        "name": "Emden Airport"
+    },
+    {
+        "icaoCode": "EDDE",
+        "iataCode": "ERF",
+        "name": "Erfurt-Weimar Airport"
+    },
+    {
+        "icaoCode": "EDLE",
+        "iataCode": "ESS",
+        "name": "Essen/Mülheim Airport"
+    },
+    {
+        "icaoCode": "EDDF",
+        "iataCode": "FRA",
+        "name": "Frankfurt Airport (Frankfurt am Main Airport, also: Rhein-Main Airport)"
+    },
+    {
+        "icaoCode": "EDTF",
+        "iataCode": "QFB",
+        "name": "Freiburg Airport"
+    },
+    {
+        "icaoCode": "EDNY",
+        "iataCode": "FDH",
+        "name": "Friedrichshafen Airport (Bodensee Airport, Friedrichshafen)"
+    },
+    {
+        "icaoCode": "EDQG",
+        "iataCode": "GHF",
+        "name": "Giebelstadt Airport"
+    },
+    {
+        "icaoCode": "EDFH",
+        "iataCode": "HHN",
+        "name": "Frankfurt-Hahn Airport"
+    },
+    {
+        "icaoCode": "EDDH",
+        "iataCode": "HAM",
+        "name": "Hamburg Airport (Hamburg-Fuhlsbüttel Airport)"
+    },
+    {
+        "icaoCode": "EDHI",
+        "iataCode": "XFW",
+        "name": "Airbus Hamburg-Finkenwerder"
+    },
+    {
+        "icaoCode": "EDDV",
+        "iataCode": "HAJ",
+        "name": "Hannover Airport"
+    },
+    {
+        "icaoCode": "EDXB",
+        "iataCode": "HEI",
+        "name": "Heide-Büsum Airport"
+    },
+    {
+        "icaoCode": "EDHE",
+        "iataCode": "",
+        "name": "Uetersen Airfield"
+    },
+    {
+        "icaoCode": "EDXH",
+        "iataCode": "HGL",
+        "name": "Heligoland Airfield (Helgoland-Düne Airfield)"
+    },
+    {
+        "icaoCode": "EDAH",
+        "iataCode": "HDF",
+        "name": "Heringsdorf Airport"
+    },
+    {
+        "icaoCode": "EDQM",
+        "iataCode": "HOQ",
+        "name": "Hof-Plauen Airport"
+    },
+    {
+        "icaoCode": "EDRH",
+        "iataCode": "",
+        "name": "Hoppstädten-Weiersbach Airfield"
+    },
+    {
+        "icaoCode": "ETSI",
+        "iataCode": "IGS",
+        "name": "Ingolstadt Manching Airport"
+    },
+    {
+        "icaoCode": "EDWJ",
+        "iataCode": "JUI",
+        "name": "Juist Airfield"
+    },
+    {
+        "icaoCode": "EDSB",
+        "iataCode": "FKB",
+        "name": "Karlsruhe/Baden-Baden Airport"
+    },
+    {
+        "icaoCode": "EDVK",
+        "iataCode": "KSF",
+        "name": "Kassel Airport"
+    },
+    {
+        "icaoCode": "EDHK",
+        "iataCode": "KEL",
+        "name": "Kiel Airport (Kiel Holtenau Airport)"
+    },
+    {
+        "icaoCode": "EDTL",
+        "iataCode": "LHA",
+        "name": "Lahr Airport"
+    },
+    {
+        "icaoCode": "EDEL",
+        "iataCode": "",
+        "name": "Langenlonsheim Airfield"
+    },
+    {
+        "icaoCode": "EDDP",
+        "iataCode": "LEJ",
+        "name": "Leipzig/Halle Airport"
+    },
+    {
+        "icaoCode": "EDHL",
+        "iataCode": "LBC",
+        "name": "Lübeck Airport (Blankensee Airport)"
+    },
+    {
+        "icaoCode": "EDBC",
+        "iataCode": "CSO",
+        "name": "Magdeburg-Cochstedt Airport"
+    },
+    {
+        "icaoCode": "EDFZ",
+        "iataCode": "",
+        "name": "Flugplatz Mainz-Finthen"
+    },
+    {
+        "icaoCode": "EDFM",
+        "iataCode": "MHG",
+        "name": "Mannheim City Airport"
+    },
+    {
+        "icaoCode": "EDJA",
+        "iataCode": "FMM",
+        "name": "Memmingen Airport"
+    },
+    {
+        "icaoCode": "EDDM",
+        "iataCode": "MUC",
+        "name": "Munich Airport"
+    },
+    {
+        "icaoCode": "EDDG",
+        "iataCode": "FMO",
+        "name": "Münster Osnabrück Airport"
+    },
+    {
+        "icaoCode": "EDRN",
+        "iataCode": "",
+        "name": "Nannhausen Airfield"
+    },
+    {
+        "icaoCode": "ETNU",
+        "iataCode": "FNB",
+        "name": "Neubrandenburg Airport"
+    },
+    {
+        "icaoCode": "EDWS",
+        "iataCode": "NOE",
+        "name": "Norden-Norddeich Airfield"
+    },
+    {
+        "icaoCode": "EDWY",
+        "iataCode": "NRD",
+        "name": "Norderney Airport"
+    },
+    {
+        "icaoCode": "EDDN",
+        "iataCode": "NUE",
+        "name": "Nuremberg Airport"
+    },
+    {
+        "icaoCode": "EDWO",
+        "iataCode": "",
+        "name": "Atterheide Airfield"
+    },
+    {
+        "icaoCode": "EDLP",
+        "iataCode": "PAD",
+        "name": "Paderborn Lippstadt Airport"
+    },
+    {
+        "icaoCode": "EDOP",
+        "iataCode": "SZW",
+        "name": "Parchim International Airport"
+    },
+    {
+        "icaoCode": "EDAX",
+        "iataCode": "REB",
+        "name": "Müritz Airpark"
+    },
+    {
+        "icaoCode": "ETNL",
+        "iataCode": "RLG",
+        "name": "Rostock-Laage Airport"
+    },
+    {
+        "icaoCode": "EDDR",
+        "iataCode": "SCN",
+        "name": "Saarbrücken Airport (Ensheim Airport)"
+    },
+    {
+        "icaoCode": "EDXO",
+        "iataCode": "PSH",
+        "name": "Sankt Peter-Ording Airport"
+    },
+    {
+        "icaoCode": "EDGS",
+        "iataCode": "SGE",
+        "name": "Siegerland Airport"
+    },
+    {
+        "icaoCode": "EDLS",
+        "iataCode": "",
+        "name": "Stadtlohn-Vreden Airport"
+    },
+    {
+        "icaoCode": "EDMS",
+        "iataCode": "RBM",
+        "name": "Straubing Wallmühle Airport"
+    },
+    {
+        "icaoCode": "EDDS",
+        "iataCode": "STR",
+        "name": "Stuttgart Airport"
+    },
+    {
+        "icaoCode": "EDRT",
+        "iataCode": "",
+        "name": "Trier-Föhren Airfield"
+    },
+    {
+        "icaoCode": "EDXP",
+        "iataCode": "",
+        "name": "Harle Airfield"
+    },
+    {
+        "icaoCode": "EDWG",
+        "iataCode": "AGE",
+        "name": "Wangerooge Airfield"
+    },
+    {
+        "icaoCode": "EDLV",
+        "iataCode": "NRN",
+        "name": "Weeze Airport (Niederrhein Airport)"
+    },
+    {
+        "icaoCode": "EDXW",
+        "iataCode": "GWT",
+        "name": "Sylt Airport"
+    },
+    {
+        "icaoCode": "EDWI",
+        "iataCode": "WVN",
+        "name": "JadeWeser Airport"
+    },
+    {
+        "icaoCode": "EDRZ",
+        "iataCode": "ZQW",
+        "name": "Zweibrücken Airport"
+    },
+    {
+        "icaoCode": "ETHA",
+        "iataCode": "",
+        "name": "Altenstadt Air Base (Army)"
+    },
+    {
+        "icaoCode": "ETEK",
+        "iataCode": "",
+        "name": "Baumholder Army Airfield (U.S. Army)"
+    },
+    {
+        "icaoCode": "ETSB",
+        "iataCode": "",
+        "name": "Büchel Air Base (Air Force)"
+    },
+    {
+        "icaoCode": "ETHB",
+        "iataCode": "",
+        "name": "Bückeburg Air Base (Army)"
+    },
+    {
+        "icaoCode": "ETHC",
+        "iataCode": "ZCN",
+        "name": "Celle Air Base (Army)"
+    },
+    {
+        "icaoCode": "ETND",
+        "iataCode": "",
+        "name": "Diepholz Air Base (Air Force)"
+    },
+    {
+        "icaoCode": "ETSE",
+        "iataCode": "",
+        "name": "Erding Air Base (Air Force)"
+    },
+    {
+        "icaoCode": "ETHS",
+        "iataCode": "",
+        "name": "Faßberg Air Base (Army)"
+    },
+    {
+        "icaoCode": "ETHF",
+        "iataCode": "FRZ",
+        "name": "Fritzlar Air Base (Army)"
+    },
+    {
+        "icaoCode": "ETSF",
+        "iataCode": "FEL",
+        "name": "Fürstenfeldbruck Air Base (Air Force)"
+    },
+    {
+        "icaoCode": "ETNG",
+        "iataCode": "GKE",
+        "name": "NATO Air Base Geilenkirchen (NATO)"
+    },
+    {
+        "icaoCode": "ETIC",
+        "iataCode": "",
+        "name": "Grafenwöhr Army Airfield (U.S. Army)"
+    },
+    {
+        "icaoCode": "ETIH",
+        "iataCode": "",
+        "name": "Hohenfels Army Airfield (U.S. Army)"
+    },
+    {
+        "icaoCode": "ETNH",
+        "iataCode": "",
+        "name": "Hohn Air Base (Air Force)"
+    },
+    {
+        "icaoCode": "ETSH",
+        "iataCode": "",
+        "name": "Holzdorf Air Base (Air Force)"
+    },
+    {
+        "icaoCode": "ETNJ",
+        "iataCode": "",
+        "name": "Jever Air Base (Air Force)"
+    },
+    {
+        "icaoCode": "ETSA",
+        "iataCode": "",
+        "name": "Landsberg-Lech Air Base (Air Force)"
+    },
+    {
+        "icaoCode": "ETHL",
+        "iataCode": "",
+        "name": "Laupheim Air Base (Air Force)"
+    },
+    {
+        "icaoCode": "ETSL",
+        "iataCode": "",
+        "name": "Lechfeld Air Base (Air Force)"
+    },
+    {
+        "icaoCode": "ETOR",
+        "iataCode": "",
+        "name": "Coleman Army Airfield (U.S. Army)"
+    },
+    {
+        "icaoCode": "ETWM",
+        "iataCode": "",
+        "name": "Meppen Air Base [de] (Air Force)"
+    },
+    {
+        "icaoCode": "ETSN",
+        "iataCode": "",
+        "name": "Neuburg Air Base (Air Force)"
+    },
+    {
+        "icaoCode": "ETHN",
+        "iataCode": "",
+        "name": "Niederstetten Air Base (Army)"
+    },
+    {
+        "icaoCode": "ETMN",
+        "iataCode": "NDZ",
+        "name": "Nordholz Naval Airbase (Navy)"
+    },
+    {
+        "icaoCode": "ETNN",
+        "iataCode": "QOE",
+        "name": "Nörvenich Air Base (Air Force)"
+    },
+    {
+        "icaoCode": "ETAR",
+        "iataCode": "RMS",
+        "name": "Ramstein Air Base (U.S. Air Force)"
+    },
+    {
+        "icaoCode": "ETHE",
+        "iataCode": "ZPQ",
+        "name": "Rheine-Bentlage Air Base (Army)"
+    },
+    {
+        "icaoCode": "ETHR",
+        "iataCode": "",
+        "name": "Roth Air Base (Army)"
+    },
+    {
+        "icaoCode": "ETNS",
+        "iataCode": "WBG",
+        "name": "Schleswig Air Base (Air Force)"
+    },
+    {
+        "icaoCode": "ETAD",
+        "iataCode": "SPM",
+        "name": "Spangdahlem Air Base (U.S. Air Force)"
+    },
+    {
+        "icaoCode": "ETOU",
+        "iataCode": "WIE",
+        "name": "Lucius D. Clay Kaserne"
+    },
+    {
+        "icaoCode": "ETNT",
+        "iataCode": "",
+        "name": "Wittmundhafen Air Base (Air Force)"
+    },
+    {
+        "icaoCode": "ETNW",
+        "iataCode": "",
+        "name": "Wunstorf Air Base (Air Force)"
+    }
+]

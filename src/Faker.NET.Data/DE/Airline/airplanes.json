@@ -1,0 +1,122 @@
+﻿[
+    {
+        "name": "Airbus A319neo",
+        "iataCode": "31N"
+    },
+    {
+        "name": "Airbus A320neo",
+        "iataCode": "32N"
+    },
+    {
+        "name": "Airbus A321neo",
+        "iataCode": "32Q"
+    },
+    {
+        "name": "Antonov An-225 Mriya",
+        "iataCode": "A5F"
+    },
+    {
+        "name": "Airbus A300-600",
+        "iataCode": "AB6"
+    },
+    {
+        "name": "Airbus A300-600 Freighter[4]",
+        "iataCode": "ABY"
+    },
+    {
+        "name": "Airbus A300B2, A300B4 and A300C4",
+        "iataCode": "AB4"
+    },
+    {
+        "name": "Airbus A310-200",
+        "iataCode": "312"
+    },
+    {
+        "name": "Airbus A310-300",
+        "iataCode": "313"
+    },
+    {
+        "name": "Airbus A318",
+        "iataCode": "318"
+    },
+    {
+        "name": "Airbus A318 (sharklets)",
+        "iataCode": "32C"
+    },
+    {
+        "name": "Airbus A319",
+        "iataCode": "319"
+    },
+    {
+        "name": "Airbus A319 (sharklets)",
+        "iataCode": "32D"
+    },
+    {
+        "name": "Airbus A320",
+        "iataCode": "320"
+    },
+    {
+        "name": "Airbus A320 (sharklets)",
+        "iataCode": "32A"
+    },
+    {
+        "name": "Airbus A321",
+        "iataCode": "321"
+    },
+    {
+        "name": "Airbus A321 (sharklets)",
+        "iataCode": "32B"
+    },
+    {
+        "name": "Airbus A330-200",
+        "iataCode": "332"
+    },
+    {
+        "name": "Airbus A330-300",
+        "iataCode": "333"
+    },
+    {
+        "name": "Airbus A330-200 Freighter",
+        "iataCode": "33X"
+    },
+    {
+        "name": "Airbus A330-300 Freighter",
+        "iataCode": "33Y"
+    },
+    {
+        "name": "Airbus A330-800",
+        "iataCode": "338"
+    },
+    {
+        "name": "Airbus A330-900",
+        "iataCode": "339"
+    },
+    {
+        "name": "Airbus A340-200",
+        "iataCode": "342"
+    },
+    {
+        "name": "Airbus A340-300",
+        "iataCode": "343"
+    },
+    {
+        "name": "Airbus A340-500",
+        "iataCode": "345"
+    },
+    {
+        "name": "Airbus A340-600",
+        "iataCode": "346"
+    },
+    {
+        "name": "Airbus A350-900",
+        "iataCode": "359"
+    },
+    {
+        "name": "Airbus A350-1000",
+        "iataCode": "351"
+    },
+    {
+        "name": "Airbus A380-800",
+        "iataCode": "388"
+    }
+]

@@ -1,0 +1,38 @@
+﻿[
+    {
+        "name": "City Airlines",
+        "iataCode": "VL",
+        "icaoCode": "LHX",
+        "callsign": "CITY AIR"
+    },
+    {
+        "name": "Eurowings",
+        "iataCode": "EW",
+        "icaoCode": "EWG",
+        "callsign": "EUROWINGS"
+    },
+    {
+        "name": "Lufthansa",
+        "iataCode": "LH",
+        "icaoCode": "DLH",
+        "callsign": "LUFTHANSA"
+    },
+    {
+        "name": "Lufthansa CityLine",
+        "iataCode": "CL",
+        "icaoCode": "CLH",
+        "callsign": "HANSALINE"
+    },
+    {
+        "name": "TUI fly Deutschland",
+        "iataCode": "X3",
+        "icaoCode": "TUI",
+        "callsign": "TUI JET"
+    },
+    {
+        "name": "Discover Airlines",
+        "iataCode": "4Y",
+        "icaoCode": "OCN",
+        "callsign": "OCEAN"
+    }
+]

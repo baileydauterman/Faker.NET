@@ -18,6 +18,11 @@ namespace Faker.NET
 
         internal static FakerLocale Locale { get; private set; } = FakerLocale.English;
 
+        public static FakerLocale GetLocale()
+        {
+            return Locale;
+        }
+
         public static void SetLocale(FakerLocale locale)
         {
             if (Locale == locale)

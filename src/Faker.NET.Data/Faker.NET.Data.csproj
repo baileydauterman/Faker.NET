@@ -7,6 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="DE\Airline\airlines.json" />
+    <None Remove="DE\Airline\airplanes.json" />
+    <None Remove="DE\Airline\airports.json" />
     <None Remove="DE\Location\city_names.json" />
     <None Remove="DE\Lorem\words.json" />
     <None Remove="DE\Phone\human.json" />
@@ -64,6 +67,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="DE\Airline\airlines.json" />
+    <EmbeddedResource Include="DE\Airline\airplanes.json" />
+    <EmbeddedResource Include="DE\Airline\airports.json" />
     <EmbeddedResource Include="DE\Location\building_number_formats.json" />
     <EmbeddedResource Include="DE\Location\city_names.json" />
     <EmbeddedResource Include="DE\Location\city_prefixes.json" />
