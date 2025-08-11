@@ -118,7 +118,14 @@ public class CsvFaker : IDisposable
 
     ~CsvFaker()
     {
-        _stream.Dispose();
+        try
+        {
+            _stream.Dispose();
+        }
+        finally
+        {
+            GC.SuppressFinalize(this);
+        }
     }
 
     private void WriteRow(string[] values)

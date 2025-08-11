@@ -49,7 +49,7 @@ namespace Faker.NET.Tests.Files
             using var writeStream = File.OpenWrite(tempPath);
             var faker = CsvFaker.ToStream(writeStream).AddTestColumns();
             faker.Write();
-            CheckFile(tempPath, 11);
+            CheckFile(tempPath, 501);
         }
 
         [Test]
