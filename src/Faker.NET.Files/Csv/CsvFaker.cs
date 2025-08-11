@@ -108,8 +108,7 @@ public class CsvFaker : IDisposable
     {
         try
         {
-            _stream.Flush();
-            _stream.Close();
+            _stream.Dispose();
         }
         finally
         {
@@ -119,7 +118,7 @@ public class CsvFaker : IDisposable
 
     ~CsvFaker()
     {
-        Dispose();
+        _stream.Dispose();
     }
 
     private void WriteRow(string[] values)
