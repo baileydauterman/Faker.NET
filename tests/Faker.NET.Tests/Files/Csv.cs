@@ -35,12 +35,9 @@ namespace Faker.NET.Tests.Files
         public void GenerateFileFromStreamReadError()
         {
             var tempPath = IO.GetRandomTempFilePath();
-            File.Create(tempPath);
 
-            using (var stream = File.OpenRead(tempPath))
-            {
-                Assert.Throws<Exception>(() => CsvFaker.ToStream(stream));
-            }
+            using var stream = File.Open(tempPath, FileMode.OpenOrCreate, FileAccess.Read);
+            Assert.Throws<Exception>(() => CsvFaker.ToStream(stream));
         }
 
         [Test]
