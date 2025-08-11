@@ -35,6 +35,7 @@ namespace Faker.NET.Tests.Files
         public void GenerateFileFromStreamReadError()
         {
             var tempPath = IO.GetRandomTempFilePath();
+            File.Create(tempPath);
 
             using (var stream = File.OpenRead(tempPath))
             {
