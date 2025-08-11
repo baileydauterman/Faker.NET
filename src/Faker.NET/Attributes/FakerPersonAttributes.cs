@@ -11,13 +11,16 @@ public class FakerPersonBioAttribute : FakerAttribute
 public class FakerPersonFirstNameAttribute : FakerAttribute
 {
     public Sex? Sex { get; set; } = null;
+    
     public override object GetPropertyValue() => Faker.Person.FirstName(Sex);
 }
 
 public class FakerPersonFullNameAttribute : FakerAttribute
 {
     public string? FirstName { get; set; } = null;
+
     public string? LastName { get; set; } = null;
+
     public Sex? Sex { get; set; } = null;
 
     public override object GetPropertyValue() => Faker.Person.FullName(FirstName, LastName, Sex);
@@ -50,18 +53,21 @@ public class FakerPersonJobTypeAttribute : FakerAttribute
 public class FakerPersonLastNameAttribute : FakerAttribute
 {
     public Sex? Sex { get; set; } = null;
+
     public override object GetPropertyValue() => Faker.Person.LastName(Sex);
 }
 
 public class FakerPersonMiddleNameAttribute : FakerAttribute
 {
     public Sex? Sex { get; set; } = null;
+
     public override object GetPropertyValue() => Faker.Person.MiddleName(Sex);
 }
 
 public class FakerPersonPrefixAttribute : FakerAttribute
 {
     public Sex? Sex { get; set; } = null;
+
     public override object GetPropertyValue() => Faker.Person.Prefix(Sex);
 }
 

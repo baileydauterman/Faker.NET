@@ -2,6 +2,22 @@ namespace Faker.NET.Common.Exceptions;
 
 public static class ThrowHelper
 {
+    public static void IfNullOrEmpty(string value, string message)
+    {
+        if (string.IsNullOrEmpty(value))
+        {
+            throw new NullReferenceException(message);
+        }
+    }
+
+    public static void IfNotWritable(Stream stream, string message = "Unable to write to stream")
+    {
+        if (!stream.CanWrite)
+        {
+            throw new Exception(message);
+        }
+    }
+
     public static void NotImplementedException()
     {
         throw new NotImplementedException();

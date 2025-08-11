@@ -9,17 +9,17 @@ public class Lorem : DeterministicTestClass
     public void ClassAttributesCsv()
     {
         var csvFaker = CsvUtils.ToCsvRows<LoremAttributes>();
-
-        Assert.That(csvFaker.Count, Is.EqualTo(6));
+        var count = 0;
 
         Assert.Multiple(() =>
         {
-            for (int i = 0; i < csvFaker.Count; i++)
+            foreach (var line in csvFaker)
             {
-                var line = csvFaker[i].Replace(",", string.Empty);
-                Assert.That(line, Is.Not.WhiteSpace.Or.Null.Or.Empty);
+                count++;
+                Assert.That(line.Replace(",", string.Empty), Is.Not.WhiteSpace.Or.Null.Or.Empty);
             }
         });
+        Assert.That(count, Is.EqualTo(6));
     }
 }
 

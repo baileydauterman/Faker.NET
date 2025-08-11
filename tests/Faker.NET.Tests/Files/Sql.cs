@@ -1,14 +1,15 @@
 ﻿using Faker.NET.Files.Sql;
+using Faker.NET.Tests.Utils;
 using System.Data;
 
 namespace Faker.NET.Tests.Files
 {
-    internal class Sql
+    internal class Sql : FileBasedTestClass
     {
         [Test]
         public void GenerateInsert()
         {
-            var tempPath = Path.Combine(Path.GetTempPath(), Path.GetTempFileName());
+            var tempPath = IO.GetRandomTempFilePath();
             using var writeStream = File.OpenWrite(tempPath);
 
             var faker = new SqlFaker(writeStream)
